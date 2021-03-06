@@ -1,0 +1,18 @@
+{
+    "format_version": 1,
+    "header": {
+        "description": "rainyat.sky.island.survival.function by xhduoduobaby ver 2.5 use /function rainyat.sky.island.survival.help or /function help for help",
+        "name": "rainyat.sky.island.survival.function",
+        "uuid": "509dc1f1-0db5-418e-8d30-f994f28400e7",
+        "version": [1, 8, 1],
+        "min_engine_version": [1, 2, 6]
+    },
+    "modules": [
+        {
+            "description": "rainyat.sky.island.survival.function",
+            "type": "data",
+            "uuid": "946152e0-9b12-4747-9469-3a50bcce489a",
+            "version": [1, 2, 6]
+        }
+    ]
+}
