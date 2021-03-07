@@ -10,16 +10,27 @@
 啊嗷！有漏洞了？在github gitee bilibili等地方联系我哦~我会去注意修复的~
 
 #### 关于
-您好,我是祉语,是一个喜欢[我的世界]与[ACG文化]的学生。不是纸片人!!!!!!!不是萝莉!!!!!!!!!!更不是小萝莉!!!!!!!!! 
+##### 关于
+您好,我是祉语,是一个喜欢[我的世界]与[ACG文化]的学生。
+##### 萝莉？
+不是纸片人!!!!!!!不是萝莉!!!!!!!!!!更不是小萝莉!!!!!!!!! 不会吧不会吧，不会还有人认为祉语是小萝莉吧
 
 #### 联系
-GitHub：https://github.com/xiaozhiyuqwq Gitee：https://gitee.com/xiaozhiyuqwq 哔哩哔哩：https://space.bilibili.com/437306982
+##### GitHub：https://github.com/xiaozhiyuqwq 
+##### Gitee：https://gitee.com/xiaozhiyuqwq 
+##### 哔哩哔哩：https://space.bilibili.com/437306982
 
 #### 导航
-main：项目主储存 v1：项目前身 v2.1：2代1项目 v2.1：2代2项目 album：相册 reserve：预留分支
+##### main：项目主储存 
+##### v1：项目前身 
+##### v2.1：2代1项目 
+##### v2.1：2代2项目 
+##### album：相册 
+##### reserve：预留分支
 
 #### 贡献
-作者：祉语 xhduoduobaby(同一人) 感谢：子佳 AceAR 一只卑微的量筒 君茶 小T 晨风 星辰 边秋一雁
+##### 作者：祉语 xhduoduobaby(同一人) 
+##### 感谢：子佳 AceAR 一只卑微的量筒 君茶 小T 晨风 星辰 边秋一雁
 
 #### 更多
 歌剧奏响的瞬间，轻音悠远，犹如蔷薇端庄高洁，看落花舞动抚过了少女指尖。
