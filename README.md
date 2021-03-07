@@ -1,4 +1,4 @@
 # Skyblock-for-Server
 
-#### 分支reserve
-这是一个预留的分支。
+#### 分支sundries
+这是一个杂物分支
