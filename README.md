@@ -33,6 +33,7 @@
 ##### album：相册 
 ##### sundries：杂物分支
 ##### reserve：预留分支
+##### development：开发分支
 
 #### 贡献
 ##### 作者：祉语 xhduoduobaby(同一人) 
@@ -75,6 +76,7 @@
 ##### album：相册
 ##### sundries：雜物分支
 ##### reserve：預留分支
+##### Development: 開發分支
 
 #### 貢獻
 ##### 作者：祉語xhduoduobaby（同一人）
@@ -119,6 +121,7 @@ It's not paper man! It's not Lori! It's not little Lori!
 ##### Album: album
 ##### sundries：Branches of sundries
 ##### Reserve: reserved branch
+##### Development: Development Branch
 
 #### Contribution
 ##### Author: zhiyu
@@ -158,6 +161,7 @@ MineCraft基岩版に基づいて作成された空島生存アーカイブは�
 ##### album：アルバム
 ##### sundries：雑物の分岐
 ##### reserve：予備分岐
+##### Development: 開発ブランチ
 
 #### 貢献
 ##### 作者 zhiyu
