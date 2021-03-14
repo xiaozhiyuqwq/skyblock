@@ -14,3 +14,5 @@
 文件：skyblockiconnettase.jpg。封面图片网抑专用
 ##### function-pack_icon.png
 文件：function-pack_icon.png。函数封面
+##### function-pack_icon2.png
+文件：function-pack_icon2.png。函数封面2
