@@ -148,3 +148,5 @@ tellraw @a[scores={rewardsupply=101..200,language=1}] {"rawtext":[{"text":"§l§
 tellraw @a[scores={rewardsupply=101..200,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§3線上補給已發放！ §f您獲得了隨機的補給。"}]}
 tellraw @a[scores={rewardsupply=101..200,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§3オンラインで補給しました。 §fランダムに補給しました。"}]}
 scoreboard players set @a[scores={rewardsupply=101..200}] rewardsupply 0
+#离线时间计算
+scoreboard players add * offlinetime 1

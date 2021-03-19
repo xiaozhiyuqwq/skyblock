@@ -59,6 +59,7 @@ scoreboard objectives add reward dummy
 scoreboard objectives add tphelp dummy
 scoreboard objectives add tphelptime dummy
 scoreboard objectives add iduse dummy
+scoreboard objectives add offlinetime dummy
 #clear
 clear @a[tag=clear]
 replaceitem entity @a[tag=clear] slot.hotbar 0 air
@@ -3430,3 +3431,7 @@ titleraw @a[scores={level=0,language=0}] actionbar {"rawtext":[{"text":"§f您�
 titleraw @a[scores={level=0,language=1}] actionbar {"rawtext":[{"text":"§fYou can't play the game. Please register first."}]}
 titleraw @a[scores={level=0,language=2}] actionbar {"rawtext":[{"text":"§f您無法進行遊戲，請先完成注册"}]}
 titleraw @a[scores={level=0,language=3}] actionbar {"rawtext":[{"text":"§fゲームができません。まず登録してください。"}]}
+#离线奖励计算
+execute @a[scores={offlinetime=10081,language=0}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f欢迎回来！"}]}
+execute @a[scores={offlinetime=10081,language=0}] ~ ~ ~ title @s title §r§f欢迎回来！
+execute @a[scores={offlinetime=10081,language=0}] ~ ~ ~ title @s subtitle §6@s §f欢迎回来！
