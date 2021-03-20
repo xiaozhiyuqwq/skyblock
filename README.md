@@ -14,6 +14,9 @@
 #### 漏洞
 啊嗷！有漏洞了？在github gitee bilibili等地方联系我哦~我会去注意修复的~
 
+#### wiki
+https://www.wolai.com/xiaozhiyuqwq/odyYFtVe6zU8TnHHQLXGx4
+
 #### 关于
 ##### 关于
 您好,我是祉语,喜欢[我的世界]与[ACG文化]。
@@ -100,6 +103,9 @@ d.本协议的拟定、解释均以中文为准。除双方另有约定外，任
 
 #### 漏洞
 啊嗷！有漏洞了？在github gitee bilibili等地方聯系我哦~我會去注意修復的~
+
+#### wiki
+https://www.wolai.com/xiaozhiyuqwq/odyYFtVe6zU8TnHHQLXGx4
 
 #### 關於
 ##### 關於
@@ -190,6 +196,9 @@ At present, V1 supports simplified Chinese, traditional Chinese and English, V2 
 #### bugs
 Ahhh! Is there a bug? Contact me in GitHub, gitee BiliBili and other places ~ I will pay attention to the repair~
 
+#### wiki
+https://www.wolai.com/xiaozhiyuqwq/odyYFtVe6zU8TnHHQLXGx4
+
 #### About
 ##### About
 Hello, I'm Zhiyu. I like [minecraft] and [ACG culture].
@@ -275,6 +284,9 @@ MineCraft基岩版に基づいて作成された空島生存アーカイブは�
 
 #### 抜け穴
 あーあ！手抜かりがありましたか？github gitee bilibiliなどで連絡してください。修復しに行きます。
+
+#### wiki
+https://www.wolai.com/xiaozhiyuqwq/odyYFtVe6zU8TnHHQLXGx4
 
 #### について
 ##### について
