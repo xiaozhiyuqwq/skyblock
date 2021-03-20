@@ -16,3 +16,7 @@
 文件：function-pack_icon.png。函数封面
 ##### function-pack_icon2.png
 文件：function-pack_icon2.png。函数封面2
+##### swty1.webp
+文件：swty1.webp 牛逼の世外桃源
+##### swty2.jpg
+文件：swty2.jpg 牛逼の世外桃源2
