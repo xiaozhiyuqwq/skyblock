@@ -60,6 +60,8 @@ scoreboard objectives add tphelp dummy
 scoreboard objectives add tphelptime dummy
 scoreboard objectives add iduse dummy
 scoreboard objectives add offlinetime dummy
+scoreboard objectives add offlinecoin dummy
+scoreboard objectives add luckily dummy
 #clear
 clear @a[tag=clear]
 replaceitem entity @a[tag=clear] slot.hotbar 0 air
@@ -1903,7 +1905,7 @@ tellraw @a[scores={temp=223,language=3,receivetext=1}] {"rawtext":[{"text":"§l�
 scoreboard players set @a[scores={temp=223,receivetext=1,receive=10..}] receivetext 2
 scoreboard players set @a[scores={temp=223,receivetext=2,receive=70..}] receivetext 3
 tellraw @a[scores={temp=223,language=0,receivetext=3}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f在 §6GitHub§f 上搜索并关注 §3xiaozhiyuqwq§f ，或者访问 §3§3https://github.com/xiaozhiyuqwq§f§f 来查看我们完全开放的空岛生存！"}]}
-tellraw @a[scores={temp=223,language=1,receivetext=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fSearch on §6GitHub§f and follow §3xiaozhiyuqwq§f, or visit §3§3https://github.com/xiaozhiyuqwq§f§f Check out our fully open skylock!"}]}
+tellraw @a[scores={temp=223,language=1,receivetext=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fSearch on §6GitHub§f and follow §3xiaozhiyuqwq§f, or visit §3§3https://github.com/xiaozhiyuqwq§f§f Check out our fully open skyblock!"}]}
 tellraw @a[scores={temp=223,language=2,receivetext=3}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f在 §6GitHub§f 上蒐索並關注 §3xiaozhiyuqwq§f ，或者訪問 §3§3https://github.com/xiaozhiyuqwq§f§f 來查看我們完全開放的空島生存！"}]}
 tellraw @a[scores={temp=223,language=3,receivetext=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§6GitHub§f で検索して §3xiaozhiyuqwq §fに注目したり、訪問したりします。 §3https://github.com/xhduodubbaby §f完全にオープンしたskyblockを見に来ました。"}]}
 scoreboard players set @a[scores={temp=223,receivetext=3,receive=70..}] receivetext 4
@@ -2900,7 +2902,7 @@ kick @a[scores={language=3,bantime=120..179}] §f現在は禁止されていま�
 kick @a[scores={language=3,bantime=180..239}] §f現在は禁止されています。ゲームに参加できません。封禁解除まであと §l§e3 时 §r§f。異議があれば管理人に連絡してください。現在Skyblock for Server v1.0.0 を実行しています。開発者： §l§d祉语ちゃん §r§f。§6GitHub§fホームページ： §3https://github.com/xiaozhiyuqwq§f ,§aGitee§fホームページ:  §chttps://gitee.com/xiaozhiyuqwq§f 。
 kick @a[scores={language=3,bantime=240..299}] §f現在は禁止されています。ゲームに参加できません。封禁解除まであと §l§e4 时 §r§f。異議があれば管理人に連絡してください。現在Skyblock for Server v1.0.0 を実行しています。開発者： §l§d祉语ちゃん §r§f。§6GitHub§fホームページ： §3https://github.com/xiaozhiyuqwq§f ,§aGitee§fホームページ:  §chttps://gitee.com/xiaozhiyuqwq§f 。
 kick @a[scores={language=3,bantime=300..359}] §f現在は禁止されています。ゲームに参加できません。封禁解除まであと §l§e5 时 §r§f。異議があれば管理人に連絡してください。現在Skyblock for Server v1.0.0 を実行しています。開発者： §l§d祉语ちゃん §r§f。§6GitHub§fホームページ： §3https://github.com/xiaozhiyuqwq§f ,§aGitee§fホームページ:  §chttps://gitee.com/xiaozhiyuqwq§f 。
-kick @a[scores={language=3,bantime=360..419}] §f現在は禁止されています。ゲームに参加できません。封禁解除まであと §l§e6 时 §r§f。異議があれば管理人に連絡してください。現在Skyblock for Server v1.0.0 を実行しています。開発者： §l§d祉语ちゃん §r§f。§6GitHub§fホームページ： §3https://github.com/xiaozhiyuqwq§f ,§aGitee§fホームページ:  §chttps://gitee.com/xiaozhiyuqwq§f 。
+kick @a[scores={language=3,bantime=360..419}] §f現在は禁止されています。ゲームに参加できません。封禁解除まであと §l§e6 时 §r§f。異議があれば管理人に連絡してください。現在Skyblock for Server v1.0.0 を実行しています。開発者： §l§d祉语ちゃん §r§f。§6GitHub§fホームページ： §3https://github.com/xiaozhiyuqwq§f ,§aGitee§fホームペー���:  §chttps://gitee.com/xiaozhiyuqwq§f 。
 kick @a[scores={language=3,bantime=420..479}] §f現在は禁止されています。ゲームに参加できません。封禁解除まであと §l§e7 时 §r§f。異議があれば管理人に連絡してください。現在Skyblock for Server v1.0.0 を実行しています。開発者： §l§d祉语ちゃん §r§f。§6GitHub§fホームページ： §3https://github.com/xiaozhiyuqwq§f ,§aGitee§fホームページ:  §chttps://gitee.com/xiaozhiyuqwq§f 。
 kick @a[scores={language=3,bantime=480..539}] §f現在は禁止されています。ゲームに参加できません。封禁解除まであと §l§e8 时 §r§f。異議があれば管理人に連絡してください。現在Skyblock for Server v1.0.0 を実行しています。開発者： §l§d祉语ちゃん §r§f。§6GitHub§fホームページ： §3https://github.com/xiaozhiyuqwq§f ,§aGitee§fホームページ:  §chttps://gitee.com/xiaozhiyuqwq§f 。
 kick @a[scores={language=3,bantime=540..599}] §f現在は禁止されています。ゲームに参加できません。封禁解除まであと §l§e9 时 §r§f。異議があれば管理人に連絡してください。現在Skyblock for Server v1.0.0 を実行しています。開発者： §l§d祉语ちゃん §r§f。§6GitHub§fホームページ： §3https://github.com/xiaozhiyuqwq§f ,§aGitee§fホームページ:  §chttps://gitee.com/xiaozhiyuqwq§f 。
@@ -3090,11 +3092,11 @@ execute @a[scores={temp=50,about=100..,abouttext=1,language=3}] ~ ~ ~ title @s t
 execute @a[scores={temp=50,about=100..,abouttext=1,language=0}] ~ ~ ~ title @s subtitle §fxiaozhiyuqwq（小祉语qwq）
 execute @a[scores={temp=50,about=100..,abouttext=1,language=1}] ~ ~ ~ title @s subtitle §fxiaozhiyuqwq
 execute @a[scores={temp=50,about=100..,abouttext=1,language=2}] ~ ~ ~ title @s subtitle §fxiaozhiyuqwq（小祉語qwq）
-execute @a[scores={temp=50,about=100..,abouttext=1,language=3}] ~ ~ ~ title @s subtitle §f祉语ちゃん
-execute @a[scores={temp=50,about=100..,abouttext=1,language=0}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§l§6作者 §r§3xiaozhiyuqwq（小祉语qwq） §a歌剧奏响的瞬间，轻音悠远，犹如蔷薇端庄高洁，看落花舞动抚过了少女指尖。 §f祉语，曾用昵称xhduoduobaby。喜爱 我的世界 以及 ACG文化 。将项目当作自己女儿的一个玩家，Github主页：https://github.com/xiaozhiyuqwq，Gitee主页：https://gitee.com/xiaozhiyuqwq，哔哩哔哩主页：https://space.bilibili.com/437306982。萝莉？不是萝莉哦~（虽然比较娇就是了qwq"}]}
-execute @a[scores={temp=50,about=100..,abouttext=1,language=1}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§6Developer §r§3xiaozhiyuqwq §fZhiyu, used to be nicknamed xhduobaby. Love Minecraft and ACG culture. GitHub home page: https://github.com/xiaozhiyuqwq , gitee home page: https://gitee.com/xiaozhiyuqwq , Bili Bili homepage: https://space.bilibili.com/437306982 . lolita? I'm not Lori~"}]}
-execute @a[scores={temp=50,about=100..,abouttext=1,language=2}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§l§6作者 §r§3xiaozhiyuqwq（小祉語qwq） §a歌劇奏響的瞬間，輕音悠遠，猶如薔薇端莊高潔，看落花舞動撫過了少女指尖。 §f祉語，曾用昵稱xhduoduobaby。喜愛Minecraft以及ACG文化。將項目當作自己女兒的一個玩家，Github主頁：https://github.com/xiaozhiyuqwq，Gitee主頁：https://gitee.com/xiaozhiyuqwq，嗶哩嗶哩主頁：https://space.bilibili.com/437306982。蘿莉？不是蘿莉哦~（雖然比較嬌就是了qwq"}]}
-execute @a[scores={temp=50,about=100..,abouttext=1,language=3}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§6開発者 §r§3祉语ちゃん §f祉语ちゃん。MinecraftとACG文化が好きです。Githubホームページ:https://github.com/xiaozhiyuqwqGiteホームページ：https://gitee.com/xiaozhiyuqwqサージのホームページ:https://space.bilibili.com/43736982。ロリ？ロリじゃないですよ。"}]}
+execute @a[scores={temp=50,about=100..,abouttext=1,language=3}] ~ ~ ~ title @s subtitle §f祉語ちゃん
+execute @a[scores={temp=50,about=100..,abouttext=1,language=0}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§l§6作者 §r§3xiaozhiyuqwq（小祉语qwq） §a歌剧奏响的瞬间，轻音悠远，犹如蔷薇端庄高洁，看落花舞动抚过了少女指尖。 §f祉语，曾用昵称xhduoduobaby。喜爱 我的世界 以及 ACG文化 。Github主页：https://github.com/xiaozhiyuqwq，Gitee主页：https://gitee.com/xiaozhiyuqwq，哔哩哔哩主页：https://space.bilibili.com/437306982。祉语不是小萝莉（虽然有的时候有点小傲娇）！"}]}
+execute @a[scores={temp=50,about=100..,abouttext=1,language=1}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§6Developer §r§3xiaozhiyuqwq §fZhiyu, used to be nicknamed xhduobaby. Love Minecraft and ACG culture. GitHub home page: https://github.com/xiaozhiyuqwq , gitee home page: https://gitee.com/xiaozhiyuqwq , Bili Bili homepage: https://space.bilibili.com/437306982 . Zhiyu is not little Lori (although sometimes a little proud)!"}]}
+execute @a[scores={temp=50,about=100..,abouttext=1,language=2}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§l§6作者 §r§3xiaozhiyuqwq（小祉語qwq） §a歌劇奏響的瞬間，輕音悠遠，猶如薔薇端莊高潔，看落花舞動撫過了少女指尖。 §f祉語，曾用昵稱xhduoduobaby。喜愛 Minecraft 以及 ACG文化 。Github主頁：https://github.com/xiaozhiyuqwq，Gitee主頁：https://gitee.com/xiaozhiyuqwq，嗶哩嗶哩主頁：https://space.bilibili.com/437306982。祉語不是小蘿莉（雖然有的時候有點小傲嬌）！"}]}
+execute @a[scores={temp=50,about=100..,abouttext=1,language=3}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§6開発者 §r§3祉語ちゃん §f祉語ちゃん。MinecraftとACG文化が好きです。Githubホームページ:https://github.com/xiaozhiyuqwqGiteホームページ：https://gitee.com/xiaozhiyuqwqサージのホームページ:https://space.bilibili.com/43736982。祉語ちゃんはロリじゃないです（ちょっとツンデレな時もありますが）！"}]}
 scoreboard players set @a[scores={temp=50,about=100..,abouttext=1}] abouttext 2
 #文本3
 execute @a[scores={temp=50,about=200..,abouttext=2,language=0}] ~ ~ ~ title @s title §f鸣谢
@@ -3323,6 +3325,7 @@ execute @a ~ ~ ~ title @s[scores={language=3,actionbar=40}] actionbar §l§fこ�
 scoreboard players set @a[scores={actionbar=0}] actionbar 50
 scoreboard players add @a actionbartime 1
 scoreboard players set @a[scores={actionbartime=401..}] actionbartime 1
+scoreboard players add @a dailyplaytime 0
 #文本1-欢迎
 execute @a[scores={actionbartime=1..100,language=0,level=!0,actionbar=50},tag=!admin,tag=!developer] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§c§l用户§f§6 "},{"selector":"@s"},{"text":" §r§b您好，欢迎您！ §f感谢您体验空岛生存！"}]}
 execute @a[scores={actionbartime=1..100,language=0,level=!0,actionbar=50},tag=!admin,tag=developer] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§c§l用户§f§6 "},{"selector":"@s"},{"text":" §r§b您好，欢迎您！ §f君茶的本子，好涩好喜欢~"}]}
@@ -3432,6 +3435,25 @@ titleraw @a[scores={level=0,language=1}] actionbar {"rawtext":[{"text":"§fYou c
 titleraw @a[scores={level=0,language=2}] actionbar {"rawtext":[{"text":"§f您無法進行遊戲，請先完成注册"}]}
 titleraw @a[scores={level=0,language=3}] actionbar {"rawtext":[{"text":"§fゲームができません。まず登録してください。"}]}
 #离线奖励计算
-execute @a[scores={offlinetime=10081,language=0}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f欢迎回来！"}]}
-execute @a[scores={offlinetime=10081,language=0}] ~ ~ ~ title @s title §r§f欢迎回来！
-execute @a[scores={offlinetime=10081,language=0}] ~ ~ ~ title @s subtitle §6@s §f欢迎回来！
+execute @a[scores={uid=0,level=0}] ~ ~ ~ scoreboard players set @s offlinetime 0
+execute @a[scores={offlinetime=10081..20160}] ~ ~ ~ scoreboard players random @s offlinecoin 50 100
+execute @a[scores={offlinetime=20161..40320}] ~ ~ ~ scoreboard players random @s offlinecoin 100 200
+execute @a[scores={offlinetime=40321..120960}] ~ ~ ~ scoreboard players random @s offlinecoin 200 500
+execute @a[scores={offlinetime=120961..}] ~ ~ ~ scoreboard players random @s offlinecoin 300 800
+execute @a[scores={offlinetime=10081..}] ~ ~ ~ scoreboard players random @s offlinecoin 
+execute @a[scores={offlinetime=10081..}] ~ ~ ~ scoreboard players random @s offlinecoin 
+execute @a[scores={offlinetime=10081..,language=0,login=4}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f欢迎回来，§l§6@"},{"selector":"@s"},{"text":"§r§f！您距离上一次登录已经过去了 §3"},{"score":{"name":"@s","objective":"offlinetime"}},{"text":" §f分钟。系统已经向您的账户中赠送了 §e"},{"score":{"name":"@s","objective":"offlinecoin"}},{"text":"枚硬币 §f。"}]}
+execute @a[scores={offlinetime=10081..,language=0,login=4}] ~ ~ ~ title @s title §r§f欢迎回来！
+execute @a[scores={offlinetime=10081..,language=0,login=4}] ~ ~ ~ title @s subtitle §6@s §f欢迎回来！
+execute @a[scores={offlinetime=10081..,language=1,login=4}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fWelcome back, §l§6@"},{"selector":"@s"},{"text":"§r§f! It's past your last login §3"},{"score":{"name":"@s","objective":"offlinetime"}},{"text":" §fminutes. The system has given it to your account §e"},{"score":{"name":"@s","objective":"offlinecoin"}},{"text":" coins §f."}]}
+execute @a[scores={offlinetime=10081..,language=1,login=4}] ~ ~ ~ title @s title §r§fWelcome back!
+execute @a[scores={offlinetime=10081..,language=1,login=4}] ~ ~ ~ title @s subtitle §6@s §fWelcome back!
+execute @a[scores={offlinetime=10081..,language=2,login=4}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§e空島生存§f>>§r§f歡迎回來，§l§6@"},{"selector":"@s"},{"text":"§r§f！您距離上一次登入已經過去了 §3"},{"score":{"name":"@s","objective":"offlinetime"}},{"text":" §f分鐘。系統已經向您的帳戶中贈送了 §e"},{"score":{"name":"@s","objective":"offlinecoin"}},{"text":"枚硬幣 §f。"}]}
+execute @a[scores={offlinetime=10081..,language=2,login=4}] ~ ~ ~ title @s title §r§f歡迎回來！
+execute @a[scores={offlinetime=10081..,language=2,login=4}] ~ ~ ~ title @s subtitle §6@s §f歡迎回來！
+execute @a[scores={offlinetime=10081..,language=3,login=4}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fお帰りなさい §l§6@"},{"selector":"@s"},{"text":"§r§f！前回のログインはもう済みました §3"},{"score":{"name":"@s","objective":"offlinetime"}},{"text":" §f分です。システムはすでにあなたの口座に贈りました。 §e"},{"score":{"name":"@s","objective":"offlinecoin"}},{"text":"枚の硬貨 §f。"}]}
+execute @a[scores={offlinetime=10081..,language=3,login=4}] ~ ~ ~ title @s title §r§fお帰りなさい
+execute @a[scores={offlinetime=10081..,language=3,login=4}] ~ ~ ~ title @s subtitle §6@s §fお帰りなさい
+execute @a[scores={offlinetime=10081..}] ~ ~ ~ scoreboard players operation @s coin += @s offlinetime
+execute @a[scores={offlinetime=10081..,login=4}] ~ ~ ~ scoreboard players set @s offlinecoin 0
+execute @a[scores={offlinetime=10081..,login=4}] ~ ~ ~ scoreboard players set @s offlinetime 0
