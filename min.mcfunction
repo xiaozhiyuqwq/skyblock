@@ -26,7 +26,7 @@ execute @a[scores={notice=100..}] ~ ~ ~ scoreboard players random @s notice 201 
 execute @a[scores={notice=201}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7何当共剪西窗烛，却话巴山夜雨时。 摘录自 李商隐 《夜雨寄北》 。"}]}
 execute @a[scores={notice=202}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7在 §6GitHub§7 上搜索并关注 §3xiaozhiyuqwq§7 ，或者访问 §3https://github.com/xiaozhiyuqwq§7 来查看我们完全开放的空岛生存！"}]}
 execute @a[scores={notice=203}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7在 §aGitee§7 上搜索并关注 §cxiaozhiyuqwq§7 ，或者访问 §chttps://gitee.com/xiaozhiyuqwq§7 来查看我们完全开放的空岛生存！"}]}
-execute @a[scores={notice=204}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7尝试访问我们的维基获得更多信息！ §bhttps://www.wolai.com/xiaozhiyuqwq/odyYFtVe6zU8TnHHQLXGx4"}]}
+execute @a[scores={notice=204}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7尝试访问我们的维基获得更多信息！ §bwiki.xiaozhiyuqwq.top §7！"}]}
 execute @a[scores={notice=205}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7祉语不是小萝莉（虽然有的时候有点小傲娇）！"}]}
 execute @a[scores={notice=206}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7您可以使用组队或者创建公会与您的朋友们在同一个空岛上生存！"}]}
 execute @a[scores={notice=207}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7您发现了吗？每次登录的时候提示是不同的哦~"}]}
@@ -38,7 +38,7 @@ execute @a[scores={notice=211}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext"
 execute @a[scores={notice=201}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7何当共剪西窗烛，却话巴山夜雨时。 Excerpt from 李商隐 《夜雨寄北》 ."}]}
 execute @a[scores={notice=202}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7Search on §6GitHub§7 and follow §3xiaozhiyuqwq§7, or visit §3https://github.com/xiaozhiyuqwq§7 Check out our fully open skyblock!"}]}
 execute @a[scores={notice=203}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7Search on §aGitee§7 and follow §cxiaozhiyuqwq§7, or visit §chttps://gitee.com/xiaozhiyuqwq§7 Check out our fully open skyblock!"}]}
-execute @a[scores={notice=204}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7Try to visit our wiki for more information! §bhttps://www.wolai.com/xiaozhiyuqwq/odyYFtVe6zU8TnHHQLXGx4"}]}
+execute @a[scores={notice=204}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7Try to visit our wiki for more information! §bwiki.xiaozhiyuqwq.top §7!"}]}
 execute @a[scores={notice=205}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7Zhiyu is not little Lori (although sometimes a little proud)!"}]}
 execute @a[scores={notice=206}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7You can use team or create guild to live on the same empty island with your friends!"}]}
 execute @a[scores={notice=207}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7Did you find out? Every time you log in, the prompt is different~"}]}
@@ -50,7 +50,7 @@ execute @a[scores={notice=211}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext"
 execute @a[scores={notice=201}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7何當共剪西窗燭，卻話巴山夜雨時。 摘錄自 李商隱 《夜雨寄北》 。"}]}
 execute @a[scores={notice=202}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7在 §6GitHub§7 上蒐索並關注 §3xiaozhiyuqwq§7 ，或者訪問 §3https://github.com/xiaozhiyuqwq§7 來查看我們完全開放的空島生存！"}]}
 execute @a[scores={notice=203}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7在 §aGitee§7 上蒐索並關注 §cxiaozhiyuqwq§7 ，或者訪問 §chttps://gitee.com/xiaozhiyuqwq§7 來查看我們完全開放的空島生存！"}]}
-execute @a[scores={notice=204}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7嘗試訪問我們的維琪獲得更多資訊！ §bhttps://www.wolai.com/xiaozhiyuqwq/odyYFtVe6zU8TnHHQLXGx4"}]}
+execute @a[scores={notice=204}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7嘗試訪問我們的維琪獲得更多資訊！ §bwiki.xiaozhiyuqwq.top §7！"}]}
 execute @a[scores={notice=205}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7祉語不是小蘿莉（雖然有的時候有點小傲嬌）！"}]}
 execute @a[scores={notice=206}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7您可以使用組隊或者創建公會與您的朋友們在同一個空島上生存！"}]}
 execute @a[scores={notice=207}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7您發現了嗎？每次登入的時候提示是不同的哦~"}]}
@@ -62,7 +62,7 @@ execute @a[scores={notice=211}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext"
 execute @a[scores={notice=201}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7何当共剪西窗烛，却话巴山夜雨时。 李商隐 《夜雨寄北》 から抜粋します。"}]}
 execute @a[scores={notice=202}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§6GitHub§7 で検索して §3xiaozhiyuqwq §7に注目したり、訪問したりします。 §3https://github.com/xiaozhiyuqwq§7 §7完全にオープンしたskyblockを見に来ました。"}]}
 execute @a[scores={notice=203}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§aGitee§7 で検索して §cxiaozhiyuqwq §7に注目したり、訪問したりします。 §chttps://gitee.com/xiaozhiyuqwq §7完全にオープンしたskyblockを見に来ました。"}]}
-execute @a[scores={notice=204}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7私たちのウィキペディアを訪問してみて、より多くの情報を得ることができます。§bhttps://www.wolai.com/xiaozhiyuqwq/odyYFtVe6zU8TnHHQLXGx4"}]}
+execute @a[scores={notice=204}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7私たちのウィキペディアを訪問してみて、より多くの情報を得ることができます。§bwiki.xiaozhiyuqwq.top §7！"}]}
 execute @a[scores={notice=205}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7祉語ちゃんはロリじゃないです（ちょっとツンデレな時もありますが）！"}]}
 execute @a[scores={notice=206}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7チームを作ったり、ギルドを作ったりして、友達と同じ空島で生存できます。"}]}
 execute @a[scores={notice=207}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7見つけましたか？ログインするたびにヒントが違いますよ。"}]}
@@ -195,7 +195,7 @@ scoreboard players add * offlinetime 1
 scoreboard players set @a[scores={offlinetime=!10081..}] offlinetime 0
 #luckily
 #系统初始化
-scoreboard players reset * luckily
+scoreboard players reset @a luckily
 tag * remove luckilyen
 #分数计算
 scoreboard players add @a luckily 0
@@ -213,9 +213,9 @@ tag @a[scores={luckily=0},c=2] add luckilyen
 execute @a[scores={luckily=0},tag=luckilyen] ~ ~ ~ scoreboard players add luckily luckily 1
 execute @a[scores={luckily=0},tag=luckilyen] ~ ~ ~ scoreboard players set @s luckily 2
 #概率计算
-execute @e[type=minecraft:armor_stand,scores={typeid=128}] ~ ~ ~ scoreboard players operation @s luckily = @s luckily
+execute @e[type=minecraft:armor_stand,scores={typeid=128}] ~ ~ ~ scoreboard players operation @s luckily = luckily luckily
 execute @e[type=minecraft:armor_stand,scores={typeid=128,luckily=360..600}] ~ ~ ~ scoreboard players random @s luckily 1005 1010
-execute @e[type=minecraft:armor_stand,scores={typeid=128,luckily=360..600}] ~ ~ ~ execute @a[scores={coin=3000..},c=1] ~ ~ ~ scoreboard players random @s luckily 1001 1010
+execute @e[type=minecraft:armor_stand,scores={typeid=128,luckily=1005..1010}] ~ ~ ~ execute @a[scores={coin=3000..},c=1] ~ ~ ~ scoreboard players random @e[type=minecraft:armor_stand,scores={typeid=128,luckily=1005..1010},c=1] luckily 1001 1010
 #天弃之子
 execute @e[type=minecraft:armor_stand,scores={typeid=128,luckily=1001..1004}] ~ ~ ~ tag @r[scores={coin=3000..}] add unluckily
 execute @a[tag=unluckily] ~ ~ ~ summon lightning_bolt ~ ~ ~
