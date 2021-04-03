@@ -27,7 +27,6 @@ scoreboard objectives add developer dummy
 scoreboard objectives add rewardsupply dummy
 scoreboard objectives add achievementtemp dummy
 scoreboard objectives add ender_pearluid dummy
-scoreboard objectives add receivetext dummy
 scoreboard objectives add hitokotolang dummy
 scoreboard objectives add sign_intext dummy
 scoreboard objectives add notice dummy
@@ -719,6 +718,7 @@ execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players add @a[scores={temp=
 execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players add @a[scores={temp=220}] uid 0
 execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players add @a[scores={temp=220}] level 0
 execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=220,uid=0,level=0}] temp 221
+execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=220,uid=!0,level=!0},tag=!registered] temp 221
 execute @a[scores={temp=223..224,receive=0..}] ~ ~ ~ scoreboard players set @a[scores={temp=221}] temp 222
 execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=221,uid=0,level=0}] temp 224
 execute @a[scores={temp=224}] ~ ~ ~ scoreboard players add uidafter uidafter 1
@@ -735,7 +735,7 @@ execute @a[scores={temp=220..226}] ~ ~ ~ effect @a[scores={temp=224}] fire_resis
 execute @a[scores={temp=220..226}] ~ ~ ~ effect @a[scores={temp=224}] water_breathing 60 255 true
 execute @a[scores={temp=220..226}] ~ ~ ~ tag @a[scores={temp=224}] remove guild
 execute @a[scores={temp=220..226}] ~ ~ ~ tag @a[scores={temp=224}] remove guildmaster
-execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] playtime 0
+execute @a[scores={temp=220..226}] ~ ~ ~ clear @s
 execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] coin 0
 execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] id 0
 execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] guild 0
@@ -771,6 +771,10 @@ execute @a[scores={temp=220..226}] ~ ~ ~ give @a[scores={temp=224}] ice 3 0
 execute @a[scores={temp=220..226}] ~ ~ ~ give @a[scores={temp=224}] cookie 16 0
 execute @a[scores={temp=220..226}] ~ ~ ~ give @a[scores={temp=224}] dirt 8 0
 execute @a[scores={temp=220..226}] ~ ~ ~ give @a[scores={temp=224}] sapling 8 0
+execute @a[scores={temp=224}] ~ ~ ~ tellraw @a[scores={temp=224,uid=!0,level=!0,language=0},tag=!registered] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f由于您上次的注册被中断，系统已自动修复并且为您重新注册。"}]}
+execute @a[scores={temp=224}] ~ ~ ~ tellraw @a[scores={temp=224,uid=!0,level=!0,language=1},tag=!registered] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fSince your last registration was interrupted, the system has been automatically repaired and re registered for you."}]}
+execute @a[scores={temp=224}] ~ ~ ~ tellraw @a[scores={temp=224,uid=!0,level=!0,language=2},tag=!registered] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f由於您上次的注册被中斷，系統已自動修復並且為您重新注册。"}]}
+execute @a[scores={temp=224}] ~ ~ ~ tellraw @a[scores={temp=224,uid=!0,level=!0,language=3},tag=!registered] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f前回の登録が中断されましたので、システムは自動的に修復され、再登録されました。"}]}
 execute @a[scores={temp=220..226}] ~ ~ ~ title @a[scores={temp=224}] times 1 1200 1
 execute @a[scores={temp=220..226}] ~ ~ ~ title @a[scores={temp=224,language=0}] title §e加载中
 execute @a[scores={temp=220..226}] ~ ~ ~ title @a[scores={temp=224,language=1}] title §eLoading
@@ -1222,26 +1226,26 @@ execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=0,uid
 #id反馈
 execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=0,id=!0,tptype=2}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§a检索成功！§f您现在可以返回您所属队伍的岛屿！目标岛屿识别符：§l§e"},{"score":{"name":"@s","objective":"iduse"}},{text"，检索方式： §l§1ID检索 §r§f。"}]}
 execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=1,id=!0,tptype=2}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§aRetrieval successful! §fYou can now return to your team's Island! Target Island ID: §l§e"},{"score":{"name":"@s","objective":"iduse"}},{text". Retrieval method: §l§1ID §r§f."}]}
-execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=2,id=!0,tptype=2}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§a檢索成功！§f您現在可以返回您所屬隊伍的島嶼！目標島嶼識別符：§l§e"},{"score":{"name":"@s","objective":"iduse"}},{text"，檢索方式： §l§1ID檢索 §r§f。"}]}
+execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=2,id=!0,tptype=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§a檢索成功！§f您現在可以返回您所屬隊伍的島嶼！目標島嶼識別符：§l§e"},{"score":{"name":"@s","objective":"iduse"}},{text"，檢索方式： §l§1ID檢索 §r§f。"}]}
 execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=0,id=0,tptype=2}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§c检索失败！§f您还没有加入队伍，无法使用这种方式检索。"}]}
 execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=1,id=0,tptype=2}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§cRetrieval failed! §fYou have not joined the team and cannot be retrieved in this way."}]}
-execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=2,id=0,tptype=2}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§c檢索失敗！§f您還沒有加入隊伍，無法使用這種方法檢索。"}]}
+execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=2,id=0,tptype=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§c檢索失敗！§f您還沒有加入隊伍，無法使用這種方法檢索。"}]}
 #guild反馈
 execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=0,guild=!0,tptype=3}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§a检索成功！§f您现在可以返回您所属公会的岛屿！目标岛屿识别符：§l§e"},{"score":{"name":"@s","objective":"iduse"}},{text"，检索方式：§l§aGuild检索 §r§f。"}]}
 execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=0,guild=0,tptype=3}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§c检索失败！§f您还没有加入公会，无法使用这种方式检索。"}]}
 execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=1,guild=!0,tptype=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§aRetrieval successful! §fYou can now return to your guild's Island! Target Island ID: §l§e"},{"score":{"name":"@s","objective":"iduse"}},{text". Retrieval method: §l§aGuild §r§f."}]}
 execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=1,guild=0,tptype=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§cRetrieval failed! §fYou have not joined the guild and cannot be retrieved in this way."}]}
-execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=2,guild=!0,tptype=3}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§a檢索成功！§f您現在可以返回您所屬公會的島嶼！目標島嶼識別符：§l§e"},{"score":{"name":"@s","objective":"iduse"}},{text"，檢索方式：§l§aGuild檢索 §r§f。"}]}
-execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=2,guild=0,tptype=3}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§c檢索失敗！§f您還沒有加入公會，無法使用這種方法檢索。"}]}
+execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=2,guild=!0,tptype=3}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§a檢索成功！§f您現在可以返回您所屬公會的島嶼！目標島嶼識別符：§l§e"},{"score":{"name":"@s","objective":"iduse"}},{text"，檢索方式：§l§aGuild檢索 §r§f。"}]}
+execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=2,guild=0,tptype=3}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§c檢索失敗！§f您還沒有加入公會，無法使用這種方法檢索。"}]}
 execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=3,guild=!0,tptype=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§a検索成功！§fあなたは今あなたの所属する公会の島に帰ることができます。検索方法： §l§aGuiil検索§r§f 。"}]}
 execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=3,guild=0,tptype=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§c検索失敗！§fまだ公会に加入していないので、このような方法で検索することはできません。"}]}
 #visit反馈
 execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=0,visit=!0,tptype=4}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§a检索成功！§f您现在可以加入邀请您参观的公会岛屿。目标岛屿识别符：§l§e"},{"score":{"name":"@s","objective":"iduse"}},{text"，检索方式： §l§3Visit检索 §r§f。"}]}
 execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=1,visit=!0,tptype=4}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§aRetrieval successful! §fYou can now join the guild island that you are invited to visit. Target Island ID: §l§e"},{"score":{"name":"@s","objective":"iduse"}},{text". Retrieval method: §l§3Visit §r§f."}]}
-execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=2,visit=!0,tptype=4}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§a檢索成功！§f您現在可以加入邀請您參觀的公會島嶼。目標島嶼識別符：§l§e"},{"score":{"name":"@s","objective":"iduse"}},{text"，檢索方式： §l§3Visit檢索 §r§f。"}]}
+execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=2,visit=!0,tptype=4}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§a檢索成功！§f您現在可以加入邀請您參觀的公會島嶼。目標島嶼識別符：§l§e"},{"score":{"name":"@s","objective":"iduse"}},{text"，檢索方式： §l§3Visit檢索 §r§f。"}]}
 execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=0,visit=0,tptype=4}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§c检索失败！§f您现在没有未处理的邀请。"}]}
 execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=1,visit=0,tptype=4}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§cRetrieval failed! §fYou don't have any outstanding invitation at this time."}]}
-execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=2,visit=0,tptype=4}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§c檢索失敗！§f您現在沒有未處理的邀請。"}]}
+execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=2,visit=0,tptype=4}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§c檢索失敗！§f您現在沒有未處理的邀請。"}]}
 #party反馈
 #null
 #注册系统
@@ -1715,7 +1719,7 @@ execute @a[scores={tphelptime=20..}] ~ ~ ~ scoreboard players reset @s tphelp
 execute @a[scores={tphelptime=20..}] ~ ~ ~ scoreboard players reset @s temp
 execute @a[scores={tphelptime=20..}] ~ ~ ~ scoreboard players reset @s tphelptime
 #返回
-execute @a[scores={temp=220..226}] ~ ~ ~ tellraw @a[scores={temp=220,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f您已经拥有了账户啦，无需重复注册。"}]}
+execute @a[scores={temp=220..226}] ~ ~ ~ tellraw @a[scores={temp=220,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f您已经拥有了账户了啦，无需重复注册。"}]}
 execute @a[scores={temp=220..226}] ~ ~ ~ tellraw @a[scores={temp=220,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fYou already have an account. You don't need to register again."}]}
 execute @a[scores={temp=220..226}] ~ ~ ~ tellraw @a[scores={temp=220,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f您已經擁有了帳戶啦，無需重複注册。"}]}
 execute @a[scores={temp=220..226}] ~ ~ ~ tellraw @a[scores={temp=220,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fもう口座を持っています。再登録する必要はありません。"}]}
@@ -1863,6 +1867,11 @@ tellraw @a[scores={temp=223,language=0,receive=541..}] {"rawtext":[{"text":"§l�
 tellraw @a[scores={temp=223,language=1,receive=541..}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fAccount creation completed."}]}
 tellraw @a[scores={temp=223,language=2,receive=541..}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f帳號創建完成。"}]}
 tellraw @a[scores={temp=223,language=3,receive=541..}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fアカウントの作成が完了しました。"}]}
+execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§f成功完成新手挑战与注册，成为正式成员！获得用户识别符 §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f！"}]}
+execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§fSuccessful completion of novice challenge and registration, become a full member! Get UID §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f!"}]}
+execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§f成功完成新手挑戰與注册，成為正式成員！獲得用戶識別符 §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f！"}]}
+execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§f登録が完了し、正式メンバーになります。UIDを取得する §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f！"}]}
+execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tag @s add registered
 title @a[scores={temp=223,receive=541..}] times 10 70 20
 title @a[scores={temp=223,receive=541..}] clear
 title @a[scores={temp=223,language=0,receive=541..}] title §e加载完成
@@ -1877,74 +1886,6 @@ scoreboard players reset @a[scores={receive=541..}] temp
 scoreboard players reset @a[scores={receive=541..}] receivetext
 scoreboard players reset @a[scores={receive=541..}] receive
 scoreboard players set @a[scores={temp=223}] actionbar 10
-execute @a[scores={temp=223,receive=101..200,language=0}] ~ ~ ~ title @s subtitle §f组队公会 易于游玩
-execute @a[scores={temp=223,receive=201..300,language=0}] ~ ~ ~ title @s subtitle §f多语言 轻松联机
-execute @a[scores={temp=223,receive=301..400,language=0}] ~ ~ ~ title @s subtitle §f管理系统 轻松查询
-execute @a[scores={temp=223,receive=401..500,language=0}] ~ ~ ~ title @s subtitle §f完全公开 用开放引领生态
-execute @a[scores={temp=223,receive=500..,language=0}] ~ ~ ~ title @s subtitle §f即将完成 稍安勿躁
-execute @a[scores={temp=223,receive=101..200,language=1}] ~ ~ ~ title @s subtitle §fTeams and guilds are easy to play.
-execute @a[scores={temp=223,receive=201..300,language=1}] ~ ~ ~ title @s subtitle §fMulti language easy online play.
-execute @a[scores={temp=223,receive=301..400,language=1}] ~ ~ ~ title @s subtitle §fFast management system.
-execute @a[scores={temp=223,receive=401..500,language=1}] ~ ~ ~ title @s subtitle §fOpen source, lead ecology with openness.
-execute @a[scores={temp=223,receive=500..,language=1}] ~ ~ ~ title @s subtitle §fIt's about to be finished. Take it easy.
-execute @a[scores={temp=223,receive=101..200,language=2}] ~ ~ ~ title @s subtitle §f組隊公會 易於遊玩
-execute @a[scores={temp=223,receive=201..300,language=2}] ~ ~ ~ title @s subtitle §f多語言 輕鬆聯機
-execute @a[scores={temp=223,receive=301..400,language=2}] ~ ~ ~ title @s subtitle §f管理系統 輕鬆査詢
-execute @a[scores={temp=223,receive=401..500,language=2}] ~ ~ ~ title @s subtitle §f完全公開 用開放引領生態
-execute @a[scores={temp=223,receive=500..,language=2}] ~ ~ ~ title @s subtitle §f即將完成 稍安勿躁
-execute @a[scores={temp=223,receive=101..200,language=3}] ~ ~ ~ title @s subtitle §f組と公会は遊びやすいです。
-execute @a[scores={temp=223,receive=201..300,language=3}] ~ ~ ~ title @s subtitle §f多言語ラクゲーム。
-execute @a[scores={temp=223,receive=301..400,language=3}] ~ ~ ~ title @s subtitle §f管理システムを使って簡単に検索できます。
-execute @a[scores={temp=223,receive=401..500,language=3}] ~ ~ ~ title @s subtitle §f完全オープンソースで生態をリードします。
-execute @a[scores={temp=223,receive=500..,language=3}] ~ ~ ~ title @s subtitle §fもうすぐ完成します。焦らないでください。
-scoreboard players set @a[scores={temp=223,receivetext=0,receive=10..}] receivetext 1
-tellraw @a[scores={temp=223,language=0,receivetext=1}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f加载中，请稍等。这可能有亿点点卡顿......"}]}
-tellraw @a[scores={temp=223,language=1,receivetext=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fLoading, please wait. This can cause slow running."}]}
-tellraw @a[scores={temp=223,language=2,receivetext=1}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f加載中，請稍等。這可能會導致運行緩慢。"}]}
-tellraw @a[scores={temp=223,language=3,receivetext=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f読み込み中です。少々お待ちください。これは運転が遅いかもしれません。"}]}
-scoreboard players set @a[scores={temp=223,receivetext=1,receive=10..}] receivetext 2
-scoreboard players set @a[scores={temp=223,receivetext=2,receive=70..}] receivetext 3
-tellraw @a[scores={temp=223,language=0,receivetext=3}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f在 §6GitHub§f 上搜索并关注 §3xiaozhiyuqwq§f ，或者访问 §3§3https://github.com/xiaozhiyuqwq§f§f 来查看我们完全开放的空岛生存！"}]}
-tellraw @a[scores={temp=223,language=1,receivetext=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fSearch on §6GitHub§f and follow §3xiaozhiyuqwq§f, or visit §3§3https://github.com/xiaozhiyuqwq§f§f Check out our fully open skyblock!"}]}
-tellraw @a[scores={temp=223,language=2,receivetext=3}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f在 §6GitHub§f 上蒐索並關注 §3xiaozhiyuqwq§f ，或者訪問 §3§3https://github.com/xiaozhiyuqwq§f§f 來查看我們完全開放的空島生存！"}]}
-tellraw @a[scores={temp=223,language=3,receivetext=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§6GitHub§f で検索して §3xiaozhiyuqwq §fに注目したり、訪問したりします。 §3https://github.com/xhduodubbaby §f完全にオープンしたskyblockを見に来ました。"}]}
-scoreboard players set @a[scores={temp=223,receivetext=3,receive=70..}] receivetext 4
-scoreboard players set @a[scores={temp=223,receivetext=4,receive=140..}] receivetext 5
-tellraw @a[scores={temp=223,language=0,receivetext=5}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f何当共剪西窗烛，却话巴山夜雨时。   摘录自 李商隐 《夜雨寄北》 。"}]}
-tellraw @a[scores={temp=223,language=1,receivetext=5}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f何当共剪西窗烛，却话巴山夜雨时。   Excerpt from 李商隐 《夜雨寄北》 ."}]}
-tellraw @a[scores={temp=223,language=2,receivetext=5}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f何當共剪西窗燭，卻話巴山夜雨時。   摘錄自 李商隱 《夜雨寄北》 。"}]}
-tellraw @a[scores={temp=223,language=3,receivetext=5}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f何当共剪西窗烛，却话巴山夜雨时。   自を抜粋する 李商隐 《夜雨寄北》 。"}]}
-scoreboard players set @a[scores={temp=223,receivetext=5,receive=140..}] receivetext 6
-scoreboard players set @a[scores={temp=223,receivetext=6,receive=210..}] receivetext 7
-tellraw @a[scores={temp=223,language=0,receivetext=7}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f您可以使用组队或者创建公会与您的朋友们在同一个空岛上生存！"}]}
-tellraw @a[scores={temp=223,language=1,receivetext=7}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fYou can use team or create guild to live on the same empty island with your friends!"}]}
-tellraw @a[scores={temp=223,language=2,receivetext=7}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f您可以使用組隊或者創建公會與您的朋友們在同一個空島上生存！"}]}
-tellraw @a[scores={temp=223,language=3,receivetext=7}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fチームを作ったり、ギルドを作ったりして、友達と同じ空島で生存できます。"}]}
-scoreboard players set @a[scores={temp=223,receivetext=7,receive=210..}] receivetext 8
-scoreboard players set @a[scores={temp=223,receivetext=8,receive=280..}] receivetext 9
-tellraw @a[scores={temp=223,language=0,receivetext=9}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f您发现了吗？每次登录的时候提示是不同的哦~"}]}
-tellraw @a[scores={temp=223,language=1,receivetext=9}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fDid you find out? Every time you log in, the prompt is different~"}]}
-tellraw @a[scores={temp=223,language=2,receivetext=9}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f您發現了嗎？每次登入的時候提示是不同的哦~"}]}
-tellraw @a[scores={temp=223,language=3,receivetext=9}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f見つけましたか？ログインするたびにヒントが違いますよ。"}]}
-scoreboard players set @a[scores={temp=223,receivetext=9,receive=280..}] receivetext 10
-scoreboard players set @a[scores={temp=223,receivetext=10,receive=350..}] receivetext 11
-tellraw @a[scores={temp=223,language=0,receivetext=11}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f尝试着向着天上看来返回主城。"}]}
-tellraw @a[scores={temp=223,language=1,receivetext=11}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fTry to look up to the sky and return to lobby."}]}
-tellraw @a[scores={temp=223,language=2,receivetext=11}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f嘗試著向著天上看來返回主城。"}]}
-tellraw @a[scores={temp=223,language=3,receivetext=11}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f空に向かってロビーに戻ってみます。"}]}
-scoreboard players set @a[scores={temp=223,receivetext=11,receive=350..}] receivetext 12
-scoreboard players set @a[scores={temp=223,receivetext=12,receive=420..}] receivetext 13
-tellraw @a[scores={temp=223,language=0,receivetext=13}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f如果岩浆变成了黑曜石，不要担心，在黑曜石上放一块圆石，再跳一下，岩浆就会恢复。"}]}
-tellraw @a[scores={temp=223,language=1,receivetext=13}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fIf the magma turns into obsidian, don't worry. Put a piece of cobblestone on the obsidian and jump again, the magma will recover."}]}
-tellraw @a[scores={temp=223,language=2,receivetext=13}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f如果岩漿變成了黑曜石，不要擔心，在黑曜石上放一塊鹅卵石，再跳一下，岩漿就會恢復。"}]}
-tellraw @a[scores={temp=223,language=3,receivetext=13}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fもしマグマが黒曜石になったら、心配しないでください。黒曜石に丸石を置いて、もう一度跳べば、マグマは回復します。"}]}
-scoreboard players set @a[scores={temp=223,receivetext=13,receive=420..}] receivetext 14
-scoreboard players set @a[scores={temp=223,receivetext=14,receive=490..}] receivetext 17
-tellraw @a[scores={temp=223,language=0,receivetext=17}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f您可以在游戏中收集成就的哦~ 解锁了新的成就系统会提示您。"}]}
-tellraw @a[scores={temp=223,language=1,receivetext=17}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fYou can collect achievements in the game. If you unlock new achievements, the system will prompt you."}]}
-tellraw @a[scores={temp=223,language=2,receivetext=17}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f您可以在遊戲中收集成就的哦~ 解鎖了新的成就系統會提示您。"}]}
-tellraw @a[scores={temp=223,language=3,receivetext=17}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fゲームで成果を集めることができますよ。新しい成果システムをロック解除したらヒントを与えます。"}]}
-scoreboard players set @a[scores={temp=223,receivetext=17,receive=490..}] receivetext 18
 #developer
 #developerget
 tag * remove developer
