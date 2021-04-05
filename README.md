@@ -15,11 +15,11 @@
 啊嗷！有漏洞了？在github gitee bilibili等地方联系我哦~我会去注意修复的~
 
 #### wiki
-https://www.wolai.com/xiaozhiyuqwq/odyYFtVe6zU8TnHHQLXGx4
+wiki.xiaozhiyuqwq.top
 
 #### 关于
 ##### 关于
-您好,我是祉语,喜欢[我的世界]与[ACG文化]。
+您好,我是祉语,喜欢[我的世界]与[ACG文化]。xiaozhiyuqwq.top
 ##### 萝莉？
 不是纸片人!!!!!!!不是萝莉!!!!!!!!!!更不是小萝莉!!!!!!!!! 不会吧不会吧，不会还有人认为祉语是小萝莉吧
 
@@ -105,11 +105,11 @@ d.本协议的拟定、解释均以中文为准。除双方另有约定外，任
 啊嗷！有漏洞了？在github gitee bilibili等地方聯系我哦~我會去注意修復的~
 
 #### wiki
-https://www.wolai.com/xiaozhiyuqwq/odyYFtVe6zU8TnHHQLXGx4
+wiki.xiaozhiyuqwq.top
 
 #### 關於
 ##### 關於
-您好，我是祉語，喜歡[我的世界]與[ACG文化]。
+您好，我是祉語，喜歡[我的世界]與[ACG文化]。xiaozhiyuqwq.top
 ##### 蘿莉？
 不是紙片人！！！！！！！不是蘿莉！！！！！！！！！！更不是小蘿莉！！！！！！！！！不會吧不會吧，不會還有人認為祉語是小蘿莉吧
 
@@ -197,11 +197,11 @@ At present, V1 supports simplified Chinese, traditional Chinese and English, V2 
 Ahhh! Is there a bug? Contact me in GitHub, gitee BiliBili and other places ~ I will pay attention to the repair~
 
 #### wiki
-https://www.wolai.com/xiaozhiyuqwq/odyYFtVe6zU8TnHHQLXGx4
+wiki.xiaozhiyuqwq.top
 
 #### About
 ##### About
-Hello, I'm Zhiyu. I like [minecraft] and [ACG culture].
+Hello, I'm Zhiyu. I like [minecraft] and [ACG culture].  xiaozhiyuqwq.top
 ##### Laurie?
 It's not paper man! It's not Lori! It's not little Lori!
 
@@ -286,11 +286,11 @@ MineCraft基岩版に基づいて作成された空島生存アーカイブは�
 あーあ！手抜かりがありましたか？github gitee bilibiliなどで連絡してください。修復しに行きます。
 
 #### wiki
-https://www.wolai.com/xiaozhiyuqwq/odyYFtVe6zU8TnHHQLXGx4
+wiki.xiaozhiyuqwq.top
 
 #### について
 ##### について
-こんにちは、私は 祉语ちゃん です。「minecraft」と「ACG文化」が好きです。
+こんにちは、私は 祉语ちゃん です。「minecraft」と「ACG文化」が好きです。  xiaozhiyuqwq.top
 ##### ロリ？
 ロリじゃない！！！！！！
 
