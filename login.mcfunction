@@ -35,9 +35,9 @@ execute @a[scores={language=1}] ~ ~ ~ tellraw @s[scores={login=0,language=1},tag
 execute @a[scores={language=1}] ~ ~ ~ tellraw @s[scores={login=0,language=1},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§aLogin successful!  §l§3"},{"selector":"@s"},{"text":" §6["},{"score":{"name":"@s","objective":"uid"}},{"text":"] . §r§fYour user group: §l§bAdmin§f-§clevel_"},{"score":{"name":"@s","objective":"level"}}]}
 execute @a[scores={language=2}] ~ ~ ~ tellraw @s[scores={login=0,language=2},tag=!admin] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§l§a登入成功！§l§3"},{"selector":"@s"},{"text":" §6["},{"score":{"name":"@s","objective":"uid"}},{"text":"] §r§f您的用戶組： §l§b用戶§f-§c"},{"score":{"name":"@s","objective":"level"}}]}
 execute @a[scores={language=2}] ~ ~ ~ tellraw @s[scores={login=0,language=2},tag=admin] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§l§a登入成功！§l§3"},{"selector":"@s"},{"text":" §6["},{"score":{"name":"@s","objective":"uid"}},{"text":"] §r§f您的用戶組： §l§b管理員§f-§c"},{"score":{"name":"@s","objective":"level"}}]}
-tellraw @a[scores={login=0,language=0,level=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您好，欢迎加入游戏！§c您还没有领取您的空岛，请领取您的岛屿。"}]}
-tellraw @a[scores={login=0,language=1,level=0}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fHello, welcome to join the game! §cYou have not claimed your empty island. Please claim your island."}]}
-tellraw @a[scores={login=0,language=2,level=0}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您好，歡迎加入遊戲！§c您還沒有領取您的空島，請領取您的島嶼。"}]}
+tellraw @a[scores={login=0,language=0,level=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您好，欢迎加入游戏！§c您还没有注册账号哦~请先注册账号。"}]}
+tellraw @a[scores={login=0,language=1,level=0}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fHello, welcome to join the game! §cYou haven't registered your account yet. Please register your account first."}]}
+tellraw @a[scores={login=0,language=2,level=0}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您好，歡迎加入遊戲！§c您還沒有註冊帳號哦~請先註冊帳號。"}]}
 tellraw @a[scores={login=0,language=0,level=1..5,sign_in=0..1,uid=0..40000}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您好，欢迎加入游戏！§6欢迎回来！§b您今天好像还没有签到哦，签到即可获得硬币。"}]}
 tellraw @a[scores={login=0,language=1,level=1..5,sign_in=0..1,uid=0..40000}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fHello, welcome to join the game! §6welcome back! §bIt seems that you have not signed in today. You can get coin by checking in."}]}
 tellraw @a[scores={login=0,language=2,level=1..5,sign_in=0..1,uid=0..40000}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您好，歡迎加入遊戲！§6歡迎回來！§b您今天好像還沒有簽到哦，簽到即可獲得硬幣。"}]}
@@ -671,6 +671,108 @@ tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=235}] {"rawtext"
 tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=236}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f这也配为人师表？--cxj<祉语的生活>"}]}
 tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=237}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f晚安，祝好梦。--陌生人<祉语的生活>"}]}
 tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=238}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f我是拽姐肯定凶，萝莉才温柔，例如xh。--秋天<祉语的生活>"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=239}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f你的无畏来源于无知。--三体"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=240}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f上古有大椿者，以八千岁为春，八千岁为秋。--庄子 · 逍遥游"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=241}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f每个人生来都是妄想家。--mozei"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=242}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f保持好迎接强者的心态，才是初心。--syc"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=243}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f以盐水作配菜，糖水做主食，就有种奢侈的感觉呢。--笨蛋测验召唤兽"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=244}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f太想伸手摘取星星的人，常常忘记脚下的鲜花。--杰里米·边沁"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=245}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f幸福的家庭都是相似的，不幸的家庭各有各的不幸。--安娜·卡列妮娜"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=246}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f我们，在路上，勿忘初心。找寻最初的梦想和微弱的希望。--根号菌SAMA"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=247}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f齐人三鼓之后，彼竭我盈之时。--曹刿论战"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=248}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f一代锤子一代皇，代代锤子教做人！--102集弹幕 · 斗罗大陆"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=249}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f但行好事，莫问前程。--佚名 · 增广贤文"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=250}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f美食之于他们是爱、是救赎、是一切美好及温暖的集合。--Bruce Jc"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=251}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f东风夜放花千树。更吹落、星如雨。--辛弃疾 · 青玉案·元夕"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=252}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f把酒祝东风。且共从容。--欧阳修 · 浪淘沙·把酒祝东风"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=253}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§fGod said: Let there be light.--Holy Bible"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=254}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f憧憬，是距离了解最遥远的一种感情。--BLEACH"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=255}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f愿风指引着你的道路，愿你的刀刃永远锋利。--魔兽世界"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=256}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f花自飘零水自流。一种相思，两处闲愁。--李清照 · 一剪梅·红藕香残玉簟秋"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=257}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f何其有幸，我们相遇。--朽猫"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=258}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f超频链接。--加速世界"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=259}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f你和我说他的可爱，你和我说他的好看。恍惚间窥见在樱花树下，铁道边，一对少男少女彼此走着，风起花落拂过他们脸颊。--祉语"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=260}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f明天的事，交给明天的我。--一拳超人"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=261}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f恰同学少年，风华正茂；书生意气，挥斥方遒。--毛泽东 沁园春·长沙"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=262}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f简童，我把肾给你，你把心给我吧。--沈谨修 · 蚀骨危情"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=263}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f焉得谖草？言树之背。--伯兮-先秦"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=264}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f浩如星海的人群中，与你相遇真是一件幸运的事情。--小小柳之絮"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=265}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f故事的结局从来不人意！--九思"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=266}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f永远相信美好的事情，即将发生。--XiaoMi"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=267}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f所以，他们的祭典还没结束。--我的青春恋爱物语果然有问题"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=268}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f我想在你眼里撒野奔跑，我想一个眼神就到老。--巫哲 · 撒野"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=269}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f善与恶逆转的瞬间，便是奇迹。--网络"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=270}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f要是太勉强自己的话，总有一天会受伤的。--玖兰枢 · 吸血鬼骑士"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=271}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§fSunny day Wow! Song power!--SUNNY DAY SONG"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=272}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f桃之夭夭，灼灼其华。之子于归，宜其室家。--桃夭"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=273}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f即使你已经习惯了受伤害，也有人看了会心疼的。--大老师 我的恋爱物语果然有问题"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=274}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f每个人都在自己的生命中频繁地抛弃着自己的过去。--米哈游 · 幽兰黛尔"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=275}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f御剑于心，且听风吟。--英雄联盟"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=276}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f贫贱难可居，脱误有功，富贵可致，不探虎穴，安得虎子？--三国志"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=277}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f不怕念起，唯恐觉迟，既已执手，此生不负。--永安调"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=278}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f清晨的花朵，开在黄昏中的残骸之上，一切都会过去，不是吗？--The New Order:Last Days of Europe · <最后一分钟>，TNO启示录事件"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=279}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f心向花开，何不朝夕。--百年浅吟"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=280}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f一旦你驯服了什么，就要对她负责，永远的负责。--小王子"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=281}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f如日中天，群魔乱舞，应臆。--朴素 · 大略"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=282}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f应该可以了吧，我已经很努力了，应该可以抵达终点了…--AIR"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=283}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f夜晚还远远没有结束!--春宵苦短，少女前进吧！"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=284}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f我真的很想喜欢你们，可是你们没有人喜欢我。--梨子"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=285}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f人生真是讽刺，一个人竟然可以变成自己曾经最讨厌的样子。--流浪记"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=286}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f至少恋爱不是种机会，我认为它是一种意志。--月色真美"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=287}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f莲子这个东西，等的越久，它越苦涩啊。--Yly · Yly"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=288}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f那随风飘荡的蒲公英种子，会在什么时候决定自己的命运呢？--沙耶之歌"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=289}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f只愿君心似我心，定不负相思意。--李之仪 · 卜算子·我住长江头"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=290}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f吾心吾行澄如明镜，所作所为皆为正义。--飙马野郎 · JOJO的奇妙冒险"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=291}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f我爱你，与你有何相干？毁灭你，又与你有何相干？--三体"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=292}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f别把耿直当理由。--网络"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=293}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f远方未必远，未来一定来。--网络"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=294}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f可能你现在不是别人的，但将来也不会是我的。--相信你愿意相信的就好了"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=295}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f没有一封信是不必被送达的。--紫罗兰永恒花园"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=296}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f有样东西是其他生物绝对没有，只有人类才有 那就是人有秘密。--月色真美"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=297}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f人的伟大之处是在于面对困难的时候还能摆出崇高的姿态。--超级教师"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=298}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f回声：寻觅归乡之路，一次一颗子弹。--少女前线"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=299}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f你的笑容怡人如晚霞般，在川流不息的时光中，神采飞扬。--许巍 · 时光"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=300}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f对于事情的预期越低，失败的时候越不伤心，成功的时候就越快乐。--TPSET · 原创"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=301}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f异地恋是，尝过欣喜若狂，也知道失魂落魄。--tinker.run"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=302}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f呐，我对你的沉沦，就像樱花落入大地~--你看樱花我看你"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=303}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f残花无零，落红无情。--黑暗萌主"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=304}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f言者无罪，闻者足戒。--诗经·周南·关雎·序"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=305}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f为什么要难过,一直微笑就好啦。--Doraemon!"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=306}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f渐行渐远渐无书，水阔鱼沉何处问。--欧阳修 · 玉楼春·别后不知君远近"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=307}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f孤高的游荡灵魂不需要羁绊之地。--春物"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=308}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f即使从梦中醒来，还会有回忆留下。--AIR"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=309}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f末将于禁，愿为曹家世代赴汤蹈火。--镇魂街"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=310}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f皑如山上雪，皎若云间月。--卓文君 · 白头吟"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=311}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f春未绿，鬓先丝。人间别久不成悲。--姜夔 · 鹧鸪天·元夕有所梦"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=312}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f你永远是我唯爱旅行中名为秘密的起点站。--绘心"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=313}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f想要成为无论多么悲伤的时候，也能够漂亮微笑的人吧。--文学少女"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=314}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f只要努力活下去，总有一天会笑着回忆。--不可思议游戏"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=315}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f何人知我霜雪催，何人与我共一醉。--Priest · 杀破狼"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=316}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f喜欢就会放肆，但爱就是克制。--韩寒 · 后会无期"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=317}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f水的清澈，并非因为它不含杂质，而是在于懂得沉淀。--网络"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=318}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f山有峰顶，海有彼岸，漫漫长途，终有回转，余味苦涩，终有回甘。--一切都是最好的安排"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=319}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f我为自己而死，并且，在最后的最后，为自己而活。--SCP基金会"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=320}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f梦醒人终散，缘尽情已空。--幻梦琉影 · 原创"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=321}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f蒹葭苍苍，白露为霜。所谓伊人，在水一方。--诗经·秦风·蒹葭"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=322}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f有一种无奈叫做，你明明是只候鸟，却喜欢上只能给你冬天的人。--九ちのセカィ"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=323}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f不要因为走的太远，就忘记了我们为什么出发。--君茶"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=324}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f身是菩提树，心如明镜台，时时勤拂拭，勿使惹尘埃。--神秀"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=325}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f菩提本无树，明镜亦非台，本来无一物，何处惹尘埃。--慧能"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=326}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f忘羡一曲远，曲终人不散。--魔道祖师"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=327}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f烟笼寒水月笼沙，夜泊秦淮近酒家。--杜牧 · 泊秦淮"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=328}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f你只需看着别人精彩，老天对你另有安排。--春天"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=329}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f雨滴降落的速度是每秒十米，我该用怎么样的速度，才能将你挽留？--言叶之庭"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=330}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f我爱你，可跟你又有什么关系？--浮士德"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=331}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f心情已经习惯和候鸟一起迁徙只是有些仓惶而已。--晓良"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=332}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f谎话被歌颂，扮清醒的人作哑装聋。--南语 · 不痛"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=333}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f黄粱一梦，山水万重，人间总相逢。--见江山"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=334}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f唯有爱与梦想不可辜负。--爱与梦想"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=335}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f一切，都已改变。--子佳"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=336}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f且听雨云，润物无声。--雨云RAINYUN.COM"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=337}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f生生生生暗生始，死死死死冥死终。--东方永夜抄"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=338}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f青枫江上秋帆远，白帝城边古木疏。--高适 · 送李少府贬峡中王少府贬长沙"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=339}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f人生在世不称意，不如自挂东南枝--十万个冷笑话"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=0,login=0,sign_intext=340}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f既然我无法停留，那么就飞到我再也不能飞的那一天吧。--シ舀シ舀"}]}
 tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f谁是敌人，谁是朋友，不须由别人去告诉你，也不该由别人去决定，而是该由自己决定的。--<异界之死亡女骑士>"}]}
 tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=2}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f历史的发展是不以人的意志为转移的。--毛泽东<毛泽东>"}]}
 tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f桃李春风一杯酒，江湖夜雨十年灯。--黄庭坚<寄黄几复>"}]}
@@ -909,6 +1011,108 @@ tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=235}] {"rawtext"
 tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=236}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fThis kind of person, also deserve to be a teacher? --cxj<Daily life of Zhiyu>"}]}
 tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=237}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fGood night and good dreams. --Stranger<Daily life of Zhiyu>"}]}
 tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=238}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fI'm the Royal sister. I must be fierce. Lori is gentle. For example, xh. --Autumn<Daily life of Zhiyu>"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=239}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f你的无畏来源于无知。--三体"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=240}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f上古有大椿者，以八千岁为春，八千岁为秋。--庄子 · 逍遥游"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=241}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f每个人生来都是妄想家。--mozei"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=242}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f保持好迎接强者的心态，才是初心。--syc"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=243}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f以盐水作配菜，糖水做主食，就有种奢侈的感觉呢。--笨蛋测验召唤兽"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=244}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f太想伸手摘取星星的人，常常忘记脚下的鲜花。--杰里米·边沁"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=245}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f幸福的家庭都是相似的，不幸的家庭各有各的不幸。--安娜·卡列妮娜"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=246}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f我们，在路上，勿忘初心。找寻最初的梦想和微弱的希望。--根号菌SAMA"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=247}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f齐人三鼓之后，彼竭我盈之时。--曹刿论战"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=248}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f一代锤子一代皇，代代锤子教做人！--102集弹幕 · 斗罗大陆"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=249}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f但行好事，莫问前程。--佚名 · 增广贤文"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=250}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f美食之于他们是爱、是救赎、是一切美好及温暖的集合。--Bruce Jc"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=251}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f东风夜放花千树。更吹落、星如雨。--辛弃疾 · 青玉案·元夕"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=252}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f把酒祝东风。且共从容。--欧阳修 · 浪淘沙·把酒祝东风"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=253}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fGod said: Let there be light.--Holy Bible"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=254}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f憧憬，是距离了解最遥远的一种感情。--BLEACH"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=255}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f愿风指引着你的道路，愿你的刀刃永远锋利。--魔兽世界"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=256}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f花自飘零水自流。一种相思，两处闲愁。--李清照 · 一剪梅·红藕香残玉簟秋"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=257}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f何其有幸，我们相遇。--朽猫"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=258}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f超频链接。--加速世界"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=259}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f你和我说他的可爱，你和我说他的好看。恍惚间窥见在樱花树下，铁道边，一对少男少女彼此走着，风起花落拂过他们脸颊。--祉语"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=260}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f明天的事，交给明天的我。--一拳超人"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=261}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f恰同学少年，风华正茂；书生意气，挥斥方遒。--毛泽东 沁园春·长沙"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=262}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f简童，我把肾给你，你把心给我吧。--沈谨修 · 蚀骨危情"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=263}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f焉得谖草？言树之背。--伯兮-先秦"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=264}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f浩如星海的人群中，与你相遇真是一件幸运的事情。--小小柳之絮"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=265}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f故事的结局从来不人意！--九思"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=266}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f永远相信美好的事情，即将发生。--XiaoMi"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=267}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f所以，他们的祭典还没结束。--我的青春恋爱物语果然有问题"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=268}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f我想在你眼里撒野奔跑，我想一个眼神就到老。--巫哲 · 撒野"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=269}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f善与恶逆转的瞬间，便是奇迹。--网络"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=270}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f要是太勉强自己的话，总有一天会受伤的。--玖兰枢 · 吸血鬼骑士"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=271}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fSunny day Wow! Song power!--SUNNY DAY SONG"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=272}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f桃之夭夭，灼灼其华。之子于归，宜其室家。--桃夭"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=273}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f即使你已经习惯了受伤害，也有人看了会心疼的。--大老师 我的恋爱物语果然有问题"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=274}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f每个人都在自己的生命中频繁地抛弃着自己的过去。--米哈游 · 幽兰黛尔"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=275}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f御剑于心，且听风吟。--英雄联盟"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=276}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f贫贱难可居，脱误有功，富贵可致，不探虎穴，安得虎子？--三国志"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=277}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f不怕念起，唯恐觉迟，既已执手，此生不负。--永安调"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=278}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f清晨的花朵，开在黄昏中的残骸之上，一切都会过去，不是吗？--The New Order:Last Days of Europe · <最后一分钟>，TNO启示录事件"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=279}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f心向花开，何不朝夕。--百年浅吟"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=280}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f一旦你驯服了什么，就要对她负责，永远的负责。--小王子"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=281}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f如日中天，群魔乱舞，应臆。--朴素 · 大略"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=282}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f应该可以了吧，我已经很努力了，应该可以抵达终点了…--AIR"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=283}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f夜晚还远远没有结束!--春宵苦短，少女前进吧！"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=284}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f我真的很想喜欢你们，可是你们没有人喜欢我。--梨子"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=285}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f人生真是讽刺，一个人竟然可以变成自己曾经最讨厌的样子。--流浪记"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=286}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f至少恋爱不是种机会，我认为它是一种意志。--月色真美"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=287}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f莲子这个东西，等的越久，它越苦涩啊。--Yly · Yly"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=288}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f那随风飘荡的蒲公英种子，会在什么时候决定自己的命运呢？--沙耶之歌"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=289}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f只愿君心似我心，定不负相思意。--李之仪 · 卜算子·我住长江头"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=290}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f吾心吾行澄如明镜，所作所为皆为正义。--飙马野郎 · JOJO的奇妙冒险"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=291}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f我爱你，与你有何相干？毁灭你，又与你有何相干？--三体"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=292}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f别把耿直当理由。--网络"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=293}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f远方未必远，未来一定来。--网络"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=294}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f可能你现在不是别人的，但将来也不会是我的。--相信你愿意相信的就好了"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=295}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f没有一封信是不必被送达的。--紫罗兰永恒花园"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=296}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f有样东西是其他生物绝对没有，只有人类才有 那就是人有秘密。--月色真美"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=297}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f人的伟大之处是在于面对困难的时候还能摆出崇高的姿态。--超级教师"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=298}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f回声：寻觅归乡之路，一次一颗子弹。--少女前线"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=299}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f你的笑容怡人如晚霞般，在川流不息的时光中，神采飞扬。--许巍 · 时光"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=300}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f对于事情的预期越低，失败的时候越不伤心，成功的时候就越快乐。--TPSET · 原创"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=301}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f异地恋是，尝过欣喜若狂，也知道失魂落魄。--tinker.run"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=302}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f呐，我对你的沉沦，就像樱花落入大地~--你看樱花我看你"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=303}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f残花无零，落红无情。--黑暗萌主"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=304}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f言者无罪，闻者足戒。--诗经·周南·关雎·序"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=305}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f为什么要难过,一直微笑就好啦。--Doraemon!"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=306}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f渐行渐远渐无书，水阔鱼沉何处问。--欧阳修 · 玉楼春·别后不知君远近"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=307}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f孤高的游荡灵魂不需要羁绊之地。--春物"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=308}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f即使从梦中醒来，还会有回忆留下。--AIR"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=309}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f末将于禁，愿为曹家世代赴汤蹈火。--镇魂街"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=310}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f皑如山上雪，皎若云间月。--卓文君 · 白头吟"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=311}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f春未绿，鬓先丝。人间别久不成悲。--姜夔 · 鹧鸪天·元夕有所梦"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=312}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f你永远是我唯爱旅行中名为秘密的起点站。--绘心"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=313}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f想要成为无论多么悲伤的时候，也能够漂亮微笑的人吧。--文学少女"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=314}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f只要努力活下去，总有一天会笑着回忆。--不可思议游戏"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=315}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f何人知我霜雪催，何人与我共一醉。--Priest · 杀破狼"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=316}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f喜欢就会放肆，但爱就是克制。--韩寒 · 后会无期"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=317}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f水的清澈，并非因为它不含杂质，而是在于懂得沉淀。--网络"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=318}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f山有峰顶，海有彼岸，漫漫长途，终有回转，余味苦涩，终有回甘。--一切都是最好的安排"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=319}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f我为自己而死，并且，在最后的最后，为自己而活。--SCP基金会"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=320}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f梦醒人终散，缘尽情已空。--幻梦琉影 · 原创"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=321}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f蒹葭苍苍，白露为霜。所谓伊人，在水一方。--诗经·秦风·蒹葭"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=322}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f有一种无奈叫做，你明明是只候鸟，却喜欢上只能给你冬天的人。--九ちのセカィ"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=323}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f不要因为走的太远，就忘记了我们为什么出发。--君茶"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=324}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f身是菩提树，心如明镜台，时时勤拂拭，勿使惹尘埃。--神秀"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=325}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f菩提本无树，明镜亦非台，本来无一物，何处惹尘埃。--慧能"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=326}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f忘羡一曲远，曲终人不散。--魔道祖师"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=327}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f烟笼寒水月笼沙，夜泊秦淮近酒家。--杜牧 · 泊秦淮"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=328}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f你只需看着别人精彩，老天对你另有安排。--春天"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=329}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f雨滴降落的速度是每秒十米，我该用怎么样的速度，才能将你挽留？--言叶之庭"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=330}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f我爱你，可跟你又有什么关系？--浮士德"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=331}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f心情已经习惯和候鸟一起迁徙只是有些仓惶而已。--晓良"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=332}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f谎话被歌颂，扮清醒的人作哑装聋。--南语 · 不痛"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=333}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f黄粱一梦，山水万重，人间总相逢。--见江山"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=334}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f唯有爱与梦想不可辜负。--爱与梦想"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=335}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f一切，都已改变。--子佳"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=336}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f且听雨云，润物无声。--雨云RAINYUN.COM"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=337}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f生生生生暗生始，死死死死冥死终。--东方永夜抄"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=338}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f青枫江上秋帆远，白帝城边古木疏。--高适 · 送李少府贬峡中王少府贬长沙"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=339}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f人生在世不称意，不如自挂东南枝--十万个冷笑话"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=340}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f既然我无法停留，那么就飞到我再也不能飞的那一天吧。--シ舀シ舀"}]}
 tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=1}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f誰是敵人，誰是朋友，不須由別人去告訴你，也不該由別人去决定，而是該由自己决定的。--<异界之死亡女騎士>"}]}
 tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f歷史的發展是不以人的意志為轉移的。--毛澤東<毛澤東>"}]}
 tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=3}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f桃李春風一杯酒，江湖夜雨十年燈。--黃庭堅<寄黃幾複>"}]}
@@ -1147,6 +1351,108 @@ tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=235}] {"rawtext"
 tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=236}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f這也配為人師表？--cxj<祉語的生活>"}]}
 tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=237}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f晚安，祝好夢。--陌生人<祉語的生活>"}]}
 tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=238}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f我是拽姐肯定凶，蘿莉才溫柔，例如xh。--秋天<祉語的生活>"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=239}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f你的無畏來源於無知。--三體"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=240}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f上古有大椿者，以八千歲為春，八千歲為秋。--莊子·逍遙遊"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=241}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f每個人生來都是妄想家。--mozei"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=242}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f保持好迎接强者的心態，才是初心。--syc"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=243}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f以鹽水作配菜，糖水做主食，就有種奢侈的感覺呢。--笨蛋測驗召喚獸"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=244}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f太想伸手摘取星星的人，常常忘記脚下的鮮花。--傑瑞米·邊沁"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=245}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f幸福的家庭都是相似的，不幸的家庭各有各的不幸。--安娜·卡列妮娜"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=246}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f我們，在路上，勿忘初心。找尋最初的夢想和微弱的希望。--根號菌SAMA"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=247}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f齊人三鼓之後，彼竭我盈之時。--曹劌論戰"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=248}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f一代錘子一代皇，代代錘子教做人！--102集彈幕·鬥羅大陸"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=249}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f但行好事，莫問前程。--佚名·增廣賢文"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=250}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f美食之於他們是愛、是救贖、是一切美好及溫暖的集合。--Bruce Jc"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=251}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f東風夜放花千樹。更吹落、星如雨。--辛弃疾·青玉案·元夕"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=252}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f把酒祝東風。且共從容。--歐陽修·浪淘沙·把酒祝東風"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=253}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§fGod said: Let there be light.--Holy Bible"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=254}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f憧憬，是距離瞭解最遙遠的一種感情。--BLEACH"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=255}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f願風指引著你的道路，願你的刀刃永遠鋒利。--魔獸世界"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=256}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f花自飄零水自流。一種相思，兩處閒愁。--李清照·一剪梅·紅藕香殘玉簟秋"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=257}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f何其有幸，我們相遇。--朽猫"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=258}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f超頻連結。--加速世界"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=259}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f你和我說他的可愛，你和我說他的好看。恍惚間窺見在櫻花樹下，鐵道邊，一對少男少女彼此走著，風起花落拂過他們臉頰。--祉語"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=260}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f明天的事，交給明天的我。--一拳超人"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=261}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f恰同學少年，風華正茂；書生意氣，揮斥方遒。--毛澤東沁園春·長沙"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=262}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f簡童，我把腎給你，你把心給我吧。--沈謹修·蝕骨危情"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=263}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f焉得諼草？言樹之背。--伯兮-先秦"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=264}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f浩如星海的人群中，與你相遇真是一件幸運的事情。--小小柳之絮"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=265}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f故事的結局從來不人意！--九思"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=266}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f永遠相信美好的事情，即將發生。--XiaoMi"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=267}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f所以，他們的祭典還沒結束。--我的青春戀愛物語果然有問題"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=268}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f我想在你眼裡撒野奔跑，我想一個眼神就到老。--巫哲·撒野"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=269}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f善與惡逆轉的瞬間，便是奇迹。--網絡"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=270}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f要是太勉强自己的話，總有一天會受傷的。--玖蘭樞·吸血鬼騎士"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=271}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§fSunny day Wow! Song power!--SUNNY DAY SONG"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=272}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f之夭夭，灼灼其華。之子於歸，宜其室家。--桃夭"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=273}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f即使你已經習慣了受傷害，也有人看了會心疼的。--大老師我的戀愛物語果然有問題"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=274}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f每個人都在自己的生命中頻繁地拋弃著自己的過去。--米哈遊·幽蘭黛爾"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=275}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f禦劍於心，且聽風吟。--英雄聯盟"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=276}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f貧賤難可居，脫誤有功，富貴可致，不探虎穴，安得虎子？--三國志"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=277}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f不怕念起，唯恐覺遲，既已執手，此生不負。--永安調"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=278}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f清晨的花朵，開在黃昏中的殘骸之上，一切都會過去，不是嗎？--The NewOrder:Last Daysof Europe·<最後一分鐘>，TNO啟示錄事件"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=279}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f心向花開，何不朝夕。--百年淺吟"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=280}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f一旦你馴服了什麼，就要對她負責，永遠的負責。--小王子"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=281}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f如日中天，群魔亂舞，應臆。--樸素·大略"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=282}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f應該可以了吧，我已經很努力了，應該可以抵達終點了…--AIR"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=283}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f夜晚還遠遠沒有結束！--春宵苦短，少女前進吧！"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=284}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f我真的很想喜歡你們，可是你們沒有人喜歡我。--梨子"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=285}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f人生真是諷刺，一個人竟然可以變成自己曾經最討厭的樣子。--流浪記"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=286}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f至少戀愛不是種機會，我認為它是一種意志。--月色真美"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=287}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f蓮子這個東西，等的越久，它越苦澀啊。--Yly·Yly"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=288}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f那隨風飄蕩的蒲公英種子，會在什麼時候决定自己的命運呢？--沙耶之歌"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=289}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f只願君心似我心，定不負相思意。--李之儀·蔔運算元·我住長江頭"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=290}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f吾心吾行澄如明鏡，所作所為皆為正義。--飆馬野郎·JOJO的奇妙冒險"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=291}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f我愛你，與你有何相干？毀滅你，又與你有何相干？--三體"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=292}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f別把耿直當理由。--網絡"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=293}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f遠方未必遠，未來一定來。--網絡"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=294}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f可能你現在不是別人的，但將來也不會是我的。--相信你願意相信的就好了"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=295}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f沒有一封信是不必被送達的。--紫羅蘭永恒花園"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=296}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f有樣東西是其他生物絕對沒有，只有人類才有那就是人有秘密。--月色真美"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=297}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f人的偉大之處是在於面對困難的時候還能擺出崇高的姿態。--超級教師"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=298}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f回聲：尋覓歸鄉之路，一次一顆子彈。--少女前線"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=299}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f你的笑容怡人如晚霞般，在川流不息的時光中，神采飛揚。--許巍·時光"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=300}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f對於事情的預期越低，失敗的時候越不傷心，成功的時候就越快樂。--TPSET·原創"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=301}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f異地戀是，嘗過欣喜若狂，也知道失魂落魄。--tinker.run"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=302}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f呐，我對你的沉淪，就像櫻花落入大地~--你看櫻花我看你"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=303}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f殘花無零，落紅無情。--黑暗萌主"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=304}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f言者無罪，聞者足戒。--詩經·周南·關雎·序"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=305}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f為什麼要難過，一直微笑就好啦。--Doraemon！"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=306}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f漸行漸遠漸無書，水闊魚沉何處問。--歐陽修·玉樓春·別後不知君遠近"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=307}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f孤高的遊蕩靈魂不需要羈絆之地。--春物"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=308}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f即使從夢中醒來，還會有回憶留下。--AIR"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=309}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f末將於禁，願為曹家世代赴湯蹈火。--鎮魂街"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=310}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f皚如山上雪，皎若雲間月。--卓文君·白頭吟"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=311}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f春未綠，鬢先絲。人間別久不成悲。--薑夔·鷓鴣天·元夕有所夢"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=312}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f你永遠是我唯愛旅行中名為秘密的起點站。--繪心"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=313}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f想要成為無論多麼悲傷的時候，也能够漂亮微笑的人吧。--文學少女"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=314}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f只要努力活下去，總有一天會笑著回憶。--不可思議遊戲"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=315}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f何人知我霜雪催，何人與我共一醉。--Priest·殺破狼"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=316}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f喜歡就會放肆，但愛就是克制。--韓寒·後會無期"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=317}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f水的清澈，並非因為它不含雜質，而是在於懂得沉澱。--網絡"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=318}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f山有峰頂，海有彼岸，漫漫長途，終有回轉，餘味苦澀，終有回甘。--一切都是最好的安排"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=319}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f我為自己而死，並且，在最後的最後，為自己而活。--SCP基金會"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=320}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f夢醒人終散，緣盡情已空。--幻夢琉影·原創"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=321}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f蒹葭蒼蒼，白露為霜。所謂伊人，在水一方。--詩經 秦風·蒹葭"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=322}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f有一種無奈叫做，你明明是只候鳥，卻喜歡上只能給你冬天的人。--九ちのセカィ"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=323}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f不要因為走的太遠，就忘記了我們為什麼出發。--君茶"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=324}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f身是菩提樹，心如明鏡台，時時勤拂拭，勿使惹塵埃。--神秀"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=325}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f菩提本無樹，明鏡亦非臺，本來無一物，何處惹塵埃。--慧能"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=326}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f忘羨一曲遠，曲終人不散。--魔道祖師"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=327}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f煙籠寒水月籠沙，夜泊秦淮近酒家。--杜牧·泊秦淮"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=328}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f你只需看著別人精彩，老天對你另有安排。--春天"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=329}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f雨滴降落的速度是每秒十米，我該用怎麼樣的速度，才能將你挽留？--言葉之庭"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=330}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f我愛你，可跟你又有什麼關係？--浮士德"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=331}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f心情已經習慣和候鳥一起遷徙只是有些倉惶而已。--曉良"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=332}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f謊話被歌頌，扮清醒的人作啞裝聾。--南語·不痛"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=333}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f黃粱一夢，山水萬重，人間總相逢。--見江山"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=334}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f唯有愛與夢想不可辜負。--愛與夢想"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=335}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f一切，都已改變。--子佳"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=336}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f且聽雨雲，潤物無聲。--雨雲RAINYUN.COM"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=337}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f生生生生暗生始，死死死死冥死終。--東方永夜抄"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=338}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f青楓江上秋帆遠，白帝城邊古木疏。--高適·送李少府貶峽中王少府貶長沙"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=339}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f人生在世不稱意，不如自掛東南枝--十萬個冷笑話"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=340}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f既然我無法停留，那麼就飛到我再也不能飛的那一天吧。--シ舀シ舀"}]}
 #？？
 tellraw @a[scores={login=0,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f空岛生存-服务端版本 v1.0.0"}]}
 tellraw @a[scores={login=0,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fSkyblock For Server v1.0.0"}]}
