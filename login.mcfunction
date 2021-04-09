@@ -1010,7 +1010,7 @@ tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=234}] {"rawtext"
 tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=235}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fRule of law in China, win in prison, lose in hospital. --Network"}]}
 tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=236}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fThis kind of person, also deserve to be a teacher? --cxj<Daily life of Zhiyu>"}]}
 tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=237}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fGood night and good dreams. --Stranger<Daily life of Zhiyu>"}]}
-tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=238}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fI'm the Royal sister. I must be fierce. Lori is gentle. For example, xh. --Autumn<Daily life of Zhiyu>"}]}
+tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=238}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fI am drag elder sister affirming fierce, the girl just gentle, for example XH! --Autumn<Daily life of Zhiyu>"}]}
 tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=239}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f你的无畏来源于无知。--三体"}]}
 tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=240}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f上古有大椿者，以八千岁为春，八千岁为秋。--庄子 · 逍遥游"}]}
 tellraw @a[scores={sign_in=2,hitokotolang=1,login=0,sign_intext=241}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f每个人生来都是妄想家。--mozei"}]}
