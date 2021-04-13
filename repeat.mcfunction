@@ -23,7 +23,6 @@ scoreboard objectives add visittime dummy
 scoreboard objectives add dailyplaytime dummy
 scoreboard objectives add state dummy
 scoreboard objectives add receive dummy
-scoreboard objectives add developer dummy
 scoreboard objectives add rewardsupply dummy
 scoreboard objectives add achievementtemp dummy
 scoreboard objectives add ender_pearluid dummy
@@ -61,6 +60,7 @@ scoreboard objectives add iduse dummy
 scoreboard objectives add offlinetime dummy
 scoreboard objectives add offlinecoin dummy
 scoreboard objectives add luckily dummy
+scoreboard objectives add developerdaily dummy
 #clear
 clear @a[tag=clear]
 replaceitem entity @a[tag=clear] slot.hotbar 0 air
@@ -303,9 +303,16 @@ tellraw @a[scores={language=2},tag=reset] {"rawtext":[{"text":"§l§e空島生�
 tellraw @a[scores={language=3},tag=reset] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§aリュックサッククリア実行成功！§fリセット完了！ゲームデータが空です。島を再び受け取ることができます。"}]}
 tag @a[tag=reset] remove reset
 #team
-#team
 #team.join
-execute @a[scores={temp=8848,uid=!0}] ~ ~ ~ scoreboard players set @p[r=3] temp 8858
+execute @a[scores={temp=8848,uid=1..40000}] ~ ~ ~ scoreboard players set @p[r=3] temp 8858
+execute @a[scores={temp=8848,uid=0}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f您还没有注册账号，无法组队！"}]}
+execute @a[scores={temp=8848,uid=0}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fYou haven't registered your account, so you can't form a team!"}]}
+execute @a[scores={temp=8848,uid=0}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f您還沒有註冊帳號，無法組隊！"}]}
+execute @a[scores={temp=8848,uid=0}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fまだアカウントを登録していませんので、チームを作ることができません。"}]}
+execute @a[scores={temp=8848,uid=100000..}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f您的用户组为游客，无法组队！"}]}
+execute @a[scores={temp=8848,uid=100000..}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fYour user group is tourists, can not form a team!"}]}
+execute @a[scores={temp=8848,uid=100000..}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f您的用戶組為遊客，無法組隊！"}]}
+execute @a[scores={temp=8848,uid=100000..}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fあなたのユーザーグループは観光客です。チームを作ることができません。"}]}
 execute @a[scores={temp=8858,id=0,uid=!0}] ~ ~ ~ tellraw @a[scores={temp=8858,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§a操作成功！§f组队完成，现在您可以选择使用 §1队伍识别符检索§f 以加入您所属队伍的岛屿。"}]}
 execute @a[scores={temp=8858,id=0,uid=!0}] ~ ~ ~ tellraw @a[scores={temp=8858,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§aOperation successful! §fTeam up is complete, now you can choose to use §1TeamID search§f to join your team's Island."}]}
 execute @a[scores={temp=8858,id=0,uid=!0}] ~ ~ ~ tellraw @a[scores={temp=8858,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§a操作成功！§f組隊完成，現在您可以選擇使用 §1隊伍識別符檢索 §f以加入您所屬隊伍的島嶼。"}]}
@@ -334,6 +341,16 @@ execute @a[scores={temp=8868,id=!0}] ~ ~ ~ scoreboard players set @a [scores={te
 scoreboard players reset @a[scores={temp=8868}] temp
 #guild
 #guild.build
+execute @a[scores={temp=10000,uid=0}] ~ ~ ~ tellraw @s[scores={temp=10000,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§c操作失败！§f创建失败！您还没有注册账号。"}]}
+execute @a[scores={temp=10000,uid=0}] ~ ~ ~ tellraw @s[scores={temp=10000,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§cOperation failed! §fYou have not registered an account."}]}
+execute @a[scores={temp=10000,uid=0}] ~ ~ ~ tellraw @s[scores={temp=10000,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§c操作失敗！§f創建失敗！您還沒有註冊帳號。"}]}
+execute @a[scores={temp=10000,uid=0}] ~ ~ ~ tellraw @s[scores={temp=10000,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§c操作失敗！§fあなたはまだアカウントを登録していません。"}]}
+scoreboard players reset @a[scores={temp=10000,uid=0}] temp
+execute @a[scores={temp=10000,uid=100000..}] ~ ~ ~ tellraw @s[scores={temp=10000,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§c操作失败！§f创建失败！您的用户组为游客，该用户组无法创建公会。"}]}
+execute @a[scores={temp=10000,uid=100000..}] ~ ~ ~ tellraw @s[scores={temp=10000,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§cOperation failed! §fYour user group is tourists. This user group cannot create a guild."}]}
+execute @a[scores={temp=10000,uid=100000..}] ~ ~ ~ tellraw @s[scores={temp=10000,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§c操作失敗！§f創建失敗！您的用戶組為遊客，該用戶組無法創建公會。"}]}
+execute @a[scores={temp=10000,uid=100000..}] ~ ~ ~ tellraw @s[scores={temp=10000,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§c操作失敗！§fあなたのグループは観光客です。グループは公会を作成できません。"}]}
+scoreboard players reset @a[scores={temp=10000,uid=100000..}] temp
 execute @a[scores={temp=10000,coin=!19980..,uid=!0}] ~ ~ ~ tellraw @s[scores={temp=10000,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§c操作失败！§f创建失败！您拥有的硬币数量不足以创建公会。"}]}
 execute @a[scores={temp=10000,coin=!19980..,uid=!0}] ~ ~ ~ tellraw @s[scores={temp=10000,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§cOperation failed! §fFailed to create! You don't have enough coins to create a guild."}]}
 execute @a[scores={temp=10000,coin=!19980..,uid=!0}] ~ ~ ~ tellraw @s[scores={temp=10000,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§c操作失敗！§f創建失敗！您擁有的硬幣數量不足以創建公會。"}]}
@@ -712,8 +729,38 @@ execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=69..
 execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=71..100,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fあなたは何も得られませんでした。"}]}
 execute @a[scores={temp=123}] ~ ~ ~ scoreboard objectives remove mineraltemp
 execute @a[scores={temp=123}] ~ ~ ~ scoreboard players reset @a[scores={temp=123}] temp
-#receive
-#原来的注册部分
+#注册，用户注册（uid=1..40000）temp=220，游客注册（uid=100001..）temp=230
+#开发者注册 - 如同棱镜国度Online可以自动获得管理权限的
+execute @a[scores={temp=240}] ~ ~ ~ scoreboard players add @s uid 0
+execute @a[scores={temp=240}] ~ ~ ~ scoreboard players add @s level 0
+execute @a[scores={temp=240}] ~ ~ ~ scoreboard players add @s language 0
+execute @a[scores={temp=240}] ~ ~ ~ scoreboard players set @s[scores={uid=0,level=0},tag=developer] temp 241
+execute @a[scores={temp=241}] ~ ~ ~ tag @s[tag=developer] add admin
+execute @a[scores={temp=241}] ~ ~ ~ tag @s[tag=developer] add devreceive
+execute @a[scores={temp=241}] ~ ~ ~ scoreboard players operation @s uid = uidafter uidafter
+execute @a[scores={temp=241,uid=1..40000}] ~ ~ ~ scoreboard players set @s temp 242
+execute @a[scores={temp=241,uid=1..40000}] ~ ~ ~ scoreboard players set @s uid 0
+execute @a[scores={temp=241,uid=1..40000}] ~ ~ ~ scoreboard players set @s level 0
+execute @a[scores={temp=241,uid=1..40000}] ~ ~ ~ scoreboard players set @s temp 220
+execute @a[scores={temp=240},tag=!developer] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f您不是开发者。"}]}
+execute @a[scores={temp=240},tag=!developer] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fYou are not a developer."}]}
+execute @a[scores={temp=240},tag=!developer] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f您不是開發者。"}]}
+execute @a[scores={temp=240},tag=!developer] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fあなたは開発者ではありません。"}]}
+execute @a[scores={temp=241},tag=!developer] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f您好，开发者 §6"},{"selector":"@s"},{"text":" §f欢迎回来！"}]}
+execute @a[scores={temp=241},tag=!developer] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fHello, developer §6"},{"selector":"@s"},{"text":" §fwelcome back!"}]}
+execute @a[scores={temp=241},tag=!developer] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f您好，開發者 §6"},{"selector":"@s"},{"text":" §f歡迎回來！"}]}
+execute @a[scores={temp=241},tag=!developer] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fこんにちは、開発者 §6"},{"selector":"@s"},{"text":" §fお帰りなさい。"}]}
+execute @a[scores={temp=241}] ~ ~ ~ scoreboard players operation @s uid = uidafter uidafter
+execute @a[scores={temp=241,uid=1..40000}] ~ ~ ~ scoreboard players set @s temp 242
+execute @a[scores={temp=241,uid=!1..40000}] ~ ~ ~ scoreboard players set @s temp 243
+execute @a[scores={temp=242..243}] ~ ~ ~ scoreboard players set @s uid 0
+execute @a[scores={temp=242..243}] ~ ~ ~ scoreboard players set @s level 0
+execute @a[scores={temp=242}] ~ ~ ~ scoreboard players set @s temp 220
+execute @a[scores={temp=243}] ~ ~ ~ scoreboard players set @s temp 230
+#测试注册 - 没啥用 - 硬币会给多一点
+
+
+#原来的注册部分（用户注册）
 execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players add @a[scores={temp=220}] language 0
 execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players add @a[scores={temp=220}] uid 0
 execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players add @a[scores={temp=220}] level 0
@@ -727,50 +774,107 @@ execute @a[scores={temp=224}] ~ ~ ~ tickingarea remove newislandbarrier1
 execute @a[scores={temp=224}] ~ ~ ~ tickingarea remove newislandbarrier2
 execute @a[scores={temp=224}] ~ ~ ~ tickingarea remove newislandbarrier3
 execute @a[scores={temp=224}] ~ ~ ~ tickingarea remove newislandbarrier4
-execute @a[scores={temp=220..226}] ~ ~ ~ effect @a[scores={temp=224}] slowness 60 255 true
-execute @a[scores={temp=220..226}] ~ ~ ~ effect @a[scores={temp=224}] blindness 60 255 true
-execute @a[scores={temp=220..226}] ~ ~ ~ effect @a[scores={temp=224}] weakness 60 255 true
-execute @a[scores={temp=220..226}] ~ ~ ~ effect @a[scores={temp=224}] resistance 60 255 true
-execute @a[scores={temp=220..226}] ~ ~ ~ effect @a[scores={temp=224}] fire_resistance 60 255 true
-execute @a[scores={temp=220..226}] ~ ~ ~ effect @a[scores={temp=224}] water_breathing 60 255 true
-execute @a[scores={temp=220..226}] ~ ~ ~ tag @a[scores={temp=224}] remove guild
-execute @a[scores={temp=220..226}] ~ ~ ~ tag @a[scores={temp=224}] remove guildmaster
-execute @a[scores={temp=220..226}] ~ ~ ~ clear @s
-execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] coin 0
-execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] id 0
-execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] guild 0
-execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] dailyplaytime 0
-execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] sign_in 1
-execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] achievement1 0
-execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] achievement2 0
-execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] achievement3 0
-execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] achievement4 0
-execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] achievement5 0
-execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] achievement6 0
-execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] achievement7 0
-execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] achievement8 0
-execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] achievement9 0
-execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] achievement10 0
-execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] achievement11 0
-execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] achievement12 0
-execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] achievement13 0
-execute @a[scores={temp=220..226}] ~ ~ ~ give @a[scores={temp=224}] golden_sword 1 0
-execute @a[scores={temp=220..226}] ~ ~ ~ give @a[scores={temp=224}] golden_axe 1 0
-execute @a[scores={temp=220..226}] ~ ~ ~ give @a[scores={temp=224}] golden_pickaxe 1 0
-execute @a[scores={temp=220..226}] ~ ~ ~ give @a[scores={temp=224}] golden_shovel 1 0
-execute @a[scores={temp=220..226}] ~ ~ ~ give @a[scores={temp=224}] golden_hoe 1 0
-execute @a[scores={temp=220..226}] ~ ~ ~ give @a[scores={temp=224}] chainmail_helmet 1 0
-execute @a[scores={temp=220..226}] ~ ~ ~ give @a[scores={temp=224}] chainmail_chestplate 1 0
-execute @a[scores={temp=220..226}] ~ ~ ~ give @a[scores={temp=224}] chainmail_chestplate 1 0
-execute @a[scores={temp=220..226}] ~ ~ ~ give @a[scores={temp=224}] chainmail_boots 1 0
-execute @a[scores={temp=220..226}] ~ ~ ~ give @a[scores={temp=224}] stone 32 2
-execute @a[scores={temp=220..226}] ~ ~ ~ give @a[scores={temp=224}] planks 64 0
-execute @a[scores={temp=220..226}] ~ ~ ~ give @a[scores={temp=224}] bucket 1 10
-execute @a[scores={temp=220..226}] ~ ~ ~ give @a[scores={temp=224}] bucket 1 10
-execute @a[scores={temp=220..226}] ~ ~ ~ give @a[scores={temp=224}] ice 3 0
-execute @a[scores={temp=220..226}] ~ ~ ~ give @a[scores={temp=224}] cookie 16 0
-execute @a[scores={temp=220..226}] ~ ~ ~ give @a[scores={temp=224}] dirt 8 0
-execute @a[scores={temp=220..226}] ~ ~ ~ give @a[scores={temp=224}] sapling 8 0
+execute @a[scores={temp=224}] ~ ~ ~ effect @s[scores={temp=224}] slowness 60 255 true
+execute @a[scores={temp=224}] ~ ~ ~ effect @s[scores={temp=224}] blindness 60 255 true
+execute @a[scores={temp=224}] ~ ~ ~ effect @s[scores={temp=224}] weakness 60 255 true
+execute @a[scores={temp=224}] ~ ~ ~ effect @s[scores={temp=224}] resistance 60 255 true
+execute @a[scores={temp=224}] ~ ~ ~ effect @s[scores={temp=224}] fire_resistance 60 255 true
+execute @a[scores={temp=224}] ~ ~ ~ effect @s[scores={temp=224}] water_breathing 60 255 true
+execute @a[scores={temp=224}] ~ ~ ~ tag @s add receiveitem
+execute @a[scores={temp=224}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f您选择了用户注册，您的用户组将会变更为用户，您可以享受用户的所有功能。"}]}
+execute @a[scores={temp=224}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fIf you choose user registration, your user group will be changed to user, and you can enjoy all the functions of user."}]}
+execute @a[scores={temp=224}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f您選擇了用戶註冊，您的用戶組將會變更為用戶，您可以享受用戶的所有功能。"}]}
+execute @a[scores={temp=224}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fユーザー登録を選択したら、ユーザーグループはユーザーに変更されます。ユーザーのすべての機能を楽しむことができます。"}]}
+#注册（游客注册）
+execute @a[scores={temp=230}] ~ ~ ~ scoreboard players add @s uid 0
+execute @a[scores={temp=230}] ~ ~ ~ scoreboard players add @s level 0
+execute @a[scores={temp=230}] ~ ~ ~ scoreboard players add @s language 0
+execute @a[scores={temp=230}] ~ ~ ~ scoreboard players set @s[scores={uid=0,level=0}] temp 231
+execute @a[scores={temp=231}] ~ ~ ~ scoreboard players add visiter uidafter 1
+execute @a[scores={temp=231}] ~ ~ ~ scoreboard players operation @s uid = visiter uidafter
+execute @a[scores={temp=231}] ~ ~ ~ scoreboard players add @s uid 100000
+execute @a[scores={temp=231}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f您选择了游客注册，您的用户组将会变更为游客，您的用户识别符无法解析您的个人岛屿，您无法创建队伍与公会。该用户组适用于无可用的用户识别符的用户用户组的线路，该用户组下您可以使用除个人岛屿以外的所有功能。"}]}
+execute @a[scores={temp=231}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fIf you choose to register tourists, your user group will be changed to tourists. Your user ID cannot resolve your personal island, and you cannot create teams and guilds. This user group is applicable to the lines of user groups without available user ID. under this user group, you can use all functions except personal island."}]}
+execute @a[scores={temp=231}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f您選擇了遊客注册，您的用戶組將會變更為遊客，您的用戶識別符無法解析您的個人島嶼，您無法創建隊伍與公會。該用戶組適用於無可用的用戶識別符的用戶用戶組的線路，該用戶組下您可以使用除個人島嶼以外的所有功能。"}]}
+execute @a[scores={temp=231}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fあなたは観光客登録を選択しましたが、ユーザーグループは観光客に変更されます。お客様の識別子は個人の島を解析することができません。チームと公会を作ることができません。このユーザグループは、利用可能なユーザ識別子がないユーザグループの回線に適しています。このユーザグループでは、個人の島以外のすべての機能を使用できます。"}]}
+execute @a[scores={temp=231}] ~ ~ ~ tag @s add receiveitem
+#物品获得与数据赋值
+execute @a[tag=receiveitem] ~ ~ ~ tag @s[tag=receiveitem] remove guild
+execute @a[tag=receiveitem] ~ ~ ~ tag @s[tag=receiveitem] remove guildmaster
+execute @a[tag=receiveitem] ~ ~ ~ clear @s
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players set @s[tag=receiveitem] coin 0
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players set @s[tag=receiveitem] id 0
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players set @s[tag=receiveitem] guild 0
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players set @s[tag=receiveitem] dailyplaytime 0
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players set @s[tag=receiveitem] sign_in 1
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players set @s[tag=receiveitem] achievement1 0
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players set @s[tag=receiveitem] achievement2 0
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players set @s[tag=receiveitem] achievement3 0
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players set @s[tag=receiveitem] achievement4 0
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players set @s[tag=receiveitem] achievement5 0
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players set @s[tag=receiveitem] achievement6 0
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players set @s[tag=receiveitem] achievement7 0
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players set @s[tag=receiveitem] achievement8 0
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players set @s[tag=receiveitem] achievement9 0
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players set @s[tag=receiveitem] achievement10 0
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players set @s[tag=receiveitem] achievement11 0
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players set @s[tag=receiveitem] achievement12 0
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players set @s[tag=receiveitem] achievement13 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=!developer] golden_sword 1 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=!developer] golden_axe 1 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=!developer] golden_pickaxe 1 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=!developer] golden_shovel 1 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=!developer] golden_hoe 1 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=!developer] chainmail_helmet 1 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=!developer] chainmail_chestplate 1 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=!developer] chainmail_leggings 1 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=!developer] chainmail_boots 1 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=developer] iron_sword 1 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=developer] iron_axe 1 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=developer] iron_pickaxe 1 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=developer] iron_shovel 1 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=developer] iron_hoe 1 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=developer] iron_helmet 1 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=developer] iron_chestplate 1 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=developer] iron_leggings 1 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=developer] iron_boots 1 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem] stone 32 2
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem] planks 64 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem] bucket 1 10
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem] bucket 1 10
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem] ice 3 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=!developer] cookie 32 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=developer] baked_potato 64 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem] dirt 8 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem] sapling 8 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=developer] netherite_ingot 2 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=developer] diamond 4 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=developer] iron_ingot 8 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=developer] gold_ingot 16 0
+execute @a[tag=receiveitem] ~ ~ ~ give @s[tag=receiveitem,tag=developer] coal 32 0
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players set @a[scores={temp=224}] coin 300
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players set @a[scores={temp=231}] coin 900
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players add @a[scores={temp=224},tag=developer] coin 300
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players add @a[scores={temp=231},tag=developer] coin 500
+execute @a[tag=receiveitem] ~ ~ ~ scoreboard players set @a[tag=devreceive] coin 3000
+execute @a[tag=receiveitem] ~ ~ ~ tag @s remove devreceive
+execute @a[tag=receiveitem] ~ ~ ~ tag @s remove receiveitem
+#游客注册
+execute @a[scores={temp=231}] ~ ~ ~ scoreboard players set @s level 1
+execute @a[scores={temp=231}] ~ ~ ~ title @s[scores={language=0}] title §e加载完成
+execute @a[scores={temp=231}] ~ ~ ~ title @s[scores={language=1}] title §eLoading complete
+execute @a[scores={temp=231}] ~ ~ ~ title @s[scores={language=2}] title §e加載完成
+execute @a[scores={temp=231}] ~ ~ ~ title @s[scores={language=3}] title §e読み込み完了
+execute @a[scores={temp=231}] ~ ~ ~ title @s[scores={language=0}] subtitle §6@s §b踏上新征程吧！
+execute @a[scores={temp=231}] ~ ~ ~ title @s[scores={language=1}] subtitle §6@s §bEnjoy your SkyBlock
+execute @a[scores={temp=231}] ~ ~ ~ title @s[scores={language=2}] subtitle §6@s §b享受您的空島生存
+execute @a[scores={temp=231}] ~ ~ ~ title @s[scores={language=3}] subtitle §6@s §bSkyBlockをお楽しみください
+execute @a[scores={temp=231}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f账号创建完成。"}]}
+execute @a[scores={temp=231}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fAccount creation completed."}]}
+execute @a[scores={temp=231}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f帳號創建完成。"}]}
+execute @a[scores={temp=231}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fアカウントの作成が完了しました。"}]}
+execute @a[scores={temp=231}] ~ ~ ~ scoreboard players reset @a[scores={temp=230..231}] temp
+#用户注册
 execute @a[scores={temp=224}] ~ ~ ~ tellraw @a[scores={temp=224,uid=!0,level=!0,language=0},tag=!registered] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f由于您上次的注册被中断，系统已自动修复并且为您重新注册。"}]}
 execute @a[scores={temp=224}] ~ ~ ~ tellraw @a[scores={temp=224,uid=!0,level=!0,language=1},tag=!registered] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fSince your last registration was interrupted, the system has been automatically repaired and re registered for you."}]}
 execute @a[scores={temp=224}] ~ ~ ~ tellraw @a[scores={temp=224,uid=!0,level=!0,language=2},tag=!registered] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f由於您上次的注册被中斷，系統已自動修復並且為您重新注册。"}]}
@@ -787,10 +891,13 @@ execute @a[scores={temp=224}] ~ ~ ~ title @s[scores={temp=224,language=3}] subti
 execute @a[scores={temp=224},c=1] ~ ~ ~ scoreboard players set @s receive 0
 execute @a[scores={temp=224},c=1] ~ ~ ~ scoreboard players set @s receivetext 0
 execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224},c=1] level 1
-execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224},c=1] coin 300
 execute @a[scores={temp=224}] ~ ~ ~ scoreboard players operation @s uid = uidafter uidafter
 execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] temp 223
 execute @a[scores={temp=223..224,uid=!1..40000}] ~ ~ ~ scoreboard players set @s temp 225
+execute @a[scores={temp=225,uid=!1..40000}] ~ ~ ~ scoreboard players set uidafter uidafter 40001
+execute @a[scores={temp=225,uid=!1..40000}] ~ ~ ~ scoreboard players set @s coin 0
+execute @a[scores={temp=225,uid=!1..40000}] ~ ~ ~ scoreboard players set @s level 0
+execute @a[scores={temp=225,uid=!1..40000}] ~ ~ ~ clear @s
 #插入部分
 #setposition
 execute @a[scores={temp=223}] ~ ~ ~ scoreboard players set @a[scores={temp=223,uid=!0}] tptype 1
@@ -809,6 +916,13 @@ execute @a[scores={temp=1005,uid=!0,tptype=5}] ~ ~ ~ scoreboard players operatio
 #检索初始化
 execute @a[scores={temp=1001..1005}] ~ ~ ~ scoreboard players set @a[scores={temp=1001..1005,uid=!0}] temp 1000
 execute @a[scores={temp=223}] ~ ~ ~ scoreboard players set @a[scores={temp=223,uid=!0}] temp 999
+execute @a[scores={temp=999,z=100000..}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f您选择的检索方式不适用于您该方式下的数值。"}]}
+execute @a[scores={temp=999,z=100000..}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fThe retrieval method you have selected is not applicable to the values in this mode."}]}
+execute @a[scores={temp=999,z=100000..}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f您選擇的檢索方式不適用於您該管道下的數值。"}]}
+execute @a[scores={temp=999,z=100000..}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f選択した検索方式はこの方式の数値には適用されません。"}]}
+execute @a[scores={temp=999,z=100000..}] ~ ~ ~ scoreboard players set @s x 0
+execute @a[scores={temp=999,z=100000..}] ~ ~ ~ scoreboard players reset @s temp
+execute @a[scores={z=100000..}] ~ ~ ~ scoreboard players set @s z 0
 #解析
 execute @a[scores={temp=999..1000}] ~ ~ ~ scoreboard players remove @a[scores={z=201..400,temp=999..1000}] z 200
 execute @a[scores={temp=999..1000}] ~ ~ ~ scoreboard players remove @a[scores={z=401..600,temp=999..1000}] z 400
@@ -1210,11 +1324,11 @@ execute @a[scores={temp=999..1000}] ~ ~ ~ scoreboard players set @a[scores={uid=
 execute @a[scores={temp=999..1000}] ~ ~ ~ scoreboard players set @a[scores={uid=39601..39800,temp=999..1000}] x 199
 execute @a[scores={temp=999..1000}] ~ ~ ~ scoreboard players set @a[scores={uid=39801..40000,temp=999..1000}] x 200
 #使用id标注
-execute @a[scores={temp=1000,tptype=1}] ~ ~ ~ scoreboard players operation @s iduse += @s uid
-execute @a[scores={temp=1000,tptype=2}] ~ ~ ~ scoreboard players operation @s iduse += @s id
-execute @a[scores={temp=1000,tptype=3}] ~ ~ ~ scoreboard players operation @s iduse += @s guild
-execute @a[scores={temp=1000,tptype=4}] ~ ~ ~ scoreboard players operation @s iduse += @s visit
-execute @a[scores={temp=1000,tptype=5}] ~ ~ ~ scoreboard players operation @s iduse += @s party
+execute @a[scores={temp=1000,tptype=1}] ~ ~ ~ scoreboard players operation @s iduse = @s uid
+execute @a[scores={temp=1000,tptype=2}] ~ ~ ~ scoreboard players operation @s iduse = @s id
+execute @a[scores={temp=1000,tptype=3}] ~ ~ ~ scoreboard players operation @s iduse = @s guild
+execute @a[scores={temp=1000,tptype=4}] ~ ~ ~ scoreboard players operation @s iduse = @s visit
+execute @a[scores={temp=1000,tptype=5}] ~ ~ ~ scoreboard players operation @s iduse = @s party
 #反馈
 #uid反馈
 execute @a[scores={temp=1000}] ~ ~ ~ tellraw @a[scores={temp=1000,language=0,uid=!0,tptype=1}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§a检索成功！§f您现在可以返回您自己的岛屿！目标岛屿识别符：§l§e"},{"score":{"name":"@s","objective":"iduse"}},{text"，检索方式： §l§6UID检索 §r§f。"}]}
@@ -1732,10 +1846,10 @@ execute @a[scores={temp=220..226}] ~ ~ ~ tellraw @a[scores={temp=221,language=1}
 execute @a[scores={temp=220..226}] ~ ~ ~ tellraw @a[scores={temp=221,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f系統繁忙，請稍後再試。"}]}
 execute @a[scores={temp=220..226}] ~ ~ ~ tellraw @a[scores={temp=221,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fシステムが忙しいので、後で試してください。"}]}
 execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=225}] temp 226
-execute @a[scores={temp=220..226}] ~ ~ ~ tellraw @a[scores={temp=225,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f无可用的用户识别符，您当前无法完成注册！当前无管理员在线，请联系管理员。"}]}
-execute @a[scores={temp=220..226}] ~ ~ ~ tellraw @a[scores={temp=225,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fNo uid available, you can't complete the registration at present! There is no administrator online, please contact the administrator."}]}
-execute @a[scores={temp=220..226}] ~ ~ ~ tellraw @a[scores={temp=225,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f無可用的用戶識別符，您當前無法完成注册！當前無管理員線上，請聯系管理員。"}]}
-execute @a[scores={temp=220..226}] ~ ~ ~ tellraw @a[scores={temp=225,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f利用可能なUIDがありません。登録は現在完了していません。現在は管理者がいませんので、管理者に連絡してください。"}]}
+execute @a[scores={temp=220..226}] ~ ~ ~ tellraw @a[scores={temp=225,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f无可用的用户识别符，您当前无法完成注册！当前无管理员在线，请联系管理员。您也可以选择使用游客注册。"}]}
+execute @a[scores={temp=220..226}] ~ ~ ~ tellraw @a[scores={temp=225,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fNo uid available, you can't complete the registration at present! There is no administrator online, please contact the administrator. You can also choose to use visitor registration."}]}
+execute @a[scores={temp=220..226}] ~ ~ ~ tellraw @a[scores={temp=225,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f無可用的用戶識別符，您當前無法完成注册！當前無管理員線上，請聯系管理員。您也可以選擇使用遊客注册。"}]}
+execute @a[scores={temp=220..226}] ~ ~ ~ tellraw @a[scores={temp=225,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f利用可能なUIDがありません。登録は現在完了していません。現在は管理者がいませんので、管理者に連絡してください。旅行者登録も選択できます。"}]}
 execute @a[scores={temp=220..226}] ~ ~ ~ tellraw @a[scores={temp=226,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f无可用的用户识别符，您当前无法完成注册！系统已经向在线管理员发出提示。"}]}
 execute @a[scores={temp=220..226}] ~ ~ ~ tellraw @a[scores={temp=226,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fNo uid available, you can't complete the registration at present! The system has issued a prompt to the online administrator."}]}
 execute @a[scores={temp=220..226}] ~ ~ ~ tellraw @a[scores={temp=226,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f無可用的用戶識別符，您當前無法完成注册！系統已經向線上管理員發出提示。"}]}
@@ -1891,43 +2005,40 @@ scoreboard players set @a[scores={temp=223}] actionbar 10
 tag * remove developer
 tag @a[name=xhduoduobaby] add developer
 tag @a[name=xh小胡] add developer
+tag @a[name=HeroHerobrine26] add developer
+tag @a[name=JUNCHA2019] add developer
+tag @a[name=JunchaOfficial] add developer
 #每日的登录物品
-give @a[tag=developer,tag=!developerdaily,scores={uid=!0}] cake 1 0
-tag @a[tag=developer,tag=!developerdaily,scores={uid=!0}] add developerdaily
-#adminget
-execute @a[scores={developer=0},tag=developer] ~ ~ ~ tellraw @a[scores={developer=0,language=0,login=2},tag=admin,tag=developer] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f尊敬的开发者 §6"},{"selector":"@s"},{"text":" §f，欢迎回家！"}]}
-execute @a[scores={developer=0},tag=developer] ~ ~ ~ tellraw @a[scores={developer=0,language=1,login=2},tag=admin,tag=developer] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fDear developers §6"},{"selector":"@s"},{"text":" §f, welcome home!"}]}
-execute @a[scores={developer=0},tag=developer] ~ ~ ~ tellraw @a[scores={developer=0,language=2,login=2},tag=admin,tag=developer] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f尊敬的開發者 §6"},{"selector":"@s"},{"text":" §f，歡迎回家！"}]}
-execute @a[scores={developer=0},tag=developer] ~ ~ ~ tellraw @a[scores={developer=0,language=3,login=2},tag=admin,tag=developer] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f尊敬する開発者 §6"},{"selector":"@s"},{"text":" §f、お帰りください。"}]}
-execute @a[scores={developer=0},tag=developer] ~ ~ ~ tellraw @a[scores={developer=0,language=0,login=2},tag=!admin,tag=developer] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f尊敬的开发者 §6"},{"selector":"@s"},{"text":" §f，欢迎您回来！您当前未获得管理员权限，请键入您的验证密钥以获得临时的管理权限。"}]}
-execute @a[scores={developer=0},tag=developer] ~ ~ ~ tellraw @a[scores={developer=0,language=1,login=2},tag=!admin,tag=developer] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fDear developer §6"},{"selector":"@s"},{"text":" §f, welcome back! You do not currently have administrator rights. Please enter your authentication key to obtain temporary administrative rights."}]}
-execute @a[scores={developer=0},tag=developer] ~ ~ ~ tellraw @a[scores={developer=0,language=2,login=2},tag=!admin,tag=developer] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f尊敬的開發者 §6"},{"selector":"@s"},{"text":" §f，歡迎您回來！您當前未獲得管理員許可權，請鍵入您的驗證金鑰以獲得臨時的管理許可權。"}]}
-execute @a[scores={developer=0},tag=developer] ~ ~ ~ tellraw @a[scores={developer=0,language=3,login=2},tag=!admin,tag=developer] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f尊敬する開発者 §6"},{"selector":"@s"},{"text":" §f、お帰りください。現在管理者権限がありません。認証鍵を入力して、一時的な管理権限を取得してください。"}]}
-scoreboard players set @a[tag=developer,tag=!admin,scores={developer=0}] developer 1
-execute @e[type=minecraft:item,name=developer] ~ ~ ~ scoreboard players set @p[r=5,tag=!admin,tag=developer,scores={developer=1}] developer 2
-execute @a[tag=!admin,tag=developer,scores={developer=2}] ~ ~ ~ kill @e[type=minecraft:item,name=developer]
-tellraw @a[scores={developer=2,language=0},tag=!admin,tag=developer] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f尊敬的开发者，您即将获得临时的管理员权限。请键入您的验证密钥激活权限！如果您现在处于联机游戏或网络游戏之中，请您与该联机游戏或网络游戏的所有者沟通并获得所有者的同意后再输入密钥。"}]}
-tellraw @a[scores={developer=2,language=1},tag=!admin,tag=developer] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fDear developer, you are about to gain temporary administrator rights. Please enter your authentication key activation authority! If you are currently in an online game or online game, please communicate with the owner of the online game or online game and obtain the owner's consent before entering the key."}]}
-tellraw @a[scores={developer=2,language=2},tag=!admin,tag=developer] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f尊敬的開發者，您即將獲得臨時的管理員許可權。請鍵入您的驗證金鑰啟動許可權！如果您現在處於聯機遊戲或網路遊戲之中，請您與該聯機遊戲或網路遊戲的所有者溝通並獲得所有者的同意後再輸入金鑰。"}]}
-tellraw @a[scores={developer=2,language=3},tag=!admin,tag=developer] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f尊敬する開発者は、臨時の管理者権限を取得します。認証鍵の有効化権限を入力してください。オンラインゲームやオンラインゲームの中にいる場合は、オンラインゲームやオンラインゲームの所有者と意思疎通して所有者の同意を得て鍵を入力してください。"}]}
-scoreboard players set @a[tag=developer,tag=!admin,scores={developer=2}] developer 3
-execute @e[type=minecraft:item,name=Zhiyu2005xhduoduobabydeveloper] ~ ~ ~ scoreboard players set @p[r=5,tag=!admin,tag=developer,scores={developer=3}] developer 4
-execute @a[tag=!admin,tag=developer,scores={developer=4}] ~ ~ ~ kill @e[type=minecraft:item,name=Zhiyu2005xhduoduobabydeveloper]
-tellraw @a[scores={developer=4,language=0},tag=!admin,tag=developer] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f尊敬的开发者，您已经成功的获得了临时的管理员权限。"}]}
-tellraw @a[scores={developer=4,language=1},tag=!admin,tag=developer] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fDear developer, you have successfully obtained temporary administrator rights."}]}
-tellraw @a[scores={developer=4,language=2},tag=!admin,tag=developer] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f尊敬的開發者，您已經成功的獲得了臨時的管理員許可權。"}]}
-tellraw @a[scores={developer=4,language=3},tag=!admin,tag=developer] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f尊敬する開発者は、一時的な管理者権限を得ることに成功しました。"}]}
-scoreboard players set @a[tag=developer,tag=!admin,scores={developer=4}] developer 5
-tag @a[tag=developer,scores={developer=5}] add admin
-gamemode creative @a[tag=developer,scores={developer=5},m=!creative]
-give @a[tag=developer,scores={developer=5},m=creative] command_block_
-give @a[tag=developer,scores={developer=5},m=creative] barrier
-give @a[tag=developer,scores={developer=5},m=creative] structure_block
-give @a[tag=developer,scores={developer=5},m=creative] structure_void
-give @a[tag=developer,scores={developer=5},m=creative] allow
-give @a[tag=developer,scores={developer=5},m=creative] deny
-give @a[tag=developer,scores={developer=5},m=creative] border_block
-scoreboard players set @a[tag=developer,scores={developer=5}] developer 6
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @a[tag=developer,tag=!developerdaily,scores={uid=!0}] cake 1 0
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ scoreboard players random @s developerdaily 1 27
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=1}] potion 1 5
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=2}] potion 1 6
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=3}] potion 1 7
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=4}] potion 1 8
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=5}] potion 1 9
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=6}] potion 1 10
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=7}] potion 1 11
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=8}] potion 1 12
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=9}] potion 1 13
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=10}] potion 1 14
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=11}] potion 1 15
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=12}] potion 1 16
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=13}] potion 1 19
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=14}] potion 1 20
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=15}] potion 1 21
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=16}] potion 1 22
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=17}] potion 1 28
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=18}] potion 1 29
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=19}] potion 1 30
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=20}] potion 1 31
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=21}] potion 1 32
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=22}] potion 1 33
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=23}] potion 1 37
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=24}] potion 1 38
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=25}] potion 1 39
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=26}] potion 1 40
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=27}] potion 1 41
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ tag @s add developerdaily
 #islandbarrier
 execute @e[type=minecraft:item] ~ ~ ~ detect ~ 0 ~ bedrock 0 kill @s
 execute @e[type=minecraft:item] ~ ~ ~ detect ~ 1 ~ deny 0 kill @s
@@ -2893,16 +3004,51 @@ kick @a[scores={language=3,bantime=4730400..5255999}] §f現在は禁止され�
 kick @a[scores={language=3,bantime=5256000..5781599}] §f現在は禁止されています。ゲームに参加できません。封禁解除まであと §l§e10 年 §r§f。異議があれば管理人に連絡してください。現在Skyblock for Server v1.0.0 を実行しています。開発者： §l§d祉语ちゃん §r§f。§6GitHub§fホームページ： §3https://github.com/xiaozhiyuqwq§f ,§aGitee§fホームページ:  §chttps://gitee.com/xiaozhiyuqwq§f 。
 kick @a[scores={language=3,bantime=5781600..}] §f現在は禁止されています。ゲームに参加できません。封禁解除まであと §l§e10+ 年 §r§f。異議があれば管理人に連絡してください。現在Skyblock for Server v1.0.0 を実行しています。開発者： §l§d祉语ちゃん §r§f。§6GitHub§fホームページ： §3https://github.com/xiaozhiyuqwq§f ,§aGitee§fホームページ:  §chttps://gitee.com/xiaozhiyuqwq§f 。
 #彩蛋（bushi
+#彩蛋标签的获取
+scoreboard players add @a sign_in 0
+execute @a[scores={sign_in=0}] ~ ~ ~ scoreboard players random @a[scores={sign_in=0}] stinger 301 304
+#天気の子
+execute @a[scores={stinger=301}] ~ ~ ~ tag * remove weatheringwithyou
+execute @r[scores={stinger=301}] ~ ~ ~ tag @r[tag=!stinger] add weatheringwithyou
+execute @a[tag=weatheringwithyou,scores={stinger=301}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7天空比大海还要深,是个未知的世界。 摘录自 §b天气之子§7 。"}]}
+execute @a[tag=weatheringwithyou,scores={stinger=301}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7空は海よりも深く、未知の世界だった。Excerpt from §bWeathering With You§7 ."}]}
+execute @a[tag=weatheringwithyou,scores={stinger=301}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7天空比大海還要深，是個未知的世界。摘錄自 §b天氣之子§7 。 "}]}
+execute @a[tag=weatheringwithyou,scores={stinger=301}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7空は海よりも深く、未知の世界だった。 §b天気の子§7 から抜粋します。"}]}
+#君の名は。
+execute @a[scores={stinger=302}] ~ ~ ~ tag * remove yourname
+execute @r[scores={stinger=302}] ~ ~ ~ tag @r[tag=!stinger] add yourname
+execute @a[tag=yourname,scores={stinger=302}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7我来见你了。真不容易啊，你在好远的地方啊。 摘录自 §b你的名字。§7 。"}]}
+execute @a[tag=yourname,scores={stinger=302}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7お前に会いに来たんだ。大変だったよ。お前すげえ遠くにいるから。 Excerpt from §bYour Name§7 ."}]}
+execute @a[tag=yourname,scores={stinger=302}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7我來見你了。真不容易啊，你在好遠的地方啊。 摘錄自 §b你的名字。§7 。 "}]}
+execute @a[tag=yourname,scores={stinger=302}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7お前に会いに来たんだ。大変だったよ。お前すげえ遠くにいるから。 §b君の名は。§7 から抜粋します。"}]}
+#千と千寻の神隠し
+execute @a[scores={stinger=303}] ~ ~ ~ tag * remove spiritedaway
+execute @a[scores={stinger=303}] ~ ~ ~ tag @r[tag=!stinger] add spiritedaway
+execute @a[tag=spiritedaway,scores={stinger=303}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7既然插手要做，就要做到底。 摘录自 §b千与千寻§7 。"}]}
+execute @a[tag=spiritedaway,scores={stinger=303}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7手を出すんなら、しまいまでやれ！ Excerpt from §bSpirited Away§7 ."}]}
+execute @a[tag=spiritedaway,scores={stinger=303}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7既然插手要做，就要做到底。 摘錄自 §b千與千尋§7 。 "}]}
+execute @a[tag=spiritedaway,scores={stinger=303}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7手を出すんなら、しまいまでやれ！ §b千と千寻の神隠し§7 から抜粋します。"}]}
+#あの日見た花の名前を僕達はまだ知らない。
+execute @a[scores={stinger=304}] ~ ~ ~ tag * remove buster
+execute @a[scores={stinger=304}] ~ ~ ~ tag @r[tag=!stinger] add buster
+execute @a[tag=buster,scores={stinger=304}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7我们总是在注意错过太多，却不注意自己拥有多少。 摘录自 §b我们仍未知道那天所看见的花的名字。§7 。"}]}
+execute @a[tag=buster,scores={stinger=304}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7私たちは、自分がどれだけ持っているのかを気にしていません Excerpt from §bあの日見た花の名前を僕達はまだ知らない。§7 ."}]}
+execute @a[tag=buster,scores={stinger=304}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7我們總是在注意錯過太多，卻不注意自己擁有多少。 摘錄自 §b我們仍未知道那天所看見的花的名字。§7 。 "}]}
+execute @a[tag=buster,scores={stinger=304}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7私たちは、自分がどれだけ持っているのかを気にしていません。 §bあの日見た花の名前を僕達はまだ知らない。§7 から抜粋します。"}]}
+#执行彩蛋区域
+#主要
+scoreboard players set @a[scores={sign_in=0}] sign_in 1
+scoreboard players reset @a[scores={stinger=301..}] stinger
 #天気の子彩蛋（迷
 execute @e[type=item,name=天气之子] ~ ~ ~ tag @p[r=5,tag=weatheringwithyou,tag=!stinger] add weather
 execute @e[type=item,name=天気の子] ~ ~ ~ tag @p[r=5,tag=weatheringwithyou,tag=!stinger] add weather
 execute @e[type=item,name=WeatheringWithYou] ~ ~ ~ tag @p[r=5,tag=weatheringwithyou,tag=!stinger] add weather
 execute @e[type=item,name=weatheringwithyou] ~ ~ ~ tag @p[r=5,tag=weatheringwithyou,tag=!stinger] add weather
 execute @a[tag=weatheringwithyou,tag=weather] ~ ~ ~ weather clear
-execute @a[tag=weatheringwithyou,tag=weather] ~ ~ ~ tellraw @a[scores={language=0},tag=weather] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f我从来不知道，渴望蓝天的人居然有那么多。  摘录自 <天气之子> 。"}]}
-execute @a[tag=weatheringwithyou,tag=weather] ~ ~ ~ tellraw @a[scores={language=1},tag=weather] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fI never knew there were so many people who yearned for the blue sky. Excerpt from <Weathering With You> ."}]}
-execute @a[tag=weatheringwithyou,tag=weather] ~ ~ ~ tellraw @a[scores={language=2},tag=weather] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f我從來不知道，渴望藍天的人居然有那麼多。 摘錄自 <天氣之子> 。"}]}
-execute @a[tag=weatheringwithyou,tag=weather] ~ ~ ~ tellraw @a[scores={language=3},tag=weather] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f青空を渇望する人がこんなに多いとは知らなかった。 「天気の子」から抜粋します。"}]}
+execute @a[tag=weatheringwithyou,tag=weather] ~ ~ ~ tellraw @a[scores={language=0},tag=weather] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7我从来不知道，渴望蓝天的人居然有那么多。  摘录自 §b天气之子§7 。"}]}
+execute @a[tag=weatheringwithyou,tag=weather] ~ ~ ~ tellraw @a[scores={language=1},tag=weather] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7I never knew there were so many people who yearned for the blue sky. Excerpt from §bWeathering With You§7 ."}]}
+execute @a[tag=weatheringwithyou,tag=weather] ~ ~ ~ tellraw @a[scores={language=2},tag=weather] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7我從來不知道，渴望藍天的人居然有那麼多。 摘錄自 §b天氣之子§7 。"}]}
+execute @a[tag=weatheringwithyou,tag=weather] ~ ~ ~ tellraw @a[scores={language=3},tag=weather] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7青空を渇望する人がこんなに多いとは知らなかった。 §b天気の子§7 から抜粋します。"}]}
 execute @a[tag=weatheringwithyou,tag=weather] ~ ~ ~ tellraw @a[scores={language=0},tag=!weather] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f呐，现在开始就要放晴了哦~"}]}
 execute @a[tag=weatheringwithyou,tag=weather] ~ ~ ~ tellraw @a[scores={language=1},tag=!weather] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fね~今から晴れますよ。"}]}
 execute @a[tag=weatheringwithyou,tag=weather] ~ ~ ~ tellraw @a[scores={language=2},tag=!weather] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f呐，現在開始就要放晴了哦~"}]}
@@ -2927,10 +3073,10 @@ execute @a[tag=yourname,tag=name] ~ ~ ~ execute @a[tag=name1] ~ ~ ~ tellraw @s[s
 execute @a[tag=yourname,tag=name] ~ ~ ~ execute @a[tag=name1] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f大切な人、绝対に忘れてはいけない人。"}]}
 execute @a[tag=yourname,tag=name] ~ ~ ~ execute @a[tag=name1] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f那個不能忘記的人，是誰呢？"}]}
 execute @a[tag=yourname,tag=name] ~ ~ ~ execute @a[tag=name1] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f大切な人、绝対に忘れてはいけない人。"}]}
-execute @a[tag=yourname,tag=name] ~ ~ ~ execute @a[tag=name1] ~ ~ ~ tellraw @a[tag=yourname,tag=name,scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f说起来，我感觉一直在做一个奇怪的梦，好像是变成别人的梦。 摘录自 <你的名字。> 。"}]}
-execute @a[tag=yourname,tag=name] ~ ~ ~ execute @a[tag=name1] ~ ~ ~ tellraw @a[tag=yourname,tag=name,scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f言う、私はずっと1つの奇怪な夢をして、感じて、他人の夢になるようです。 Excerpt from <Your Name> ."}]}
-execute @a[tag=yourname,tag=name] ~ ~ ~ execute @a[tag=name1] ~ ~ ~ tellraw @a[tag=yourname,tag=name,scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f說起來，我感覺一直在做一個奇怪的夢，好像是變成別人的夢。 摘錄自 <你的名字。> 。"}]}
-execute @a[tag=yourname,tag=name] ~ ~ ~ execute @a[tag=name1] ~ ~ ~ tellraw @a[tag=yourname,tag=name,scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f言う、私はずっと1つの奇怪な夢をして、感じて、他人の夢になるようです。 「君の名は。」から抜粋します。"}]}
+execute @a[tag=yourname,tag=name] ~ ~ ~ execute @a[tag=name1] ~ ~ ~ tellraw @a[tag=yourname,tag=name,scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7说起来，我感觉一直在做一个奇怪的梦，好像是变成别人的梦。 摘录自 §b你的名字。§7 。"}]}
+execute @a[tag=yourname,tag=name] ~ ~ ~ execute @a[tag=name1] ~ ~ ~ tellraw @a[tag=yourname,tag=name,scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7言う、私はずっと1つの奇怪な夢をして、感じて、他人の夢になるようです。 Excerpt from §bYour Name§7 ."}]}
+execute @a[tag=yourname,tag=name] ~ ~ ~ execute @a[tag=name1] ~ ~ ~ tellraw @a[tag=yourname,tag=name,scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7說起來，我感覺一直在做一個奇怪的夢，好像是變成別人的夢。 摘錄自 §b你的名字。§7 。"}]}
+execute @a[tag=yourname,tag=name] ~ ~ ~ execute @a[tag=name1] ~ ~ ~ tellraw @a[tag=yourname,tag=name,scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7言う、私はずっと1つの奇怪な夢をして、感じて、他人の夢になるようです。 §b君の名は。§7 から抜粋します。"}]}
 title @a[tag=yourname,tag=name] times 10 70 20
 execute @a[tag=yourname,tag=name] ~ ~ ~ execute @a[tag=name1] ~ ~ ~ tag @a[tag=name] add stinger
 execute @a[tag=yourname,tag=name] ~ ~ ~ execute @a[tag=name1] ~ ~ ~ tag @a[tag=name1] add stinger
@@ -2943,10 +3089,10 @@ execute @e[type=item,name=千と千寻の神隠し] ~ ~ ~ tag @p[r=5,tag=spirite
 execute @e[type=item,name=千與千尋] ~ ~ ~ tag @p[r=5,tag=spiritedaway,tag=!stinger] add away
 execute @e[type=item,name=SpiritedAway] ~ ~ ~ tag @p[r=5,tag=spiritedaway,tag=!stinger] add away
 execute @e[type=item,name=spiritedaway] ~ ~ ~ tag @p[r=5,tag=spiritedaway,tag=!stinger] add away
-execute @a[tag=spiritedaway,tag=away] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f我不知道离别的滋味是这样凄凉，我不知道说声再见要这么坚强。 摘录自 <千与千寻> 。"}]}
-execute @a[tag=spiritedaway,tag=away] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fI don't know the feeling of parting is so desolate, I don't know to say goodbye so strong. Excerpt from <Spirited Away> ."}]}
-execute @a[tag=spiritedaway,tag=away] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f我不知道離別的滋味是這樣淒涼，我不知道說聲再見要這麼堅強。 摘錄自 <千與千尋> 。"}]}
-execute @a[tag=spiritedaway,tag=away] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f私は知らないお别れの味はこう惨めで言っているのか分からないんでさようならなければならない。强いよ。 「千と千寻の神隠し」から抜粋します。"}]}
+execute @a[tag=spiritedaway,tag=away] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7我不知道离别的滋味是这样凄凉，我不知道说声再见要这么坚强。 摘录自 §b千与千寻§7 。"}]}
+execute @a[tag=spiritedaway,tag=away] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7I don't know the feeling of parting is so desolate, I don't know to say goodbye so strong. Excerpt from §bSpirited Away§7 ."}]}
+execute @a[tag=spiritedaway,tag=away] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7我不知道離別的滋味是這樣淒涼，我不知道說聲再見要這麼堅強。 摘錄自 §b千與千尋§7 。"}]}
+execute @a[tag=spiritedaway,tag=away] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7私は知らないお别れの味はこう惨めで言っているのか分からないんでさようならなければならない。强いよ。 §b千と千寻の神隠し§7 から抜粋します。"}]}
 execute @a[tag=spiritedaway,tag=away] ~ ~ ~ effect @s resistance 900 225 true
 execute @a[tag=spiritedaway,tag=away] ~ ~ ~ effect @s invisibility 900 225 true
 execute @a[tag=spiritedaway,tag=away] ~ ~ ~ tag @s add stinger
@@ -2962,49 +3108,15 @@ execute @e[type=item,name=未闻花名] ~ ~ ~ tag @p[r=5,tag=buster,tag=!stinger
 execute @e[type=item,name=我們仍未知道那天所看見的花的名字。] ~ ~ ~ tag @p[r=5,tag=buster,tag=!stinger] add busters
 execute @e[type=item,name=我們仍未知道那天所看見的花的名字] ~ ~ ~ tag @p[r=5,tag=buster,tag=!stinger] add busters
 execute @e[type=item,name=未聞花名] ~ ~ ~ tag @p[r=5,tag=buster,tag=!stinger] add busters
-execute @a[tag=buster,tag=busters] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f已知花意，未闻花名，再见花时，泪落千溟。已知花意，未闻其花，已见其花，未闻花名。 摘录自 <我们仍未知道那天所看见的花的名字。> 。"}]}
-execute @a[tag=buster,tag=busters] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fKnown it is not meaning, smelling a flower, bye flower, tears fall thousand styles. Known it is not, to smell the flowers, has seen its flower, smell a flower. Excerpt from <あの日見た花の名前を僕達はまだ知らない。> ."}]}
-execute @a[tag=buster,tag=busters] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f已知花意，未聞花名，再見花時，淚落千溟。已知花意，未聞其花，已見其花，未聞花名。 摘錄自 <我們仍未知道那天所看見的花的名字。> 。"}]}
-execute @a[tag=buster,tag=busters] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f既知の花花意せず、その花を知る、未闻花の名を、またその花は、涙が落ち千海。 「あの日見た花の名前を僕達はまだ知らない。」 から抜粋します。"}]}
+execute @a[tag=buster,tag=busters] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7已知花意，未闻花名，再见花时，泪落千溟。已知花意，未闻其花，已见其花，未闻花名。 摘录自 §b我们仍未知道那天所看见的花的名字。§7 。"}]}
+execute @a[tag=buster,tag=busters] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7Known it is not meaning, smelling a flower, bye flower, tears fall thousand styles. Known it is not, to smell the flowers, has seen its flower, smell a flower. Excerpt from §bあの日見た花の名前を僕達はまだ知らない。§7 ."}]}
+execute @a[tag=buster,tag=busters] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7已知花意，未聞花名，再見花時，淚落千溟。已知花意，未聞其花，已見其花，未聞花名。 摘錄自 §b我們仍未知道那天所看見的花的名字。§7 。"}]}
+execute @a[tag=buster,tag=busters] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7既知の花花意せず、その花を知る、未闻花の名を、またその花は、涙が落ち千海。 §bあの日見た花の名前を僕達はまだ知らない。§7 から抜粋します。"}]}
 execute @a[tag=buster,tag=busters] ~ ~ ~ fill ~ ~-1 ~ ~ ~-1 ~ dirt 0 destroy
 execute @a[tag=buster,tag=busters] ~ ~ ~ fill ~ ~ ~ ~ ~ ~ red_flower 8 destroy
 execute @a[tag=buster,tag=busters] ~ ~ ~ tag @a[tag=busters] add stinger
 tag @a[tag=busters] remove buster
 tag @a[tag=busters] remove busters
-#主要
-scoreboard players add @a sign_in 0
-execute @a[scores={sign_in=0}] ~ ~ ~ scoreboard players random @a[scores={sign_in=0}] stinger 301 304
-#天気の子
-execute @a[scores={stinger=301}] ~ ~ ~ tag * remove weatheringwithyou
-execute @r[scores={stinger=301}] ~ ~ ~ tag @r[tag=!stinger] add weatheringwithyou
-execute @a[tag=weatheringwithyou,scores={stinger=301}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f天空比大海还要深,是个未知的世界。 摘录自 <天气之子> 。"}]}
-execute @a[tag=weatheringwithyou,scores={stinger=301}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f空は海よりも深く、未知の世界だった。Excerpt from <Weathering With You> ."}]}
-execute @a[tag=weatheringwithyou,scores={stinger=301}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f天空比大海還要深，是個未知的世界。摘錄自 <天氣之子> 。 "}]}
-execute @a[tag=weatheringwithyou,scores={stinger=301}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f空は海よりも深く、未知の世界だった。 「天気の子」 から抜粋します。"}]}
-#君の名は。
-execute @a[scores={stinger=302}] ~ ~ ~ tag * remove yourname
-execute @r[scores={stinger=302}] ~ ~ ~ tag @r[tag=!stinger] add yourname
-execute @a[tag=yourname,scores={stinger=302}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f我来见你了。真不容易啊，你在好远的地方啊。 摘录自 <你的名字。> 。"}]}
-execute @a[tag=yourname,scores={stinger=302}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fお前に会いに来たんだ。大変だったよ。お前すげえ遠くにいるから。 Excerpt from <Your Name> ."}]}
-execute @a[tag=yourname,scores={stinger=302}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f我來見你了。真不容易啊，你在好遠的地方啊。 摘錄自 <你的名字。> 。 "}]}
-execute @a[tag=yourname,scores={stinger=302}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fお前に会いに来たんだ。大変だったよ。お前すげえ遠くにいるから。 「君の名は。」 から抜粋します。"}]}
-#千と千寻の神隠し
-execute @a[scores={stinger=303}] ~ ~ ~ tag * remove spiritedaway
-execute @a[scores={stinger=303}] ~ ~ ~ tag @r[tag=!stinger] add spiritedaway
-execute @a[tag=spiritedaway,scores={stinger=303}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f既然插手要做，就要做到底。 摘录自 <千与千寻> 。"}]}
-execute @a[tag=spiritedaway,scores={stinger=303}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f手を出すんなら、しまいまでやれ！ Excerpt from <Spirited Away> ."}]}
-execute @a[tag=spiritedaway,scores={stinger=303}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f既然插手要做，就要做到底。 摘錄自 <千與千尋> 。 "}]}
-execute @a[tag=spiritedaway,scores={stinger=303}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f手を出すんなら、しまいまでやれ！ 「千と千寻の神隠し」 から抜粋します。"}]}
-#あの日見た花の名前を僕達はまだ知らない。
-execute @a[scores={stinger=304}] ~ ~ ~ tag * remove buster
-execute @a[scores={stinger=304}] ~ ~ ~ tag @r[tag=!stinger] add buster
-execute @a[tag=buster,scores={stinger=304}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f我们总是在注意错过太多，却不注意自己拥有多少。 摘录自 <我们仍未知道那天所看见的花的名字。> 。"}]}
-execute @a[tag=buster,scores={stinger=304}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f私たちは、自分がどれだけ持っているのかを気にしていません Excerpt from <あの日見た花の名前を僕達はまだ知らない。> ."}]}
-execute @a[tag=buster,scores={stinger=304}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f我們總是在注意錯過太多，卻不注意自己擁有多少。 摘錄自 <我們仍未知道那天所看見的花的名字。> 。 "}]}
-execute @a[tag=buster,scores={stinger=304}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f私たちは、自分がどれだけ持っているのかを気にしていません。 「あの日見た花の名前を僕達はまだ知らない。」 から抜粋します。"}]}
-#主要
-scoreboard players set @a[scores={sign_in=0}] sign_in 1
-scoreboard players reset @a[scores={stinger=301..}] stinger
 #关于about，temp=50
 #时间记录与初始化
 scoreboard players add @a[scores={temp=50}] about 1
@@ -3026,17 +3138,17 @@ execute @a[scores={temp=50,about=1..,abouttext=0,language=2}] ~ ~ ~ tellraw @s {
 execute @a[scores={temp=50,about=1..,abouttext=0,language=3}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§6について §r§3ここで私達のことをもっと知ります。"}]}
 scoreboard players set @a[scores={temp=50,about=1..,abouttext=0}] abouttext 1
 #文本2
-execute @a[scores={temp=50,about=100..,abouttext=1,language=0}] ~ ~ ~ title @s title §f作者
+execute @a[scores={temp=50,about=100..,abouttext=1,language=0}] ~ ~ ~ title @s title §f开发者
 execute @a[scores={temp=50,about=100..,abouttext=1,language=1}] ~ ~ ~ title @s title §fDeveloper
-execute @a[scores={temp=50,about=100..,abouttext=1,language=2}] ~ ~ ~ title @s title §f作者
+execute @a[scores={temp=50,about=100..,abouttext=1,language=2}] ~ ~ ~ title @s title §f開發者
 execute @a[scores={temp=50,about=100..,abouttext=1,language=3}] ~ ~ ~ title @s title §f開発者
 execute @a[scores={temp=50,about=100..,abouttext=1,language=0}] ~ ~ ~ title @s subtitle §fxiaozhiyuqwq（小祉语qwq）
 execute @a[scores={temp=50,about=100..,abouttext=1,language=1}] ~ ~ ~ title @s subtitle §fxiaozhiyuqwq
 execute @a[scores={temp=50,about=100..,abouttext=1,language=2}] ~ ~ ~ title @s subtitle §fxiaozhiyuqwq（小祉語qwq）
 execute @a[scores={temp=50,about=100..,abouttext=1,language=3}] ~ ~ ~ title @s subtitle §f祉語ちゃん
-execute @a[scores={temp=50,about=100..,abouttext=1,language=0}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§l§6作者 §r§3xiaozhiyuqwq（小祉语qwq） §a歌剧奏响的瞬间，轻音悠远，犹如蔷薇端庄高洁，看落花舞动抚过了少女指尖。 §f祉语，曾用昵称xhduoduobaby。喜爱 我的世界 以及 ACG文化 。Github主页：https://github.com/xiaozhiyuqwq，Gitee主页：https://gitee.com/xiaozhiyuqwq，哔哩哔哩主页：https://space.bilibili.com/437306982。祉语不是小萝莉（虽然有的时候有点小傲娇）！"}]}
+execute @a[scores={temp=50,about=100..,abouttext=1,language=0}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§l§6开发者 §r§3xiaozhiyuqwq（小祉语qwq） §a歌剧奏响的瞬间，轻音悠远，犹如蔷薇端庄高洁，看落花舞动抚过了少女指尖。 §f祉语，曾用昵称xhduoduobaby。喜爱 我的世界 以及 ACG文化 。Github主页：https://github.com/xiaozhiyuqwq，Gitee主页：https://gitee.com/xiaozhiyuqwq，哔哩哔哩主页：https://space.bilibili.com/437306982。祉语不是小萝莉（虽然有的时候有点小傲娇）！"}]}
 execute @a[scores={temp=50,about=100..,abouttext=1,language=1}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§6Developer §r§3xiaozhiyuqwq §fZhiyu, used to be nicknamed xhduobaby. Love Minecraft and ACG culture. GitHub home page: https://github.com/xiaozhiyuqwq , gitee home page: https://gitee.com/xiaozhiyuqwq , Bili Bili homepage: https://space.bilibili.com/437306982 . Zhiyu is not little Lori (although sometimes a little proud)!"}]}
-execute @a[scores={temp=50,about=100..,abouttext=1,language=2}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§l§6作者 §r§3xiaozhiyuqwq（小祉語qwq） §a歌劇奏響的瞬間，輕音悠遠，猶如薔薇端莊高潔，看落花舞動撫過了少女指尖。 §f祉語，曾用昵稱xhduoduobaby。喜愛 Minecraft 以及 ACG文化 。Github主頁：https://github.com/xiaozhiyuqwq，Gitee主頁：https://gitee.com/xiaozhiyuqwq，嗶哩嗶哩主頁：https://space.bilibili.com/437306982。祉語不是小蘿莉（雖然有的時候有點小傲嬌）！"}]}
+execute @a[scores={temp=50,about=100..,abouttext=1,language=2}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§l§6開發者 §r§3xiaozhiyuqwq（小祉語qwq） §a歌劇奏響的瞬間，輕音悠遠，猶如薔薇端莊高潔，看落花舞動撫過了少女指尖。 §f祉語，曾用昵稱xhduoduobaby。喜愛 Minecraft 以及 ACG文化 。Github主頁：https://github.com/xiaozhiyuqwq，Gitee主頁：https://gitee.com/xiaozhiyuqwq，嗶哩嗶哩主頁：https://space.bilibili.com/437306982。祉語不是小蘿莉（雖然有的時候有點小傲嬌）！"}]}
 execute @a[scores={temp=50,about=100..,abouttext=1,language=3}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§6開発者 §r§3祉語ちゃん §f祉語ちゃん。MinecraftとACG文化が好きです。Githubホームページ:https://github.com/xiaozhiyuqwqGiteホームページ：https://gitee.com/xiaozhiyuqwqサージのホームページ:https://space.bilibili.com/43736982。祉語ちゃんはロリじゃないです（ちょっとツンデレな時もありますが）！"}]}
 scoreboard players set @a[scores={temp=50,about=100..,abouttext=1}] abouttext 2
 #文本3

@@ -25,10 +25,6 @@ scoreboard players add @a[scores={login=0}] sign_in 0
 scoreboard players add @a[scores={login=0}] level 0
 scoreboard players add @a[scores={login=0}] uid 0
 scoreboard players add @a[scores={login=0}] language 0
-scoreboard players add @a[scores={login=0}] developer 0
-gamemode adventure @a[scores={login=0,developer=6},m=creative]
-tag @a[scores={login=0,developer=6}] remove admin
-scoreboard players set @a[scores={login=0}] developer 0
 execute @a[scores={language=0}] ~ ~ ~ tellraw @s[scores={login=0,language=0},tag=!admin] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§l§a登录成功！ §l§3"},{"selector":"@s"},{"text":" §6["},{"score":{"name":"@s","objective":"uid"}},{"text":"] §r§f您的用户组： §l§b用户§f-§c等级"},{"score":{"name":"@s","objective":"level"}}]}
 execute @a[scores={language=0}] ~ ~ ~ tellraw @s[scores={login=0,language=0},tag=admin] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§l§a登录成功！ §l§3"},{"selector":"@s"},{"text":" §6["},{"score":{"name":"@s","objective":"uid"}},{"text":"]§r§f您的用户组： §l§b管理员§f-§c等级"},{"score":{"name":"@s","objective":"level"}}]}
 execute @a[scores={language=1}] ~ ~ ~ tellraw @s[scores={login=0,language=1},tag=!admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§aLogin successful! §l§3"},{"selector":"@s"},{"text":" §6["},{"score":{"name":"@s","objective":"uid"}},{"text":"] . §r§fYour user group: §l§bUser§f-§clevel_"},{"score":{"name":"@s","objective":"level"}}]}
@@ -44,10 +40,10 @@ tellraw @a[scores={login=0,language=2,level=1..5,sign_in=0..1,uid=0..40000}] {"r
 tellraw @a[scores={login=0,language=0,level=1..5,sign_in=2,uid=0..40000}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您好，欢迎加入游戏！§6欢迎回来！"}]}
 tellraw @a[scores={login=0,language=1,level=1..5,sign_in=2,uid=0..40000}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fHello, welcome to join the game! §6welcome back! "}]}
 tellraw @a[scores={login=0,language=2,level=1..5,sign_in=2,uid=0..40000}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您好，歡迎加入遊戲！§6歡迎回來！"}]}
-tellraw @a[scores={login=0,language=0,uid=!0..40000}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您好，欢迎加入游戏！§c无效的uid参数！请联系管理员处理！"}]}
-tellraw @a[scores={login=0,language=1,uid=!0..40000}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fHello, welcome to join the game! §cInvalid uid parameter! Please contact the administrator!"}]}
-tellraw @a[scores={login=0,language=2,uid=!0..40000}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您好，歡迎加入遊戲！§c無效的uid參數！請聯系管理員處理！"}]}
-scoreboard players random @a[scores={login=0..2}] logintemp 1 128
+tellraw @a[scores={login=0,language=0,uid=40001..99999}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您好，欢迎加入游戏！§c无效的用户识别符参数！请联系管理员处理！"}]}
+tellraw @a[scores={login=0,language=1,uid=40001..99999}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fHello, welcome to join the game! §cInvalid uid parameter! Please contact the administrator!"}]}
+tellraw @a[scores={login=0,language=2,uid=40001..99999}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您好，歡迎加入遊戲！§c無效的用戶識別符參數！請聯系管理員處理！"}]}
+scoreboard players random @a[scores={login=0}] logintemp 1 128
 tellraw @a[scores={sign_in=0..1,login=0,hitokotolang=0,logintemp=1}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f萧萧梧叶送寒声，江上秋风动客情。"}]}
 tellraw @a[scores={sign_in=0..1,login=0,hitokotolang=0,logintemp=2}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f人生得意须尽欢，莫使金樽空对月。"}]}
 tellraw @a[scores={sign_in=0..1,login=0,hitokotolang=0,logintemp=3}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f忆对中秋丹桂丛，花也杯中，月也杯中。"}]}
@@ -1769,8 +1765,13 @@ execute @a[scores={login=3,language=0}] ~ ~ ~ title @s subtitle §f空岛生存-
 execute @a[scores={login=3,language=1}] ~ ~ ~ title @s subtitle §fSkyblock For Server v1.0.0
 execute @a[scores={login=3,language=2}] ~ ~ ~ title @s subtitle §f空島生存-服務端版本 v1.0.0
 scoreboard players add @a[scores={login=0..3}] login 1
-execute @a[scores={login=1}] ~ ~ ~ scoreboard players set @e[type=minecraft:armor_stand,x=0,y=75,z=0,r=3,scores={typeid=128}] list 0
-execute @a[scores={login=1}] ~ ~ ~ execute @a ~ ~ ~ scoreboard players add @e[type=minecraft:armor_stand,x=0,y=75,z=0,r=3,scores={typeid=128}] list 1
-execute @a[scores={login=1}] ~ ~ ~ execute @e[type=minecraft:armor_stand,x=0,y=75,z=0,r=3,scores={typeid=128}] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f这个世界当前有 §l§c"},{"score":{"name":"@s","objective":"list"}},{"text":" 位 §r§f玩家在线。"}]}
-execute @a[scores={login=1}] ~ ~ ~ execute @e[type=minecraft:armor_stand,x=0,y=75,z=0,r=3,scores={typeid=128}] ~ ~ ~ tellraw @a[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fThere are currently §l§c"},{"score":{"name":"@s","objective":"list"}},{"text":" players §r§fonline in the world."}]}
-execute @a[scores={login=1}] ~ ~ ~ execute @e[type=minecraft:armor_stand,x=0,y=75,z=0,r=3,scores={typeid=128}] ~ ~ ~ tellraw @a[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f這個世界當前有 §l§c"},{"score":{"name":"@s","objective":"list"}},{"text":" 個 §r§f玩家線上。"}]}
+execute @a[scores={login=0}] ~ ~ ~ scoreboard players set @e[type=minecraft:armor_stand,x=0,y=75,z=0,r=3,scores={typeid=128}] list 0
+execute @a[scores={login=0}] ~ ~ ~ execute @a ~ ~ ~ scoreboard players add @e[type=minecraft:armor_stand,x=0,y=75,z=0,r=3,scores={typeid=128}] list 1
+execute @a[scores={login=0}] ~ ~ ~ execute @e[type=minecraft:armor_stand,x=0,y=75,z=0,r=3,scores={typeid=128}] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f这个世界当前有 §l§c"},{"score":{"name":"@s","objective":"list"}},{"text":" 位 §r§f玩家在线。"}]}
+execute @a[scores={login=0}] ~ ~ ~ execute @e[type=minecraft:armor_stand,x=0,y=75,z=0,r=3,scores={typeid=128}] ~ ~ ~ tellraw @a[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fThere are currently §l§c"},{"score":{"name":"@s","objective":"list"}},{"text":" players §r§fonline in the world."}]}
+execute @a[scores={login=0}] ~ ~ ~ execute @e[type=minecraft:armor_stand,x=0,y=75,z=0,r=3,scores={typeid=128}] ~ ~ ~ tellraw @a[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f這個世界當前有 §l§c"},{"score":{"name":"@s","objective":"list"}},{"text":" 個 §r§f玩家線上。"}]}
+#开发者欢迎
+execute @a[scores={login=0}] ~ ~ ~ tellraw @s[tag=developer,scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f尊敬的开发者，欢迎回来！"}]}
+execute @a[scores={login=0}] ~ ~ ~ tellraw @s[tag=developer,scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fDear developers, welcome back!"}]}
+execute @a[scores={login=0}] ~ ~ ~ tellraw @s[tag=developer,scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f尊敬的開發者，歡迎回來！"}]}
+execute @a[scores={login=0}] ~ ~ ~ tellraw @s[tag=developer,scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f尊敬する開発者、お帰りください。"}]}
