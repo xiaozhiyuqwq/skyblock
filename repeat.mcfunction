@@ -1982,9 +1982,9 @@ tellraw @a[scores={temp=223,language=1,receive=541..}] {"rawtext":[{"text":"§l�
 tellraw @a[scores={temp=223,language=2,receive=541..}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f帳號創建完成。"}]}
 tellraw @a[scores={temp=223,language=3,receive=541..}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fアカウントの作成が完了しました。"}]}
 execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§f成功完成新手挑战与注册，成为正式成员！获得用户识别符 §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f！"}]}
-execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§fSuccessful completion of novice challenge and registration, become a full member! Get UID §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f!"}]}
-execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§f成功完成新手挑戰與注册，成為正式成員！獲得用戶識別符 §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f！"}]}
-execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§f登録が完了し、正式メンバーになります。UIDを取得する §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f！"}]}
+execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tellraw @a[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§fSuccessful completion of novice challenge and registration, become a full member! Get UID §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f!"}]}
+execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tellraw @a[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§f成功完成新手挑戰與注册，成為正式成員！獲得用戶識別符 §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f！"}]}
+execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tellraw @a[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§f登録が完了し、正式メンバーになります。UIDを取得する §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f！"}]}
 execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tag @s add registered
 title @a[scores={temp=223,receive=541..}] times 10 70 20
 title @a[scores={temp=223,receive=541..}] clear
@@ -2038,6 +2038,10 @@ execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[
 execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=25}] potion 1 39
 execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=26}] potion 1 40
 execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={devedeveloperdaily=27}] potion 1 41
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f今日的开发者专享礼物已送达！"}]}
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ tellraw @a[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fToday's developer exclusive gift has been delivered!"}]}
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ tellraw @a[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f今日的開發者專享禮物已送達！"}]}
+execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ tellraw @a[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f今日の開発者専用のプレゼントが届きました。"}]}
 execute @a[tag=developer,tag=!devedeveloperdaily,scores={uid=!0}] ~ ~ ~ tag @s add developerdaily
 #islandbarrier
 execute @e[type=minecraft:item] ~ ~ ~ detect ~ 0 ~ bedrock 0 kill @s
@@ -2519,9 +2523,20 @@ tellraw @a[scores={language=1},tag=retask] {"rawtext":[{"text":"§l§eSkyBlock§
 tellraw @a[scores={language=2},tag=retask] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§a操作成功！§f已重置您的任務進度。"}]}
 tellraw @a[scores={language=3},tag=retask] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§aリュックサッククリア実行成功！§fタスクの進捗をリセットしました。"}]}
 tag @a[tag=retask] remove retask
-#ban
+#封禁系统
 #ban
 scoreboard players add @a bantime 0
+tag @a[bantime=!1..2147483646] remove remove bantitle
+execute @a[tag=!bantitle,tag=ban] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§l§c一位用户因为作弊或滥用功能被移出。"}]}
+execute @a[tag=!bantitle,tag=ban] ~ ~ ~ tellraw @a[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§l§cA user has been removed for cheating or abusing functions."}]}
+execute @a[tag=!bantitle,tag=ban] ~ ~ ~ tellraw @a[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§l§c一個用戶因為作弊或濫用功能被移出。"}]}
+execute @a[tag=!bantitle,tag=ban] ~ ~ ~ tellraw @a[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§l§cあるユーザーはカンニングや悪用のために転出されました。"}]}
+execute @a[tag=!bantitle,scores{bantime=1..2147483646}] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§l§c一位用户因为作弊或滥用功能被移出。"}]}
+execute @a[tag=!bantitle,scores{bantime=1..2147483646}] ~ ~ ~ tellraw @a[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§l§cA user has been removed for cheating or abusing functions."}]}
+execute @a[tag=!bantitle,scores{bantime=1..2147483646}] ~ ~ ~ tellraw @a[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§l§c一個用戶因為作弊或濫用功能被移出。"}]}
+execute @a[tag=!bantitle,scores{bantime=1..2147483646}] ~ ~ ~ tellraw @a[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§l§cあるユーザーはカンニングや悪用のために転出されました。"}]}
+execute @a[tag=!bantitle,tag=ban] ~ ~ ~ tag @s add bantitle
+execute @a[tag=!bantitle,scores{bantime=1..2147483646}] ~ ~ ~ tag @s add bantitle
 tellraw @a[scores={language=0},tag=admin,tag=ban] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f啊嗷！当前有管理员正在使用封禁系统尝试对您进行操作，由于您拥有管理员权限，该操作已被系统拦截。"}]}
 tellraw @a[scores={language=1},tag=admin,tag=ban] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fCurrently, an administrator is using the blocking system to try to operate on you. Because you have administrator rights, the operation has been blocked by the system."}]}
 tellraw @a[scores={language=2},tag=admin,tag=ban] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f當前有管理員正在使用封禁系統嘗試對您進行操作，由於您擁有管理員許可權，該操作已被系統攔截。"}]}

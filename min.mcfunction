@@ -211,12 +211,12 @@ tag * remove luckily
 #结束还原
 execute @e[type=minecraft:armor_stand,scores={typeid=128,luckily=1001..1010}] ~ ~ ~ scoreboard players reset * luckily
 #公告系统
-scoreboard players random @e[type=minecraft:armor_stand,scores={typeid=128}] notice 5 12
+scoreboard players random @e[type=minecraft:armor_stand,scores={typeid=128}] notice 5 10
 execute @a ~ ~ ~ scoreboard players operation @s notice += @e[scores={typeid=128},type=minecraft:armor_stand] notice
 execute @a[scores={notice=100..200}] ~ ~ ~ scoreboard players random @s notice 201 232
 execute @a[scores={notice=217}] ~ ~ ~ scoreboard players set @s notice 206
 execute @a[scores={notice=229}] ~ ~ ~ scoreboard players set @s notice 201
-execute @a[scores={notice=201..202}] ~ ~ ~ scoreboard players random @s notice 301 309
+execute @a[scores={notice=201..202}] ~ ~ ~ scoreboard players random @s notice 301 310
 execute @a[scores={notice=203}] ~ ~ ~ scoreboard players random @s notice 401 403
 execute @a[scores={notice=204..205}] ~ ~ ~ scoreboard players random @s notice 501 505
 execute @a[scores={notice=227..228}] ~ ~ ~ scoreboard players set @s notice 206
@@ -231,6 +231,8 @@ execute @a[scores={notice=302..203}] ~ ~ ~ scoreboard players random @s notice 3
 execute @a[scores={notice=304}] ~ ~ ~ scoreboard players random @s notice 321 322
 execute @a[scores={notice=305}] ~ ~ ~ scoreboard players random @s notice 331 333
 execute @a[scores={notice=308}] ~ ~ ~ scoreboard players random @s notice 341 343
+execute @a[scores={notice=309}] ~ ~ ~ scoreboard players random @s notice 351 352
+execute @a[scores={notice=310}] ~ ~ ~ scoreboard players random @s notice 361 367
 #chinese
 execute @a[scores={notice=301}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7你和我说他的可爱，你和我说他的好看。恍惚间窥见在樱花树下，铁道边，一对少男少女彼此走着，风起花落拂过他们脸颊。 摘录自 祉语 因为有你 。"}]}
 execute @a[scores={notice=311}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7如今走过这世间，万般流连，翻过岁月不同侧脸，措不及防闯入你的笑颜。 摘录自 吴青峰 起风了 。"}]}
@@ -248,7 +250,15 @@ execute @a[scores={notice=307}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext"
 execute @a[scores={notice=341}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7在有生的瞬间能遇到§b你§7，竟花光所有§d运气§7，到这日才发现，曾呼吸过空气。 摘录自 陈奕迅 明年今日 。"}]}
 execute @a[scores={notice=342}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7陪在一个§b陌生人§7左右，走过渐渐熟悉的街头。 摘录自 陈奕迅 十年 。"}]}
 execute @a[scores={notice=343}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7壊れた砂時計 戻らない時の中で あの日から一年 繰り返す痛み (坏掉的沙漏，在回不去的时间中，那天开始的一年，反反复复的伤痛。) 摘录自 中孝介 十年 。"}]}
-execute @a[scores={notice=309}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7我吹过你吹过的§b晚风§7，那我们算不算-相拥，可如梦初醒般的两手空空，心也空。 摘录自 艾辰 错位时空 。"}]}
+execute @a[scores={notice=351}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7我吹过你吹过的§b晚风§7，那我们算不算-§d相拥§7，可如梦初醒般的两手空空，心也空。 摘录自 艾辰 错位时空 。"}]}
+execute @a[scores={notice=352}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7我吹过你吹过的§b晚风§7，空气里弥漫着-§c心痛§7，可我们最后在这错位时空，终成空。 摘录自 艾辰 错位时空 。"}]}
+execute @a[scores={notice=361}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7よりかえなみが あしもとをよぎりなにかをさらう (涌动的波浪，掠过脚边究竟掠走了什么) 摘录自 打ち上げ花火(打上花火) 。"}]}
+execute @a[scores={notice=362}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7きっとまだおわらないなつが あいまいなこころをとかしてつないだ (还未结束的夏天，一定会将暧昧的心结融化相连在一起) 摘录自 打ち上げ花火(打上花火) 。"}]}
+execute @a[scores={notice=363}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7大雨下 溅起§b浪花§7 掠过脚边的冰凉 究竟卷走了什么啊。 摘录自 打上花火 。"}]}
+execute @a[scores={notice=364}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7“啪”的一声升空§a烟§b花§7 流光下的懵懂嘶哑 撩起的§d发§7 像是在盛放的§a夏§7。 摘录自 打上花火 。"}]}
+execute @a[scores={notice=365}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7被大海冲刷 在年少刻下的话 仿若指尖滑落的沙。 摘录自 打上花火 。"}]}
+execute @a[scores={notice=366}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7你出现的场景成画 旁白衬着§d暧昧§7的话 §6泛黄§7记忆难忘你笑的一刹。 摘录自 打上花火 。"}]}
+execute @a[scores={notice=367}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7夕阳下 不再§6说话§7 拥着黄昏顺流而下 也不再挣扎。 摘录自 打上花火 。"}]}
 execute @a[scores={notice=401}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7在 §6GitHub§7 搜索并关注 §3xiaozhiyuqwq§7 ，或者访问 §3https://github.com/xiaozhiyuqwq§7 来查看我们完全开放的空岛生存！"}]}
 execute @a[scores={notice=402}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7在 §aGitee§7 搜索并关注 §cxiaozhiyuqwq§7 ，或者访问 §chttps://gitee.com/xiaozhiyuqwq§7 来查看我们完全开放的空岛生存！"}]}
 execute @a[scores={notice=403}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7在 §aOSCHINA§7 搜索并关注 §cxiaozhiyuqwq§7 ，或者访问 §chttps://my.oschina.net/u/4991772§7 来查看我们完全开放的空岛生存！"}]}
@@ -277,7 +287,7 @@ execute @a[scores={notice=214}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext"
 execute @a[scores={notice=215}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7这个项目里有很多彩蛋哦~快去找找吧~"}]}
 execute @a[scores={notice=216}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7如果您喜欢这个项目，请为项目资源页五心好评或给项目仓库点上星。"}]}
 execute @a[scores={notice=218}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7当您拥有了超过3000枚硬币的时候，您将会有机会被系统随机抽奖成为天弃之子。"}]}
-execute @a[scores={notice=219}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§6"},{"selector":"@s"},{"text":" §7您好！感谢您在 §b空岛生存-服务端版本 §7体验我的世界经典生存玩法 §e空岛生存 §e！"}]}
+execute @a[scores={notice=219}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§6"},{"selector":"@s"},{"text":" §7您好！感谢您在 §b空岛生存-服务端版本 §7体验我的世界经典生存玩法 §e空岛生存 §7！"}]}
 execute @a[scores={notice=231}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7秋天(祉语的朋友)：祉语是§b萝§d莉§7~啊哈~嗯...唔~§f好大§7~~~"}]}
 execute @a[scores={notice=232}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7在项目中，感谢提供技术支持的朋友们：子佳 君茶 量筒 Ace_AR 归来 。"}]}
 execute @a[scores={notice=701}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7项目的第一个测试版本(v1-v1.0)是祉语努力开发了一日两夜的结果！"}]}
@@ -323,19 +333,27 @@ execute @a[scores={notice=301}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext"
 execute @a[scores={notice=311}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7如今走过这世间，万般流连，翻过岁月不同侧脸，措不及防闯入你的笑颜。 Excerpt from 吴青峰 起风了 ."}]}
 execute @a[scores={notice=312}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7我终将§b青春§7还给了§d她§7，连同指尖弹出的§a盛夏§7，心之所动，就随风去了。 Excerpt from 吴青峰 起风了 ."}]}
 execute @a[scores={notice=313}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7我曾将§b青春§7翻涌成§d她§7，也曾指尖弹出§a盛夏§7，心之所动，且就随缘去吧。 Excerpt from 吴青峰 起风了 ."}]}
-execute @a[scores={notice=314}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7すぐにヤキモチ焼くとこも好きだよってからかって笑う君に甘えていた 爱していることを言叶以外の方法で今すぐに伝えたい。(就连我动不动就吃醋这点都喜欢 向为此逗我笑的你撒娇 现在立刻想用言语以外的方法将爱着你的心情告诉你) Excerpt from 高桥优 ヤキモチ(吃醋) ."}]}
+execute @a[scores={notice=314}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7すぐにヤキモチ焼くとこも好きだよってからかって笑う君に甘えていた 爱していることを言叶以外の方法で今すぐに伝えたい。 Excerpt from 高桥优 ヤキモチ ."}]}
 execute @a[scores={notice=315}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7再次看到§d你§7，微§b凉§a晨光§7里，笑得很甜蜜。 Excerpt from 吴青峰 起风了 ."}]}
 execute @a[scores={notice=321}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7歌剧奏响的瞬间，轻音悠远，犹如蔷薇端庄高洁，看落花舞动拂过了少女指尖。 Excerpt from 哔哩哔哩 BV1KV411Y7md ."}]}
 execute @a[scores={notice=322}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7听着大雨将顷春风渡夏，一声惊雷划过天涯，想起与他泪尽繁花一世情话。 Excerpt from 哔哩哔哩 BV1KV411Y7md ."}]}
 execute @a[scores={notice=331}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7不想离开，当你的§e笑容§7绽开，这世界突然填满§c色§b彩§7。 Excerpt from 华晨宇 好想爱这个世界啊 ."}]}
 execute @a[scores={notice=332}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7想过离开，当§e阳光§7败给§8阴霾§7，没想到§b你§7会拼命为§d我§7拨开。 Excerpt from 华晨宇 好想爱这个世界啊 ."}]}
-execute @a[scores={notice=333}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7消えたい 消えてしまいたい 言葉の§c刃§7に引き裂なれて (想消失，想消失不见啊，被语言的刀§c刃§7所撕裂。) Excerpt from 鹿乃 好想爱这个世界啊 ."}]}
+execute @a[scores={notice=333}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7消えたい 消えてしまいたい 言葉の§c刃§7に引き裂なれて  Excerpt from 鹿乃 好想爱这个世界啊 ."}]}
 execute @a[scores={notice=306}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7Just §bsomething§7 I can turn to, Somebody I can §dkiss§7. Excerpt from Something just like this ."}]}
 execute @a[scores={notice=307}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7因为刚好遇见§b你§7，留下§c十年§7的期许，如果再§a相遇§7，我想我会记得§b你§7。 Excerpt from 李玉刚 刚好遇见你 ."}]}
 execute @a[scores={notice=341}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7在有生的瞬间能遇到§b你§7，竟花光所有§d运气§7，到这日才发现，曾呼吸过空气。 Excerpt from 陈奕迅 明年今日 ."}]}
 execute @a[scores={notice=342}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7陪在一个§b陌生人§7左右，走过渐渐熟悉的街头。 Excerpt from 陈奕迅 十年 ."}]}
-execute @a[scores={notice=343}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7壊れた砂時計 戻らない時の中で あの日から一年 繰り返す痛み (坏掉的沙漏，在回不去的时间中，那天开始的一年，反反复复的伤痛。) Excerpt from 中孝介 十年 ."}]}
-execute @a[scores={notice=309}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7我吹过你吹过的§b晚风§7，那我们算不算-相拥，可如梦初醒般的两手空空，心也空。 Excerpt from 艾辰 错位时空 ."}]}
+execute @a[scores={notice=343}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7壊れた砂時計 戻らない時の中で あの日から一年 繰り返す痛み  Excerpt from 中孝介 十年 ."}]}
+execute @a[scores={notice=351}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7我吹过你吹过的§b晚风§7，那我们算不算-§b相拥§7，可如梦初醒般的两手空空，心也空。 Excerpt from 艾辰 错位时空 ."}]}
+execute @a[scores={notice=352}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7我吹过你吹过的§b晚风§7，空气里弥漫着-§c心痛§7，可我们最后在这错位时空，终成空。 Excerpt from 艾辰 错位时空 ."}]}
+execute @a[scores={notice=361}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7よりかえなみが あしもとをよぎりなにかをさらう 摘录自 打ち上げ花火 ."}]}
+execute @a[scores={notice=362}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7きっとまだおわらないなつが あいまいなこころをとかしてつないだ  Excerpt from 打ち上げ花火 ."}]}
+execute @a[scores={notice=363}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7大雨下 溅起§b浪花§7 掠过脚边的冰凉 究竟卷走了什么啊。 Excerpt from 打上花火 ."}]}
+execute @a[scores={notice=364}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7“啪”的一声升空§a烟§b花§7 流光下的懵懂嘶哑 撩起的§d发§7 像是在盛放的§a夏§7。 Excerpt from 打上花火 ."}]}
+execute @a[scores={notice=365}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7被大海冲刷 在年少刻下的话 仿若指尖滑落的沙。 Excerpt from 打上花火 ."}]}
+execute @a[scores={notice=366}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7你出现的场景成画 旁白衬着§d暧昧§7的话 §6泛黄§7记忆难忘你笑的一刹。 Excerpt from 打上花火 ."}]}
+execute @a[scores={notice=367}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7夕阳下 不再§6说话§7 拥着黄昏顺流而下 也不再挣扎。 Excerpt from 打上花火 ."}]}
 execute @a[scores={notice=401}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7Search on §6GitHub§7 and follow §3xiaozhiyuqwq§7, or visit §3https://github.com/xiaozhiyuqwq§7 Check out our fully open skyblock!"}]}
 execute @a[scores={notice=402}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7Search on §aGitee§7 and follow §cxiaozhiyuqwq§7, or visit §chttps://gitee.com/xiaozhiyuqwq§7 Check out our fully open skyblock!"}]}
 execute @a[scores={notice=403}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7Search on §aOSCHINA§7 and follow §cxiaozhiyuqwq§7 , or visit §chttps://my.oschina.net/u/4991772§7 Check out our fully open skyblock!"}]}
@@ -418,7 +436,15 @@ execute @a[scores={notice=307}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext"
 execute @a[scores={notice=341}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7在有生的瞬間能遇到§b你§7，竟花光所有§d運氣§7，到這日才發現，曾呼吸過空氣。 摘錄自 陳奕迅 明年今日 。"}]}
 execute @a[scores={notice=342}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7陪在一個§b陌生人§7左右，走過漸漸熟悉的街頭。 摘錄自 陳奕迅 十年 。"}]}
 execute @a[scores={notice=343}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7壊れた砂時計 戻らない時の中で あの日から一年 繰り返す痛み (壞掉的沙漏，在回不去的時間中，那天開始的一年，反反復複的傷痛。) 摘錄自 中孝介 十年 。"}]}
-execute @a[scores={notice=309}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7我吹過你吹過的§b晚風§7，那我們算不算-相擁，可如夢初醒般的兩手空空，心也空。 摘錄自 艾辰 錯位時空 。"}]}
+execute @a[scores={notice=351}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7我吹過你吹過的§b晚風§7，那我們算不算-§b相擁§7，可如夢初醒般的兩手空空，心也空。 摘錄自 艾辰 錯位時空 。"}]}
+execute @a[scores={notice=352}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7我吹過你吹過的§b晚風§7，空氣裏彌漫著-§c心痛§7，可我們最後在這錯位時空，終成空。 摘錄自 艾辰 錯位時空 。"}]}
+execute @a[scores={notice=361}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7よりかえなみが あしもとをよぎりなにかをさらう (湧動的波浪，掠過脚邊究竟掠走了什麼) 摘錄自 打ち上げ花火(打上花火) 。"}]}
+execute @a[scores={notice=362}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7きっとまだおわらないなつが あいまいなこころをとかしてつないだ (還未結束的夏天，一定會將曖昧的心結融化相連在一起) 摘錄自 打ち上げ花火(打上花火) 。"}]}
+execute @a[scores={notice=363}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7大雨下 濺起§b浪花§7 掠過脚邊的冰涼 究竟卷走了什麼啊。 摘錄自 打上花火 。"}]}
+execute @a[scores={notice=364}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7“啪”的一聲升空§a烟§b花§7 流光下的懵懂嘶啞 撩起的§d發§7 像是在盛放的§a夏§7。 摘錄自 打上花火 。"}]}
+execute @a[scores={notice=365}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7被大海沖刷 在年少刻下的話 仿若指尖滑落的沙。 摘錄自 打上花火 。"}]}
+execute @a[scores={notice=366}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7你出現的場景成畫 旁白襯著§d曖昧§7的話 §6泛黃§7記憶難忘你笑的一刹。 摘錄自 打上花火 。"}]}
+execute @a[scores={notice=367}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7夕陽下 不再§6說話§7 擁著黃昏順流而下也不再掙扎。 摘錄自 打上花火 。"}]}
 execute @a[scores={notice=401}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7在 §6GitHub§7 上蒐索並關注 §3xiaozhiyuqwq§7 ，或者訪問 §3https://github.com/xiaozhiyuqwq§7 來查看我們完全開放的空島生存！"}]}
 execute @a[scores={notice=402}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7在 §aGitee§7 上蒐索並關注 §cxiaozhiyuqwq§7 ，或者訪問 §chttps://gitee.com/xiaozhiyuqwq§7 來查看我們完全開放的空島生存！"}]}
 execute @a[scores={notice=403}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7在 §aOSCHINA§7 上蒐索並關注 §cxiaozhiyuqwq§7 ，或者訪問 §chttps://my.oschina.net/u/4991772§7 來查看我們完全開放的空島生存！"}]}
@@ -447,7 +473,7 @@ execute @a[scores={notice=214}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext"
 execute @a[scores={notice=215}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7這個項目裏有很多彩蛋哦~快去找找吧~"}]}
 execute @a[scores={notice=216}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7如果您喜歡這個項目，請為項目資源頁五心好評或給項目倉庫點上星。"}]}
 execute @a[scores={notice=218}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7當您擁有了超過3000枚硬幣的時候，您將會有機會被系統隨機抽獎成為天弃之子。"}]}
-execute @a[scores={notice=219}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§6"},{"selector":"@s"},{"text":" §7您好！感謝您在 §b空島生存-服務端版本 §7體驗我的世界經典生存玩法 §e空島生存 §e！"}]}
+execute @a[scores={notice=219}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§6"},{"selector":"@s"},{"text":" §7您好！感謝您在 §b空島生存-服務端版本 §7體驗我的世界經典生存玩法 §e空島生存 §7！"}]}
 execute @a[scores={notice=231}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7秋天(祉語的朋友)：祉語是§b蘿§d莉§7~啊哈~嗯…唔~§f好大§7~~~"}]}
 execute @a[scores={notice=232}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7在項目中，感謝提供技術支援的朋友們：子佳 君茶 量筒 Ace_AR 歸來 。"}]}
 execute @a[scores={notice=701}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7項目的第一個測試版本（v1-v1.0）是祉語努力開發了一日兩夜的結果！"}]}
@@ -501,7 +527,15 @@ execute @a[scores={notice=307}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext"
 execute @a[scores={notice=341}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7在有生的瞬间能遇到§b你§7，竟花光所有§d运气§7，到这日才发现，曾呼吸过空气。 陈奕迅 明年今日 から抜粋します。"}]}
 execute @a[scores={notice=342}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7陪在一个§b陌生人§7左右，走过渐渐熟悉的街头。 陈奕迅 十年 から抜粋します。"}]}
 execute @a[scores={notice=343}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7壊れた砂時計 戻らない時の中で あの日から一年 繰り返す痛み  中孝介 十年 から抜粋します。"}]}
-execute @a[scores={notice=309}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7我吹过你吹过的§b晚风§7，那我们算不算-相拥，可如梦初醒般的两手空空，心也空。 艾辰 错位时空 から抜粋します。"}]}
+execute @a[scores={notice=351}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7我吹过你吹过的§b晚风§7，那我们算不算-§b相拥§7，可如梦初醒般的两手空空，心也空。 艾辰 错位时空 から抜粋します。"}]}
+execute @a[scores={notice=352}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7我吹过你吹过的§b晚风§7，空气里弥漫着-§c心痛§7，可我们最后在这错位时空，终成空。 艾辰 错位时空 から抜粋します。"}]}
+execute @a[scores={notice=361}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7よりかえなみが あしもとをよぎりなにかをさらう  打ち上げ花火 から抜粋します。"}]}
+execute @a[scores={notice=362}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7きっとまだおわらないなつが あいまいなこころをとかしてつないだ  打ち上げ花火 から抜粋します。"}]}
+execute @a[scores={notice=363}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7大雨下 溅起§b浪花§7 掠过脚边的冰凉 究竟卷走了什么啊。 打上花火 から抜粋します。"}]}
+execute @a[scores={notice=364}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7“啪”的一声升空§a烟§b花§7 流光下的懵懂嘶哑 撩起的§d发§7 像是在盛放的§a夏§7。 打上花火 から抜粋します。"}]}
+execute @a[scores={notice=365}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7被大海冲刷 在年少刻下的话 仿若指尖滑落的沙。 打上花火 から抜粋します。"}]}
+execute @a[scores={notice=366}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7你出现的场景成画 旁白衬着§d暧昧§7的话 §6泛黄§7记忆难忘你笑的一刹。 打上花火 から抜粋します。"}]}
+execute @a[scores={notice=367}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7夕阳下 不再§6说话§7 拥着黄昏顺流而下 也不再挣扎。 打上花火 から抜粋します。"}]}
 execute @a[scores={notice=401}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§6GitHub§7 で検索して §3xiaozhiyuqwq§7 に注目したり、訪問したりします。 §3https://github.com/xiaozhiyuqwq§7 完全にオープンしたskyblockを見に来ました。"}]}
 execute @a[scores={notice=402}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§aGitee§7 で検索して §cxiaozhiyuqwq§7 に注目したり、訪問したりします。 §chttps://gitee.com/xiaozhiyuqwq§7 完全にオープンしたskyblockを見に来ました。"}]}
 execute @a[scores={notice=403}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§aOSCHINA§7 で検索して §cxiaozhiyuqwq§7 に注目したり、訪問したりします。 §chttps://my.oschina.net/u/4991772§7 完全にオープンしたskyblockを見に来ました。"}]}
