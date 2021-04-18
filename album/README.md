@@ -20,3 +20,9 @@
 文件：swty1.webp 牛逼の世外桃源
 ##### swty2.jpg
 文件：swty2.jpg 牛逼の世外桃源2
+##### zijiaqwq.jpg
+文件：zijiaqwq.jpg 可可爱爱小子佳~
+##### class-1.jpg
+文件：class-1.jpg 手稿+同学的笔记+同学的狼虎之词+不是萝莉
+##### notice.jpg
+文件：notice.jpg 公告效果（实拍）
