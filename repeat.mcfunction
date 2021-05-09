@@ -36,6 +36,7 @@ scoreboard objectives add about dummy
 scoreboard objectives add abouttext dummy
 scoreboard objectives add actionbar dummy
 scoreboard objectives add actionbartime dummy
+scoreboard objectives add actionbartext dummy
 scoreboard objectives add achievement1 dummy
 scoreboard objectives add achievement2 dummy
 scoreboard objectives add achievement3 dummy
@@ -61,6 +62,7 @@ scoreboard objectives add offlinetime dummy
 scoreboard objectives add offlinecoin dummy
 scoreboard objectives add luckily dummy
 scoreboard objectives add developerdaily dummy
+scoreboard objectives add registernum dummy
 #clear
 clear @a[tag=clear]
 replaceitem entity @a[tag=clear] slot.hotbar 0 air
@@ -130,10 +132,10 @@ replaceitem entity @a[tag=clear] slot.armor.chest 0 air
 replaceitem entity @a[tag=clear] slot.armor.feet 0 air
 replaceitem entity @a[tag=clear] slot.armor.head 0 air
 replaceitem entity @a[tag=clear] slot.armor.legs 0 air
-tellraw @a[scores={language=0},tag=clear] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f清包执行成功！已清除您的所有物品。"}]}
-tellraw @a[scores={language=1},tag=clear] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fClear package successfully executed! All your items have been cleared."}]}
-tellraw @a[scores={language=2},tag=clear] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f清包執行成功！已清除您的所有物品。"}]}
-tellraw @a[scores={language=3},tag=clear] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fリュックサッククリア実行成功！すべてのアイテムをクリアしました。"}]}
+tellraw @a[scores={language=0},tag=clear] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f清包执行成功！已清除您的所有物品。"}]}
+tellraw @a[scores={language=1},tag=clear] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fClear package successfully executed! All your items have been cleared."}]}
+tellraw @a[scores={language=2},tag=clear] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f清包執行成功！已清除您的所有物品。"}]}
+tellraw @a[scores={language=3},tag=clear] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fリュックサッククリア実行成功！すべてのアイテムをクリアしました。"}]}
 tag @a[tag=clear] remove clear
 #contraband
 clear @a[tag=!admin] light_block
@@ -327,15 +329,15 @@ execute @a[scores={temp=8848,uid=100000..}] ~ ~ ~ tellraw @s[scores={language=3}
 execute @a[scores={temp=8858,id=0,uid=!0}] ~ ~ ~ tellraw @a[scores={temp=8858,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§a操作成功！§f组队完成，现在您可以选择使用 §1队伍识别符检索§f 以加入您所属队伍的岛屿。"}]}
 execute @a[scores={temp=8858,id=0,uid=!0}] ~ ~ ~ tellraw @a[scores={temp=8858,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§aOperation successful! §fTeam up is complete, now you can choose to use §1TeamID search§f to join your team's Island."}]}
 execute @a[scores={temp=8858,id=0,uid=!0}] ~ ~ ~ tellraw @a[scores={temp=8858,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§a操作成功！§f組隊完成，現在您可以選擇使用 §1隊伍識別符檢索 §f以加入您所屬隊伍的島嶼。"}]}
-execute @a[scores={temp=8858,id=0,uid=!0}] ~ ~ ~ tellraw @a[scores={temp=8848,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§a操作成功！§f组队完成，对方已经成为您岛屿的成员。"}]}
-execute @a[scores={temp=8858,id=0,uid=!0}] ~ ~ ~ tellraw @a[scores={temp=8848,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§aOperation successful! §fTeam up is complete, The other party has become a member of your island."}]}
-execute @a[scores={temp=8858,id=0,uid=!0}] ~ ~ ~ tellraw @a[scores={temp=8848,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§a操作成功！組隊完成，對方已經成為您島嶼的成員。"}]}
+execute @a[scores={temp=8858,id=0,uid=!0}] ~ ~ ~ tellraw @a[scores={temp=8848,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§a操作成功！§f组队完成，§6"},{"selector":"@p[scores={temp=8858}},c=1]"},{"text":" §f已经成为您岛屿的成员。"}]}
+execute @a[scores={temp=8858,id=0,uid=!0}] ~ ~ ~ tellraw @a[scores={temp=8848,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§aOperation successful! §fTeam up is complete, §6"},{"selector":"@p[scores={temp=8858}},c=1]"},{"text":" §f has become a member of your island."}]}
+execute @a[scores={temp=8858,id=0,uid=!0}] ~ ~ ~ tellraw @a[scores={temp=8848,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§a操作成功！組隊完成，§6"},{"selector":"@p[scores={temp=8858}},c=1]"},{"text":" §f已經成為您島嶼的成員。"}]}
 execute @a[scores={temp=8858,id=!0,uid=!0}] ~ ~ ~ tellraw @a[scores={temp=8858,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§c操作失败！§f您已经加入了其他队伍，您需要退出队伍才可以执行此操作。"}]}
 execute @a[scores={temp=8858,id=!0,uid=!0}] ~ ~ ~ tellraw @a[scores={temp=8858,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§cOperation failed! §fYou have joined another team. You need to quit the team to perform this operation."}]}
 execute @a[scores={temp=8858,id=!0,uid=!0}] ~ ~ ~ tellraw @a[scores={temp=8858,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§fc操作失敗！§f您已經加入了其他隊伍，您需要退出隊伍才可以執行此操作。"}]}
-execute @a[scores={temp=8858,id=!0,uid=!0}] ~ ~ ~ tellraw @a[scores={temp=8848,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§c操作失败！§f对方已经拥有了队伍，无法和您再次组队。"}]}
-execute @a[scores={temp=8858,id=!0,uid=!0}] ~ ~ ~ tellraw @a[scores={temp=8848,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§cOperation failed! §fThe other party already has a team and cannot team up with you again."}]}
-execute @a[scores={temp=8858,id=!0,uid=!0}] ~ ~ ~ tellraw @a[scores={temp=8848,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§fc操作失敗！§f對方已經擁有了隊伍，無法和您再次組隊。"}]}
+execute @a[scores={temp=8858,id=!0,uid=!0}] ~ ~ ~ tellraw @a[scores={temp=8848,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§c操作失败！§f§6"},{"selector":"@p[scores={temp=8858}},c=1]"},{"text":" §f已经拥有了队伍，无法和您再次组队。"}]}
+execute @a[scores={temp=8858,id=!0,uid=!0}] ~ ~ ~ tellraw @a[scores={temp=8848,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§cOperation failed! §f§6"},{"selector":"@p[scores={temp=8858}},c=1]"},{"text":" §f already has a team and cannot team up with you again."}]}
+execute @a[scores={temp=8858,id=!0,uid=!0}] ~ ~ ~ tellraw @a[scores={temp=8848,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§fc操作失敗！§f§6"},{"selector":"@p[scores={temp=8858}},c=1]"},{"text":" §f已經擁有了隊伍，無法和您再次組隊。"}]}
 execute @a[scores={temp=8858,id=0,uid=!0}] ~ ~ ~ scoreboard players operation @p[scores={temp=8858}] id = @p[scores={temp=8848}] uid
 scoreboard players reset @a[scores={temp=8848..8858}] temp
 #team_leave
@@ -572,172 +574,174 @@ execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=22}] ir
 execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=23}] iron_ore 1 0
 execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=24}] iron_ore 2 0
 execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=25}] iron_ore 4 0
-execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=26..30}] coal 1 0
-execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=31..33}] coal 2 0
-execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=34..35}] coal 4 0
-execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=36..40}] coal_ore 1 0
-execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=41..43}] coal_ore 2 0
-execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=44..45}] coal_ore 4 0
-execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=46..50}] redstone 1 0
-execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=51..53}] redstone 2 0
-execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=54..55}] redstone 4 0
-execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=56..60}] redstone_ore 1 0
-execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=61..63}] redstone_ore 2 0
-execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=64..65}] redstone_ore 4 0
-execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=66}] dye 2 4
-execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=67..68}] dye 4 4
-execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=69..70}] lapis_ore 1 0
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=1..2,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l钻石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=3,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l钻石*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=4,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l钻石矿石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=5,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l钻石矿石*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=6,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l金粒*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=7,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l金粒*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=8,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l金粒*8"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=9..10,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l金锭*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=11,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l金锭*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=12,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l金锭*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=13,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l金矿石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=14,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l金矿石*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=15,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l金矿石*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=16,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l铁粒*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=17,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l铁粒*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=18,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l铁粒*8"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=19..20,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l铁锭*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=21,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l铁锭*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=22,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l铁锭*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=23,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l铁矿石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=24,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l铁矿石*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=25,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l铁矿石*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=26..30,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l煤炭*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=31..33,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l煤炭*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=34..35,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l煤炭*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=36..40,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l煤矿石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=41..43,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l煤矿石*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=44..45,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l煤矿石*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=46..50,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l红石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=51..53,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l红石*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=54..55,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l红石*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=56..60,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l红石矿石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=61..63,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l红石矿石*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=64..65,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l红石矿石*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=66,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l青金石*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=67..68,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l青金石*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=69..70,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您获得了 §e§l青金石矿石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=71..100,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f您没有获得任何物品。"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=1..2,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§ldiamond*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=3,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§ldiamond*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=4,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§ldiamond ore*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=5,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§ldiamond ore*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=6,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§lgold nugget*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=7,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§lgold nugget*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=8,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§lgold nugget*8"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=9..10,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§lgold ingot*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=11,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§lgold ingot*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=12,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§lgold ingot*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=13,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§lgold ore*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=14,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§lgold ore*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=15,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§lgold ore*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=16,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§liron nugget*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=17,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§liron nugget*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=18,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§liron nugget*8"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=19..20,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§liron ingot*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=21,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§liron ingot*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=22,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§liron ingot*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=23,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§liron ore*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=24,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§liron ore*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=25,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§liron ore*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=26..30,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§lcoal*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=31..33,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§lcoal*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=34..35,language=1}] {"rawtext":[{"text":"§fYou got a §e§lcoal*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=36..40,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§lcoal ore*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=41..43,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§lcoal ore*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=44..45,language=1}] {"rawtext":[{"text":"§fYou got a §e§lcoal ore*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=46..50,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§lredstone*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=51..53,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§lredstone*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=54..55,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§lredstone*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=56..60,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§lredstone ore*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=61..63,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§lredstone ore*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=64..65,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§lredstone ore*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=66,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§llapis*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=69..70,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou got a §e§llapis ore*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=71..100,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fYou did not get any items."}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=1..2,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l鑽石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=3,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l鑽石*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=4,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l鑽石礦石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=5,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l鑽石礦石*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=6,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l金粒*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=7,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l金粒*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=8,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l金粒*8"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=9..10,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l金錠*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=11,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l金錠*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=12,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l金錠*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=13,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l金礦石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=14,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l金礦石*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=15,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l金礦石*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=16,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l鐵粒*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=17,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l鐵粒*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=18,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l鐵粒*8"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=19..20,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l鐵錠*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=21,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l鐵錠*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=22,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l鐵錠*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=23,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l鐵礦石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=24,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l鐵礦石*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=25,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l鐵礦石*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=26..30,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l煤炭*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=31..33,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l煤炭*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=34..35,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l煤炭*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=36..40,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l煤礦石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=41..43,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l煤礦石*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=44..45,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l煤礦石*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=46..50,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l紅石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=51..53,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l紅石*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=54..55,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l紅石*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=56..60,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l紅石礦石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=61..63,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l紅石礦石*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=64..65,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l紅石礦石*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=66,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l青金石*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=67..68,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l青金石*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=69..70,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您獲得了 §e§l青金石礦石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=71..100,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f您沒有獲得任何物品。"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=1..2,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§lダイヤモンド*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=3,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§lダイヤモンド*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=4,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§lダイヤモンド鉱石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=5,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§lダイヤモンド鉱石*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=6,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l金の塊*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=7,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l金の塊*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=8,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l金の塊*8"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=9..10,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l金の延べ棒*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=11,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l金の延べ棒*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=12,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l金の延べ棒*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=13,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l金鉱石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=14,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l金鉱石*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=15,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l金鉱石*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=16,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l鉄塊*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=17,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l鉄塊*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=18,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l鉄塊*8"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=19..20,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l鉄の延べ棒*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=21,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l鉄の延べ棒*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=22,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l鉄の延べ棒*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=23,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l鉄鉱石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=24,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l鉄鉱石*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=25,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l鉄鉱石*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=26..30,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l石炭*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=31..33,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l石炭*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=34..35,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l石炭*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=36..40,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l石炭鉱石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=41..43,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l石炭鉱石*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=44..45,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§l石炭鉱石*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=46..50,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§lレッドストーン*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=51..53,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§lレッドストーン*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=54..55,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§lレッドストーン*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=56..60,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§lレッドストーン鉱石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=61..63,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§lレッドストーン鉱石*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=64..65,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§lレッドストーン鉱石*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=66,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§lラピスラズリ*2"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=67..68,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§lラピスラズリ*4"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=69..70,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§f獲得しました §e§lラピスラズリ鉱石*1"}]}
-execute @a[scores={temp=123}] ~ ~ ~ tellraw @p[scores={temp=123,mineraltemp=71..100,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fあなたは何も得られませんでした。"}]}
+execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=26..30}] coal 2 0
+execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=31..33}] coal 4 0
+execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=34..35}] coal 8 0
+execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=36..40}] coal_ore 2 0
+execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=41..43}] coal_ore 4 0
+execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=44..45}] coal_ore 8 0
+execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=46..50}] redstone 3 0
+execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=51..53}] redstone 6 0
+execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=54..55}] redstone 12 0
+execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=56..60}] redstone_ore 2 0
+execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=61..63}] redstone_ore 4 0
+execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=64..65}] redstone_ore 6 0
+execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=66}] dye 4 4
+execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=67..68}] dye 8 4
+execute @a[scores={temp=123}] ~ ~ ~ give @p[scores={temp=123,mineraltemp=69..70}] lapis_ore 2 0
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=1..100}] title §l
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=1..2,language=0}] subtitle §f您获得了 §e§l钻石*1 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=3,language=0}] subtitle §f您获得了 §e§l钻石*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=4,language=0}] subtitle §f您获得了 §e§l钻石矿石*1 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=5,language=0}] subtitle §f您获得了 §e§l钻石矿石*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=6,language=0}] subtitle §f您获得了 §e§l金粒*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=7,language=0}] subtitle §f您获得了 §e§l金粒*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=8,language=0}] subtitle §f您获得了 §e§l金粒*8 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=9..10,language=0}] subtitle §f您获得了 §e§l金锭*1 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=11,language=0}] subtitle §f您获得了 §e§l金锭*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=12,language=0}] subtitle §f您获得了 §e§l金锭*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=13,language=0}] subtitle §f您获得了 §e§l金矿石*1 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=14,language=0}] subtitle §f您获得了 §e§l金矿石*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=15,language=0}] subtitle §f您获得了 §e§l金矿石*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=16,language=0}] subtitle §f您获得了 §e§l铁粒*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=17,language=0}] subtitle §f您获得了 §e§l铁粒*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=18,language=0}] subtitle §f您获得了 §e§l铁粒*8 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=19..20,language=0}] subtitle §f您获得了 §e§l铁锭*1 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=21,language=0}] subtitle §f您获得了 §e§l铁锭*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=22,language=0}] subtitle §f您获得了 §e§l铁锭*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=23,language=0}] subtitle §f您获得了 §e§l铁矿石*1 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=24,language=0}] subtitle §f您获得了 §e§l铁矿石*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=25,language=0}] subtitle §f您获得了 §e§l铁矿石*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=26..30,language=0}] subtitle §f您获得了 §e§l煤炭*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=31..33,language=0}] subtitle §f您获得了 §e§l煤炭*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=34..35,language=0}] subtitle §f您获得了 §e§l煤炭*8 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=36..40,language=0}] subtitle §f您获得了 §e§l煤矿石*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=41..43,language=0}] subtitle §f您获得了 §e§l煤矿石*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=44..45,language=0}] subtitle §f您获得了 §e§l煤矿石*8 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=46..50,language=0}] subtitle §f您获得了 §e§l红石*3 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=51..53,language=0}] subtitle §f您获得了 §e§l红石*6 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=54..55,language=0}] subtitle §f您获得了 §e§l红石*12 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=56..60,language=0}] subtitle §f您获得了 §e§l红石矿石*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=61..63,language=0}] subtitle §f您获得了 §e§l红石矿石*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=64..65,language=0}] subtitle §f您获得了 §e§l红石矿石*6 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=66,language=0}] subtitle §f您获得了 §e§l青金石*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=67..68,language=0}] subtitle §f您获得了 §e§l青金石*8 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=69..70,language=0}] subtitle §f您获得了 §e§l青金石矿石*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=71..100,language=0}] subtitle §f您没有获得任何物品。 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=1..2,language=1}] subtitle §fYou got a §e§ldiamond*1 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=3,language=1}] subtitle §fYou got a §e§ldiamond*2 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=4,language=1}] subtitle §fYou got a §e§ldiamond ore*1 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=5,language=1}] subtitle §fYou got a §e§ldiamond ore*2 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=6,language=1}] subtitle §fYou got a §e§lgold nugget*2 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=7,language=1}] subtitle §fYou got a §e§lgold nugget*4 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=8,language=1}] subtitle §fYou got a §e§lgold nugget*8 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=9..10,language=1}] subtitle §fYou got a §e§lgold ingot*1 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=11,language=1}] subtitle §fYou got a §e§lgold ingot*2 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=12,language=1}] subtitle §fYou got a §e§lgold ingot*4 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=13,language=1}] subtitle §fYou got a §e§lgold ore*1 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=14,language=1}] subtitle §fYou got a §e§lgold ore*2 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=15,language=1}] subtitle §fYou got a §e§lgold ore*4 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=16,language=1}] subtitle §fYou got a §e§liron nugget*2 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=17,language=1}] subtitle §fYou got a §e§liron nugget*4 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=18,language=1}] subtitle §fYou got a §e§liron nugget*8 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=19..20,language=1}] subtitle §fYou got a §e§liron ingot*1 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=21,language=1}] subtitle §fYou got a §e§liron ingot*2 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=22,language=1}] subtitle §fYou got a §e§liron ingot*4 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=23,language=1}] subtitle §fYou got a §e§liron ore*1 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=24,language=1}] subtitle §fYou got a §e§liron ore*2 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=25,language=1}] subtitle §fYou got a §e§liron ore*4 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=26..30,language=1}] subtitle §fYou got a §e§lcoal*2 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=31..33,language=1}] subtitle §fYou got a §e§lcoal*4 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=34..35,language=1}] subtitle §fYou got a §e§lcoal*8 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=36..40,language=1}] subtitle §fYou got a §e§lcoal ore*2 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=41..43,language=1}] subtitle §fYou got a §e§lcoal ore*4 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=44..45,language=1}] subtitle §fYou got a §e§lcoal ore*8 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=46..50,language=1}] subtitle §fYou got a §e§lredstone*3 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=51..53,language=1}] subtitle §fYou got a §e§lredstone*6 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=54..55,language=1}] subtitle §fYou got a §e§lredstone*12 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=56..60,language=1}] subtitle §fYou got a §e§lredstone ore*2 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=61..63,language=1}] subtitle §fYou got a §e§lredstone ore*4 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=64..65,language=1}] subtitle §fYou got a §e§lredstone ore*6 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=66,language=1}] subtitle §fYou got a §e§llapis*4 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=67..68,language=1}] subtitle §fYou got a §e§llapis*8 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=69..70,language=1}] subtitle §fYou got a §e§llapis ore*2 §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=71..100,language=1}] subtitle §fYou did not get any items. §r§f.
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=1..2,language=2}] subtitle §f您獲得了 §e§l鑽石*1 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=3,language=2}] subtitle §f您獲得了 §e§l鑽石*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=4,language=2}] subtitle §f您獲得了 §e§l鑽石礦石*1 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=5,language=2}] subtitle §f您獲得了 §e§l鑽石礦石*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=6,language=2}] subtitle §f您獲得了 §e§l金粒*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=7,language=2}] subtitle §f您獲得了 §e§l金粒*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=8,language=2}] subtitle §f您獲得了 §e§l金粒*8 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=9..10,language=2}] subtitle §f您獲得了 §e§l金錠*1 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=11,language=2}] subtitle §f您獲得了 §e§l金錠*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=12,language=2}] subtitle §f您獲得了 §e§l金錠*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=13,language=2}] subtitle §f您獲得了 §e§l金礦石*1 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=14,language=2}] subtitle §f您獲得了 §e§l金礦石*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=15,language=2}] subtitle §f您獲得了 §e§l金礦石*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=16,language=2}] subtitle §f您獲得了 §e§l鐵粒*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=17,language=2}] subtitle §f您獲得了 §e§l鐵粒*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=18,language=2}] subtitle §f您獲得了 §e§l鐵粒*8 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=19..20,language=2}] subtitle §f您獲得了 §e§l鐵錠*1 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=21,language=2}] subtitle §f您獲得了 §e§l鐵錠*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=22,language=2}] subtitle §f您獲得了 §e§l鐵錠*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=23,language=2}] subtitle §f您獲得了 §e§l鐵礦石*1 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=24,language=2}] subtitle §f您獲得了 §e§l鐵礦石*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=25,language=2}] subtitle §f您獲得了 §e§l鐵礦石*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=26..30,language=2}] subtitle §f您獲得了 §e§l煤炭*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=31..33,language=2}] subtitle §f您獲得了 §e§l煤炭*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=34..35,language=2}] subtitle §f您獲得了 §e§l煤炭*8 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=36..40,language=2}] subtitle §f您獲得了 §e§l煤礦石*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=41..43,language=2}] subtitle §f您獲得了 §e§l煤礦石*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=44..45,language=2}] subtitle §f您獲得了 §e§l煤礦石*8 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=46..50,language=2}] subtitle §f您獲得了 §e§l紅石*3 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=51..53,language=2}] subtitle §f您獲得了 §e§l紅石*6 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=54..55,language=2}] subtitle §f您獲得了 §e§l紅石*12 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=56..60,language=2}] subtitle §f您獲得了 §e§l紅石礦石*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=61..63,language=2}] subtitle §f您獲得了 §e§l紅石礦石*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=64..65,language=2}] subtitle §f您獲得了 §e§l紅石礦石*6 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=66,language=2}] subtitle §f您獲得了 §e§l青金石*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=67..68,language=2}] subtitle §f您獲得了 §e§l青金石*8 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=69..70,language=2}] subtitle §f您獲得了 §e§l青金石礦石*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=71..100,language=2}] subtitle §f您沒有獲得任何物品。 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=1..2,language=3}] subtitle §f獲得しました §e§lダイヤモンド*1 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=3,language=3}] subtitle §f獲得しました §e§lダイヤモンド*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=4,language=3}] subtitle §f獲得しました §e§lダイヤモンド鉱石*1 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=5,language=3}] subtitle §f獲得しました §e§lダイヤモンド鉱石*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=6,language=3}] subtitle §f獲得しました §e§l金の塊*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=7,language=3}] subtitle §f獲得しました §e§l金の塊*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=8,language=3}] subtitle §f獲得しました §e§l金の塊*8 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=9..10,language=3}] subtitle §f獲得しました §e§l金の延べ棒*1 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=11,language=3}] subtitle §f獲得しました §e§l金の延べ棒*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=12,language=3}] subtitle §f獲得しました §e§l金の延べ棒*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=13,language=3}] subtitle §f獲得しました §e§l金鉱石*1 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=14,language=3}] subtitle §f獲得しました §e§l金鉱石*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=15,language=3}] subtitle §f獲得しました §e§l金鉱石*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=16,language=3}] subtitle §f獲得しました §e§l鉄塊*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=17,language=3}] subtitle §f獲得しました §e§l鉄塊*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=18,language=3}] subtitle §f獲得しました §e§l鉄塊*8 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=19..20,language=3}] subtitle §f獲得しました §e§l鉄の延べ棒*1 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=21,language=3}] subtitle §f獲得しました §e§l鉄の延べ棒*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=22,language=3}] subtitle §f獲得しました §e§l鉄の延べ棒*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=23,language=3}] subtitle §f獲得しました §e§l鉄鉱石*1 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=24,language=3}] subtitle §f獲得しました §e§l鉄鉱石*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=25,language=3}] subtitle §f獲得しました §e§l鉄鉱石*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=26..30,language=3}] subtitle §f獲得しました §e§l石炭*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=31..33,language=3}] subtitle §f獲得しました §e§l石炭*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=34..35,language=3}] subtitle §f獲得しました §e§l石炭*8 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=36..40,language=3}] subtitle §f獲得しました §e§l石炭鉱石*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=41..43,language=3}] subtitle §f獲得しました §e§l石炭鉱石*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=44..45,language=3}] subtitle §f獲得しました §e§l石炭鉱石*8 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=46..50,language=3}] subtitle §f獲得しました §e§lレッドストーン*3 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=51..53,language=3}] subtitle §f獲得しました §e§lレッドストーン*6 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=54..55,language=3}] subtitle §f獲得しました §e§lレッドストーン*12 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=56..60,language=3}] subtitle §f獲得しました §e§lレッドストーン鉱石*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=61..63,language=3}] subtitle §f獲得しました §e§lレッドストーン鉱石*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=64..65,language=3}] subtitle §f獲得しました §e§lレッドストーン鉱石*6 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=66,language=3}] subtitle §f獲得しました §e§lラピスラズリ*4 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=67..68,language=3}] subtitle §f獲得しました §e§lラピスラズリ*8 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=69..70,language=3}] subtitle §f獲得しました §e§lラピスラズリ鉱石*2 §r§f。
+execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=71..100,language=3}] subtitle §fあなたは何も得られませんでした。 §r§f。
 execute @a[scores={temp=123}] ~ ~ ~ scoreboard objectives remove mineraltemp
 execute @a[scores={temp=123}] ~ ~ ~ scoreboard players reset @a[scores={temp=123}] temp
 #注册，用户注册（uid=1..40000）temp=220，游客注册（uid=100001..）temp=230
@@ -768,9 +772,6 @@ execute @a[scores={temp=242..243}] ~ ~ ~ scoreboard players set @s uid 0
 execute @a[scores={temp=242..243}] ~ ~ ~ scoreboard players set @s level 0
 execute @a[scores={temp=242}] ~ ~ ~ scoreboard players set @s temp 220
 execute @a[scores={temp=243}] ~ ~ ~ scoreboard players set @s temp 230
-#测试注册 - 没啥用 - 硬币会给多一点
-
-
 #原来的注册部分（用户注册）
 execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players add @a[scores={temp=220}] language 0
 execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players add @a[scores={temp=220}] uid 0
@@ -797,13 +798,15 @@ execute @a[scores={temp=224}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[
 execute @a[scores={temp=224}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f您選擇了用戶註冊，您的用戶組將會變更為用戶，您可以享受用戶的所有功能。"}]}
 execute @a[scores={temp=224}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fユーザー登録を選択したら、ユーザーグループはユーザーに変更されます。ユーザーのすべての機能を楽しむことができます。"}]}
 #注册（游客注册）
-execute @a[scores={temp=230}] ~ ~ ~ scoreboard players add @s uid 0
-execute @a[scores={temp=230}] ~ ~ ~ scoreboard players add @s level 0
-execute @a[scores={temp=230}] ~ ~ ~ scoreboard players add @s language 0
-execute @a[scores={temp=230}] ~ ~ ~ scoreboard players set @s[scores={uid=0,level=0}] temp 231
-execute @a[scores={temp=231}] ~ ~ ~ scoreboard players add visiter uidafter 1
-execute @a[scores={temp=231}] ~ ~ ~ scoreboard players operation @s uid = visiter uidafter
-execute @a[scores={temp=231}] ~ ~ ~ scoreboard players add @s uid 100000
+execute @a[scores={temp=230},tag=!registered] ~ ~ ~ scoreboard players add @s uid 0
+execute @a[scores={temp=230},tag=!registered] ~ ~ ~ scoreboard players add @s level 0
+execute @a[scores={temp=230},tag=!registered] ~ ~ ~ scoreboard players add @s language 0
+execute @a[scores={temp=230},tag=!registered] ~ ~ ~ scoreboard players set @s[scores={uid=0,level=0}] temp 231
+execute @a[scores={temp=231},tag=!registered] ~ ~ ~ scoreboard players add visiter uidafter 1
+execute @a[scores={temp=231},tag=!registered] ~ ~ ~ scoreboard players operation @s uid = visiter uidafter
+execute @a[scores={temp=231},tag=!registered] ~ ~ ~ scoreboard players add @s uid 100000
+execute @a[scores={temp=231},tag=!registered] ~ ~ ~ scoreboard players add registernum registernum 1
+execute @a[scores={temp=231},tag=!registered] ~ ~ ~ scoreboard players operation @s registernum = registernum registernum
 execute @a[scores={temp=231}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f您选择了游客注册，您的用户组将会变更为游客，您的用户识别符无法解析您的个人岛屿，您无法创建队伍与公会。该用户组适用于无可用的用户识别符的用户用户组的线路，该用户组下您可以使用除个人岛屿以外的所有功能。"}]}
 execute @a[scores={temp=231}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fIf you choose to register tourists, your user group will be changed to tourists. Your user ID cannot resolve your personal island, and you cannot create teams and guilds. This user group is applicable to the lines of user groups without available user ID. under this user group, you can use all functions except personal island."}]}
 execute @a[scores={temp=231}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f您選擇了遊客注册，您的用戶組將會變更為遊客，您的用戶識別符無法解析您的個人島嶼，您無法創建隊伍與公會。該用戶組適用於無可用的用戶識別符的用戶用戶組的線路，該用戶組下您可以使用除個人島嶼以外的所有功能。"}]}
@@ -880,10 +883,15 @@ execute @a[scores={temp=231}] ~ ~ ~ title @s[scores={language=0}] subtitle §6@s
 execute @a[scores={temp=231}] ~ ~ ~ title @s[scores={language=1}] subtitle §6@s §bEnjoy your SkyBlock
 execute @a[scores={temp=231}] ~ ~ ~ title @s[scores={language=2}] subtitle §6@s §b享受您的空島生存
 execute @a[scores={temp=231}] ~ ~ ~ title @s[scores={language=3}] subtitle §6@s §bSkyBlockをお楽しみください
-execute @a[scores={temp=231}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f账号创建完成。"}]}
-execute @a[scores={temp=231}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fAccount creation completed."}]}
-execute @a[scores={temp=231}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f帳號創建完成。"}]}
-execute @a[scores={temp=231}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fアカウントの作成が完了しました。"}]}
+execute @a[scores={temp=231}] ~ ~ ~ tellraw @s[scores={language=0},tag=!registered] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f账号创建完成。"}]}
+execute @a[scores={temp=231}] ~ ~ ~ tellraw @s[scores={language=1},tag=!registered] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fAccount creation completed."}]}
+execute @a[scores={temp=231}] ~ ~ ~ tellraw @s[scores={language=2},tag=!registered] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f帳號創建完成。"}]}
+execute @a[scores={temp=231}] ~ ~ ~ tellraw @s[scores={language=3},tag=!registered] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fアカウントの作成が完了しました。"}]}
+execute @a[scores={temp=231}] ~ ~ ~ tellraw @a[scores={language=0},tag=!registered] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§f成功完成新手挑战与注册，成为第 §l§b"},{"score":{"name":"@s","objective":"registernum"}},{"text":" §r§f位正式成员！获得用户识别符 §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f！"}]}
+execute @a[scores={temp=231}] ~ ~ ~ tellraw @a[scores={language=1},tag=!registered] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§fSuccessful completion of novice challenge and registration, and become the §l§b"},{"score":{"name":"@s","objective":"registernum"}},{"text":" §r§ffull member! Get UID §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f!"}]}
+execute @a[scores={temp=231}] ~ ~ ~ tellraw @a[scores={language=2},tag=!registered] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§f成功完成新手挑戰與注册，成為第 §l§b"},{"score":{"name":"@s","objective":"registernum"}},{"text":" §r§f個正式成員！獲得用戶識別符 §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f！"}]}
+execute @a[scores={temp=231}] ~ ~ ~ tellraw @a[scores={language=3},tag=!registered] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§f登録完了しました。第 §l§b"},{"score":{"name":"@s","objective":"registernum"}},{"text":" §r§fのメンバーになります。UIDを取得する §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f！"}]}
+execute @a[scores={temp=231}] ~ ~ ~ tag @s add registered
 execute @a[scores={temp=231}] ~ ~ ~ scoreboard players reset @a[scores={temp=230..231}] temp
 #用户注册
 execute @a[scores={temp=224}] ~ ~ ~ tellraw @a[scores={temp=224,uid=!0,level=!0,language=0},tag=!registered] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f由于您上次的注册被中断，系统已自动修复并且为您重新注册。"}]}
@@ -903,6 +911,8 @@ execute @a[scores={temp=224},c=1] ~ ~ ~ scoreboard players set @s receive 0
 execute @a[scores={temp=224},c=1] ~ ~ ~ scoreboard players set @s receivetext 0
 execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224},c=1] level 1
 execute @a[scores={temp=224}] ~ ~ ~ scoreboard players operation @s uid = uidafter uidafter
+execute @a[scores={temp=224}] ~ ~ ~ scoreboard players add registernum registernum 1
+execute @a[scores={temp=224}] ~ ~ ~ scoreboard players operation @s registernum = registernum registernum
 execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=224}] temp 223
 execute @a[scores={temp=223..224,uid=!1..40000}] ~ ~ ~ scoreboard players set @s temp 225
 execute @a[scores={temp=225,uid=!1..40000}] ~ ~ ~ scoreboard players set uidafter uidafter 40001
@@ -1379,406 +1389,406 @@ execute @a[scores={temp=999}] ~ ~ ~ scoreboard players set @a[scores={temp=999}]
 execute @a[scores={temp=1000}] ~ ~ ~ scoreboard players reset @a[scores={temp=1000}] temp
 #Transfer
 execute @a[scores={temp=223}] ~ ~ ~ scoreboard players set @a[scores={temp=223}] temp 1100
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=1}] 6000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=2}] 7000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=3}] 8000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=4}] 9000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=5}] 10000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=6}] 11000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=7}] 12000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=8}] 13000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=9}] 14000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=10}] 15000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=11}] 16000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=12}] 17000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=13}] 18000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=14}] 19000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=15}] 20000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=16}] 21000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=17}] 22000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=18}] 23000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=19}] 24000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=20}] 25000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=21}] 26000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=22}] 27000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=23}] 28000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=24}] 29000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=25}] 30000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=26}] 31000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=27}] 32000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=28}] 33000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=29}] 34000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=30}] 35000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=31}] 36000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=32}] 37000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=33}] 38000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=34}] 39000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=35}] 40000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=36}] 41000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=37}] 42000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=38}] 43000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=39}] 44000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=40}] 45000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=41}] 46000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=42}] 47000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=43}] 48000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=44}] 49000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=45}] 50000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=46}] 51000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=47}] 52000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=48}] 53000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=49}] 54000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=50}] 55000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=51}] 56000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=52}] 57000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=53}] 58000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=54}] 59000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=55}] 60000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=56}] 61000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=57}] 62000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=58}] 63000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=59}] 64000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=60}] 65000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=61}] 66000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=62}] 67000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=63}] 68000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=64}] 69000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=65}] 70000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=66}] 71000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=67}] 72000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=68}] 73000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=69}] 74000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=70}] 75000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=71}] 76000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=72}] 77000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=73}] 78000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=74}] 79000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=75}] 80000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=76}] 81000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=77}] 82000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=78}] 83000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=79}] 84000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=80}] 85000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=81}] 86000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=82}] 87000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=83}] 88000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=84}] 89000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=85}] 90000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=86}] 91000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=87}] 92000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=88}] 93000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=89}] 94000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=90}] 95000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=91}] 96000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=92}] 97000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=93}] 98000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=94}] 99000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=95}] 100000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=96}] 101000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=97}] 102000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=98}] 103000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=99}] 104000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=100}] 105000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=101}] -6000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=102}] -7000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=103}] -8000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=104}] -9000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=105}] -10000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=106}] -11000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=107}] -12000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=108}] -13000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=109}] -14000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=110}] -15000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=111}] -16000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=112}] -17000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=113}] -18000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=114}] -19000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=115}] -20000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=116}] -21000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=117}] -22000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=118}] -23000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=119}] -24000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=120}] -25000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=121}] -26000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=122}] -27000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=123}] -28000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=124}] -29000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=125}] -30000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=126}] -31000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=127}] -32000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=128}] -33000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=129}] -34000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=130}] -35000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=131}] -36000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=132}] -37000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=133}] -38000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=134}] -39000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=135}] -40000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=136}] -41000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=137}] -42000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=138}] -43000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=139}] -44000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=140}] -45000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=141}] -46000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=142}] -47000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=143}] -48000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=144}] -49000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=145}] -50000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=146}] -51000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=147}] -52000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=148}] -53000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=149}] -54000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=150}] -55000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=151}] -56000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=152}] -57000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=153}] -58000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=154}] -59000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=155}] -60000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=156}] -61000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=157}] -62000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=158}] -63000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=159}] -64000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=160}] -65000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=161}] -66000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=162}] -67000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=163}] -68000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=164}] -69000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=165}] -70000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=166}] -71000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=167}] -72000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=168}] -73000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=169}] -74000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=170}] -75000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=171}] -76000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=172}] -77000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=173}] -78000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=174}] -79000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=175}] -80000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=176}] -81000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=177}] -82000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=178}] -83000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=179}] -84000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=180}] -85000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=181}] -86000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=182}] -87000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=183}] -88000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=184}] -89000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=185}] -90000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=186}] -91000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=187}] -92000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=188}] -93000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=189}] -94000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=190}] -95000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=191}] -96000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=192}] -97000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=193}] -98000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=194}] -99000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=195}] -100000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=196}] -101000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=197}] -102000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=198}] -103000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=199}] -104000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=200}] -105000 64 ~
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=1}] ~ 64 6000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=2}] ~ 64 7000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=3}] ~ 64 8000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=4}] ~ 64 9000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=5}] ~ 64 10000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=6}] ~ 64 11000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=7}] ~ 64 12000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=8}] ~ 64 13000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=9}] ~ 64 14000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=10}] ~ 64 15000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=11}] ~ 64 16000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=12}] ~ 64 17000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=13}] ~ 64 18000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=14}] ~ 64 19000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=15}] ~ 64 20000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=16}] ~ 64 21000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=17}] ~ 64 22000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=18}] ~ 64 23000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=19}] ~ 64 24000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=20}] ~ 64 25000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=21}] ~ 64 26000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=22}] ~ 64 27000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=23}] ~ 64 28000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=24}] ~ 64 29000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=25}] ~ 64 30000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=26}] ~ 64 31000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=27}] ~ 64 32000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=28}] ~ 64 33000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=29}] ~ 64 34000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=30}] ~ 64 35000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=31}] ~ 64 36000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=32}] ~ 64 37000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=33}] ~ 64 38000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=34}] ~ 64 39000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=35}] ~ 64 40000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=36}] ~ 64 41000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=37}] ~ 64 42000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=38}] ~ 64 43000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=39}] ~ 64 44000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=40}] ~ 64 45000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=41}] ~ 64 46000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=42}] ~ 64 47000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=43}] ~ 64 48000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=44}] ~ 64 49000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=45}] ~ 64 50000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=46}] ~ 64 51000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=47}] ~ 64 52000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=48}] ~ 64 53000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=49}] ~ 64 54000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=50}] ~ 64 55000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=51}] ~ 64 56000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=52}] ~ 64 57000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=53}] ~ 64 58000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=54}] ~ 64 59000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=55}] ~ 64 60000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=56}] ~ 64 61000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=57}] ~ 64 62000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=58}] ~ 64 63000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=59}] ~ 64 64000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=60}] ~ 64 65000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=61}] ~ 64 66000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=62}] ~ 64 67000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=63}] ~ 64 68000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=64}] ~ 64 69000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=65}] ~ 64 70000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=66}] ~ 64 71000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=67}] ~ 64 72000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=68}] ~ 64 73000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=69}] ~ 64 74000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=70}] ~ 64 75000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=71}] ~ 64 76000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=72}] ~ 64 77000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=73}] ~ 64 78000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=74}] ~ 64 79000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=75}] ~ 64 80000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=76}] ~ 64 81000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=77}] ~ 64 82000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=78}] ~ 64 83000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=79}] ~ 64 84000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=80}] ~ 64 85000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=81}] ~ 64 86000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=82}] ~ 64 87000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=83}] ~ 64 88000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=84}] ~ 64 89000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=85}] ~ 64 90000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=86}] ~ 64 91000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=87}] ~ 64 92000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=88}] ~ 64 93000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=89}] ~ 64 94000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=90}] ~ 64 95000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=91}] ~ 64 96000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=92}] ~ 64 97000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=93}] ~ 64 98000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=94}] ~ 64 99000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=95}] ~ 64 100000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=96}] ~ 64 101000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=97}] ~ 64 102000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=98}] ~ 64 103000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=99}] ~ 64 104000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=100}] ~ 64 105000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=101}] ~ 64 -6000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=102}] ~ 64 -7000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=103}] ~ 64 -8000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=104}] ~ 64 -9000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=105}] ~ 64 -10000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=106}] ~ 64 -11000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=107}] ~ 64 -12000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=108}] ~ 64 -13000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=109}] ~ 64 -14000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=110}] ~ 64 -15000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=111}] ~ 64 -16000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=112}] ~ 64 -17000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=113}] ~ 64 -18000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=114}] ~ 64 -19000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=115}] ~ 64 -20000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=116}] ~ 64 -21000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=117}] ~ 64 -22000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=118}] ~ 64 -23000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=119}] ~ 64 -24000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=120}] ~ 64 -25000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=121}] ~ 64 -26000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=122}] ~ 64 -27000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=123}] ~ 64 -28000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=124}] ~ 64 -29000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=125}] ~ 64 -30000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=126}] ~ 64 -31000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=127}] ~ 64 -32000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=128}] ~ 64 -33000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=129}] ~ 64 -34000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=130}] ~ 64 -35000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=131}] ~ 64 -36000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=132}] ~ 64 -37000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=133}] ~ 64 -38000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=134}] ~ 64 -39000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=135}] ~ 64 -40000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=136}] ~ 64 -41000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=137}] ~ 64 -42000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=138}] ~ 64 -43000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=139}] ~ 64 -44000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=140}] ~ 64 -45000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=141}] ~ 64 -46000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=142}] ~ 64 -47000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=143}] ~ 64 -48000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=144}] ~ 64 -49000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=145}] ~ 64 -50000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=146}] ~ 64 -51000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=147}] ~ 64 -52000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=148}] ~ 64 -53000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=149}] ~ 64 -54000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=150}] ~ 64 -55000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=151}] ~ 64 -56000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=152}] ~ 64 -57000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=153}] ~ 64 -58000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=154}] ~ 64 -59000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=155}] ~ 64 -60000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=156}] ~ 64 -61000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=157}] ~ 64 -62000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=158}] ~ 64 -63000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=159}] ~ 64 -64000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=160}] ~ 64 -65000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=161}] ~ 64 -66000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=162}] ~ 64 -67000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=163}] ~ 64 -68000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=164}] ~ 64 -69000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=165}] ~ 64 -70000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=166}] ~ 64 -71000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=167}] ~ 64 -72000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=168}] ~ 64 -73000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=169}] ~ 64 -74000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=170}] ~ 64 -75000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=171}] ~ 64 -76000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=172}] ~ 64 -77000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=173}] ~ 64 -78000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=174}] ~ 64 -79000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=175}] ~ 64 -80000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=176}] ~ 64 -81000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=177}] ~ 64 -82000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=178}] ~ 64 -83000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=179}] ~ 64 -84000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=180}] ~ 64 -85000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=181}] ~ 64 -86000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=182}] ~ 64 -87000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=183}] ~ 64 -88000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=184}] ~ 64 -89000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=185}] ~ 64 -90000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=186}] ~ 64 -91000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=187}] ~ 64 -92000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=188}] ~ 64 -93000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=189}] ~ 64 -94000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=190}] ~ 64 -95000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=191}] ~ 64 -96000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=192}] ~ 64 -97000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=193}] ~ 64 -98000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=194}] ~ 64 -99000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=195}] ~ 64 -100000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=196}] ~ 64 -101000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=197}] ~ 64 -102000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=198}] ~ 64 -103000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=199}] ~ 64 -104000
-execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=200}] ~ 64 -105000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=1}] 6000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=2}] 7000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=3}] 8000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=4}] 9000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=5}] 10000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=6}] 11000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=7}] 12000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=8}] 13000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=9}] 14000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=10}] 15000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=11}] 16000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=12}] 17000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=13}] 18000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=14}] 19000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=15}] 20000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=16}] 21000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=17}] 22000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=18}] 23000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=19}] 24000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=20}] 25000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=21}] 26000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=22}] 27000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=23}] 28000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=24}] 29000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=25}] 30000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=26}] 31000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=27}] 32000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=28}] 33000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=29}] 34000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=30}] 35000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=31}] 36000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=32}] 37000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=33}] 38000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=34}] 39000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=35}] 40000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=36}] 41000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=37}] 42000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=38}] 43000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=39}] 44000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=40}] 45000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=41}] 46000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=42}] 47000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=43}] 48000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=44}] 49000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=45}] 50000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=46}] 51000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=47}] 52000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=48}] 53000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=49}] 54000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=50}] 55000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=51}] 56000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=52}] 57000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=53}] 58000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=54}] 59000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=55}] 60000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=56}] 61000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=57}] 62000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=58}] 63000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=59}] 64000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=60}] 65000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=61}] 66000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=62}] 67000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=63}] 68000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=64}] 69000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=65}] 70000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=66}] 71000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=67}] 72000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=68}] 73000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=69}] 74000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=70}] 75000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=71}] 76000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=72}] 77000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=73}] 78000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=74}] 79000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=75}] 80000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=76}] 81000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=77}] 82000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=78}] 83000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=79}] 84000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=80}] 85000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=81}] 86000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=82}] 87000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=83}] 88000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=84}] 89000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=85}] 90000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=86}] 91000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=87}] 92000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=88}] 93000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=89}] 94000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=90}] 95000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=91}] 96000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=92}] 97000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=93}] 98000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=94}] 99000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=95}] 100000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=96}] 101000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=97}] 102000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=98}] 103000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=99}] 104000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=100}] 105000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=101}] -6000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=102}] -7000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=103}] -8000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=104}] -9000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=105}] -10000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=106}] -11000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=107}] -12000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=108}] -13000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=109}] -14000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=110}] -15000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=111}] -16000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=112}] -17000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=113}] -18000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=114}] -19000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=115}] -20000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=116}] -21000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=117}] -22000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=118}] -23000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=119}] -24000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=120}] -25000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=121}] -26000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=122}] -27000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=123}] -28000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=124}] -29000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=125}] -30000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=126}] -31000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=127}] -32000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=128}] -33000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=129}] -34000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=130}] -35000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=131}] -36000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=132}] -37000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=133}] -38000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=134}] -39000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=135}] -40000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=136}] -41000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=137}] -42000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=138}] -43000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=139}] -44000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=140}] -45000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=141}] -46000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=142}] -47000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=143}] -48000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=144}] -49000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=145}] -50000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=146}] -51000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=147}] -52000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=148}] -53000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=149}] -54000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=150}] -55000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=151}] -56000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=152}] -57000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=153}] -58000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=154}] -59000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=155}] -60000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=156}] -61000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=157}] -62000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=158}] -63000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=159}] -64000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=160}] -65000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=161}] -66000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=162}] -67000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=163}] -68000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=164}] -69000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=165}] -70000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=166}] -71000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=167}] -72000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=168}] -73000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=169}] -74000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=170}] -75000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=171}] -76000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=172}] -77000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=173}] -78000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=174}] -79000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=175}] -80000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=176}] -81000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=177}] -82000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=178}] -83000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=179}] -84000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=180}] -85000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=181}] -86000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=182}] -87000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=183}] -88000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=184}] -89000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=185}] -90000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=186}] -91000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=187}] -92000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=188}] -93000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=189}] -94000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=190}] -95000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=191}] -96000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=192}] -97000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=193}] -98000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=194}] -99000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=195}] -100000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=196}] -101000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=197}] -102000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=198}] -103000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=199}] -104000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,x=200}] -105000 101 ~
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=1}] ~ 101 6000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=2}] ~ 101 7000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=3}] ~ 101 8000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=4}] ~ 101 9000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=5}] ~ 101 10000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=6}] ~ 101 11000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=7}] ~ 101 12000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=8}] ~ 101 13000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=9}] ~ 101 14000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=10}] ~ 101 15000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=11}] ~ 101 16000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=12}] ~ 101 17000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=13}] ~ 101 18000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=14}] ~ 101 19000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=15}] ~ 101 20000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=16}] ~ 101 21000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=17}] ~ 101 22000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=18}] ~ 101 23000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=19}] ~ 101 24000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=20}] ~ 101 25000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=21}] ~ 101 26000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=22}] ~ 101 27000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=23}] ~ 101 28000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=24}] ~ 101 29000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=25}] ~ 101 30000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=26}] ~ 101 31000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=27}] ~ 101 32000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=28}] ~ 101 33000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=29}] ~ 101 34000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=30}] ~ 101 35000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=31}] ~ 101 36000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=32}] ~ 101 37000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=33}] ~ 101 38000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=34}] ~ 101 39000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=35}] ~ 101 40000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=36}] ~ 101 41000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=37}] ~ 101 42000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=38}] ~ 101 43000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=39}] ~ 101 44000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=40}] ~ 101 45000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=41}] ~ 101 46000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=42}] ~ 101 47000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=43}] ~ 101 48000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=44}] ~ 101 49000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=45}] ~ 101 50000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=46}] ~ 101 51000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=47}] ~ 101 52000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=48}] ~ 101 53000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=49}] ~ 101 54000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=50}] ~ 101 55000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=51}] ~ 101 56000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=52}] ~ 101 57000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=53}] ~ 101 58000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=54}] ~ 101 59000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=55}] ~ 101 60000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=56}] ~ 101 61000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=57}] ~ 101 62000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=58}] ~ 101 63000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=59}] ~ 101 64000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=60}] ~ 101 65000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=61}] ~ 101 66000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=62}] ~ 101 67000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=63}] ~ 101 68000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=64}] ~ 101 69000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=65}] ~ 101 70000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=66}] ~ 101 71000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=67}] ~ 101 72000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=68}] ~ 101 73000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=69}] ~ 101 74000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=70}] ~ 101 75000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=71}] ~ 101 76000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=72}] ~ 101 77000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=73}] ~ 101 78000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=74}] ~ 101 79000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=75}] ~ 101 80000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=76}] ~ 101 81000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=77}] ~ 101 82000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=78}] ~ 101 83000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=79}] ~ 101 84000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=80}] ~ 101 85000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=81}] ~ 101 86000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=82}] ~ 101 87000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=83}] ~ 101 88000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=84}] ~ 101 89000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=85}] ~ 101 90000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=86}] ~ 101 91000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=87}] ~ 101 92000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=88}] ~ 101 93000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=89}] ~ 101 94000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=90}] ~ 101 95000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=91}] ~ 101 96000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=92}] ~ 101 97000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=93}] ~ 101 98000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=94}] ~ 101 99000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=95}] ~ 101 100000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=96}] ~ 101 101000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=97}] ~ 101 102000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=98}] ~ 101 103000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=99}] ~ 101 104000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=100}] ~ 101 105000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=101}] ~ 101 -6000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=102}] ~ 101 -7000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=103}] ~ 101 -8000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=104}] ~ 101 -9000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=105}] ~ 101 -10000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=106}] ~ 101 -11000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=107}] ~ 101 -12000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=108}] ~ 101 -13000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=109}] ~ 101 -14000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=110}] ~ 101 -15000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=111}] ~ 101 -16000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=112}] ~ 101 -17000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=113}] ~ 101 -18000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=114}] ~ 101 -19000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=115}] ~ 101 -20000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=116}] ~ 101 -21000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=117}] ~ 101 -22000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=118}] ~ 101 -23000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=119}] ~ 101 -24000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=120}] ~ 101 -25000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=121}] ~ 101 -26000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=122}] ~ 101 -27000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=123}] ~ 101 -28000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=124}] ~ 101 -29000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=125}] ~ 101 -30000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=126}] ~ 101 -31000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=127}] ~ 101 -32000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=128}] ~ 101 -33000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=129}] ~ 101 -34000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=130}] ~ 101 -35000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=131}] ~ 101 -36000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=132}] ~ 101 -37000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=133}] ~ 101 -38000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=134}] ~ 101 -39000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=135}] ~ 101 -40000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=136}] ~ 101 -41000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=137}] ~ 101 -42000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=138}] ~ 101 -43000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=139}] ~ 101 -44000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=140}] ~ 101 -45000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=141}] ~ 101 -46000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=142}] ~ 101 -47000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=143}] ~ 101 -48000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=144}] ~ 101 -49000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=145}] ~ 101 -50000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=146}] ~ 101 -51000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=147}] ~ 101 -52000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=148}] ~ 101 -53000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=149}] ~ 101 -54000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=150}] ~ 101 -55000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=151}] ~ 101 -56000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=152}] ~ 101 -57000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=153}] ~ 101 -58000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=154}] ~ 101 -59000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=155}] ~ 101 -60000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=156}] ~ 101 -61000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=157}] ~ 101 -62000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=158}] ~ 101 -63000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=159}] ~ 101 -64000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=160}] ~ 101 -65000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=161}] ~ 101 -66000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=162}] ~ 101 -67000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=163}] ~ 101 -68000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=164}] ~ 101 -69000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=165}] ~ 101 -70000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=166}] ~ 101 -71000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=167}] ~ 101 -72000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=168}] ~ 101 -73000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=169}] ~ 101 -74000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=170}] ~ 101 -75000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=171}] ~ 101 -76000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=172}] ~ 101 -77000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=173}] ~ 101 -78000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=174}] ~ 101 -79000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=175}] ~ 101 -80000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=176}] ~ 101 -81000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=177}] ~ 101 -82000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=178}] ~ 101 -83000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=179}] ~ 101 -84000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=180}] ~ 101 -85000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=181}] ~ 101 -86000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=182}] ~ 101 -87000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=183}] ~ 101 -88000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=184}] ~ 101 -89000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=185}] ~ 101 -90000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=186}] ~ 101 -91000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=187}] ~ 101 -92000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=188}] ~ 101 -93000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=189}] ~ 101 -94000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=190}] ~ 101 -95000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=191}] ~ 101 -96000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=192}] ~ 101 -97000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=193}] ~ 101 -98000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=194}] ~ 101 -99000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=195}] ~ 101 -100000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=196}] ~ 101 -101000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=197}] ~ 101 -102000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=198}] ~ 101 -103000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=199}] ~ 101 -104000
+execute @a[scores={temp=1100..1101}] ~ ~ ~ tp @a[scores={temp=1100..1101,z=200}] ~ 101 -105000
 #注册系统
 execute @a[scores={temp=1100}] ~ ~ ~ scoreboard players set @a[scores={temp=1100}] temp 223
 #提示
@@ -1828,18 +1838,18 @@ execute @a[scores={temp=1101}] ~ ~ ~ scoreboard players set @a[scores={temp=1101
 execute @a[scores={temp=1101}] ~ ~ ~ scoreboard players set @a[scores={temp=1101}] temp 1102
 #防止被困
 execute @a[scores={temp=1102}] ~ ~ ~ scoreboard players add @s tphelptime 1
-execute @a[scores={temp=1102,tphelptime=10..}] ~ ~ ~ detect ~ 64 ~ air 0 scoreboard players set @s tphelp 1
-execute @a[scores={temp=1102,tphelp=1}] ~ ~ ~ fill ~ 64 ~ ~ 65 ~ air destroy
+execute @a[scores={temp=1102,tphelptime=10..}] ~ ~ ~ detect ~ 102 ~ air 0 scoreboard players set @s tphelp 1
+execute @a[scores={temp=1102,tphelp=1}] ~ ~ ~ fill ~ 101 ~ ~ 102 ~ air destroy
 execute @a[scores={temp=1102,tphelp=1}] ~ ~ ~ scoreboard players set @s tphelp 0
-execute @a[scores={temp=1102,tphelp=0,tphelptime=15..}] ~ ~ ~ detect ~ 63 ~ air 0 scoreboard players set @s tphelp 11
-execute @a[scores={temp=1102,tphelp=11}] ~ ~ ~ detect ~ 62 ~ air 0 scoreboard players set @s tphelp 12
-execute @a[scores={temp=1102,tphelp=12}] ~ ~ ~ detect ~ 61 ~ air 0 scoreboard players set @s tphelp 13
-execute @a[scores={temp=1102,tphelp=13}] ~ ~ ~ detect ~ 60 ~ air 0 scoreboard players set @s tphelp 14
-execute @a[scores={temp=1102,tphelp=14}] ~ ~ ~ detect ~ 59 ~ air 0 scoreboard players set @s tphelp 15
-execute @a[scores={temp=1102,tphelp=15}] ~ ~ ~ detect ~ 58 ~ air 0 scoreboard players set @s tphelp 16
-execute @a[scores={temp=1102,tphelp=16}] ~ ~ ~ detect ~ 57 ~ air 0 scoreboard players set @s tphelp 17
-execute @a[scores={temp=1102,tphelp=17}] ~ ~ ~ detect ~ 56 ~ air 0 scoreboard players set @s tphelp 18
-execute @a[scores={temp=1102,tphelp=18}] ~ ~ ~ fill ~ 64 ~ ~ 64 ~ stone 0 replace air
+execute @a[scores={temp=1102,tphelp=0,tphelptime=15..}] ~ ~ ~ detect ~ 100 ~ air 0 scoreboard players set @s tphelp 11
+execute @a[scores={temp=1102,tphelp=11}] ~ ~ ~ detect ~ 99 ~ air 0 scoreboard players set @s tphelp 12
+execute @a[scores={temp=1102,tphelp=12}] ~ ~ ~ detect ~ 98 ~ air 0 scoreboard players set @s tphelp 13
+execute @a[scores={temp=1102,tphelp=13}] ~ ~ ~ detect ~ 97 ~ air 0 scoreboard players set @s tphelp 14
+execute @a[scores={temp=1102,tphelp=14}] ~ ~ ~ detect ~ 96 ~ air 0 scoreboard players set @s tphelp 15
+execute @a[scores={temp=1102,tphelp=15}] ~ ~ ~ detect ~ 95 ~ air 0 scoreboard players set @s tphelp 16
+execute @a[scores={temp=1102,tphelp=16}] ~ ~ ~ detect ~ 94 ~ air 0 scoreboard players set @s tphelp 17
+execute @a[scores={temp=1102,tphelp=17}] ~ ~ ~ detect ~ 93 ~ air 0 scoreboard players set @s tphelp 18
+execute @a[scores={temp=1102,tphelp=18}] ~ ~ ~ fill ~ 100 ~ ~ 100 ~ stone 0 replace air
 execute @a[scores={tphelptime=20..}] ~ ~ ~ scoreboard players reset @s tphelp
 execute @a[scores={tphelptime=20..}] ~ ~ ~ scoreboard players reset @s temp
 execute @a[scores={tphelptime=20..}] ~ ~ ~ scoreboard players reset @s tphelptime
@@ -1877,11 +1887,11 @@ execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players reset @a[scores={tem
 execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players set @a[scores={temp=223,receive=0}] receive 1
 #原来的循环部分
 execute @a[scores={temp=223,receive=1..}] ~ ~ ~ scoreboard players add @s receive 1
-execute @a[scores={temp=223,receive=1..},c=1] ~ 64 ~ tp @s ~ 64 ~
+execute @a[scores={temp=223,receive=1..},c=1] ~ 101 ~ tp @s ~ 101 ~
 execute @a[scores={temp=223,receive=100..110},c=1] ~ ~ ~ detect 0 7 0 air 0 setblock 0 7 0 bedrock
 execute @a[scores={temp=223,receive=100..110},c=1] ~ ~ ~ detect 0 8 0 setblock 0 8 0 air
 execute @a[scores={temp=223,receive=100..110},c=1] ~ ~ ~ detect 0 9 0 setblock 0 9 0 air
-execute @a[scores={temp=223,receive=111..130},c=1] ~ 64 ~ detect ~ ~-1 ~ air 0 clone 8 1 -8 -8 17 8 ~-8 ~-7 ~-8
+execute @a[scores={temp=223,receive=111..130},c=1] ~ 101 ~ detect ~ ~-1 ~ air 0 clone 8 1 -8 -8 17 8 ~-8 ~-7 ~-8
 execute @a[scores={temp=223,receive=131..210}] ~ ~ ~ tickingarea add ~500 0 ~500 ~500 255 ~-500 newislandbarrier1
 execute @a[scores={temp=223,receive=141..210}] ~ ~ ~ detect ~500 254 ~498 air 0 fill ~500 254 ~500 ~500 254 ~-500 border_block
 execute @a[scores={temp=223,receive=141..210}] ~ ~ ~ detect ~500 2 ~498 air 0 fill ~500 2 ~500 ~500 2 ~-500 border_block
@@ -1992,10 +2002,10 @@ tellraw @a[scores={temp=223,language=0,receive=541..}] {"rawtext":[{"text":"§l�
 tellraw @a[scores={temp=223,language=1,receive=541..}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fAccount creation completed."}]}
 tellraw @a[scores={temp=223,language=2,receive=541..}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f帳號創建完成。"}]}
 tellraw @a[scores={temp=223,language=3,receive=541..}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fアカウントの作成が完了しました。"}]}
-execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§f成功完成新手挑战与注册，成为正式成员！获得用户识别符 §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f！"}]}
-execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tellraw @a[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§fSuccessful completion of novice challenge and registration, become a full member! Get UID §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f!"}]}
-execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tellraw @a[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§f成功完成新手挑戰與注册，成為正式成員！獲得用戶識別符 §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f！"}]}
-execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tellraw @a[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§f登録が完了し、正式メンバーになります。UIDを取得する §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f！"}]}
+execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§f成功完成新手挑战与注册，成为第 §l§b"},{"score":{"name":"@s","objective":"registernum"}},{"text":" §r§f位正式成员！获得用户识别符 §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f！"}]}
+execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tellraw @a[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§fSuccessful completion of novice challenge and registration, and become the §l§b"},{"score":{"name":"@s","objective":"registernum"}},{"text":" §r§ffull member! Get UID §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f!"}]}
+execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tellraw @a[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§f成功完成新手挑戰與注册，成為第 §l§b"},{"score":{"name":"@s","objective":"registernum"}},{"text":" §r§f個正式成員！獲得用戶識別符 §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f！"}]}
+execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tellraw @a[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§6"},{"selector":"@s"},{"text":" §r§f登録完了しました。第 §l§b"},{"score":{"name":"@s","objective":"registernum"}},{"text":" §r§fのメンバーになります。UIDを取得する §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":" §r§f！"}]}
 execute @a[scores={temp=223,receive=541..},tag=!registered] ~ ~ ~ tag @s add registered
 title @a[scores={temp=223,receive=541..}] times 10 70 20
 title @a[scores={temp=223,receive=541..}] clear
@@ -2019,64 +2029,6 @@ tag @a[name=xh小胡] add developer
 tag @a[name=HeroHerobrine26] add developer
 tag @a[name=JUNCHA2019] add developer
 tag @a[name=JunchaOfficial] add developer
-#每日的登录物品
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @a[tag=developer,tag=!developerdaily,scores={uid=!0}] cake 1 0
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ scoreboard players random @s developerdaily 1 27
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=1}] potion 1 5
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=2}] potion 1 6
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=3}] potion 1 7
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=4}] potion 1 8
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=5}] potion 1 9
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=6}] potion 1 10
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=7}] potion 1 11
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=8}] potion 1 12
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=9}] potion 1 13
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=10}] potion 1 14
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=11}] potion 1 15
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=12}] potion 1 16
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=13}] potion 1 19
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=14}] potion 1 20
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=15}] potion 1 21
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=16}] potion 1 22
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=17}] potion 1 28
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=18}] potion 1 29
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=19}] potion 1 30
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=20}] potion 1 31
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=21}] potion 1 32
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=22}] potion 1 33
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=23}] potion 1 37
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=24}] potion 1 38
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=25}] potion 1 39
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=26}] potion 1 40
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=27}] potion 1 41
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ scoreboard players random @s developerdaily 30 51
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=30}] coal 1 0
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=31}] coal 2 0
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=32}] coal 4 0
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=33}] iron_ingot 1 0
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=34}] iron_ingot 2 0
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=35}] iron_ingot 4 0
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=36}] iron_nugget 2 0
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=37}] iron_nugget 4 0
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=38}] iron_nugget 8 0
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=39}] gold_ingot 1 0
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=40}] gold_ingot 2 0
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=41}] gold_ingot 4 0
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=42}] gold_nugget 2 0
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=43}] gold_nugget 4 0
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=44}] gold_nugget 8 0
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=45}] redstone 4 0
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=46}] redstone 8 0
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=47}] redstone 16 0
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=48}] redstone 32 0
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=49}] dye 4 4
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=50}] dye 8 4
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ give @s[scores={developerdaily=51}] diamond 1 0
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f今日的开发者专享礼物已送达！"}]}
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ tellraw @a[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fToday's developer exclusive gift has been delivered!"}]}
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ tellraw @a[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f今日的開發者專享禮物已送達！"}]}
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ tellraw @a[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f今日の開発者専用のプレゼントが届きました。"}]}
-execute @a[tag=developer,tag=!developerdaily,scores={uid=!0}] ~ ~ ~ tag @s add developerdaily
 #islandbarrier
 execute @e[type=minecraft:item] ~ ~ ~ detect ~ 0 ~ bedrock 0 kill @s
 execute @e[type=minecraft:item] ~ ~ ~ detect ~ 1 ~ deny 0 kill @s
@@ -2402,7 +2354,7 @@ execute @a[tag=islandbarrier,tag=!islandbarriertellraw] ~ ~ ~ tellraw @s[scores=
 tag @a[tag=islandbarrier,tag=!islandbarriertellraw] add islandbarriertellraw
 execute @a[tag=islandbarrier] ~ ~ ~ tag @s remove islandbarrier
 #strengthen
-scoreboard players add @e[type=!minecraft:armor_stand,type=!minecraft:arrow,type=!minecraft:boat,type=!minecraft:chest_,type=!minecraft:command_block_,type=!minecraft:dragon_fireball,type=!minecraft:egg,type=!minecraft:ender_crystal,type=!minecraft:ender_dragon,type=!minecraft:ender_pearl,type=!minecraft:evocation_fang,type=!minecraft:eye_of_ender_signal,type=!minecraft:falling_block,type=!minecraft:fireball,type=!minecraft:fireworks_rocket,type=!minecraft:fishing_hook,type=!minecraft:hopper_,type=!minecraft:item,type=!minecraft:leash_knot,type=!minecraft:lightning_bolt,type=!minecraft:lingering_potion,type=!minecraft:llama_spit,type=!minecraft:,type=!minecraft:painting,type=!minecraft:player,type=!minecraft:shulker_bullet,type=!minecraft:small_fireball,type=!minecraft:splash_potion,type=!minecraft:thrown_trident,type=!minecraft:tnt,type=!minecraft:tnt_,type=!minecraft:wither,type=!minecraft:xp_bottle,type=!minecraft:xp_orb] typeid 0
+scoreboard players add @e[type=!minecraft:armor_stand,type=!minecraft:arrow,type=!minecraft:boat,type=!minecraft:dragon_fireball,type=!minecraft:egg,type=!minecraft:ender_crystal,type=!minecraft:ender_dragon,type=!minecraft:ender_pearl,type=!minecraft:evocation_fang,type=!minecraft:eye_of_ender_signal,type=!minecraft:falling_block,type=!minecraft:fireball,type=!minecraft:fireworks_rocket,type=!minecraft:fishing_hook,type=!minecraft:item,type=!minecraft:leash_knot,type=!minecraft:lightning_bolt,type=!minecraft:lingering_potion,type=!minecraft:llama_spit,type=!minecraft:painting,type=!minecraft:player,type=!minecraft:shulker_bullet,type=!minecraft:small_fireball,type=!minecraft:splash_potion,type=!minecraft:thrown_trident,type=!minecraft:tnt,type=!minecraft:wither,type=!minecraft:xp_bottle,type=!minecraft:xp_orb] typeid 0
 scoreboard players random @e[scores={typeid=0}] typeid 1 75
 effect @e[scores={typeid=1..10}] fire_resistance 1000000 0 true
 effect @e[scores={typeid=11}] health_boost 1000000 0 true
@@ -2428,11 +2380,66 @@ effect @e[scores={typeid=61..63}] resistance 1000000 0 true
 effect @e[scores={typeid=64..67}] resistance 1000000 1 true
 effect @e[scores={typeid=68..70}] resistance 1000000 2 true
 effect @e[scores={typeid=71..75}] slow_falling 1000000 0 true
-scoreboard players set @e[scores={typeid=1..75},type=!minecraft:armor_stand,type=!minecraft:arrow,type=!minecraft:boat,type=!minecraft:chest_,type=!minecraft:command_block_,type=!minecraft:dragon_fireball,type=!minecraft:egg,type=!minecraft:ender_crystal,type=!minecraft:ender_dragon,type=!minecraft:ender_pearl,type=!minecraft:evocation_fang,type=!minecraft:eye_of_ender_signal,type=!minecraft:falling_block,type=!minecraft:fireball,type=!minecraft:fireworks_rocket,type=!minecraft:fishing_hook,type=!minecraft:hopper_,type=!minecraft:item,type=!minecraft:leash_knot,type=!minecraft:lightning_bolt,type=!minecraft:lingering_potion,type=!minecraft:llama_spit,type=!minecraft:,type=!minecraft:painting,type=!minecraft:player,type=!minecraft:shulker_bullet,type=!minecraft:small_fireball,type=!minecraft:splash_potion,type=!minecraft:thrown_trident,type=!minecraft:tnt,type=!minecraft:tnt_,type=!minecraft:wither,type=!minecraft:xp_bottle,type=!minecraft:xp_orb] typeid -1
-scoreboard players random @e[scores={typeid=-1},type=!minecraft:armor_stand,type=!minecraft:arrow,type=!minecraft:boat,type=!minecraft:chest_,type=!minecraft:command_block_,type=!minecraft:dragon_fireball,type=!minecraft:egg,type=!minecraft:ender_crystal,type=!minecraft:ender_dragon,type=!minecraft:ender_pearl,type=!minecraft:evocation_fang,type=!minecraft:eye_of_ender_signal,type=!minecraft:falling_block,type=!minecraft:fireball,type=!minecraft:fireworks_rocket,type=!minecraft:fishing_hook,type=!minecraft:hopper_,type=!minecraft:item,type=!minecraft:leash_knot,type=!minecraft:lightning_bolt,type=!minecraft:lingering_potion,type=!minecraft:llama_spit,type=!minecraft:,type=!minecraft:painting,type=!minecraft:player,type=!minecraft:shulker_bullet,type=!minecraft:small_fireball,type=!minecraft:splash_potion,type=!minecraft:thrown_trident,type=!minecraft:tnt,type=!minecraft:tnt_,type=!minecraft:wither,type=!minecraft:xp_bottle,type=!minecraft:xp_orb] typeid 101 110
-scoreboard players random @e[scores={typeid=101..103},type=!minecraft:armor_stand,type=!minecraft:arrow,type=!minecraft:boat,type=!minecraft:chest_,type=!minecraft:command_block_,type=!minecraft:dragon_fireball,type=!minecraft:egg,type=!minecraft:ender_crystal,type=!minecraft:ender_dragon,type=!minecraft:ender_pearl,type=!minecraft:evocation_fang,type=!minecraft:eye_of_ender_signal,type=!minecraft:falling_block,type=!minecraft:fireball,type=!minecraft:fireworks_rocket,type=!minecraft:fishing_hook,type=!minecraft:hopper_,type=!minecraft:item,type=!minecraft:leash_knot,type=!minecraft:lightning_bolt,type=!minecraft:lingering_potion,type=!minecraft:llama_spit,type=!minecraft:,type=!minecraft:painting,type=!minecraft:player,type=!minecraft:shulker_bullet,type=!minecraft:small_fireball,type=!minecraft:splash_potion,type=!minecraft:thrown_trident,type=!minecraft:tnt,type=!minecraft:tnt_,type=!minecraft:wither,type=!minecraft:xp_bottle,type=!minecraft:xp_orb] typeid 1 75
-scoreboard players set @e[scores={typeid=104..110},type=!minecraft:armor_stand,type=!minecraft:arrow,type=!minecraft:boat,type=!minecraft:chest_,type=!minecraft:command_block_,type=!minecraft:dragon_fireball,type=!minecraft:egg,type=!minecraft:ender_crystal,type=!minecraft:ender_dragon,type=!minecraft:ender_pearl,type=!minecraft:evocation_fang,type=!minecraft:eye_of_ender_signal,type=!minecraft:falling_block,type=!minecraft:fireball,type=!minecraft:fireworks_rocket,type=!minecraft:fishing_hook,type=!minecraft:hopper_,type=!minecraft:item,type=!minecraft:leash_knot,type=!minecraft:lightning_bolt,type=!minecraft:lingering_potion,type=!minecraft:llama_spit,type=!minecraft:,type=!minecraft:painting,type=!minecraft:player,type=!minecraft:shulker_bullet,type=!minecraft:small_fireball,type=!minecraft:splash_potion,type=!minecraft:thrown_trident,type=!minecraft:tnt,type=!minecraft:tnt_,type=!minecraft:wither,type=!minecraft:xp_bottle,type=!minecraft:xp_orb] typeid 500
-scoreboard players set @e[scores={typeid=!500},type=!minecraft:armor_stand,type=!minecraft:arrow,type=!minecraft:boat,type=!minecraft:chest_,type=!minecraft:command_block_,type=!minecraft:dragon_fireball,type=!minecraft:egg,type=!minecraft:ender_crystal,type=!minecraft:ender_dragon,type=!minecraft:ender_pearl,type=!minecraft:evocation_fang,type=!minecraft:eye_of_ender_signal,type=!minecraft:falling_block,type=!minecraft:fireball,type=!minecraft:fireworks_rocket,type=!minecraft:fishing_hook,type=!minecraft:hopper_,type=!minecraft:item,type=!minecraft:leash_knot,type=!minecraft:lightning_bolt,type=!minecraft:lingering_potion,type=!minecraft:llama_spit,type=!minecraft:,type=!minecraft:painting,type=!minecraft:player,type=!minecraft:shulker_bullet,type=!minecraft:small_fireball,type=!minecraft:splash_potion,type=!minecraft:thrown_trident,type=!minecraft:tnt,type=!minecraft:tnt_,type=!minecraft:wither,type=!minecraft:xp_bottle,type=!minecraft:xp_orb] typeid 600
+scoreboard players set @e[scores={typeid=1..75},type=!minecraft:armor_stand,type=!minecraft:arrow,type=!minecraft:boat,type=!minecraft:dragon_fireball,type=!minecraft:egg,type=!minecraft:ender_crystal,type=!minecraft:ender_dragon,type=!minecraft:ender_pearl,type=!minecraft:evocation_fang,type=!minecraft:eye_of_ender_signal,type=!minecraft:falling_block,type=!minecraft:fireball,type=!minecraft:fireworks_rocket,type=!minecraft:fishing_hook,type=!minecraft:item,type=!minecraft:leash_knot,type=!minecraft:lightning_bolt,type=!minecraft:lingering_potion,type=!minecraft:llama_spit,type=!minecraft:painting,type=!minecraft:player,type=!minecraft:shulker_bullet,type=!minecraft:small_fireball,type=!minecraft:splash_potion,type=!minecraft:thrown_trident,type=!minecraft:tnt,type=!minecraft:wither,type=!minecraft:xp_bottle,type=!minecraft:xp_orb] typeid -1
+scoreboard players random @e[scores={typeid=-1},type=!minecraft:armor_stand,type=!minecraft:arrow,type=!minecraft:boat,type=!minecraft:dragon_fireball,type=!minecraft:egg,type=!minecraft:ender_crystal,type=!minecraft:ender_dragon,type=!minecraft:ender_pearl,type=!minecraft:evocation_fang,type=!minecraft:eye_of_ender_signal,type=!minecraft:falling_block,type=!minecraft:fireball,type=!minecraft:fireworks_rocket,type=!minecraft:fishing_hook,type=!minecraft:item,type=!minecraft:leash_knot,type=!minecraft:lightning_bolt,type=!minecraft:lingering_potion,type=!minecraft:llama_spit,type=!minecraft:painting,type=!minecraft:player,type=!minecraft:shulker_bullet,type=!minecraft:small_fireball,type=!minecraft:splash_potion,type=!minecraft:thrown_trident,type=!minecraft:tnt,type=!minecraft:wither,type=!minecraft:xp_bottle,type=!minecraft:xp_orb] typeid 101 110
+scoreboard players random @e[scores={typeid=101..103},type=!minecraft:armor_stand,type=!minecraft:arrow,type=!minecraft:boat,type=!minecraft:dragon_fireball,type=!minecraft:egg,type=!minecraft:ender_crystal,type=!minecraft:ender_dragon,type=!minecraft:ender_pearl,type=!minecraft:evocation_fang,type=!minecraft:eye_of_ender_signal,type=!minecraft:falling_block,type=!minecraft:fireball,type=!minecraft:fireworks_rocket,type=!minecraft:fishing_hook,type=!minecraft:item,type=!minecraft:leash_knot,type=!minecraft:lightning_bolt,type=!minecraft:lingering_potion,type=!minecraft:llama_spit,type=!minecraft:painting,type=!minecraft:player,type=!minecraft:shulker_bullet,type=!minecraft:small_fireball,type=!minecraft:splash_potion,type=!minecraft:thrown_trident,type=!minecraft:tnt,type=!minecraft:wither,type=!minecraft:xp_bottle,type=!minecraft:xp_orb] typeid 1 75
+scoreboard players set @e[scores={typeid=104..110},type=!minecraft:armor_stand,type=!minecraft:arrow,type=!minecraft:boat,type=!minecraft:dragon_fireball,type=!minecraft:egg,type=!minecraft:ender_crystal,type=!minecraft:ender_dragon,type=!minecraft:ender_pearl,type=!minecraft:evocation_fang,type=!minecraft:eye_of_ender_signal,type=!minecraft:falling_block,type=!minecraft:fireball,type=!minecraft:fireworks_rocket,type=!minecraft:fishing_hook,type=!minecraft:item,type=!minecraft:leash_knot,type=!minecraft:lightning_bolt,type=!minecraft:lingering_potion,type=!minecraft:llama_spit,type=!minecraft:painting,type=!minecraft:player,type=!minecraft:shulker_bullet,type=!minecraft:small_fireball,type=!minecraft:splash_potion,type=!minecraft:thrown_trident,type=!minecraft:tnt,type=!minecraft:wither,type=!minecraft:xp_bottle,type=!minecraft:xp_orb] typeid 500
+scoreboard players set @e[scores={typeid=1..500},type=!minecraft:armor_stand,type=!minecraft:arrow,type=!minecraft:boat,type=!minecraft:dragon_fireball,type=!minecraft:egg,type=!minecraft:ender_crystal,type=!minecraft:ender_dragon,type=!minecraft:ender_pearl,type=!minecraft:evocation_fang,type=!minecraft:eye_of_ender_signal,type=!minecraft:falling_block,type=!minecraft:fireball,type=!minecraft:fireworks_rocket,type=!minecraft:fishing_hook,type=!minecraft:item,type=!minecraft:leash_knot,type=!minecraft:lightning_bolt,type=!minecraft:lingering_potion,type=!minecraft:llama_spit,type=!minecraft:painting,type=!minecraft:player,type=!minecraft:shulker_bullet,type=!minecraft:small_fireball,type=!minecraft:splash_potion,type=!minecraft:thrown_trident,type=!minecraft:tnt,type=!minecraft:wither,type=!minecraft:xp_bottle,type=!minecraft:xp_orb] typeid 600
+execute @e[scores={typeid=600},type=minecraft:zombie] ~ ~ ~ scoreboard players set @s typeid 1000
+execute @e[scores={typeid=600},type=minecraft:skeleton] ~ ~ ~ scoreboard players set @s typeid 1000
+execute @e[scores={typeid=600},type=minecraft:stray] ~ ~ ~ scoreboard players set @s typeid 1000
+execute @e[scores={typeid=600},type=minecraft:husk] ~ ~ ~ scoreboard players set @s typeid 1000
+execute @e[scores={typeid=600},type=minecraft:zombie_pigman] ~ ~ ~ scoreboard players set @s typeid 1000
+execute @e[scores={typeid=600},type=minecraft:drowned] ~ ~ ~ scoreboard players set @s typeid 1000
+execute @e[scores={typeid=600},type=minecraft:spider] ~ ~ ~ scoreboard players set @s typeid 1000
+execute @e[scores={typeid=600},type=minecraft:cave_spider] ~ ~ ~ scoreboard players set @s typeid 1000
+execute @e[scores={typeid=1000},tag=!copytype] ~ ~ ~ scoreboard players random @s typeid 1101 1200
+execute @e[scores={typeid=1000},tag=copytype] ~ ~ ~ scoreboard players random @s typeid 1121 1200
+execute @e[scores={typeid=1101..1120}] ~ ~ ~ summon minecraft:zombie ~ ~ ~ scoreboard players random @s typeid 1201 1207
+execute @e[scores={typeid=1201}] ~ ~ ~ summon minecraft:zombie ~ ~ ~
+execute @e[scores={typeid=1202}] ~ ~ ~ summon minecraft:skeleton ~ ~ ~
+execute @e[scores={typeid=1203}] ~ ~ ~ summon minecraft:cave_spider ~ ~ ~
+execute @e[scores={typeid=1204}] ~ ~ ~ summon minecraft:husk ~ ~ ~
+execute @e[scores={typeid=1205}] ~ ~ ~ summon minecraft:stray ~ ~ ~
+execute @e[scores={typeid=1206}] ~ ~ ~ summon minecraft:drowned ~ ~ ~
+execute @e[scores={typeid=1201..1206}] ~ ~ ~ scoreboard players add @e[r=5,type=!minecraft:player] typeid 0
+execute @e[scores={typeid=1121..1180}] ~ ~ ~ scoreboard players random @s typeid 1501 1600
+execute @e[scores={typeid=1501..1520},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.head 0 leather_helmet 1 30
+execute @e[scores={typeid=1521..1530},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.head 0 chainmail_helmet 1 50
+execute @e[scores={typeid=1531..1540},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.head 0 chainmail_helmet 1 75
+execute @e[scores={typeid=1541..1550},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.head 0 chainmail_helmet 1 100
+execute @e[scores={typeid=1551..1555},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.head 0 iron_helmet 1 30
+execute @e[scores={typeid=1556..1560},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.head 0 iron_helmet 1 60
+execute @e[scores={typeid=1561..1565},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.head 0 golden_helmet 1 30
+execute @e[scores={typeid=1566..1570},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.head 0 golden_helmet 1 60
+execute @e[scores={typeid=1501..1600}] ~ ~ ~ scoreboard players random @s typeid 1601 1700
+execute @e[scores={typeid=1601..1620},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.legs 0 leather_leggings 1 30
+execute @e[scores={typeid=1621..1630},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.legs 0 chainmail_leggings 1 50
+execute @e[scores={typeid=1631..1640},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.legs 0 chainmail_leggings 1 75
+execute @e[scores={typeid=1641..1650},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.legs 0 chainmail_leggings 1 100
+execute @e[scores={typeid=1651..1655},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.legs 0 iron_leggings 1 30
+execute @e[scores={typeid=1656..1660},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.legs 0 iron_leggings 1 60
+execute @e[scores={typeid=1661..1665},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.legs 0 golden_leggings 1 30
+execute @e[scores={typeid=1666..1670},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.legs 0 golden_leggings 1 60
+execute @e[scores={typeid=1601..1700}] ~ ~ ~ scoreboard players random @s typeid 1701 1800
+execute @e[scores={typeid=1701..1720},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.chest 0 leather_chestplate 1 30
+execute @e[scores={typeid=1721..1730},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.chest 0 chainmail_chestplate 1 50
+execute @e[scores={typeid=1731..1740},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.chest 0 chainmail_chestplate 1 75
+execute @e[scores={typeid=1741..1750},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.chest 0 chainmail_chestplate 1 100
+execute @e[scores={typeid=1751..1755},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.chest 0 iron_chestplate 1 30
+execute @e[scores={typeid=1756..1760},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.chest 0 iron_chestplate 1 60
+execute @e[scores={typeid=1761..1765},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.chest 0 golden_chestplate 1 30
+execute @e[scores={typeid=1766..1770},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.chest 0 golden_chestplate 1 60
+execute @e[scores={typeid=1701..1800}] ~ ~ ~ scoreboard players random @s typeid 1801 1900
+execute @e[scores={typeid=1801..1820},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.feet 0 leather_boots 1 30
+execute @e[scores={typeid=1821..1830},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.feet 0 chainmail_boots 1 50
+execute @e[scores={typeid=1831..1840},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.feet 0 chainmail_boots 1 75
+execute @e[scores={typeid=1841..1850},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.feet 0 chainmail_boots 1 100
+execute @e[scores={typeid=1851..1855},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.feet 0 iron_boots 1 30
+execute @e[scores={typeid=1856..1860},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.feet 0 iron_boots 1 60
+execute @e[scores={typeid=1861..1865},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.feet 0 golden_boots 1 30
+execute @e[scores={typeid=1866..1870},type=!minecraft:player] ~ ~ ~ replaceitem entity @s slot.armor.feet 0 golden_boots 1 60
+execute @e[scores={typeid=1000..1999}] ~ ~ ~ scoreboard players set @s tptype 2000
 #achievement/repeat
 scoreboard players add @a achievementtemp 0
 scoreboard players set @a[scores={achievement1=0,achievementtemp=0,uid=1..9}] achievementtemp 1
@@ -3316,121 +3323,130 @@ scoreboard players reset @a[scores={temp=!50}] about
 scoreboard players reset @a[scores={temp=!50}] abouttext
 #文本显示actionbar
 #注册
-execute @a[scores={temp=223,actionbar=10,receive=0..5}] ~ ~ ~ title @s actionbar §l§c■ ■ ■ ■ ■  §l§d= §l§60% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=6..10}] ~ ~ ~ title @s actionbar §l§c■ ■ ■ ■ ■  §l§d= §l§61% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=11..15}] ~ ~ ~ title @s actionbar §l§c■ ■ ■ ■ ■  §l§d= §l§62% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=16..20}] ~ ~ ~ title @s actionbar §l§c■ ■ ■ ■ ■  §l§d= §l§63% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=21..25}] ~ ~ ~ title @s actionbar §l§c■ ■ ■ ■ ■  §l§d= §l§64% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=26..30}] ~ ~ ~ title @s actionbar §l§c■ ■ ■ ■ ■  §l§d= §l§65% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=31..35}] ~ ~ ~ title @s actionbar §l§c■ ■ ■ ■ ■  §l§d= §l§66% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=36..40}] ~ ~ ~ title @s actionbar §l§c■ ■ ■ ■ ■  §l§d= §l§67% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=41..45}] ~ ~ ~ title @s actionbar §l§c■ ■ ■ ■ ■  §l§d= §l§68% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=46..50}] ~ ~ ~ title @s actionbar §l§c■ ■ ■ ■ ■  §l§d= §l§69% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=51..55}] ~ ~ ~ title @s actionbar §l§c■ ■ ■ ■ ■  §l§d= §l§610% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=56..60}] ~ ~ ~ title @s actionbar §l§b■ §c■ ■ ■ ■  §l§d= §l§611% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=61..65}] ~ ~ ~ title @s actionbar §l§b■ §c■ ■ ■ ■  §l§d= §l§612% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=66..70}] ~ ~ ~ title @s actionbar §l§b■ §c■ ■ ■ ■  §l§d= §l§613% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=71..75}] ~ ~ ~ title @s actionbar §l§b■ §c■ ■ ■ ■  §l§d= §l§614% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=76..80}] ~ ~ ~ title @s actionbar §l§b■ §c■ ■ ■ ■  §l§d= §l§615% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=81..85}] ~ ~ ~ title @s actionbar §l§b■ §c■ ■ ■ ■  §l§d= §l§616% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=86..90}] ~ ~ ~ title @s actionbar §l§b■ §c■ ■ ■ ■  §l§d= §l§617% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=91..95}] ~ ~ ~ title @s actionbar §l§b■ §c■ ■ ■ ■  §l§d= §l§618% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=96..100}] ~ ~ ~ title @s actionbar §l§b■ §c■ ■ ■ ■  §l§d= §l§619% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=101..105}] ~ ~ ~ title @s actionbar §l§b■ ■ §c■ ■ ■  §l§d= §l§620% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=106..110}] ~ ~ ~ title @s actionbar §l§b■ ■ §c■ ■ ■  §l§d= §l§621% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=115..120}] ~ ~ ~ title @s actionbar §l§b■ ■ §c■ ■ ■  §l§d= §l§622% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=121..125}] ~ ~ ~ title @s actionbar §l§b■ ■ §c■ ■ ■  §l§d= §l§623% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=126..130}] ~ ~ ~ title @s actionbar §l§b■ ■ §c■ ■ ■  §l§d= §l§624% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=131..135}] ~ ~ ~ title @s actionbar §l§b■ ■ §c■ ■ ■  §l§d= §l§625% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=136..140}] ~ ~ ~ title @s actionbar §l§b■ ■ §c■ ■ ■  §l§d= §l§626% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=141..145}] ~ ~ ~ title @s actionbar §l§b■ ■ §c■ ■ ■  §l§d= §l§627% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=146..150}] ~ ~ ~ title @s actionbar §l§b■ ■ §c■ ■ ■  §l§d= §l§628% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=151..155}] ~ ~ ~ title @s actionbar §l§b■ ■ §c■ ■ ■  §l§d= §l§629% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=156..160}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ §c■ ■  §l§d= §l§630% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=161..165}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ §c■ ■  §l§d= §l§631% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=166..170}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ §c■ ■  §l§d= §l§632% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=171..175}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ §c■ ■  §l§d= §l§633% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=176..180}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ §c■ ■  §l§d= §l§634% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=181..185}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ §c■ ■  §l§d= §l§635% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=186..190}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ §c■ ■  §l§d= §l§636% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=191..195}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ §c■ ■  §l§d= §l§637% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=196..200}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ §c■ ■  §l§d= §l§638% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=201..205}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ §c■ ■  §l§d= §l§639% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=206..210}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ §c■  §l§d= §l§640% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=211..215}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ §c■  §l§d= §l§641% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=216..220}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ §c■  §l§d= §l§642% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=221..225}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ §c■  §l§d= §l§643% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=226..230}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ §c■  §l§d= §l§644% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=231..235}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ §c■  §l§d= §l§645% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=236..240}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ §c■  §l§d= §l§646% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=241..245}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ §c■  §l§d= §l§647% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=246..250}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ §c■  §l§d= §l§648% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=251..255}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ §c■  §l§d= §l§649% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=256..260}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§650% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=261..265}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§651% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=266..270}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§652% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=271..275}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§653% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=276..280}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§654% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=281..285}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§655% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=286..290}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§656% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=291..295}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§657% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=296..300}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§658% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=301..305}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§659% §l§d=§l§c  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=306..310}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§660% §l§d=§l§b  ■§c ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=311..315}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§661% §l§d=§l§b  ■§c ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=316..320}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§662% §l§d=§l§b  ■§c ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=321..325}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§663% §l§d=§l§b  ■§c ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=336..330}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§664% §l§d=§l§b  ■§c ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=331..335}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§665% §l§d=§l§b  ■§c ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=336..340}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§666% §l§d=§l§b  ■§c ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=341..345}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§667% §l§d=§l§b  ■§c ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=346..350}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§668% §l§d=§l§b  ■§c ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=351..355}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§669% §l§d=§l§b  ■§c ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=356..360}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§670% §l§d=§l§b  ■ ■§c ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=361..365}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§671% §l§d=§l§b  ■ ■§c ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=366..370}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§672% §l§d=§l§b  ■ ■§c ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=371..375}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§673% §l§d=§l§b  ■ ■§c ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=376..380}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§674% §l§d=§l§b  ■ ■§c ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=381..385}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§675% §l§d=§l§b  ■ ■§c ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=386..390}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§676% §l§d=§l§b  ■ ■§c ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=391..395}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§677% §l§d=§l§b  ■ ■§c ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=396..400}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§678% §l§d=§l§b  ■ ■§c ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=401..405}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§679% §l§d=§l§b  ■ ■§c ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=406..410}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§680% §l§d=§l§b  ■ ■ ■§c ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=411..415}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§681% §l§d=§l§b  ■ ■ ■§c ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=416..420}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§682% §l§d=§l§b  ■ ■ ■§c ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=421..425}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§683% §l§d=§l§b  ■ ■ ■§c ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=426..430}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§684% §l§d=§l§b  ■ ■ ■§c ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=431..435}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§685% §l§d=§l§b  ■ ■ ■§c ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=436..440}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§686% §l§d=§l§b  ■ ■ ■§c ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=441..445}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§687% §l§d=§l§b  ■ ■ ■§c ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=446..450}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§688% §l§d=§l§b  ■ ■ ■§c ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=451..455}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§689% §l§d=§l§b  ■ ■ ■§c ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=456..460}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§690% §l§d=§l§b  ■ ■ ■ ■§c ■
-execute @a[scores={temp=223,actionbar=10,receive=461..465}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§691% §l§d=§l§b  ■ ■ ■ ■§c ■
-execute @a[scores={temp=223,actionbar=10,receive=466..470}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§692% §l§d=§l§b  ■ ■ ■ ■§c ■
-execute @a[scores={temp=223,actionbar=10,receive=471..475}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§693% §l§d=§l§b  ■ ■ ■ ■§c ■
-execute @a[scores={temp=223,actionbar=10,receive=476..480}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§694% §l§d=§l§b  ■ ■ ■ ■§c ■
-execute @a[scores={temp=223,actionbar=10,receive=481..485}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§695% §l§d=§l§b  ■ ■ ■ ■§c ■
-execute @a[scores={temp=223,actionbar=10,receive=486..490}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§696% §l§d=§l§b  ■ ■ ■ ■§c ■
-execute @a[scores={temp=223,actionbar=10,receive=491..495}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§697% §l§d=§l§b  ■ ■ ■ ■§c ■
-execute @a[scores={temp=223,actionbar=10,receive=496..500}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§698% §l§d=§l§b  ■ ■ ■ ■§c ■
-execute @a[scores={temp=223,actionbar=10,receive=501..505}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§699% §l§d=§l§b  ■ ■ ■ ■§c ■
-execute @a[scores={temp=223,actionbar=10,receive=506..510}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§6100% §l§d=§l§b  ■ ■ ■ ■ ■
-execute @a[scores={temp=223,actionbar=10,receive=511..}] ~ ~ ~ title @s actionbar §l§b■ ■ ■ ■ ■  §l§d= §l§6DONE §l§d=§l§b  ■ ■ ■ ■ ■
+execute @a[scores={temp=223,actionbar=10,receive=0..5}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§c■ ■ ■ ■ ■  §l§d= §l§60% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=6..10}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§c■ ■ ■ ■ ■  §l§d= §l§61% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=11..15}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§c■ ■ ■ ■ ■  §l§d= §l§62% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=16..20}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§c■ ■ ■ ■ ■  §l§d= §l§63% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=21..25}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§c■ ■ ■ ■ ■  §l§d= §l§64% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=26..30}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§c■ ■ ■ ■ ■  §l§d= §l§65% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=31..35}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§c■ ■ ■ ■ ■  §l§d= §l§66% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=36..40}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§c■ ■ ■ ■ ■  §l§d= §l§67% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=41..45}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§c■ ■ ■ ■ ■  §l§d= §l§68% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=46..50}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§c■ ■ ■ ■ ■  §l§d= §l§69% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=51..55}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§c■ ■ ■ ■ ■  §l§d= §l§610% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=56..60}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ §c■ ■ ■ ■  §l§d= §l§611% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=61..65}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ §c■ ■ ■ ■  §l§d= §l§612% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=66..70}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ §c■ ■ ■ ■  §l§d= §l§613% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=71..75}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ §c■ ■ ■ ■  §l§d= §l§614% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=76..80}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ §c■ ■ ■ ■  §l§d= §l§615% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=81..85}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ §c■ ■ ■ ■  §l§d= §l§616% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=86..90}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ §c■ ■ ■ ■  §l§d= §l§617% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=91..95}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ §c■ ■ ■ ■  §l§d= §l§618% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=96..100}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ §c■ ■ ■ ■  §l§d= §l§619% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=101..105}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ §c■ ■ ■  §l§d= §l§620% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=106..110}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ §c■ ■ ■  §l§d= §l§621% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=115..120}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ §c■ ■ ■  §l§d= §l§622% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=121..125}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ §c■ ■ ■  §l§d= §l§623% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=126..130}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ §c■ ■ ■  §l§d= §l§624% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=131..135}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ §c■ ■ ■  §l§d= §l§625% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=136..140}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ §c■ ■ ■  §l§d= §l§626% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=141..145}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ §c■ ■ ■  §l§d= §l§627% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=146..150}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ §c■ ■ ■  §l§d= §l§628% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=151..155}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ §c■ ■ ■  §l§d= §l§629% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=156..160}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ §c■ ■  §l§d= §l§630% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=161..165}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ §c■ ■  §l§d= §l§631% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=166..170}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ §c■ ■  §l§d= §l§632% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=171..175}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ §c■ ■  §l§d= §l§633% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=176..180}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ §c■ ■  §l§d= §l§634% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=181..185}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ §c■ ■  §l§d= §l§635% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=186..190}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ §c■ ■  §l§d= §l§636% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=191..195}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ §c■ ■  §l§d= §l§637% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=196..200}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ §c■ ■  §l§d= §l§638% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=201..205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ §c■ ■  §l§d= §l§639% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=206..210}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ §c■  §l§d= §l§640% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=211..215}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ §c■  §l§d= §l§641% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=216..220}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ §c■  §l§d= §l§642% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=221..225}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ §c■  §l§d= §l§643% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=226..230}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ §c■  §l§d= §l§644% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=231..235}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ §c■  §l§d= §l§645% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=236..240}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ §c■  §l§d= §l§646% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=241..245}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ §c■  §l§d= §l§647% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=246..250}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ §c■  §l§d= §l§648% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=251..255}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ §c■  §l§d= §l§649% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=256..260}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§650% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=261..265}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§651% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=266..270}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§652% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=271..275}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§653% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=276..280}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§654% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=281..285}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§655% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=286..290}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§656% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=291..295}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§657% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=296..300}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§658% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=301..305}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§659% §l§d=§l§c  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=306..310}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§660% §l§d=§l§b  ■§c ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=311..315}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§661% §l§d=§l§b  ■§c ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=316..320}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§662% §l§d=§l§b  ■§c ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=321..325}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§663% §l§d=§l§b  ■§c ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=336..330}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§664% §l§d=§l§b  ■§c ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=331..335}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§665% §l§d=§l§b  ■§c ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=336..340}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§666% §l§d=§l§b  ■§c ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=341..345}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§667% §l§d=§l§b  ■§c ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=346..350}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§668% §l§d=§l§b  ■§c ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=351..355}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§669% §l§d=§l§b  ■§c ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=356..360}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§670% §l§d=§l§b  ■ ■§c ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=361..365}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§671% §l§d=§l§b  ■ ■§c ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=366..370}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§672% §l§d=§l§b  ■ ■§c ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=371..375}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§673% §l§d=§l§b  ■ ■§c ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=376..380}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§674% §l§d=§l§b  ■ ■§c ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=381..385}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§675% §l§d=§l§b  ■ ■§c ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=386..390}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§676% §l§d=§l§b  ■ ■§c ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=391..395}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§677% §l§d=§l§b  ■ ■§c ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=396..400}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§678% §l§d=§l§b  ■ ■§c ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=401..405}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§679% §l§d=§l§b  ■ ■§c ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=406..410}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§680% §l§d=§l§b  ■ ■ ■§c ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=411..415}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§681% §l§d=§l§b  ■ ■ ■§c ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=416..420}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§682% §l§d=§l§b  ■ ■ ■§c ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=421..425}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§683% §l§d=§l§b  ■ ■ ■§c ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=426..430}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§684% §l§d=§l§b  ■ ■ ■§c ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=431..435}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§685% §l§d=§l§b  ■ ■ ■§c ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=436..440}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§686% §l§d=§l§b  ■ ■ ■§c ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=441..445}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§687% §l§d=§l§b  ■ ■ ■§c ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=446..450}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§688% §l§d=§l§b  ■ ■ ■§c ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=451..455}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§689% §l§d=§l§b  ■ ■ ■§c ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=456..460}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§690% §l§d=§l§b  ■ ■ ■ ■§c ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=461..465}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§691% §l§d=§l§b  ■ ■ ■ ■§c ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=466..470}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§692% §l§d=§l§b  ■ ■ ■ ■§c ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=471..475}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§693% §l§d=§l§b  ■ ■ ■ ■§c ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=476..480}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§694% §l§d=§l§b  ■ ■ ■ ■§c ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=481..485}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§695% §l§d=§l§b  ■ ■ ■ ■§c ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=486..490}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§696% §l§d=§l§b  ■ ■ ■ ■§c ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=491..495}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§697% §l§d=§l§b  ■ ■ ■ ■§c ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=496..500}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§698% §l§d=§l§b  ■ ■ ■ ■§c ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=501..505}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§699% §l§d=§l§b  ■ ■ ■ ■§c ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=506..510}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§6100% §l§d=§l§b  ■ ■ ■ ■ ■"}]}
+execute @a[scores={temp=223,actionbar=10,receive=511..}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b■ ■ ■ ■ ■  §l§d= §l§6DONE §l§d=§l§b  ■ ■ ■ ■ ■"}]}
 #边界
-execute @a ~ ~ ~ title @s[scores={language=0,actionbar=40}] actionbar §l§f您好！ §6您已到达岛屿边界！
-execute @a ~ ~ ~ title @s[scores={language=1,actionbar=40}] actionbar §l§fHello! §6You have reached the boundary of the island!
-execute @a ~ ~ ~ title @s[scores={language=2,actionbar=40}] actionbar §l§f您好！ §6您已到達島嶼邊界！
-execute @a ~ ~ ~ title @s[scores={language=3,actionbar=40}] actionbar §l§fこんにちは！ §6島の境界に着きました。
+execute @a ~ ~ ~ titleraw @s[scores={language=0,actionbar=40}] actionbar {"rawtext":[{"text":"§l§f您好！ §6您已到达岛屿边界！"}]}
+execute @a ~ ~ ~ titleraw @s[scores={language=1,actionbar=40}] actionbar {"rawtext":[{"text":"§l§fHello! §6You have reached the boundary of the island!"}]}
+execute @a ~ ~ ~ titleraw @s[scores={language=2,actionbar=40}] actionbar {"rawtext":[{"text":"§l§f您好！ §6您已到達島嶼邊界！"}]}
+execute @a ~ ~ ~ titleraw @s[scores={language=3,actionbar=40}] actionbar {"rawtext":[{"text":"§l§fこんにちは！ §6島の境界に着きました。"}]}
 #时间
+scoreboard players add @a actionbar 0
 scoreboard players set @a[scores={actionbar=0}] actionbar 50
 scoreboard players add @a actionbartime 1
-scoreboard players set @a[scores={actionbartime=401..}] actionbartime 1
+scoreboard players set @a[scores={actionbartime=601..}] actionbartime 1
 scoreboard players add @a dailyplaytime 0
+execute @a[scores={actionbartime=1..400}] ~ ~ ~ tag @s remove actionbartext1
+execute @a[scores={actionbartime=1..400}] ~ ~ ~ tag @s remove actionbartext2
+execute @a[scores={actionbartime=1..400}] ~ ~ ~ scoreboard players set @s actionbartext 0
+execute @a[scores={actionbartime=401..500,actionbartext=0},tag=!actionbartext1] ~ ~ ~ scoreboard players random @s actionbartext 1 10
+execute @a[scores={actionbartime=401..500,actionbartext=1..3},tag=!actionbartext1] ~ ~ ~ scoreboard players random @s actionbartext 101 105
+execute @a[scores={actionbartime=401..500,actionbartext=4..10},tag=!actionbartext1] ~ ~ ~ scoreboard players random @s actionbartext 201 205
+execute @a[scores={actionbartime=401..500,actionbartext=101..299},tag=!actionbartext1] ~ ~ ~ tag @s add actionbartext1
+execute @a[scores={actionbartime=501..600,actionbartext=1..5},tag=!actionbartext2] ~ ~ ~ scoreboard players random @s actionbartext 1 5
+execute @a[scores={actionbartime=501..600,actionbartext=1..5},tag=!actionbartext2] ~ ~ ~ tag @s add actionbartext2
 #文本1-欢迎
-execute @a[scores={actionbartime=1..100,language=0,level=!0,actionbar=50},tag=!admin,tag=!developer] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§c§l用户§f§6 "},{"selector":"@s"},{"text":" §r§b您好，欢迎您！ §f感谢您体验空岛生存！"}]}
-execute @a[scores={actionbartime=1..100,language=0,level=!0,actionbar=50},tag=!admin,tag=developer] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§c§l用户§f§6 "},{"selector":"@s"},{"text":" §r§b您好，欢迎您！ §f君茶的本子，好涩好喜欢~"}]}
+execute @a[scores={actionbartime=1..100,language=0,level=!0,actionbar=50},tag=!admin] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§c§l用户§f§6 "},{"selector":"@s"},{"text":" §r§b您好，欢迎您！ §f感谢您体验空岛生存！"}]}
 execute @a[scores={actionbartime=1..100,language=1,level=!0,actionbar=50},tag=!admin] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§c§lUser§f§6 "},{"selector":"@s"},{"text":" §r§bHello, welcome! §fThank you for experiencing skyblock!"}]}
 execute @a[scores={actionbartime=1..100,language=2,level=!0,actionbar=50},tag=!admin] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§c§l用戶§f§6 "},{"selector":"@s"},{"text":" §r§b您好，歡迎您！ §f感謝您體驗空島生存！"}]}
 execute @a[scores={actionbartime=1..100,language=3,level=!0,actionbar=50},tag=!admin] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§c§lUser§f§6 "},{"selector":"@s"},{"text":" §r§bこんにちは、歓迎します。 §fSkyblockを体験してくれてありがとうございます。"}]}
@@ -3450,87 +3466,146 @@ execute @a[scores={actionbartime=201..300,language=2,level=!0,actionbar=50}] ~ ~
 execute @a[scores={actionbartime=201..300,language=3,level=!0,actionbar=50}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§r§f硬貨 §l§e"},{"score":{"name":"@s","objective":"coin"}},{"text":"   §r§fオンライン時間 §l§b"},{"score":{"name":"@s","objective":"playtime"}},{"text":"   §r§f今日のオンライン時間 §l§d"},{"score":{"name":"@s","objective":"dailyplaytime"}},{"text":"   §r§fレベル §l§c"},{"score":{"name":"@s","objective":"level"}}]}
 #文本4-任务
 #任务提示-language=0
-execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=1}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务1] §r§f收集：物品 [§d圆石*10§f] 奖励：物品 [§d煤炭*16§f] 硬币 [§e硬币*30§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=2}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务2] §r§f收集：物品 [§d石头*10§f] 奖励：物品 [§d橡树苗*3§f] [§d泥土*4§f] 硬币 [§e硬币*20§f] 经验 [§a经验*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=3}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务3] §r§f收集：物品 [§d橡木原木*15§f] 奖励：物品 [§d骨粉*32§f] [§d泥土*8§f] [§d草方块*2§f] 硬币 [§e硬币*10§f] 经验 [§a经验*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=4}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务4] §r§f收集：物品 [§d种子*10§f] 奖励：硬币 [§e硬币*10§f] 经验 [§a经验*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=5}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务5] §r§f收集：物品 [§d小麦*15§f] 奖励：硬币 [§e硬币*10§f] 经验 [§a经验*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=6}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务6] §r§f收集：物品 [§d面包*10§f] 奖励：物品 [§d云杉树苗*3§f] 硬币 [§e硬币*10§f] 经验 [§a经验*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=7}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务7] §r§f收集：物品 [§d云杉原木*15§f] 奖励：硬币 [§e硬币*10§f] 经验 [§a经验*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=8}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务8] §r§f收集：物品 [§d石剑*1§f] 奖励：硬币 [§e硬币*10§f] 经验 [§a经验*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=9}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务9] §r§f收集：物品 [§d苹果*10§f] 奖励：物品 [§d胡萝卜*3§f] 硬币 [§e硬币*10§f] 经验 [§a经验*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=10}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务10] §r§f探索：副本 [§3副本I§f] 完成 [§b副本I支线任务I§f] 奖励：硬币 [§e硬币*10§f] 经验 [§a经验*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=11}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务11] §r§f收集：物品 [§d胡萝卜*32§f] 奖励：硬币 [§e硬币*10§f] 经验 [§a经验*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=12}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务12] §r§f收集：物品 [§d线*20§f] 奖励：物品 [§d竹子*3§f] 硬币 [§e硬币*10§f] 经验 [§a经验*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=13}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务13] §r§f收集：物品 [§d竹子*40§f] 奖励：物品 [§d桦树苗*3§f] 硬币 [§e硬币*10§f] 经验 [§a经验*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=14}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务14] §r§f收集：物品 [§d桦树原木*25§f] 奖励：物品 [§d马铃薯*3§f] 硬币 [§e硬币*10§f] 经验 [§a经验*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=15}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务15] §r§f收集：物品 [§d马铃薯*32§f] 奖励：物品 [§d南瓜种子*3§f] 硬币 [§e硬币*10§f] 经验 [§a经验*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=16}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务16] §r§f收集：物品 [§d南瓜*8§f] 奖励：物品 [§d甘蔗*3§f] [§d沙子*8§f] [§d泥土*8§f] 硬币 [§e硬币*10§f] 经验 [§a经验*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=17}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务17] §r§f收集：物品 [§d甘蔗*40§f] 奖励：硬币 [§e硬币*10§f] 经验 [§a经验*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=18}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务18] §r§f收集：物品 [§d脚手架*32§f] 奖励：物品 [§d丛林树苗*3§f] 硬币 [§e硬币*10§f] 经验 [§a经验*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=19}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务19] §r§f收集：物品 [§d丛林原木*64§f] 奖励：物品 [§d黑曜石*2§f] [§d甜菜根种子*3§f] 硬币 [§e硬币*10§f] 经验 [§a经验*5§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=1}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务1] §r§f收集：物品 [§d圆石*10§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=2}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务2] §r§f收集：物品 [§d石头*10§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=3}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务3] §r§f收集：物品 [§d橡木原木*15§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=4}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务4] §r§f收集：物品 [§d种子*10§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=5}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务5] §r§f收集：物品 [§d小麦*15§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=6}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务6] §r§f收集：物品 [§d面包*10§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=7}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务7] §r§f收集：物品 [§d云杉原木*15§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=8}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务8] §r§f收集：物品 [§d石剑*1§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=9}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务9] §r§f收集：物品 [§d苹果*10§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=10}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务10] §r§f探索：副本 [§3副本I§f] 完成 [§b副本I支线任务I§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=11}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务11] §r§f收集：物品 [§d胡萝卜*32§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=12}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务12] §r§f收集：物品 [§d线*20§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=13}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务13] §r§f收集：物品 [§d竹子*40§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=14}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务14] §r§f收集：物品 [§d桦树原木*25§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=15}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务15] §r§f收集：物品 [§d马铃薯*32§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=16}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务16] §r§f收集：物品 [§d南瓜*8§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=17}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务17] §r§f收集：物品 [§d甘蔗*40§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=18}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务18] §r§f收集：物品 [§d脚手架*32§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=0,actionbar=50,task=19}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任务19] §r§f收集：物品 [§d丛林原木*64§f] 。"}]}
 #任务提示-language=1
-execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=1}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[TASK-1] §r§fCollection: Item [§dCobblestone*10§f] Reward: Item [§dCoal*16§f] Coin [§eCoin*30§f] ."}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=2}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[TASK-2] §r§fCollection: Item [§dStone*10§f] Reward: Item: [§dOak Sapling*3§f] [§dDirt*4§f] Coin [§eCoin*20§f] Experience [§aEXP*5§f] ."}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=3}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[TASK-3] §r§fCollection: Item [§dOak Log*15§f] Reward: Item [§dBone Meal*32§f] [§dDirt*8§f] [§dGrass Block*2§f] Coin [§eCoin*10§f] Experience [§aEXP*5§f] ."}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=4}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[TASK-4] §r§fCollection: Item [§dSeeds*10§f] Reward: Coin [§eCoin*10§f] Experience [§aEXP*5§f] ."}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=5}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[TASK-5] §r§fCollection: Item [§dWheat*15§f] Reward: Coin [§eCoin*10§f] Experience [§aEXP*5§f] ."}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=6}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[TASK-6] §r§fCollection: Item [§dBread*10§f] Reward: Item [§dSpruce Sapling*3§f] Coin [§eCoin*10§f] Experience [§aEXP*5§f] ."}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=7}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[TASK-7] §r§fCollection: Item [§dSpruce Log*15§f] Reward: Coin [§eCoin*10§f] Experience [§aEXP*5§f] ."}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=8}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[TASK-8] §r§fCollection: Item [§dStone Sword*1§f] Reward: Coin [§eCoin*10§f] Experience [§aEXP*5§f] ."}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=9}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[TASK-9] §r§fCollection: Item [§dApple*10§f] Reward: Item [§dCarrot*3§f] Coin [§eCoin*10§f] Experience [§aEXP*5§f] ."}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=10}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[TASK-10] §r§fExplore: Battle [§3Battle I§f] Complete [§bBattle I Side Quest I§f] Reward: Coin [§eCoin*10§f] Experience [§aEXP*5§f] ."}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=11}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[TASK-11] §r§fCollection: Item [§dCarrot*32§f] Reward: Coin [§eCoin*10§f] Experience [§aEXP*5§f] ."}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=12}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[TASK-12] §r§fCollection: Item [§dString*20§f] Reward: Item [§dBamboo*3§f] Coin [§eCoin*10§f] Experience [§aEXP*5§f] ."}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=13}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[TASK-13] §r§fCollection: Item [§dBamboo*40§f] Reward: Item [§dBirch Sapling*3§f] Coin [§eCoin*10§f] Experience [§aEXP*5§f] ."}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=14}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[TASK-14] §r§fCollection: Item [§dBirch Log*25§f] Reward: Item [§dPotato*3§f] Coin [§eCoin*10§f] Experience [§aEXP*5§f] ."}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=15}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[TASK-15] §r§fCollection: Item [§dPotato*32§f] Reward: Item [§dPumpkin Seeds*3§f] Coin [§eCoin*10§f] Experience [§aEXP*5§f] ."}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=16}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[TASK-16] §r§fCollection: Item [§dPumpkin*8§f] Reward: Item [§dSugar Cane*3§f] [§dSand*8§f] [§dDirt*8§f] Coin [§eCoin*10§f] Experience [§aEXP*5§f] ."}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=17}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[TASK-17] §r§fCollection: Item [§dSugar Cane*32§f] Reward: Coin [§eCoin*10§f] Experience [§aEXP*5§f] ."}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=18}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[TASK-18] §r§fCollection: Item [§dScaffolding*32§f] Reward: Item [§dJungle Sapling*3§f] Coin [§eCoin*10§f] Experience [§aEXP*5§f] ."}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=19}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[TASK-19] §r§fCollection: Item [§dJungle Log*64§f] Reward: Item [§dObsidian*2§f] [§dBeetroot Seeds*3§f] Coin [§eCoin*10§f] Experience [§aEXP*5§f] ."}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=1}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[MISSION-1] §r§fCollection: Item [§dCobblestone*10§f] ."}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=2}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[MISSION-2] §r§fCollection: Item [§dStone*10§f] ."}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=3}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[MISSION-3] §r§fCollection: Item [§dOak Log*15§f] ."}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=4}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[MISSION-4] §r§fCollection: Item [§dSeeds*10§f] ."}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=5}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[MISSION-5] §r§fCollection: Item [§dWheat*15§f] ."}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=6}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[MISSION-6] §r§fCollection: Item [§dBread*10§f] ."}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=7}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[MISSION-7] §r§fCollection: Item [§dSpruce Log*15§f] ."}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=8}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[MISSION-8] §r§fCollection: Item [§dStone Sword*1§f] ."}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=9}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[MISSION-9] §r§fCollection: Item [§dApple*10§f] ."}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=10}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[MISSION-10] §r§fExplore: Battle [§3Battle I§f] Complete [§bBattle I Side Quest I§f] ."}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=11}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[MISSION-11] §r§fCollection: Item [§dCarrot*32§f] ."}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=12}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[MISSION-12] §r§fCollection: Item [§dString*20§f] ."}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=13}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[MISSION-13] §r§fCollection: Item [§dBamboo*40§f] ."}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=14}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[MISSION-14] §r§fCollection: Item [§dBirch Log*25§f] ."}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=15}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[MISSION-15] §r§fCollection: Item [§dPotato*32§f] ."}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=16}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[MISSION-16] §r§fCollection: Item [§dPumpkin*8§f] ."}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=17}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[MISSION-17] §r§fCollection: Item [§dSugar Cane*32§f] ."}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=18}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[MISSION-18] §r§fCollection: Item [§dScaffolding*32§f] ."}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=1,actionbar=50,task=19}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[MISSION-19] §r§fCollection: Item [§dJungle Log*64§f] ."}]}
 #任务提示-language=2
-execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=1}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務1] §r§f收集：物品 [§d鹅卵石*10§f] 獎勵：物品 [§d煤炭*16§f] 硬幣 [§e硬幣*30§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=2}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務2] §r§f收集：物品 [§d石頭*10§f] 獎勵：物品 [§d橡樹苗*3§f] [§d泥土*4§f] 硬幣 [§e硬幣*20§f] 經驗 [§a經驗*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=3}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務3] §r§f收集：物品 [§d橡樹原木*15§f] 獎勵：物品 [§d骨粉*32§f] [§d泥土*8§f] [§d草方塊*2§f] 硬幣 [§e硬幣*10§f] 經驗 [§a經驗*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=4}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務4] §r§f收集：物品 [§d種子*10§f] 獎勵：硬幣 [§e硬幣*10§f] 經驗 [§a經驗*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=5}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務5] §r§f收集：物品 [§d小麥*15§f] 獎勵：硬幣 [§e硬幣*10§f] 經驗 [§a經驗*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=6}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務6] §r§f收集：物品 [§d麵包*10§f] 獎勵：物品 [§d雲杉樹苗*3§f] 硬幣 [§e硬幣*10§f] 經驗 [§a經驗*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=7}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務7] §r§f收集：物品 [§d雲杉原木*15§f] 獎勵：、硬幣 [§e硬幣*10§f] 經驗 [§a經驗*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=8}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務8] §r§f收集：物品 [§d石劍*1§f] 獎勵：硬幣 [§e硬幣*10§f] 經驗 [§a經驗*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=9}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務9] §r§f收集：物品 [§d蘋果*10§f] 獎勵：物品 [§d胡蘿蔔*3§f] 硬幣 [§e硬幣*10§f] 經驗 [§a經驗*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=10}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務10] §r§f探索：副本 [§3副本I§f] 完成 [§b副本I支線任務I§f] 獎勵：硬幣 [§e硬幣*10§f] 經驗 [§a經驗*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=11}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務11] §r§f收集：物品 [§d胡蘿蔔*32f] 獎勵：硬幣 [§e硬幣*10§f] 經驗 [§a經驗*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=12}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務12] §r§f收集：物品 [§d線*20f] 獎勵：物品 [§d竹子*3§f] 硬幣 [§e硬幣*10§f] 經驗 [§a經驗*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=13}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務13] §r§f收集：物品 [§d竹子*40f] 獎勵：物品 [§d樺樹苗*3§f] 硬幣 [§e硬幣*10§f] 經驗 [§a經驗*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=14}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務14] §r§f收集：物品 [§d樺樹原木*25f] 獎勵：物品 [§d馬鈴薯*3§f] 硬幣 [§e硬幣*10§f] 經驗 [§a經驗*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=15}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務15] §r§f收集：物品 [§d馬鈴薯*32f] 獎勵：物品 [§d南瓜種子*3§f] 硬幣 [§e硬幣*10§f] 經驗 [§a經驗*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=16}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務16] §r§f收集：物品 [§d南瓜*8f] 獎勵：物品 [§d甘蔗*3§f] [§d沙子*8§f] [§d泥土*8§f] 硬幣 [§e硬幣*10§f] 經驗 [§a經驗*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=17}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務17] §r§f收集：物品 [§d甘蔗*40f] 獎勵：硬幣 [§e硬幣*10§f] 經驗 [§a經驗*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=18}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務18] §r§f收集：物品 [§d脚手架*32§f] 獎勵：物品 [§d叢林樹苗*3§f] 硬幣 [§e硬幣*10§f] 經驗 [§a經驗*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=19}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務19] §r§f收集：物品 [§d叢林原木*64§f] 獎勵：物品 [§d黑曜石*2§f] [§d紅菜頭根種子*3§f] 硬幣 [§e硬幣*10§f] 經驗 [§a經驗*5§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=1}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務1] §r§f收集：物品 [§d鹅卵石*10§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=2}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務2] §r§f收集：物品 [§d石頭*10§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=3}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務3] §r§f收集：物品 [§d橡樹原木*15§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=4}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務4] §r§f收集：物品 [§d種子*10§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=5}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務5] §r§f收集：物品 [§d小麥*15§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=6}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務6] §r§f收集：物品 [§d麵包*10§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=7}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務7] §r§f收集：物品 [§d雲杉原木*15§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=8}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務8] §r§f收集：物品 [§d石劍*1§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=9}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務9] §r§f收集：物品 [§d蘋果*10§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=10}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務10] §r§f探索：副本 [§3副本I§f] 完成 [§b副本I支線任務I§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=11}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務11] §r§f收集：物品 [§d胡蘿蔔*32f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=12}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務12] §r§f收集：物品 [§d線*20f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=13}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務13] §r§f收集：物品 [§d竹子*40f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=14}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務14] §r§f收集：物品 [§d樺樹原木*25f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=15}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務15] §r§f收集：物品 [§d馬鈴薯*32f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=16}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務16] §r§f收集：物品 [§d南瓜*8f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=17}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務17] §r§f收集：物品 [§d甘蔗*40f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=18}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務18] §r§f收集：物品 [§d脚手架*32§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=2,actionbar=50,task=19}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[任務19] §r§f收集：物品 [§d叢林原木*64§f] 。"}]}
 #任务提示-language=3
-execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=1}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-1] §r§f収集：物品 [§d丸石*10§f] 奨励：物品 [§d石炭*16§f] 硬貨 [§e硬貨*30§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=2}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-2] §r§f収集：物品 [§d石*10§f] 奨励：物品 [§d樫の苗木*3§f] [§d土*4§f] 硬貨 [§e硬貨*20§f] 経験 [§aEXP*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=3}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-3] §r§f収集：物品 [§d樫の丸太*15§f] 奨励：物品 [§d骨粉*32§f] [§d土*8§f] [§d草ブロック*2§f] 硬貨 [§e硬貨*10§f] 経験 [§aEXP*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=4}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-4] §r§f収集：物品 [§d種*10§f] 奨励：硬貨 [§e硬貨*10§f] 経験 [§aEXP*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=5}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-5] §r§f収集：物品 [§d小麦*15§f] 奨励：硬貨 [§e硬貨*10§f] 経験 [§aEXP*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=6}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-6] §r§f収集：物品 [§d麵包*10§f] 奨励：物品 [§dトウヒの苗木*3§f] 硬貨 [§e硬貨*10§f] 経験 [§aEXP*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=7}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-7] §r§f収集：物品 [§dトウヒの丸太*15§f] 奨励：硬貨 [§e硬貨*10§f] 経験 [§aEXP*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=8}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-8] §r§f収集：物品 [§d石の剣*1§f] 奨励：硬貨 [§e硬貨*10§f] 経験 [§aEXP*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=9}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-9] §r§f収集：物品 [§dリンゴ*10§f] 奨励：物品 [§dニンジン*3§f] 硬貨 [§e硬貨*10§f] 経験 [§aEXP*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=10}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-10] §r§fクエスト：戦闘 [§3戦闘I§f] 完了 [§b戦闘I分岐クエストI§f] 奨励：硬貨 [§e硬貨*10§f] 経験 [§aEXP*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=11}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-11] §r§f収集：物品 [§dニンジン*32§f] 奨励：硬貨 [§e硬貨*10§f] 経験 [§aEXP*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=12}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-12] §r§f収集：物品 [§d糸*20§f] 奨励：物品 [§d竹*3§f] 硬貨 [§e硬貨*10§f] 経験 [§aEXP*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=13}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-13] §r§f収集：物品 [§d竹*40§f] 奨励：物品 [§d樺の苗木*3§f] 硬貨 [§e硬貨*10§f] 経験 [§aEXP*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=14}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-14] §r§f収集：物品 [§d樺の丸太*25§f] 奨励：物品 [§dジャガイモ*3§f] 硬貨 [§e硬貨*10§f] 経験 [§aEXP*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=15}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-15] §r§f収集：物品 [§dジャガイモ*32§f] 奨励：物品 [§dカボチャの種*3§f] 硬貨 [§e硬貨*10§f] 経験 [§aEXP*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=16}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-16] §r§f収集：物品 [§dカボチャ*8§f] 奨励：物品 [§dサトウキビ*3§f] [§d砂*8§f] [§d土*8§f] 硬貨 [§e硬貨*10§f] 経験 [§aEXP*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=17}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-17] §r§f収集：物品 [§dサトウキビ*40§f] 奨励：硬貨 [§e硬貨*10§f] 経験 [§aEXP*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=18}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-18] §r§f収集：物品 [§d足場*32§f] 奨励：物品 [§dジャングルの苗木*3§f] 硬貨 [§e硬貨*10§f] 経験 [§aEXP*5§f] 。"}]}
-execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=19}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-19] §r§f収集：物品 [§dジャングルの木の丸太*64§f] 奨励：物品 [§d黒曜石*2§f] [§dビートルートの種*3§f] 硬貨 [§e硬貨*10§f] 経験 [§aEXP*5§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=1}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-1] §r§f収集：物品 [§d丸石*10§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=2}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-2] §r§f収集：物品 [§d石*10§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=3}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-3] §r§f収集：物品 [§d樫の丸太*15§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=4}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-4] §r§f収集：物品 [§d種*10§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=5}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-5] §r§f収集：物品 [§d小麦*15§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=6}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-6] §r§f収集：物品 [§d麵包*10§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=7}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-7] §r§f収集：物品 [§dトウヒの丸太*15§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=8}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-8] §r§f収集：物品 [§d石の剣*1§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=9}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-9] §r§f収集：物品 [§dリンゴ*10§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=10}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-10] §r§fクエスト：戦闘 [§3戦闘I§f] 完了 [§b戦闘I分岐クエストI§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=11}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-11] §r§f収集：物品 [§dニンジン*32§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=12}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-12] §r§f収集：物品 [§d糸*20§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=13}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-13] §r§f収集：物品 [§d竹*40§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=14}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-14] §r§f収集：物品 [§d樺の丸太*25§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=15}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-15] §r§f収集：物品 [§dジャガイモ*32§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=16}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-16] §r§f収集：物品 [§dカボチャ*8§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=17}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-17] §r§f収集：物品 [§dサトウキビ*40§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=18}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-18] §r§f収集：物品 [§d足場*32§f] 。"}]}
+execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=19}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2[タスク-19] §r§f収集：物品 [§dジャングルの木の丸太*64§f] 。"}]}
 #前面的区域，以后再来探索吧~
-execute @a[scores={actionbartime=301..400,level=!0,actionbar=50,task=!0..19}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fqt：小萝莉~把胸卡给我~"}]}
+execute @a[scores={actionbartime=301..400,level=!0,actionbar=50,task=!0..19}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§f前面的区域，以后再来探索吧~"}]}
+#文本5 - 广告1
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f无法将你打败的，终将使你变得更加强大。}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在探索的路上永不止步！}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f去探索，更美好的世界。}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f愿你历尽千帆，归来仍是少年。}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f彼岸花花开彼岸，断肠草草断肝肠。}]}
+execute @a[scores={actionbartime=401..500,language=1,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fWhat does not kill you makes you stronger.}]}
+execute @a[scores={actionbartime=401..500,language=1,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fNever stop on the way of exploration!}]}
+execute @a[scores={actionbartime=401..500,language=1,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fTo explore a better world.}]}
+execute @a[scores={actionbartime=401..500,language=1,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fWhere there is a will, there is a way.}]}
+execute @a[scores={actionbartime=401..500,language=1,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fThe world is but a little place, after all.}]}
+execute @a[scores={actionbartime=401..500,language=2,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f無法將你打敗的，終將使你變得更加强大。}]}
+execute @a[scores={actionbartime=401..500,language=2,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在探索的路上永不止步！}]}
+execute @a[scores={actionbartime=401..500,language=2,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f去探索，更美好的世界。}]}
+execute @a[scores={actionbartime=401..500,language=2,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f願你歷盡千帆，歸來仍是少年。}]}
+execute @a[scores={actionbartime=401..500,language=2,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f彼岸花花開彼岸，斷腸草草斷肝腸。}]}
+execute @a[scores={actionbartime=401..500,language=3,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fあなたを打ち負かすことができないのは、最後にあなたをもっと強くさせます。}]}
+execute @a[scores={actionbartime=401..500,language=3,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f探索の道で立ち止まらない！}]}
+execute @a[scores={actionbartime=401..500,language=3,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fより良い世界を探しに行きます。}]}
+execute @a[scores={actionbartime=401..500,language=3,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f大切な事ほど見慣れた場所で輝くのかもしれない}]}
+execute @a[scores={actionbartime=401..500,language=3,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f春夏秋冬と 浮かぶのは あの日の空 涙雨降り止まぬ}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=101}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §d哔哩哔哩 §f搜索并关注 §6uid:437306982 §f。}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=102}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §2Xbox §f搜索并关注 §6xhduoduobaby §f。}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=103}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §aGitee(码云) §f搜索并关注 §6xiaozhiyuqwq §f。}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=104}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §fGitHub §f搜索并关注 §6xiaozhiyuqwq §f。}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=105}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §aOSCHINA §f搜索并关注 §64991772 §f。}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=106}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §6微博 §f搜索并关注 §6xhduoduobaby §f。}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=107}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §aGitee(码云) §f搜索并关注 §6dolphin455 §f。}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=108}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §fGitHub §f搜索并关注 §6Hero-awa §f。}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=109}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §f蒸汽平台(Steam) §f搜索并关注 §6xiaozhiyuqwq(76561199164798433) §f。}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=110}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f访问祉语的个人主页 §bxiaozhiyuqwq.top §f了解更多。}]}
+
+
+
+
+
+
+
+#文本6 - 广告2
+execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f水能载舟，亦能覆舟。}]}
+execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f我终将§b青春§f还给了§d她§f，连同指尖弹出的§a盛夏§f，心之所动，就随风去了。}]}
+execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f起风了，唯有努力生存。}]}
+execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f愿你历尽千帆，归来仍是少年。}]}
+execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f彼岸花花开彼岸，断肠草草断肝肠。}]}
+execute @a[scores={actionbartime=501..600,language=1,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fThe water that bears the boat is the same that swallows it up.}]}
+execute @a[scores={actionbartime=501..600,language=1,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fNever stop on the way of exploration!}]}
+execute @a[scores={actionbartime=501..600,language=1,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fTo explore a better world.}]}
+execute @a[scores={actionbartime=501..600,language=1,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fNULL}]}
+execute @a[scores={actionbartime=501..600,language=1,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fNULL}]}
+execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f水能載舟，亦能覆舟。}]}
+execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在探索的路上永不止步！}]}
+execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f去探索，更美好的世界。}]}
+execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f願你歷盡千帆，歸來仍是少年。}]}
+execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f彼岸花花開彼岸，斷腸草草斷肝腸。}]}
+execute @a[scores={actionbartime=501..600,language=3,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f水は舟を載せても、舟を覆すことができる。}]}
+execute @a[scores={actionbartime=501..600,language=3,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f风立ちぬ、いざ生きめやも。}]}
+execute @a[scores={actionbartime=501..600,language=3,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fより良い世界を探しに行きます。}]}
+execute @a[scores={actionbartime=501..600,language=3,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fNULL}]}
+execute @a[scores={actionbartime=501..600,language=3,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fNULL}]}
 #未注册
 titleraw @a[scores={level=0,language=0}] actionbar {"rawtext":[{"text":"§f您无法进行游戏，请先完成注册"}]}
 titleraw @a[scores={level=0,language=1}] actionbar {"rawtext":[{"text":"§fYou can't play the game. Please register first."}]}
@@ -3556,6 +3631,51 @@ execute @a[scores={offlinetime=10081..,language=2,login=4}] ~ ~ ~ title @s subti
 execute @a[scores={offlinetime=10081..,language=3,login=4}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fお帰りなさい §l§6@"},{"selector":"@s"},{"text":"§r§f！前回のログインはもう済みました §3"},{"score":{"name":"@s","objective":"offlinetime"}},{"text":" §f分です。システムはすでにあなたの口座に贈りました。 §e"},{"score":{"name":"@s","objective":"offlinecoin"}},{"text":"枚の硬貨 §f。"}]}
 execute @a[scores={offlinetime=10081..,language=3,login=4}] ~ ~ ~ title @s title §r§fお帰りなさい
 execute @a[scores={offlinetime=10081..,language=3,login=4}] ~ ~ ~ title @s subtitle §6@s §fお帰りなさい
-execute @a[scores={offlinetime=10081..}] ~ ~ ~ scoreboard players operation @s coin += @s offlinetime
+execute @a[scores={offlinetime=10081..}] ~ ~ ~ scoreboard players operation @s coin += @s offlinecoin
 execute @a[scores={offlinetime=10081..,login=4}] ~ ~ ~ scoreboard players set @s offlinecoin 0
 execute @a[scores={offlinetime=10081..,login=4}] ~ ~ ~ scoreboard players set @s offlinetime 0
+#party系统
+#加入,temp=30000
+execute @a[scores={temp=30000},c=1] ~ ~ ~ scoreboard players set @s[scores={uid=0}] temp 30001
+execute @a[scores={temp=30000},c=1] ~ ~ ~ scoreboard players set @s[scores={uid=100000..}] temp 30002
+execute @a[scores={temp=30000},c=1] ~ ~ ~ scoreboard players set @s[scores={uid=1..40000}] temp 30003
+execute @a[scores={temp=30001},c=1] ~ ~ ~ tellraw @s[scores={temp=30001,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f您尚未注册账号，无法使用派对系统，请先注册。"}]}
+execute @a[scores={temp=30002},c=1] ~ ~ ~ tellraw @s[scores={temp=30002,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f您当前的用户组为游客，不支持成为派对队长。"}]}
+execute @a[scores={temp=30001},c=1] ~ ~ ~ tellraw @s[scores={temp=30001,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fYou haven't registered your account. You can't use the party system. Please register first."}]}
+execute @a[scores={temp=30002},c=1] ~ ~ ~ tellraw @s[scores={temp=30002,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fYour current user group is visitor, so it is not supported to be party captain."}]}
+execute @a[scores={temp=30001},c=1] ~ ~ ~ tellraw @s[scores={temp=30001,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f您尚未註冊帳號，無法使用派對系統，請先註冊。"}]}
+execute @a[scores={temp=30002},c=1] ~ ~ ~ tellraw @s[scores={temp=30002,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f您當前的用戶組為遊客，不支持成為派對隊長。"}]}
+execute @a[scores={temp=30001},c=1] ~ ~ ~ tellraw @s[scores={temp=30001,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fアカウントはまだ登録されていませんので、パーティーシステムは使えません。先に登録してください。"}]}
+execute @a[scores={temp=30002},c=1] ~ ~ ~ tellraw @s[scores={temp=30002,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fあなたの現在のユーザーグループはvisitorで、パーティのリーダーになることができません。"}]}
+execute @a[scores={temp=30003},c=1] ~ ~ ~ scoreboard players add @a[r=5] temp 0
+execute @a[scores={temp=30003},c=1] ~ ~ ~ scoreboard players add @p[r=5,c=1,scores={temp=0}] party 0
+execute @a[scores={temp=30003},c=1] ~ ~ ~ scoreboard players set @p[r=5,c=1,scores={temp=0}] temp 30010
+execute @a[scores={temp=30010},c=1] ~ ~ ~ scoreboard players set @s[scores={uid=0}] temp 30011
+execute @a[scores={temp=30010},c=1] ~ ~ ~ scoreboard players set @s[scores={party=!0}] temp 30012
+execute @a[scores={temp=30010},c=1] ~ ~ ~ scoreboard players set @s[scores={uid=!0,party=0}] temp 30021
+execute @a[scores={temp=30011},c=1] ~ ~ ~ tellraw @a[scores={temp=30003,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f"},{"selector":"@s"},{"text":" 尚未注册账号，无法加入您的派对。"}]}
+execute @a[scores={temp=30012},c=1] ~ ~ ~ tellraw @a[scores={temp=30003,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f"},{"selector":"@s"},{"text":" 当前已经加入了派对，无法再加入您的派对。"}]}
+execute @a[scores={temp=30011},c=1] ~ ~ ~ tellraw @s[scores={temp=30011,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f您尚未注册账号，无法使用派对系统，请先注册。"}]}
+execute @a[scores={temp=30012},c=1] ~ ~ ~ tellraw @s[scores={temp=30012,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f您已经加入了派对，无法再加入其他的派对。"}]}
+execute @a[scores={temp=30011},c=1] ~ ~ ~ tellraw @a[scores={temp=30003,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f"},{"selector":"@s"},{"text":" has not signed up for your party."}]}
+execute @a[scores={temp=30012},c=1] ~ ~ ~ tellraw @a[scores={temp=30003,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f"},{"selector":"@s"},{"text":" has not signed up for your party. You have joined a party at present. You can't join your party any more."}]}
+execute @a[scores={temp=30011},c=1] ~ ~ ~ tellraw @s[scores={temp=30011,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fYou haven't registered your account. You can't use the party system. Please register first."}]}
+execute @a[scores={temp=30012},c=1] ~ ~ ~ tellraw @s[scores={temp=30012,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fYou have already joined the party. You can't join any other party."}]}
+execute @a[scores={temp=30011},c=1] ~ ~ ~ tellraw @a[scores={temp=30003,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f"},{"selector":"@s"},{"text":" 尚未註冊帳號，無法加入您的派對。"}]}
+execute @a[scores={temp=30012},c=1] ~ ~ ~ tellraw @a[scores={temp=30003,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f"},{"selector":"@s"},{"text":" 當前已經加入了派對，無法再加入您的派對。"}]}
+execute @a[scores={temp=30011},c=1] ~ ~ ~ tellraw @s[scores={temp=30011,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f您尚未註冊帳號，無法使用派對系統，請先註冊。"}]}
+execute @a[scores={temp=30012},c=1] ~ ~ ~ tellraw @s[scores={temp=30012,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f您已經加入了派對，無法再加入其他的派對。"}]}
+execute @a[scores={temp=30011},c=1] ~ ~ ~ tellraw @a[scores={temp=30003,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f"},{"selector":"@s"},{"text":" はまだアカウントを登録していませんので、パーティーに参加できません。"}]}
+execute @a[scores={temp=30012},c=1] ~ ~ ~ tellraw @a[scores={temp=30003,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f"},{"selector":"@s"},{"text":" は今パーティーに参加しました。もうパーティーに参加できません。"}]}
+execute @a[scores={temp=30011},c=1] ~ ~ ~ tellraw @s[scores={temp=30011,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fアカウントはまだ登録されていませんので、パーティーシステムは使えません。先に登録してください。"}]}
+execute @a[scores={temp=30012},c=1] ~ ~ ~ tellraw @s[scores={temp=30012,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fあなたはもうパーティーに参加しました。他のパーティーに参加できません。"}]}
+execute @a[scores={temp=30003},c=1] ~ ~ ~ scoreboard players operation @p[scores={temp=30021},c=1] party = @p[scores={temp=30003}] uid
+execute @a[scores={temp=30003},c=1] ~ ~ ~ tellraw @s[scores={temp=30003,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§6"},{"selector":"@p[scores={temp=30021,party=!0},c=1]"},{"text":" §f加入了您的派对。请注意，如果派对成员下线或拥有派对身份超过8小时，身份会自动移除。"}]}
+execute @a[scores={temp=30021},c=1] ~ ~ ~ tellraw @s[scores={temp=30003,language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f您已经加入了 §6"},{"selector":"@p[scores={temp=30003},c=1]"},{"text":" §f的派对。请注意，如果派对您下线或拥有派对身份超过8小时，身份会自动移除。"}]}
+execute @a[scores={temp=30003},c=1] ~ ~ ~ tellraw @s[scores={temp=30003,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§6"},{"selector":"@p[scores={temp=30021,party=!0},c=1]"},{"text":" §fjoined your party. Please note that if Party members are offline or have party identity for more than 8 hours, the identity will be automatically removed."}]}
+execute @a[scores={temp=30021},c=1] ~ ~ ~ tellraw @s[scores={temp=30003,language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fYou have joined the Party of  §6"},{"selector":"@p[scores={temp=30003},c=1]"},{"text":" §f.  Please note that if you are offline or have party identity for more than 8 hours, the identity will be automatically removed."}]}
+execute @a[scores={temp=30003},c=1] ~ ~ ~ tellraw @s[scores={temp=30003,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§6"},{"selector":"@p[scores={temp=30021,party=!0},c=1]"},{"text":" §f加入了您的派對。請注意，如果派對成員下線或擁有派對身份超過8小時，身份會自動移除。"}]}
+execute @a[scores={temp=30021},c=1] ~ ~ ~ tellraw @s[scores={temp=30003,language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f您已經加入了 §6"},{"selector":"@p[scores={temp=30003},c=1]"},{"text":" §f的派對。請注意，如果派對您下線或擁有派對身份超過8小時，身份會自動移除。"}]}
+execute @a[scores={temp=30003},c=1] ~ ~ ~ tellraw @s[scores={temp=30003,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§6"},{"selector":"@p[scores={temp=30021,party=!0},c=1]"},{"text":" §fはあなたのパーティーに参加しました。パーティメンバーがオフラインやパーティの身分が8時間以上あると、自動的に身元が消えるのでご注意ください。"}]}
+execute @a[scores={temp=30021},c=1] ~ ~ ~ tellraw @s[scores={temp=30003,language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§6"},{"selector":"@p[scores={temp=30003},c=1]"},{"text":" §fパーティーに参加しました。パーティーの場合、オフラインやパーティの身分が8時間以上あると、自動的に身分が崩れますので、ご注意ください。"}]}
+execute @a[scores={temp=30000..30030}] ~ ~ ~ scoreboard players reset @s temp

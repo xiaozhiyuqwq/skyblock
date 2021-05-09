@@ -25,6 +25,7 @@ scoreboard players add @a[scores={login=0}] sign_in 0
 scoreboard players add @a[scores={login=0}] level 0
 scoreboard players add @a[scores={login=0}] uid 0
 scoreboard players add @a[scores={login=0}] language 0
+scoreboard players set @a[scores={login=0,notice=0..85}] notice 86
 execute @a[scores={language=0}] ~ ~ ~ tellraw @s[scores={login=0,language=0},tag=!admin] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§l§a登录成功！ §l§3"},{"selector":"@s"},{"text":" §6["},{"score":{"name":"@s","objective":"uid"}},{"text":"] §r§f您的用户组： §l§b用户§f-§c等级"},{"score":{"name":"@s","objective":"level"}}]}
 execute @a[scores={language=0}] ~ ~ ~ tellraw @s[scores={login=0,language=0},tag=admin] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§l§a登录成功！ §l§3"},{"selector":"@s"},{"text":" §6["},{"score":{"name":"@s","objective":"uid"}},{"text":"]§r§f您的用户组： §l§b管理员§f-§c等级"},{"score":{"name":"@s","objective":"level"}}]}
 execute @a[scores={language=1}] ~ ~ ~ tellraw @s[scores={login=0,language=1},tag=!admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§l§aLogin successful! §l§3"},{"selector":"@s"},{"text":" §6["},{"score":{"name":"@s","objective":"uid"}},{"text":"] . §r§fYour user group: §l§bUser§f-§clevel_"},{"score":{"name":"@s","objective":"level"}}]}

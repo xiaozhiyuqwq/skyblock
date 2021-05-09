@@ -210,8 +210,66 @@ execute @a[tag=luckily] ~ ~ ~ tellraw @a[scores={language=3,uid=!0,level=!0}] {"
 tag * remove luckily
 #结束还原
 execute @e[type=minecraft:armor_stand,scores={typeid=128,luckily=1001..1010}] ~ ~ ~ scoreboard players reset * luckily
+#开发者每日的登录物品
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @a[tag=developer,scores={uid=!0,dailyplaytime=2}] cake 1 0
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ scoreboard players random @s developerdaily 1 27
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=1}] potion 1 5
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=2}] potion 1 6
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=3}] potion 1 7
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=4}] potion 1 8
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=5}] potion 1 9
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=6}] potion 1 10
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=7}] potion 1 11
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=8}] potion 1 12
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=9}] potion 1 13
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=10}] potion 1 14
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=11}] potion 1 15
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=12}] potion 1 16
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=13}] potion 1 19
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=14}] potion 1 20
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=15}] potion 1 21
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=16}] potion 1 22
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=17}] potion 1 28
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=18}] potion 1 29
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=19}] potion 1 30
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=20}] potion 1 31
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=21}] potion 1 32
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=22}] potion 1 33
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=23}] potion 1 37
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=24}] potion 1 38
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=25}] potion 1 39
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=26}] potion 1 40
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=27}] potion 1 41
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ scoreboard players random @s developerdaily 30 51
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=30}] coal 1 0
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=31}] coal 2 0
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=32}] coal 4 0
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=33}] iron_ingot 1 0
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=34}] iron_ingot 2 0
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=35}] iron_ingot 4 0
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=36}] iron_nugget 2 0
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=37}] iron_nugget 4 0
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=38}] iron_nugget 8 0
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=39}] gold_ingot 1 0
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=40}] gold_ingot 2 0
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=41}] gold_ingot 4 0
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=42}] gold_nugget 2 0
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=43}] gold_nugget 4 0
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=44}] gold_nugget 8 0
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=45}] redstone 4 0
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=46}] redstone 8 0
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=47}] redstone 16 0
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=48}] redstone 32 0
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=49}] dye 4 4
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=50}] dye 8 4
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ give @s[scores={developerdaily=51}] diamond 1 0
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f今日的开发者专享礼物已送达！"}]}
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ tellraw @a[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fToday's developer exclusive gift has been delivered!"}]}
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ tellraw @a[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f今日的開發者專享禮物已送達！"}]}
+execute @a[tag=developer,scores={uid=!0,dailyplaytime=2}] ~ ~ ~ tellraw @a[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f今日の開発者専用のプレゼントが届きました。"}]}
 #公告系统
-scoreboard players random @e[type=minecraft:armor_stand,scores={typeid=128}] notice 5 10
+scoreboard players random @e[type=minecraft:armor_stand,scores={typeid=128}] notice 3 9
+execute @a[scores={dailyplaytime=1..60}] ~ ~ ~ scoreboard players add @s notice 1
 execute @a ~ ~ ~ scoreboard players operation @s notice += @e[scores={typeid=128},type=minecraft:armor_stand] notice
 execute @a[scores={notice=100..200}] ~ ~ ~ scoreboard players random @s notice 201 232
 execute @a[scores={notice=217}] ~ ~ ~ scoreboard players set @s notice 206
@@ -220,14 +278,15 @@ execute @a[scores={notice=201..202}] ~ ~ ~ scoreboard players random @s notice 3
 execute @a[scores={notice=203}] ~ ~ ~ scoreboard players random @s notice 401 403
 execute @a[scores={notice=204..205}] ~ ~ ~ scoreboard players random @s notice 501 505
 execute @a[scores={notice=227..228}] ~ ~ ~ scoreboard players set @s notice 206
-execute @a[scores={notice=206}] ~ ~ ~ scoreboard players random @s notice 601 609
-execute @a[scores={notice=220..223}] ~ ~ ~ scoreboard players random @s notice 701 711
+execute @a[scores={notice=206}] ~ ~ ~ scoreboard players random @s notice 601 611
+execute @a[scores={notice=220..223,language=!0}] ~ ~ ~ scoreboard players random @s notice 701 711
+execute @a[scores={notice=220..223,language=0}] ~ ~ ~ scoreboard players random @s notice 701 712
 execute @a[scores={notice=224}] ~ ~ ~ scoreboard players random @s notice 801 807
 execute @a[scores={notice=225,language=0}] ~ ~ ~ scoreboard players random @s notice 901 904
 execute @a[scores={notice=225,language=!0}] ~ ~ ~ scoreboard players set @s notice 206
 execute @a[scores={notice=226}] ~ ~ ~ scoreboard players random @s notice 1001 1004
 execute @a[scores={notice=230}] ~ ~ ~ scoreboard players random @s notice 1101 1112
-execute @a[scores={notice=302..203}] ~ ~ ~ scoreboard players random @s notice 311 315
+execute @a[scores={notice=302..203}] ~ ~ ~ scoreboard players random @s notice 311 316
 execute @a[scores={notice=304}] ~ ~ ~ scoreboard players random @s notice 321 322
 execute @a[scores={notice=305}] ~ ~ ~ scoreboard players random @s notice 331 333
 execute @a[scores={notice=308}] ~ ~ ~ scoreboard players random @s notice 341 343
@@ -240,6 +299,7 @@ execute @a[scores={notice=312}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext"
 execute @a[scores={notice=313}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7我曾将§b青春§7翻涌成§d她§7，也曾指尖弹出§a盛夏§7，心之所动，且就随缘去吧。 摘录自 吴青峰 起风了 。"}]}
 execute @a[scores={notice=314}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7すぐにヤキモチ焼くとこも好きだよってからかって笑う君に甘えていた 爱していることを言叶以外の方法で今すぐに伝えたい。(就连我动不动就吃醋这点都喜欢 向为此逗我笑的你撒娇 现在立刻想用言语以外的方法将爱着你的心情告诉你) 摘录自 高桥优 ヤキモチ(吃醋) 。"}]}
 execute @a[scores={notice=315}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7再次看到§d你§7，微§b凉§a晨光§7里，笑得很甜蜜。 摘录自 吴青峰 起风了 。"}]}
+execute @a[scores={notice=316}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7一绪に居られるだけで 手と手を重ね合えるだけで良かったね (只要一直在§b一起§7，§d双手合十§7就好了呢。) 摘录自 高桥优 ヤキモチ(吃醋) 。"}]}
 execute @a[scores={notice=321}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7歌剧奏响的瞬间，轻音悠远，犹如蔷薇端庄高洁，看落花舞动拂过了少女指尖。 摘录自 哔哩哔哩 BV1KV411Y7md 。"}]}
 execute @a[scores={notice=322}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7听着大雨将顷春风渡夏，一声惊雷划过天涯，想起与他泪尽繁花一世情话。 摘录自 哔哩哔哩 BV1KV411Y7md 。"}]}
 execute @a[scores={notice=331}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7不想离开，当你的§e笑容§7绽开，这世界突然填满§c色§b彩§7。 摘录自 华晨宇 好想爱这个世界啊 。"}]}
@@ -276,6 +336,8 @@ execute @a[scores={notice=606}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext"
 execute @a[scores={notice=607}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7在 §aGitee(码云) §7搜索并关注 §6dolphin455 §7。"}]}
 execute @a[scores={notice=608}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7在 §fGitHub §7搜索并关注 §6Hero-awa §7。"}]}
 execute @a[scores={notice=609}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7在 §d哔哩哔哩 §7搜索并关注 §6uid:287893850 §7。"}]}
+execute @a[scores={notice=610}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7在 §f蒸汽平台(Steam) §7搜索并关注 §6xiaozhiyuqwq(76561199164798433) §7。"}]}
+execute @a[scores={notice=611}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7在 §3TapTap §7搜索并关注 §6ID:61306024 §7。"}]}
 execute @a[scores={notice=207}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7祉语才不是§b小§d萝§b莉§7（虽然有的时候有点小§d傲§b娇§7）！"}]}
 execute @a[scores={notice=208}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7您可以使用组队或者创建公会与您的朋友们在同一个空岛上生存！"}]}
 execute @a[scores={notice=209}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7您发现了吗？每次登录的时候提示是不同的哦~"}]}
@@ -301,6 +363,7 @@ execute @a[scores={notice=708}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext"
 execute @a[scores={notice=709}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7您可以在项目仓库找到所有的项目历史版本！"}]}
 execute @a[scores={notice=710}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7最开始项目是只支持简体中文的哦~"}]}
 execute @a[scores={notice=711}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7抽奖概率太低？祉语曾经连续6次什么都没有抽到哦~"}]}
+execute @a[scores={notice=712}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7网§b抑§7(易)严选 - 以严谨的态度，为中国§b我的世界资源开发者§7(消费者)甄选天下§b不过审核理由§7(优品)。"}]}
 execute @a[scores={notice=801}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7友情链接 www.rainyat.work - 雨逸阁Rainyat - [我的世界]基岩版小型群组服务器"}]}
 execute @a[scores={notice=802}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7友情链接 xiaozhiyuqwq.top - 祉语の主页 - 祉语的个人主页"}]}
 execute @a[scores={notice=803}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§7友情链接 github.com - GitHub - 世界构建软件的地方"}]}
@@ -331,10 +394,11 @@ execute @a[scores={notice=1112}] ~ ~ ~ tellraw @s[scores={language=0}] {"rawtext
 #english
 execute @a[scores={notice=301}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7你和我说他的可爱，你和我说他的好看。恍惚间窥见在樱花树下，铁道边，一对少男少女彼此走着，风起花落拂过他们脸颊。 Excerpt from 祉语 因为有你 ."}]}
 execute @a[scores={notice=311}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7如今走过这世间，万般流连，翻过岁月不同侧脸，措不及防闯入你的笑颜。 Excerpt from 吴青峰 起风了 ."}]}
-execute @a[scores={notice=312}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7我终将§b青春§7还给了§d她§7，连同指尖弹出的§a盛夏§7，心之所动，就随风去了。 Excerpt from 吴青峰 起风了 ."}]}
+execute @a[scores={notice=312}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7I have §bburied§7 the story of§d her§7, together with that tuneful §asummer§7. Excerpt from Song of the wind ."}]}
 execute @a[scores={notice=313}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7我曾将§b青春§7翻涌成§d她§7，也曾指尖弹出§a盛夏§7，心之所动，且就随缘去吧。 Excerpt from 吴青峰 起风了 ."}]}
 execute @a[scores={notice=314}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7すぐにヤキモチ焼くとこも好きだよってからかって笑う君に甘えていた 爱していることを言叶以外の方法で今すぐに伝えたい。 Excerpt from 高桥优 ヤキモチ ."}]}
 execute @a[scores={notice=315}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7再次看到§d你§7，微§b凉§a晨光§7里，笑得很甜蜜。 Excerpt from 吴青峰 起风了 ."}]}
+execute @a[scores={notice=316}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7一绪に居られるだけで 手と手を重ね合えるだけで良かったね Excerpt from 高桥优 ヤキモチ(吃醋) ."}]}
 execute @a[scores={notice=321}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7歌剧奏响的瞬间，轻音悠远，犹如蔷薇端庄高洁，看落花舞动拂过了少女指尖。 Excerpt from 哔哩哔哩 BV1KV411Y7md ."}]}
 execute @a[scores={notice=322}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7听着大雨将顷春风渡夏，一声惊雷划过天涯，想起与他泪尽繁花一世情话。 Excerpt from 哔哩哔哩 BV1KV411Y7md ."}]}
 execute @a[scores={notice=331}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7不想离开，当你的§e笑容§7绽开，这世界突然填满§c色§b彩§7。 Excerpt from 华晨宇 好想爱这个世界啊 ."}]}
@@ -371,6 +435,8 @@ execute @a[scores={notice=606}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext"
 execute @a[scores={notice=607}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7Visit §aGitee §7search and follow §6dolphin455 §7."}]}
 execute @a[scores={notice=608}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7Visit §fGitHub §7search and follow §6Hero-awa §7."}]}
 execute @a[scores={notice=609}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7Visit §dBilibili §7search and follow §6uid:287893850 §7."}]}
+execute @a[scores={notice=610}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7Visit §fSteam §7search and follow §6xiaozhiyuqwq(76561199164798433) §7."}]}
+execute @a[scores={notice=611}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7Visit §3TapTap §7search and follow §6ID:61306024 §7."}]}
 execute @a[scores={notice=207}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7Zhiyu is not §bl§di§bt§dt§bl§de §bL§do§br§di§7 (although sometimes a little §bp§dr§bo§du§bd§7)!"}]}
 execute @a[scores={notice=208}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7You can use team or create guild to live on the same island with your friends!"}]}
 execute @a[scores={notice=209}] ~ ~ ~ tellraw @s[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7Did you find out? Every time you log in, the prompt is different~"}]}
@@ -426,6 +492,7 @@ execute @a[scores={notice=312}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext"
 execute @a[scores={notice=313}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7我曾將§b青春§7翻湧成§d她§7，也曾指尖彈出§a盛夏§7，心之所動，且就隨緣去吧。 摘錄自 吳青峰 起風了。"}]}
 execute @a[scores={notice=314}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7すぐにヤキモチ焼くとこも好きだよってからかって笑う君に甘えていた 爱していることを言叶以外の方法で今すぐに伝えたい。(就連我動不動就吃醋這點都喜歡向為此逗我笑的你撒嬌現在立刻想用言語以外的方法將愛著你的心情告訴你) 摘錄自 高橋優 ヤキモチ(吃醋) 。"}]}
 execute @a[scores={notice=315}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7再次看到§d你§7，微§b凉§a晨光§7裏，笑得很甜蜜。 摘錄自 吳青峰 起風了。"}]}
+execute @a[scores={notice=316}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7一绪に居られるだけで 手と手を重ね合えるだけで良かったね (只要一直在§b一起§7，§d雙手合十§7就好了呢。) 摘錄自 高橋優 ヤキモチ(吃醋) 。"}]}
 execute @a[scores={notice=321}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7歌劇奏響的瞬間，輕音悠遠，猶如薔薇端莊高潔，看落花舞動拂過了少女指尖。 摘錄自 嗶哩嗶哩 BV1KV411Y7md 。"}]}
 execute @a[scores={notice=322}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7聽著大雨將頃春風渡夏，一聲驚雷劃過天涯，想起與他淚盡繁花一世情話。 摘錄自 嗶哩嗶哩 BV1KV411Y7md 。"}]}
 execute @a[scores={notice=331}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7不想離開，當你的§e笑容§7綻開，這世界突然填滿§c色§b彩§7。 摘錄自 華晨宇 好想愛這個世界啊 。"}]}
@@ -462,6 +529,8 @@ execute @a[scores={notice=606}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext"
 execute @a[scores={notice=607}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7在 §aGitee §7蒐索並關注 §6dolphin455 §7。"}]}
 execute @a[scores={notice=608}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7在 §fGitHub §7蒐索並關注 §6Hero-awa §7。"}]}
 execute @a[scores={notice=609}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7在 §d嗶哩嗶哩 §7蒐索並關注 §6uid:287893850 §7。"}]}
+execute @a[scores={notice=610}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7在 §fSteam §7蒐索並關注 §6xiaozhiyuqwq(76561199164798433) §7。"}]}
+execute @a[scores={notice=611}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7在 §3TapTap §7蒐索並關注 §6ID:61306024 §7。"}]}
 execute @a[scores={notice=207}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7祉語才不是§b小§d蘿§b莉§7（雖然有的時候有點小§d傲§b嬌§7）！"}]}
 execute @a[scores={notice=208}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7您可以使用組隊或者創建公會與您的朋友們在同一個空島上生存！"}]}
 execute @a[scores={notice=209}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7您發現了嗎？每次登入的時候提示是不同的哦~"}]}
@@ -517,6 +586,7 @@ execute @a[scores={notice=312}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext"
 execute @a[scores={notice=313}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7我曾将§b青春§7翻涌成§d她§7，也曾指尖弹出§a盛夏§7，心之所动，且就随缘去吧。 吴青峰 起风了 から抜粋します。"}]}
 execute @a[scores={notice=314}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7すぐにヤキモチ焼くとこも好きだよってからかって笑う君に甘えていた 爱していることを言叶以外の方法で今すぐに伝えたい。 高桥优 ヤキモチ から抜粋します。"}]}
 execute @a[scores={notice=315}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7再次看到§d你§7，微§b凉§a晨光§7里，笑得很甜蜜。 吴青峰 起风了 から抜粋します。"}]}
+execute @a[scores={notice=316}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7一绪に居られるだけで 手と手を重ね合えるだけで良かったね。 高桥优 ヤキモチ から抜粋します。"}]}
 execute @a[scores={notice=321}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7歌剧奏响的瞬间，轻音悠远，犹如蔷薇端庄高洁，看落花舞动拂过了少女指尖。 哔哩哔哩 BV1KV411Y7md から抜粋します。"}]}
 execute @a[scores={notice=322}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7听着大雨将顷春风渡夏，一声惊雷划过天涯，想起与他泪尽繁花一世情话。 哔哩哔哩 BV1KV411Y7md から抜粋します。"}]}
 execute @a[scores={notice=331}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7不想离开，当你的§e笑容§7绽开，这世界突然填满§c色§b彩§7。 华晨宇 好想爱这个世界啊 から抜粋します。"}]}
@@ -553,6 +623,8 @@ execute @a[scores={notice=606}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext"
 execute @a[scores={notice=607}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§aGitee §7で検索して §6dolphin455 §7に注目したり。"}]}
 execute @a[scores={notice=608}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fGitHub §7で検索して §6Hero-awa §7に注目したり。"}]}
 execute @a[scores={notice=609}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§d哔哩哔哩 §7で検索して §6uid:287893850 §7に注目したり。"}]}
+execute @a[scores={notice=610}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fSteam §7で検索して §6xiaozhiyuqwq(76561199164798433) §7に注目したり。"}]}
+execute @a[scores={notice=611}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§3TapTap §7で検索して §6ID:61306024 §7に注目したり。"}]}
 execute @a[scores={notice=207}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7祉語ちゃんは§bロ§dリ§7じゃないです（ちょっとツンデレな時もありますが）！"}]}
 execute @a[scores={notice=208}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7チームを作ったり、ギルドを作ったりして、友達と同じ空島で生存できます。"}]}
 execute @a[scores={notice=209}] ~ ~ ~ tellraw @s[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§7見つけましたか？ログインするたびにヒントが違いますよ。"}]}

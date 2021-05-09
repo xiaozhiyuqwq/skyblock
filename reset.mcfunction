@@ -14,5 +14,3 @@ tellraw @a[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§
 tellraw @a[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f日期已更新！簽到及每日線上時間已重置。"}]}
 #彩蛋重置 天気の子 君の名は。 千と千寻の神隠し あの日見た花の名前を僕達はまだ知らない。
 tag * remove stinger
-#developerdaily
-tag * remove developerdaily
