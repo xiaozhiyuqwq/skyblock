@@ -3438,22 +3438,34 @@ scoreboard players set @a[scores={actionbartime=601..}] actionbartime 1
 scoreboard players add @a dailyplaytime 0
 execute @a[scores={actionbartime=1..400}] ~ ~ ~ tag @s remove actionbartext1
 execute @a[scores={actionbartime=1..400}] ~ ~ ~ tag @s remove actionbartext2
-execute @a[scores={actionbartime=1..400}] ~ ~ ~ scoreboard players set @s actionbartext 0
+execute @a[scores={actionbartime=1..400}] ~ ~ ~ tag @s remove actionbartext1adv
+execute @a[scores={actionbartime=1..300}] ~ ~ ~ scoreboard players set @s actionbartext 0
 execute @a[scores={actionbartime=401..500,actionbartext=0},tag=!actionbartext1] ~ ~ ~ scoreboard players random @s actionbartext 1 10
-execute @a[scores={actionbartime=401..500,actionbartext=1..3},tag=!actionbartext1] ~ ~ ~ scoreboard players random @s actionbartext 101 105
-execute @a[scores={actionbartime=401..500,actionbartext=4..10},tag=!actionbartext1] ~ ~ ~ scoreboard players random @s actionbartext 201 205
+execute @a[scores={actionbartime=401..500,actionbartext=1..2},tag=!actionbartext1] ~ ~ ~ scoreboard players random @s actionbartext 101 106
+execute @a[scores={actionbartime=401..500,actionbartext=3..10},tag=!actionbartext1] ~ ~ ~ scoreboard players random @s actionbartext 201 205
+execute @a[scores={actionbartime=401..500,actionbartext=101..199},tag=!actionbartext1] ~ ~ ~ tag @s add actionbartext1adv
 execute @a[scores={actionbartime=401..500,actionbartext=101..299},tag=!actionbartext1] ~ ~ ~ tag @s add actionbartext1
-execute @a[scores={actionbartime=501..600,actionbartext=1..5},tag=!actionbartext2] ~ ~ ~ scoreboard players random @s actionbartext 1 5
-execute @a[scores={actionbartime=501..600,actionbartext=1..5},tag=!actionbartext2] ~ ~ ~ tag @s add actionbartext2
+execute @a[scores={actionbartime=501..600,actionbartext=101..299},tag=!actionbartext2,tag=!actionbartext1adv] ~ ~ ~ scoreboard players random @s actionbartext 1 10
+execute @a[scores={actionbartime=501..600,actionbartext=101..299},tag=!actionbartext2,tag=actionbartext1adv] ~ ~ ~ scoreboard players set @s actionbartext 5
+execute @a[scores={actionbartime=501..600,actionbartext=1..2},tag=!actionbartext2] ~ ~ ~ scoreboard players random @s actionbartext 101 105
+execute @a[scores={actionbartime=501..600,actionbartext=3..10,language=1},tag=!actionbartext2] ~ ~ ~ scoreboard players random @s actionbartext 201 205
+execute @a[scores={actionbartime=501..600,actionbartext=3..10,language=3},tag=!actionbartext2] ~ ~ ~ scoreboard players random @s actionbartext 201 205
+execute @a[scores={actionbartime=501..600,actionbartext=3..10,language=0},tag=!actionbartext2] ~ ~ ~ scoreboard players random @s actionbartext 201 206
+execute @a[scores={actionbartime=501..600,actionbartext=3..10,language=2},tag=!actionbartext2] ~ ~ ~ scoreboard players random @s actionbartext 201 206
+execute @a[scores={actionbartime=501..600,actionbartext=202,language=0},tag=!actionbartext2] ~ ~ ~ scoreboard players random @s actionbartext 211 216
+execute @a[scores={actionbartime=501..600,actionbartext=202,language=2},tag=!actionbartext2] ~ ~ ~ scoreboard players random @s actionbartext 211 216
+execute @a[scores={actionbartime=501..600,actionbartext=206,language=0},tag=!actionbartext2] ~ ~ ~ scoreboard players random @s actionbartext 211 216
+execute @a[scores={actionbartime=501..600,actionbartext=206,language=2},tag=!actionbartext2] ~ ~ ~ scoreboard players random @s actionbartext 211 216
+execute @a[scores={actionbartime=501..600,actionbartext=101..299},tag=!actionbartext2] ~ ~ ~ tag @s add actionbartext2
 #文本1-欢迎
 execute @a[scores={actionbartime=1..100,language=0,level=!0,actionbar=50},tag=!admin] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§c§l用户§f§6 "},{"selector":"@s"},{"text":" §r§b您好，欢迎您！ §f感谢您体验空岛生存！"}]}
 execute @a[scores={actionbartime=1..100,language=1,level=!0,actionbar=50},tag=!admin] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§c§lUser§f§6 "},{"selector":"@s"},{"text":" §r§bHello, welcome! §fThank you for experiencing skyblock!"}]}
 execute @a[scores={actionbartime=1..100,language=2,level=!0,actionbar=50},tag=!admin] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§c§l用戶§f§6 "},{"selector":"@s"},{"text":" §r§b您好，歡迎您！ §f感謝您體驗空島生存！"}]}
 execute @a[scores={actionbartime=1..100,language=3,level=!0,actionbar=50},tag=!admin] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§c§lUser§f§6 "},{"selector":"@s"},{"text":" §r§bこんにちは、歓迎します。 §fSkyblockを体験してくれてありがとうございます。"}]}
-execute @a[scores={actionbartime=1..100,language=0,level=!0,actionbar=50},tag=admin] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§c§l管理员§f§6 "},{"selector":"@s"},{"text":" §r§b您好，欢迎您！ §f歌剧奏响的瞬间，轻音悠远，犹如蔷薇端庄高洁，看落花舞动抚过了少女指尖。"}]}
-execute @a[scores={actionbartime=1..100,language=1,level=!0,actionbar=50},tag=admin] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§c§lAdmin§f§6 "},{"selector":"@s"},{"text":" §r§bHello, welcome! §fNever stop on the road of exploration!"}]}
-execute @a[scores={actionbartime=1..100,language=2,level=!0,actionbar=50},tag=admin] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§c§l管理員§f§6 "},{"selector":"@s"},{"text":" §r§b您好，歡迎您！ §f歌劇奏響的瞬間，輕音悠遠，猶如薔薇端莊高潔，看落花舞動撫過了少女指尖。"}]}
-execute @a[scores={actionbartime=1..100,language=3,level=!0,actionbar=50},tag=admin] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§c§lAdmin§f§6 "},{"selector":"@s"},{"text":" §r§bこんにちは、歓迎します。 §f探索の道で立ち止まらない！"}]}
+execute @a[scores={actionbartime=1..100,language=0,level=!0,actionbar=50},tag=admin] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§c§l管理员§f§6 "},{"selector":"@s"},{"text":" §r§b您好，欢迎您！ §f感谢您体验空岛生存！"}]}
+execute @a[scores={actionbartime=1..100,language=1,level=!0,actionbar=50},tag=admin] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§c§lAdmin§f§6 "},{"selector":"@s"},{"text":" §r§bHello, welcome! §fThank you for experiencing skyblock!"}]}
+execute @a[scores={actionbartime=1..100,language=2,level=!0,actionbar=50},tag=admin] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§c§l管理員§f§6 "},{"selector":"@s"},{"text":" §r§b您好，歡迎您！ §f感謝您體驗空島生存！"}]}
+execute @a[scores={actionbartime=1..100,language=3,level=!0,actionbar=50},tag=admin] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§c§lAdmin§f§6 "},{"selector":"@s"},{"text":" §r§bこんにちは、歓迎します。 §fSkyblockを体験してくれてありがとうございます。"}]}
 #文本2-账号数据
 execute @a[scores={actionbartime=101..200,language=0,level=!0,actionbar=50}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§r§f用户识别符 §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":"   §r§f队伍识别符 §l§1"},{"score":{"name":"@s","objective":"id"}},{"text":"   §r§f公会识别符 §l§a"},{"score":{"name":"@s","objective":"id"}}]}
 execute @a[scores={actionbartime=101..200,language=1,level=!0,actionbar=50}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§r§fUID §l§6"},{"score":{"name":"@s","objective":"uid"}},{"text":"   §r§fTeamID §l§1"},{"score":{"name":"@s","objective":"id"}},{"text":"   §r§fGuildID §l§a"},{"score":{"name":"@s","objective":"id"}}]}
@@ -3548,64 +3560,101 @@ execute @a[scores={actionbartime=301..400,level=!0,language=3,actionbar=50,task=
 #前面的区域，以后再来探索吧~
 execute @a[scores={actionbartime=301..400,level=!0,actionbar=50,task=!0..19}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§f前面的区域，以后再来探索吧~"}]}
 #文本5 - 广告1
-execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f无法将你打败的，终将使你变得更加强大。}]}
-execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在探索的路上永不止步！}]}
-execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f去探索，更美好的世界。}]}
-execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f愿你历尽千帆，归来仍是少年。}]}
-execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f彼岸花花开彼岸，断肠草草断肝肠。}]}
-execute @a[scores={actionbartime=401..500,language=1,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fWhat does not kill you makes you stronger.}]}
-execute @a[scores={actionbartime=401..500,language=1,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fNever stop on the way of exploration!}]}
-execute @a[scores={actionbartime=401..500,language=1,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fTo explore a better world.}]}
-execute @a[scores={actionbartime=401..500,language=1,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fWhere there is a will, there is a way.}]}
-execute @a[scores={actionbartime=401..500,language=1,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fThe world is but a little place, after all.}]}
-execute @a[scores={actionbartime=401..500,language=2,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f無法將你打敗的，終將使你變得更加强大。}]}
-execute @a[scores={actionbartime=401..500,language=2,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在探索的路上永不止步！}]}
-execute @a[scores={actionbartime=401..500,language=2,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f去探索，更美好的世界。}]}
-execute @a[scores={actionbartime=401..500,language=2,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f願你歷盡千帆，歸來仍是少年。}]}
-execute @a[scores={actionbartime=401..500,language=2,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f彼岸花花開彼岸，斷腸草草斷肝腸。}]}
-execute @a[scores={actionbartime=401..500,language=3,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fあなたを打ち負かすことができないのは、最後にあなたをもっと強くさせます。}]}
-execute @a[scores={actionbartime=401..500,language=3,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f探索の道で立ち止まらない！}]}
-execute @a[scores={actionbartime=401..500,language=3,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fより良い世界を探しに行きます。}]}
-execute @a[scores={actionbartime=401..500,language=3,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f大切な事ほど見慣れた場所で輝くのかもしれない}]}
-execute @a[scores={actionbartime=401..500,language=3,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f春夏秋冬と 浮かぶのは あの日の空 涙雨降り止まぬ}]}
-execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=101}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §d哔哩哔哩 §f搜索并关注 §6uid:437306982 §f。}]}
-execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=102}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §2Xbox §f搜索并关注 §6xhduoduobaby §f。}]}
-execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=103}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §aGitee(码云) §f搜索并关注 §6xiaozhiyuqwq §f。}]}
-execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=104}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §fGitHub §f搜索并关注 §6xiaozhiyuqwq §f。}]}
-execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=105}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §aOSCHINA §f搜索并关注 §64991772 §f。}]}
-execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=106}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §6微博 §f搜索并关注 §6xhduoduobaby §f。}]}
-execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=107}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §aGitee(码云) §f搜索并关注 §6dolphin455 §f。}]}
-execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=108}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §fGitHub §f搜索并关注 §6Hero-awa §f。}]}
-execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=109}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §f蒸汽平台(Steam) §f搜索并关注 §6xiaozhiyuqwq(76561199164798433) §f。}]}
-execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=110}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f访问祉语的个人主页 §bxiaozhiyuqwq.top §f了解更多。}]}
-
-
-
-
-
-
-
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f无法将你打败的，终将使你变得更加强大。"}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在探索的路上永不止步！"}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f去探索，更美好的世界。"}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f愿你历尽千帆，归来仍是少年。"}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f彼岸花花开彼岸，断肠草草断肝肠。"}]}
+execute @a[scores={actionbartime=401..500,language=1,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fWhat does not kill you makes you stronger."}]}
+execute @a[scores={actionbartime=401..500,language=1,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fNever stop on the way of exploration!"}]}
+execute @a[scores={actionbartime=401..500,language=1,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fTo explore a better world."}]}
+execute @a[scores={actionbartime=401..500,language=1,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fWhere there is a will, there is a way."}]}
+execute @a[scores={actionbartime=401..500,language=1,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fThe world is but a little place, after all."}]}
+execute @a[scores={actionbartime=401..500,language=2,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f無法將你打敗的，終將使你變得更加强大。"}]}
+execute @a[scores={actionbartime=401..500,language=2,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在探索的路上永不止步！"}]}
+execute @a[scores={actionbartime=401..500,language=2,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f去探索，更美好的世界。"}]}
+execute @a[scores={actionbartime=401..500,language=2,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f願你歷盡千帆，歸來仍是少年。"}]}
+execute @a[scores={actionbartime=401..500,language=2,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f彼岸花花開彼岸，斷腸草草斷肝腸。"}]}
+execute @a[scores={actionbartime=401..500,language=3,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fあなたを打ち負かすことができないのは、最後にあなたをもっと強くさせます。"}]}
+execute @a[scores={actionbartime=401..500,language=3,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f探索の道で立ち止まらない！"}]}
+execute @a[scores={actionbartime=401..500,language=3,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fより良い世界を探しに行きます。"}]}
+execute @a[scores={actionbartime=401..500,language=3,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f大切な事ほど見慣れた場所で輝くのかもしれない"}]}
+execute @a[scores={actionbartime=401..500,language=3,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f春夏秋冬と 浮かぶのは あの日の空 涙雨降り止まぬ"}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=101}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §d哔哩哔哩 §f搜索并关注 §6uid:437306982 §f。"}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=102}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §2Xbox §f搜索并关注 §6xhduoduobaby §f。"}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=103}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §aGitee(码云) §f搜索并关注 §6xiaozhiyuqwq §f。"}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=104}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §fGitHub §f搜索并关注 §6xiaozhiyuqwq §f。"}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=105}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §aOSCHINA §f搜索并关注 §64991772 §f。"}]}
+execute @a[scores={actionbartime=401..500,language=0,level=!0,actionbar=50,actionbartext=106}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §6微博 §f搜索并关注 §6xhduoduobaby §f。"}]}
+execute @a[scores={actionbartime=401..500,language=1,level=!0,actionbar=50,actionbartext=101}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fVisit §dBilibili §fsearch and follow §6uid:437306982 §f."}]}
+execute @a[scores={actionbartime=401..500,language=1,level=!0,actionbar=50,actionbartext=102}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fVisit §2Xbox §fsearch and follow §6xhduoduobaby §f."}]}
+execute @a[scores={actionbartime=401..500,language=1,level=!0,actionbar=50,actionbartext=103}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fVisit §aGitee §fsearch and follow §6xiaozhiyuqwq §f."}]}
+execute @a[scores={actionbartime=401..500,language=1,level=!0,actionbar=50,actionbartext=104}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fVisit §fGitHub §fsearch and follow §6xiaozhiyuqwq §f."}]}
+execute @a[scores={actionbartime=401..500,language=1,level=!0,actionbar=50,actionbartext=105}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fVisit §aOSCHINA §fsearch and follow §64991772 §f."}]}
+execute @a[scores={actionbartime=401..500,language=1,level=!0,actionbar=50,actionbartext=106}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fVisit §6Weibo §fsearch and follow §6xhduoduobaby §f."}]}
+execute @a[scores={actionbartime=401..500,language=2,level=!0,actionbar=50,actionbartext=101}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §d嗶哩嗶哩 §f蒐索並關注 §6uid:437306982 §f。"}]}
+execute @a[scores={actionbartime=401..500,language=2,level=!0,actionbar=50,actionbartext=102}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §2Xbox §f蒐索並關注 §6xhduoduobaby §f。"}]}
+execute @a[scores={actionbartime=401..500,language=2,level=!0,actionbar=50,actionbartext=103}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §aGitee §f蒐索並關注 §6xiaozhiyuqwq §f。"}]}
+execute @a[scores={actionbartime=401..500,language=2,level=!0,actionbar=50,actionbartext=104}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §fGitHub §f蒐索並關注 §6xiaozhiyuqwq §f。"}]}
+execute @a[scores={actionbartime=401..500,language=2,level=!0,actionbar=50,actionbartext=105}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §aOSCHINA §f蒐索並關注 §64991772 §f。"}]}
+execute @a[scores={actionbartime=401..500,language=2,level=!0,actionbar=50,actionbartext=106}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §6微博 §f蒐索並關注 §6xhduoduobaby §f。"}]}
+execute @a[scores={actionbartime=401..500,language=3,level=!0,actionbar=50,actionbartext=101}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§d哔哩哔哩 §fで検索して §6uid:437306982 §fに注目したり。"}]}
+execute @a[scores={actionbartime=401..500,language=3,level=!0,actionbar=50,actionbartext=102}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§2Xbox §fで検索して §6xhduoduobaby §fに注目したり。"}]}
+execute @a[scores={actionbartime=401..500,language=3,level=!0,actionbar=50,actionbartext=103}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§aGitee §fで検索して §6xiaozhiyuqwq §fに注目したり。"}]}
+execute @a[scores={actionbartime=401..500,language=3,level=!0,actionbar=50,actionbartext=104}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fGitHub §fで検索して §6xiaozhiyuqwq §fに注目したり。"}]}
+execute @a[scores={actionbartime=401..500,language=3,level=!0,actionbar=50,actionbartext=105}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§aOSCHINA §fで検索して §64991772 §fに注目したり。"}]}
+execute @a[scores={actionbartime=401..500,language=3,level=!0,actionbar=50,actionbartext=106}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§6weibo §fで検索して §6xhduoduobaby §fに注目したり。"}]}
 #文本6 - 广告2
-execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f水能载舟，亦能覆舟。}]}
-execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f我终将§b青春§f还给了§d她§f，连同指尖弹出的§a盛夏§f，心之所动，就随风去了。}]}
-execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f起风了，唯有努力生存。}]}
-execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f愿你历尽千帆，归来仍是少年。}]}
-execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f彼岸花花开彼岸，断肠草草断肝肠。}]}
-execute @a[scores={actionbartime=501..600,language=1,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fThe water that bears the boat is the same that swallows it up.}]}
-execute @a[scores={actionbartime=501..600,language=1,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fNever stop on the way of exploration!}]}
-execute @a[scores={actionbartime=501..600,language=1,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fTo explore a better world.}]}
-execute @a[scores={actionbartime=501..600,language=1,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fNULL}]}
-execute @a[scores={actionbartime=501..600,language=1,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fNULL}]}
-execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f水能載舟，亦能覆舟。}]}
-execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在探索的路上永不止步！}]}
-execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f去探索，更美好的世界。}]}
-execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f願你歷盡千帆，歸來仍是少年。}]}
-execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f彼岸花花開彼岸，斷腸草草斷肝腸。}]}
-execute @a[scores={actionbartime=501..600,language=3,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f水は舟を載せても、舟を覆すことができる。}]}
-execute @a[scores={actionbartime=501..600,language=3,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f风立ちぬ、いざ生きめやも。}]}
-execute @a[scores={actionbartime=501..600,language=3,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fより良い世界を探しに行きます。}]}
-execute @a[scores={actionbartime=501..600,language=3,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fNULL}]}
-execute @a[scores={actionbartime=501..600,language=3,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fNULL}]}
+execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f水能载舟，亦能覆舟。"}]}
+execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=211}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f我终将§b青春§f还给了§d她§f，连同指尖弹出的§a盛夏§f，心之所动，就随风去了。"}]}
+execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=212}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f我曾将§b青春§f翻涌成§d她§f，也曾指尖弹出§a盛夏§f，心之所动，且就随缘去吧。"}]}
+execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=213}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f再次看到§d你§f，微§b凉§a晨光§f里，笑得很甜蜜。"}]}
+execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=214}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f从前初识这世间，万般§b流连§f，看着§a天边§f似在眼前，也甘愿§c赴§6汤§c蹈§6火§f去走它一遍。"}]}
+execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=215}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f如今走过这世间，万般§b流连§f，翻过§a岁月§f不同侧脸，措不及防闯入§d你§f的笑颜。"}]}
+execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=216}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b晚风§f吹起你鬓间的白发，§d抚平§f回忆留下的§c疤§f，你的眼中-明暗交杂-§a一笑生花§f。"}]}
+execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f纵有疾风起，人生不言放。(起风了，唯有努力生存。)"}]}
+execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f人间烟火气，最抚凡人心。"}]}
+execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f亲爱的旅人，你仍是记忆中的模样。"}]}
+execute @a[scores={actionbartime=501..600,language=1,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fThe water that bears the boat is the same that swallows it up."}]}
+execute @a[scores={actionbartime=501..600,language=1,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fWhere there is life, there is hope."}]}
+execute @a[scores={actionbartime=501..600,language=1,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fThe world is his who enjoys it."}]}
+execute @a[scores={actionbartime=501..600,language=1,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fNothing is to be got without pain but poverty."}]}
+execute @a[scores={actionbartime=501..600,language=1,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fProvide for a rainy day."}]}
+execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f水能載舟，亦能覆舟。"}]}
+execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=211}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f我終將§b青春§f還給了§d她§f，連同指尖彈出的§a盛夏§f，心之所動，就隨風去了。"}]}
+execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=212}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f我曾將§b青春§f翻湧成§d她§f，也曾指尖彈出§a盛夏§f，心之所動，且就隨緣去吧。"}]}
+execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=213}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f再次看到§d你§f，微§b凉§a晨光§f裏，笑得很甜蜜。"}]}
+execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=214}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f從前初識這世間，萬般§b流連§f，看著§a天邊§f似在眼前，也甘願§c赴§6湯§c蹈§6火§f去走它一遍。"}]}
+execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=215}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f如今走過這世間，萬般§b流連§f，翻過§a歲月§f不同側臉，措不及防闖入§d你§f的笑顏。"}]}
+execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=216}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f晚風§f吹起你鬢間的白髮，§d撫平§f回憶留下的§c疤§f，你的眼中-明暗交雜-§a一笑生花§f。"}]}
+execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f縱有疾風起，人生不言放。（起風了，唯有努力生存。）"}]}
+execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f人間煙火氣，最撫凡人心。"}]}
+execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f親愛的旅人，你仍是記憶中的模樣。"}]}
+execute @a[scores={actionbartime=501..600,language=3,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f水は舟を載せても、舟を覆すことができる。"}]}
+execute @a[scores={actionbartime=501..600,language=3,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f风立ちぬ、いざ生きめやも。"}]}
+execute @a[scores={actionbartime=501..600,language=3,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f夏の花の如く艶やかに生き、秋の枯叶の如く穏やかに终りを迎えよ"}]}
+execute @a[scores={actionbartime=501..600,language=3,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f一绪に居られるだけで 手と手を重ね合えるだけで良かったね"}]}
+execute @a[scores={actionbartime=501..600,language=3,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fあの人は谁？忘れたくない人、忘れたくなかた人、忘れちゃダメな人、君の名前…"}]}
+execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=101}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §aGitee(码云) §f搜索并关注 §6dolphin455 §f。"}]}
+execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=102}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §fGitHub §f搜索并关注 §6Hero-awa §f。"}]}
+execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=103}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §f蒸汽平台(Steam) §f搜索并关注 §6xiaozhiyuqwq(76561199164798433) §f。"}]}
+execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=104}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f访问祉语的个人主页 §bxiaozhiyuqwq.top §f了解更多。"}]}
+execute @a[scores={actionbartime=501..600,language=0,level=!0,actionbar=50,actionbartext=105}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §3TapTap §f搜索并关注 §6ID:61306024 §f。"}]}
+execute @a[scores={actionbartime=501..600,language=1,level=!0,actionbar=50,actionbartext=101}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fVisit §aGitee §fsearch and follow §6dolphin455 §f."}]}
+execute @a[scores={actionbartime=501..600,language=1,level=!0,actionbar=50,actionbartext=102}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fVisit §fGitHub §fsearch and follow §6Hero-awa §f."}]}
+execute @a[scores={actionbartime=501..600,language=1,level=!0,actionbar=50,actionbartext=103}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fVisit §fSteam §fsearch and follow §6xiaozhiyuqwq(76561199164798433) §f."}]}
+execute @a[scores={actionbartime=501..600,language=1,level=!0,actionbar=50,actionbartext=104}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fVisit §bxiaozhiyuqwq.top §fto learn more."}]}
+execute @a[scores={actionbartime=501..600,language=1,level=!0,actionbar=50,actionbartext=105}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fVisit §3TapTap §fsearch and follow §6ID:61306024 §f."}]}
+execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=101}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §aGitee §f蒐索並關注 §6dolphin455 §f。"}]}
+execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=102}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §fGitHub §f蒐索並關注 §6Hero-awa §f。"}]}
+execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=103}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §fSteam §f蒐索並關注 §6xiaozhiyuqwq(76561199164798433) §f。"}]}
+execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=104}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f訪問祉語的個人主頁 §bxiaozhiyuqwq.top§f 瞭解更多。"}]}
+execute @a[scores={actionbartime=501..600,language=2,level=!0,actionbar=50,actionbartext=105}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f在 §3TapTap §f蒐索並關注 §6ID:61306024 §f。"}]}
+execute @a[scores={actionbartime=501..600,language=3,level=!0,actionbar=50,actionbartext=101}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§aGitee §fで検索して §6dolphin455 §fに注目したり。"}]}
+execute @a[scores={actionbartime=501..600,language=3,level=!0,actionbar=50,actionbartext=102}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fGitHub §fで検索して §6Hero-awa §fに注目したり。"}]}
+execute @a[scores={actionbartime=501..600,language=3,level=!0,actionbar=50,actionbartext=103}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fSteam §fで検索して §6xiaozhiyuqwq(76561199164798433) §fに注目したり。"}]}
+execute @a[scores={actionbartime=501..600,language=3,level=!0,actionbar=50,actionbartext=104}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§bxiaozhiyuqwq.top §fに訪問してもっと多くのことを知っています。"}]}
+execute @a[scores={actionbartime=501..600,language=3,level=!0,actionbar=50,actionbartext=105}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§3TapTap §fで検索して §6ID:61306024 §fに注目したり。"}]}
 #未注册
 titleraw @a[scores={level=0,language=0}] actionbar {"rawtext":[{"text":"§f您无法进行游戏，请先完成注册"}]}
 titleraw @a[scores={level=0,language=1}] actionbar {"rawtext":[{"text":"§fYou can't play the game. Please register first."}]}
