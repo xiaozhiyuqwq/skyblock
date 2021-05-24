@@ -88,6 +88,7 @@ scoreboard objectives add developerdaily dummy
 scoreboard objectives add registernum dummy
 scoreboard objectives add systemstate dummy
 scoreboard objectives add version dummy
+scoreboard objectives add registered dummy
 #clear
 clear @a[tag=clear]
 replaceitem entity @a[tag=clear] slot.hotbar 0 air
@@ -770,11 +771,15 @@ execute @a[scores={temp=123}] ~ ~ ~ title @p[scores={temp=123,mineraltemp=71..10
 execute @a[scores={temp=123}] ~ ~ ~ scoreboard objectives remove mineraltemp
 execute @a[scores={temp=123}] ~ ~ ~ scoreboard players reset @a[scores={temp=123}] temp
 #注册，用户注册（uid=1..40000）temp=220，游客注册（uid=100001..）temp=230
+#注册部分多服务器联动 - 对接记分板同步插件
+execute @a ~ ~ ~ scoreboard players add @s registered 1
+execute @a[tag=registered] ~ ~ ~ scoreboard players set @s registered 1
+execute @a[scores={registered=1}] ~ ~ ~ tag @s add registered
 #开发者注册 - 如同棱镜国度Online可以自动获得管理权限的
 execute @a[scores={temp=240}] ~ ~ ~ scoreboard players add @s uid 0
 execute @a[scores={temp=240}] ~ ~ ~ scoreboard players add @s level 0
 execute @a[scores={temp=240}] ~ ~ ~ scoreboard players add @s language 0
-execute @a[scores={temp=240}] ~ ~ ~ scoreboard players set @s[scores={uid=0,level=0},tag=developer] temp 241
+execute @a[scores={temp=240}] ~ ~ ~ scoreboard players set @s[scores={uid=0,level=0},tag=developer,tag=!registered] temp 241
 execute @a[scores={temp=241}] ~ ~ ~ tag @s[tag=developer] add admin
 execute @a[scores={temp=241}] ~ ~ ~ tag @s[tag=developer] add devreceive
 execute @a[scores={temp=241}] ~ ~ ~ scoreboard players operation @s uid = uidafter uidafter
@@ -797,6 +802,7 @@ execute @a[scores={temp=242..243}] ~ ~ ~ scoreboard players set @s uid 0
 execute @a[scores={temp=242..243}] ~ ~ ~ scoreboard players set @s level 0
 execute @a[scores={temp=242}] ~ ~ ~ scoreboard players set @s temp 220
 execute @a[scores={temp=243}] ~ ~ ~ scoreboard players set @s temp 230
+execute @a[scores={temp=240..245}] ~ ~ ~ scoreboard players reset @s temp 
 #原来的注册部分（用户注册）
 execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players add @a[scores={temp=220}] language 0
 execute @a[scores={temp=220..226}] ~ ~ ~ scoreboard players add @a[scores={temp=220}] uid 0
@@ -3468,8 +3474,8 @@ execute @a[scores={actionbartime=451..525,actionbartext=101..299},tag=!actionbar
 execute @a[scores={actionbartime=451..525,actionbartext=101..299},tag=!actionbartext2,tag=actionbartext1adv] ~ ~ ~ scoreboard players set @s actionbartext 5
 execute @a[scores={actionbartime=451..525,actionbartext=1..2},tag=!actionbartext2] ~ ~ ~ scoreboard players random @s actionbartext 101 105
 execute @a[scores={actionbartime=451..525,actionbartext=3..10},tag=!actionbartext2] ~ ~ ~ scoreboard players random @s actionbartext 201 205
-execute @a[scores={actionbartime=451..525,actionbartext=202,language=0},tag=!actionbartext2] ~ ~ ~ scoreboard players random @s actionbartext 211 216
-execute @a[scores={actionbartime=451..525,actionbartext=202,language=2},tag=!actionbartext2] ~ ~ ~ scoreboard players random @s actionbartext 211 216
+execute @a[scores={actionbartime=451..525,actionbartext=202,language=0},tag=!actionbartext2] ~ ~ ~ scoreboard players random @s actionbartext 211 215
+execute @a[scores={actionbartime=451..525,actionbartext=202,language=2},tag=!actionbartext2] ~ ~ ~ scoreboard players random @s actionbartext 211 215
 execute @a[scores={actionbartime=451..525,actionbartext=101..299},tag=!actionbartext2] ~ ~ ~ tag @s add actionbartext2
 #文本1-欢迎
 execute @a[scores={actionbartime=1..75,language=0,level=!0,actionbar=50},tag=!admin] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§c§l用户§f§6 "},{"selector":"@s"},{"text":" §r§b您好，欢迎您！ §f感谢您体验空岛生存！"}]}
@@ -3652,6 +3658,7 @@ execute @a[scores={actionbartime=451..525,language=0,level=!0,actionbar=50,actio
 execute @a[scores={actionbartime=451..525,language=0,level=!0,actionbar=50,actionbartext=212}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f我曾将§b青春§f翻涌成§d她§f，也曾指尖弹出§a盛夏§f，心之所动，且就随缘去吧。"}]}
 execute @a[scores={actionbartime=451..525,language=0,level=!0,actionbar=50,actionbartext=213}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f再次看到§d你§f，微§b凉§a晨光§f里，笑得很甜蜜。"}]}
 execute @a[scores={actionbartime=451..525,language=0,level=!0,actionbar=50,actionbartext=214}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f从前初识这世间，万般§b流连§f，看着§a天边§f似在眼前，也甘愿§c赴§6汤§c蹈§6火§f去走它一遍。"}]}
+execute @a[scores={actionbartime=451..525,language=0,level=!0,actionbar=50,actionbartext=215}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f我仍感叹于§b世界之大§f，也沉醉于§d儿时情话§f，不剩真假-不做挣扎-无谓笑话。"}]}
 execute @a[scores={actionbartime=451..525,language=0,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f纵有疾风起，人生不言放。(起风了，唯有努力生存。)"}]}
 execute @a[scores={actionbartime=451..525,language=0,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f人间烟火气，最抚凡人心。"}]}
 execute @a[scores={actionbartime=451..525,language=0,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f亲爱的旅人，你仍是记忆中的模样。"}]}
@@ -3665,6 +3672,7 @@ execute @a[scores={actionbartime=451..525,language=2,level=!0,actionbar=50,actio
 execute @a[scores={actionbartime=451..525,language=2,level=!0,actionbar=50,actionbartext=212}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f我曾將§b青春§f翻湧成§d她§f，也曾指尖彈出§a盛夏§f，心之所動，且就隨緣去吧。"}]}
 execute @a[scores={actionbartime=451..525,language=2,level=!0,actionbar=50,actionbartext=213}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f再次看到§d你§f，微§b凉§a晨光§f裏，笑得很甜蜜。"}]}
 execute @a[scores={actionbartime=451..525,language=2,level=!0,actionbar=50,actionbartext=214}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f從前初識這世間，萬般§b流連§f，看著§a天邊§f似在眼前，也甘願§c赴§6湯§c蹈§6火§f去走它一遍。"}]}
+execute @a[scores={actionbartime=451..525,language=2,level=!0,actionbar=50,actionbartext=215}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f我仍感歎於§b世界之大§f，也沉醉於§d兒時情話§f，不剩真假-不做掙扎-無謂笑話。"}]}
 execute @a[scores={actionbartime=451..525,language=2,level=!0,actionbar=50,actionbartext=203}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f縱有疾風起，人生不言放。（起風了，唯有努力生存。）"}]}
 execute @a[scores={actionbartime=451..525,language=2,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f人間煙火氣，最撫凡人心。"}]}
 execute @a[scores={actionbartime=451..525,language=2,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f親愛的旅人，你仍是記憶中的模樣。"}]}
@@ -3694,6 +3702,12 @@ execute @a[scores={actionbartime=451..525,language=3,level=!0,actionbar=50,actio
 execute @a[scores={actionbartime=451..525,language=3,level=!0,actionbar=50,actionbartext=104}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§bxiaozhiyuqwq.top §fに訪問してもっと多くのことを知っています。"}]}
 execute @a[scores={actionbartime=451..525,language=3,level=!0,actionbar=50,actionbartext=105}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§3TapTap §fで検索して §6ID:61306024 §fに注目したり。"}]}
 #文本6 - 广告3
+execute @a[scores={actionbartime=526..600,language=0,level=!0,actionbar=50,actionbartext=101}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f抵制不良游戏，拒绝盗版游戏。"}]}
+execute @a[scores={actionbartime=526..600,language=0,level=!0,actionbar=50,actionbartext=102}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f注意自我保护，谨防受骗上当。"}]}
+execute @a[scores={actionbartime=526..600,language=0,level=!0,actionbar=50,actionbartext=103}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f适度游戏益脑，沉迷游戏伤身。"}]}
+execute @a[scores={actionbartime=526..600,language=0,level=!0,actionbar=50,actionbartext=104}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f合理安排时间，享受健康生活。"}]}
+execute @a[scores={actionbartime=526..600,language=0,level=!0,actionbar=50,actionbartext=105}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fNULL"}]}
+
 execute @a[scores={actionbartime=526..600,language=0,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fNULL"}]}
 execute @a[scores={actionbartime=526..600,language=0,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fNULL"}]}
 execute @a[scores={actionbartime=526..600,language=0,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fNULL"}]}
@@ -3702,6 +3716,13 @@ execute @a[scores={actionbartime=451..525,language=0,level=!0,actionbar=50,actio
 execute @a[scores={actionbartime=451..525,language=0,level=!0,actionbar=50,actionbartext=212}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§b晚风§f吹起你鬓间的白发，§d抚平§f回忆留下的§c疤§f，你的眼中-明暗交杂-§a一笑生花§f。"}]}
 execute @a[scores={actionbartime=451..525,language=0,level=!0,actionbar=50,actionbartext=213}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f短短的路走走停停，也有了§c几分§f的距离，不知抚摸的是故事，还是段§d心情§f。"}]}
 execute @a[scores={actionbartime=451..525,language=0,level=!0,actionbar=50,actionbartext=214}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f我曾难自拔于§b世界§f之大，也沉溺于其中§d梦话§f。"}]}
+execute @a[scores={actionbartime=451..525,language=0,level=!0,actionbar=50,actionbartext=215}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f晚风吹起你§b鬓间§f的白发，抚平回忆留下的§c疤§f，你的眼中-§7明§8暗§f交杂-§c一§6笑§b生§a花§f。"}]}
+
+execute @a[scores={actionbartime=526..600,language=1,level=!0,actionbar=50,actionbartext=101}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fResist bad games and pirated games."}]}
+execute @a[scores={actionbartime=526..600,language=1,level=!0,actionbar=50,actionbartext=102}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fPay attention to self-protection, beware of being cheated."}]}
+execute @a[scores={actionbartime=526..600,language=1,level=!0,actionbar=50,actionbartext=103}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fModerate play is beneficial to the brain, while indulging in games is harmful to the body."}]}
+execute @a[scores={actionbartime=526..600,language=1,level=!0,actionbar=50,actionbartext=104}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fArrange time reasonably and enjoy healthy life."}]}
+execute @a[scores={actionbartime=526..600,language=1,level=!0,actionbar=50,actionbartext=105}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§fNULL"}]}
 
 execute @a[scores={actionbartime=526..600,language=1,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fNULL"}]}
 execute @a[scores={actionbartime=526..600,language=1,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fNULL"}]}
@@ -3709,12 +3730,24 @@ execute @a[scores={actionbartime=526..600,language=1,level=!0,actionbar=50,actio
 execute @a[scores={actionbartime=526..600,language=1,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fNULL"}]}
 execute @a[scores={actionbartime=526..600,language=1,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fNULL"}]}
 
+execute @a[scores={actionbartime=526..600,language=2,level=!0,actionbar=50,actionbartext=101}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f抵制不良遊戲，拒絕盜版遊戲。"}]}
+execute @a[scores={actionbartime=526..600,language=2,level=!0,actionbar=50,actionbartext=102}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f注意自我保護，謹防受騙上當。"}]}
+execute @a[scores={actionbartime=526..600,language=2,level=!0,actionbar=50,actionbartext=103}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f適度遊戲益腦，沉迷遊戲傷身。"}]}
+execute @a[scores={actionbartime=526..600,language=2,level=!0,actionbar=50,actionbartext=104}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f合理安排時間，享受健康生活。"}]}
+execute @a[scores={actionbartime=526..600,language=2,level=!0,actionbar=50,actionbartext=105}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fNULL"}]}
+
 execute @a[scores={actionbartime=526..600,language=2,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fNULL"}]}
 execute @a[scores={actionbartime=526..600,language=2,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fNULL"}]}
 execute @a[scores={actionbartime=526..600,language=2,level=!0,actionbar=50,actionbartext=204}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fNULL"}]}
 execute @a[scores={actionbartime=526..600,language=2,level=!0,actionbar=50,actionbartext=205}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fNULL"}]}
 execute @a[scores={actionbartime=451..525,language=2,level=!0,actionbar=50,actionbartext=211}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f如今走過這世間，萬般§b流連§f，翻過§a歲月§f不同側臉，措不及防闖入§d你§f的笑顏。"}]}
 execute @a[scores={actionbartime=451..525,language=2,level=!0,actionbar=50,actionbartext=212}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f晚風§f吹起你鬢間的白髮，§d撫平§f回憶留下的§c疤§f，你的眼中-明暗交雜-§a一笑生花§f。"}]}
+
+execute @a[scores={actionbartime=526..600,language=3,level=!0,actionbar=50,actionbartext=101}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f不良ゲームをボイコットして、海賊版ゲームを拒否します。"}]}
+execute @a[scores={actionbartime=526..600,language=3,level=!0,actionbar=50,actionbartext=102}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f自己保護に注意して、だまされないように注意してください。"}]}
+execute @a[scores={actionbartime=526..600,language=3,level=!0,actionbar=50,actionbartext=103}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f適度なゲームは脳にいいです。ゲームに夢中になって体に悪いです。"}]}
+execute @a[scores={actionbartime=526..600,language=3,level=!0,actionbar=50,actionbartext=104}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§f合理的に時間を手配して、健康な生活を享受します。"}]}
+execute @a[scores={actionbartime=526..600,language=3,level=!0,actionbar=50,actionbartext=105}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fNULL"}]}
 
 execute @a[scores={actionbartime=526..600,language=3,level=!0,actionbar=50,actionbartext=201}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fNULL"}]}
 execute @a[scores={actionbartime=526..600,language=3,level=!0,actionbar=50,actionbartext=202}] ~ ~ ~ titleraw @s actionbar {"rawtext":[{"text":"§l§fNULL"}]}
