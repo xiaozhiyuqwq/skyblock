@@ -8,6 +8,8 @@ scoreboard objectives add list dummy
 execute @a ~ ~ ~ scoreboard players operation @s login = @s login1
 scoreboard objectives remove login1
 scoreboard players add @a login 0
+tag @a[scores={login=0}] remove loginsuccess
+tag @a[scores={login=4}] add loginsuccess
 scoreboard players add @a[scores={login=0}] achievement1 0
 scoreboard players add @a[scores={login=0}] achievement2 0
 scoreboard players add @a[scores={login=0}] achievement3 0
