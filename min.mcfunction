@@ -542,7 +542,7 @@ execute @a[scores={notice=214}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext"
 execute @a[scores={notice=215}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7這個項目裏有很多彩蛋哦~快去找找吧~"}]}
 execute @a[scores={notice=216}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7如果您喜歡這個項目，請為項目資源頁五心好評或給項目倉庫點上星。"}]}
 execute @a[scores={notice=218}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7當您擁有了超過3000枚硬幣的時候，您將會有機會被系統隨機抽獎成為天弃之子。"}]}
-execute @a[scores={notice=219}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§6"},{"selector":"@s"},{"text":" §7您好！感謝您在 §b空島生存-服務端版本 §7體驗我的世界經典生存玩法 §e空島生存 §7！"}]}
+execute @a[scores={notice=219}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§6"},{"selector":"@s"},{"text":" §7您好！感謝您在 §b空島生存-伺服器版本 §7體驗我的世界經典生存玩法 §e空島生存 §7！"}]}
 execute @a[scores={notice=231}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7秋天(祉語的朋友)：祉語是§b蘿§d莉§7~啊哈~嗯…唔~§f好大§7~~~"}]}
 execute @a[scores={notice=232}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7在項目中，感謝提供技術支援的朋友們：子佳 君茶 量筒 Ace_AR 歸來 。"}]}
 execute @a[scores={notice=701}] ~ ~ ~ tellraw @s[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§7項目的第一個測試版本（v1-v1.0）是祉語努力開發了一日兩夜的結果！"}]}

@@ -1455,7 +1455,7 @@ tellraw @a[scores={sign_in=2,hitokotolang=2,login=0,sign_intext=340}] {"rawtext"
 #？？
 execute @a[scores={login=0,language=0}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f空岛生存-服务端版本 v1.0.0"}]}
 execute @a[scores={login=0,language=1}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fSkyblock For Server v1.0.0"}]}
-execute @a[scores={login=0,language=2}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f空島生存-服務端版本 v1.0.0"}]}
+execute @a[scores={login=0,language=2}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f空島生存-伺服器版本 v1.0.0"}]}
 execute @a[scores={login=0,language=0}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§f祉语(xhduoduobaby) 版权所有"}]}
 execute @a[scores={login=0,language=1}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§fZhiyu(xhduoduobaby) All rights reserved"}]}
 execute @a[scores={login=0,language=2}] ~ ~ ~ tellraw @s {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§f祉語(xhduoduobaby) 版權所有"}]}
@@ -1729,7 +1729,7 @@ execute @a[scores={login=3,hitokotolang=1}] ~ ~ ~ titleraw @s title {"rawtext":[
 execute @a[scores={login=3,hitokotolang=2}] ~ ~ ~ titleraw @s title {"rawtext":[{"text":"§f空島生存"}]}
 execute @a[scores={login=3,hitokotolang=0}] ~ ~ ~ titleraw @s subtitle {"rawtext":[{"text":"§f空岛生存-服务端版本 v1.0.0"}]}
 execute @a[scores={login=3,hitokotolang=1}] ~ ~ ~ titleraw @s subtitle {"rawtext":[{"text":"§fSkyblock For Server v1.0.0"}]}
-execute @a[scores={login=3,hitokotolang=2}] ~ ~ ~ titleraw @s subtitle {"rawtext":[{"text":"§f空島生存-服務端版本 v1.0.0"}]}
+execute @a[scores={login=3,hitokotolang=2}] ~ ~ ~ titleraw @s subtitle {"rawtext":[{"text":"§f空島生存-伺服器版本 v1.0.0"}]}
 #开发者欢迎
 execute @a[scores={login=0}] ~ ~ ~ tellraw @s[tag=developer,scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f尊敬的开发者，欢迎回来！"}]}
 execute @a[scores={login=0}] ~ ~ ~ tellraw @s[tag=developer,scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fDear developers, welcome back!"}]}
