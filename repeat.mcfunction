@@ -2631,14 +2631,14 @@ tag @a[tag=retask] remove retask
 #ban
 scoreboard players add @a bantime 0
 tag @a[bantime=!1..2147483646] remove remove bantitle
-execute @a[tag=!bantitle,tag=ban] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§l§c一位用户因为作弊或滥用功能被移出。"}]}
-execute @a[tag=!bantitle,tag=ban] ~ ~ ~ tellraw @a[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§l§cA user has been removed for cheating or abusing functions."}]}
-execute @a[tag=!bantitle,tag=ban] ~ ~ ~ tellraw @a[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§l§c一個用戶因為作弊或濫用功能被移出。"}]}
-execute @a[tag=!bantitle,tag=ban] ~ ~ ~ tellraw @a[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§l§cあるユーザーはカンニングや悪用のために転出されました。"}]}
-execute @a[tag=!bantitle,scores{bantime=1..2147483646}] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§l§c一位用户因为作弊或滥用功能被移出。"}]}
-execute @a[tag=!bantitle,scores{bantime=1..2147483646}] ~ ~ ~ tellraw @a[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§l§cA user has been removed for cheating or abusing functions."}]}
-execute @a[tag=!bantitle,scores{bantime=1..2147483646}] ~ ~ ~ tellraw @a[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§l§c一個用戶因為作弊或濫用功能被移出。"}]}
-execute @a[tag=!bantitle,scores{bantime=1..2147483646}] ~ ~ ~ tellraw @a[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§l§cあるユーザーはカンニングや悪用のために転出されました。"}]}
+execute @a[tag=!bantitle,tag=ban] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§l§c一位用户因为作弊或滥用功能而被封禁。"}]}
+execute @a[tag=!bantitle,tag=ban] ~ ~ ~ tellraw @a[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§l§cA user is banned for cheating or abusing functions."}]}
+execute @a[tag=!bantitle,tag=ban] ~ ~ ~ tellraw @a[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§l§c一名用戶因為作弊或濫用功能而被封禁。"}]}
+execute @a[tag=!bantitle,tag=ban] ~ ~ ~ tellraw @a[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§l§c一人のユーザーはカンニングや機能の乱用で禁止されました。"}]}
+execute @a[tag=!bantitle,scores{bantime=1..2147483646}] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§l§c一位用户因为作弊或滥用功能而被封禁 "},{"score":{"name":"@s","objective":"bantime"}},{"text":" 分钟。"}]}
+execute @a[tag=!bantitle,scores{bantime=1..2147483646}] ~ ~ ~ tellraw @a[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§l§cA user has been banned for "},{"score":{"name":"@s","objective":"bantime"}},{"text":" minutes for cheating or abusing functions."}]}
+execute @a[tag=!bantitle,scores{bantime=1..2147483646}] ~ ~ ~ tellraw @a[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§l§c一名用戶因為作弊或濫用功能而被封禁 "},{"score":{"name":"@s","objective":"bantime"}},{"text":" 分鐘。"}]}
+execute @a[tag=!bantitle,scores{bantime=1..2147483646}] ~ ~ ~ tellraw @a[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§l§cあるユーザーはカンニングや機能の乱用で "},{"score":{"name":"@s","objective":"bantime"}},{"text":" 分を禁止されました。"}]}
 execute @a[tag=!bantitle,tag=ban] ~ ~ ~ tag @s add bantitle
 execute @a[tag=!bantitle,scores{bantime=1..2147483646}] ~ ~ ~ tag @s add bantitle
 tellraw @a[scores={language=0},tag=admin,tag=ban] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f啊嗷！当前有管理员正在使用封禁系统尝试对您进行操作，由于您拥有管理员权限，该操作已被系统拦截。"}]}
@@ -2665,18 +2665,32 @@ tag * remove developerkick
 scoreboard players set @a[tag=admin,scores={bantime=!0}] bantime 0
 scoreboard players set @a[scores={bantime=!1..2147483646}] bantime 0
 scoreboard players set @a[tag=ban,tag=!admin] bantime 5781600
-kick @a[tag=ban,scores={language=0}] §l§f您当前已经被封禁。如有异议请联系管理员。 §r§e空岛生存-服务端版本 §f项目动态 §bxiaozhiyuqwq.top §f。
-kick @a[tag=ban,scores={language=1}] §l§fYou are currently banned. If you have any objection, please contact the administrator. §r§eSkyBlock for Server §fProject news §bxiaozhiyuqwq.top §f.
-kick @a[tag=ban,scores={language=2}] §l§f您當前已經被封禁。如有異議請聯系管理員。 §r§e空島生存-伺服器版本 §f項目動態 §bxiaozhiyuqwq.top §f。
-kick @a[tag=ban,scores={language=3}] §l§f現在は禁止されています。異議があれば管理人に連絡してください。 §r§eSkyBlock for Server §fプロジェクトの動き §bxiaozhiyuqwq.top §f。
+kick @a[tag=ban,scores={language=0}] §l§f您由于作弊或滥用功能而被封禁，暂时无法加入，如有异议请联系管理员。
+kick @a[tag=ban,scores={language=1}] §l§fYou are banned due to cheating or abusing the function. You can't join for the time being. If you have any objection, please contact the administrator.
+kick @a[tag=ban,scores={language=2}] §l§f您由於作弊或濫用功能而被封禁，暫時無法加入，如有異議請聯系管理員。
+kick @a[tag=ban,scores={language=3}] §l§f不正や機能の乱用で禁止されています。しばらくは参加できません。異議があれば管理人に連絡してください。
 #bantime
-kick @a[scores={language=0,bantime=1..57861599}] §l§f您当前已经被封禁。如有异议请联系管理员。 §r§e空岛生存-服务端版本 §f项目动态 §bxiaozhiyuqwq.top §f。
-kick @a[scores={language=0,bantime=5781600..}] §l§f您当前已经被封禁。如有异议请联系管理员。 §r§e空岛生存-服务端版本 §f项目动态 §bxiaozhiyuqwq.top §f。 十年之后我们是朋友，还可以问候，只是那种温柔~
-kick @a[scores={language=1,bantime=1..}] §l§fYou are currently banned. If you have any objection, please contact the administrator. §r§eSkyBlock for Server §fProject news §bxiaozhiyuqwq.top §f.
-kick @a[scores={language=2,bantime=1..}] §l§f您當前已經被封禁。如有異議請聯系管理員。 §r§e空島生存-伺服器版本 §f項目動態 §bxiaozhiyuqwq.top §f。
-kick @a[scores={language=3,bantime=1..}] §l§f現在は禁止されています。異議があれば管理人に連絡してください。 §r§eSkyBlock for Server §fプロジェクトの動き §bxiaozhiyuqwq.top §f。
+kick @a[scores={language=0,bantime=1..57861599}] §l§f您由于作弊或滥用功能而被封禁，暂时无法加入，如有异议请联系管理员。
+kick @a[scores={language=0,bantime=5781600..}] §l§f您由于作弊或滥用功能而被封禁，暂时无法加入，如有异议请联系管理员。 十年之后我们是朋友，还可以问候，只是那种温柔~
+kick @a[scores={language=1,bantime=1..}] §l§fYou are banned due to cheating or abusing the function. You can't join for the time being. If you have any objection, please contact the administrator.
+kick @a[scores={language=2,bantime=1..}] §l§f您由於作弊或濫用功能而被封禁，暫時無法加入，如有異議請聯系管理員。
+kick @a[scores={language=3,bantime=1..}] §l§f不正や機能の乱用で禁止されています。しばらくは参加できません。異議があれば管理人に連絡してください。
 kick @a[scores={bantime=1..}] §l§fYou were kicked by ADMIN .
 kick @a[tag=ban] §l§fYou were kicked by ADMIN .
+scoreboard players reset @a[scores={bantime=!1..2147483646}] bantime
+#kick踢出游戏
+tag @a remove kicktitle
+execute @a[tag=!kicktitle,tag=kick] ~ ~ ~ tellraw @a[scores={language=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§l§c一位用户因为作弊或滥用功能而被移出。"}]}
+execute @a[tag=!kicktitle,tag=kick] ~ ~ ~ tellraw @a[scores={language=1}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§l§cA user has been removed for cheating or abusing functions."}]}
+execute @a[tag=!kicktitle,tag=kick] ~ ~ ~ tellraw @a[scores={language=2}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§l§c一名用戶因為作弊或濫用功能而被移出。"}]}
+execute @a[tag=!kicktitle,tag=kick] ~ ~ ~ tellraw @a[scores={language=3}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§l§cあるユーザーはカンニングや悪用のために転出されました。"}]}
+tag @a[tag=kick] add kicktitle
+kick @a[tag=kick,scores={language=0}] §l§f您由于作弊或滥用功能而被移出。
+kick @a[tag=kick,scores={language=0}] §l§fYou were removed due to cheating or abuse of functions.
+kick @a[tag=kick,scores={language=0}] §l§f您由於作弊或濫用功能而被移出。
+kick @a[tag=kick,scores={language=0}] §l§fカンニングや機能の乱用で移動されました。
+kick @a[tag=kick] §l§fYou were kicked by ADMIN .
+tag * remove kick
 #彩蛋（bushi
 #彩蛋标签的获取
 scoreboard players add @a sign_in 0
