@@ -1,88 +1,46 @@
 # Skyblock-for-Server
 
-### ÈÕ±¾ÕZ
+### æ—¥æœ¬èªž
 
-#### ½B½é¤¹¤ë
-MineCraft»ùÑÒ°æ¤Ë»ù¤Å¤¤¤Æ×÷³É¤µ¤ì¤¿¿ÕuÉú´æ¥¢©`¥«¥¤¥Ö¤Ï¡¢…g¶À™C¥ª¥ó¥é¥¤¥ó¤Èbds¥µ©`¥Ð©`¤ËÊ¹ÓÃ¤µ¤ì¤Þ¤¹¡£±¾¥×¥í¥¸¥§¥¯¥È¤òÊ¹ÓÃ¤¹¤ëˆöºÏ¤Ï¡¢¥ª©`¥×¥ó¥¦¥§¥¢¤òº¬¤à¤¬¡¢¤½¤ì¤ËÏÞ¤é¤º¡¢¥×¥í¥¸¥§¥¯¥È¤ÎÇ°Éí¤Î¥ê¥½©`¥¹£¨v 1£©¤òÊ¹ÓÃ¤¹¤ë¤³¤È¤¬¤Ç¤­¤Þ¤¹¡£
+#### ç´¹ä»‹ã™ã‚‹
+MineCraftåŸºå²©ç‰ˆã«åŸºã¥ã„ã¦ä½œæˆã•ã‚ŒãŸç©ºå³¶ç”Ÿå­˜ã‚¢ãƒ¼ã‚«ã‚¤ãƒ–ã¯ã€å˜ç‹¬æ©Ÿã‚ªãƒ³ãƒ©ã‚¤ãƒ³ã¨bdsã‚µãƒ¼ãƒãƒ¼ã«ä½¿ç”¨ã•ã‚Œã¾ã™ã€‚æœ¬ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã‚’ä½¿ç”¨ã™ã‚‹å ´åˆã¯ã€ã‚ªãƒ¼ãƒ—ãƒ³ã‚¦ã‚§ã‚¢ã‚’å«ã‚€ãŒã€ãã‚Œã«é™ã‚‰ãšã€ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã®å‰èº«ã®ãƒªã‚½ãƒ¼ã‚¹ï¼ˆv 1ï¼‰ã‚’ä½¿ç”¨ã™ã‚‹ã“ã¨ãŒã§ãã¾ã™ã€‚
 
-#### ¥¢¥¤¥Æ¥à
-¤³¤Î¥×¥í¥¸¥§¥¯¥È¤ÏË½¤¬Æó»­¤·¤Æß\†Ó¤·¤Æ¤¤¤ëminecraft¤Î¥µ©`¥Ð©`¤«¤éÀ´¤Þ¤·¤¿¡£ÔL†–¤Ç¤­¤Þ¤¹¡£www.rainyat.work¤³¤Î¥×¥í¥¸¥§¥¯¥È¤òÖª¤Ã¤Æ¤¤¤Þ¤¹
+#### ã‚¢ã‚¤ãƒ†ãƒ 
+ã“ã®ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã¯ç§ãŒä¼ç”»ã—ã¦é‹å–¶ã—ã¦ã„ã‚‹minecraftã®ã‚µãƒ¼ãƒãƒ¼ã‹ã‚‰æ¥ã¾ã—ãŸã€‚è¨ªå•ã§ãã¾ã™ã€‚www.rainyat.workã“ã®ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã‚’çŸ¥ã£ã¦ã„ã¾ã™
 
-#### ÑÔÕZ
-¬FÔÚv 1¤Ïº†Ìå×ÖÖÐ¹úÕZ·±Ìå×ÖÓ¢ÕZ¤ËŒê¤·¤Æ¤¤¤Þ¤¹¡£v 2¤Ïº†Ìå×ÖÖÐ¹úÕZ·±Ìå×ÖÖÐ¹úÕZÓ¢ÕZÈÕ±¾ÕZ¤ËŒê¤·¤Æ¤¤¤Þ¤¹¡£
+#### è¨€èªž
+ç¾åœ¨v 1ã¯ç°¡ä½“å­—ä¸­å›½èªžç¹ä½“å­—è‹±èªžã«å¯¾å¿œã—ã¦ã„ã¾ã™ã€‚v 2ã¯ç°¡ä½“å­—ä¸­å›½èªžç¹ä½“å­—ä¸­å›½èªžè‹±èªžæ—¥æœ¬èªžã«å¯¾å¿œã—ã¦ã„ã¾ã™ã€‚
 
-#### ’i¤±Ñ¨
-¤¢©`¤¢£¡ÊÖ’i¤«¤ê¤¬¤¢¤ê¤Þ¤·¤¿¤«£¿github gitee bilibili¤Ê¤É¤ÇßB½j¤·¤Æ¤¯¤À¤µ¤¤¡£ÐÞÍ¤·¤ËÐÐ¤­¤Þ¤¹¡£
+#### æŠœã‘ç©´
+ã‚ãƒ¼ã‚ï¼æ‰‹æŠœã‹ã‚ŠãŒã‚ã‚Šã¾ã—ãŸã‹ï¼Ÿgithub gitee bilibiliãªã©ã§é€£çµ¡ã—ã¦ãã ã•ã„ã€‚ä¿®å¾©ã—ã«è¡Œãã¾ã™ã€‚
 
 #### wiki
 wiki.xiaozhiyuqwq.top
 
-#### ¤Ë¤Ä¤¤¤Æ
-##### ¤Ë¤Ä¤¤¤Æ
-¤³¤ó¤Ë¤Á¤Ï¡¢Ë½¤Ï ìíÓï¤Á¤ã¤ó ¤Ç¤¹¡£¡¸minecraft¡¹¤È¡¸ACGÎÄ»¯¡¹¤¬ºÃ¤­¤Ç¤¹¡£  xiaozhiyuqwq.top
-##### ¥í¥ê£¿
-¥í¥ê¤¸¤ã¤Ê¤¤£¡£¡£¡£¡£¡£¡
+#### ã«ã¤ã„ã¦
+##### ã«ã¤ã„ã¦
+ã“ã‚“ã«ã¡ã¯ã€ç§ã¯ ç¥‰è¯­ã¡ã‚ƒã‚“ ã§ã™ã€‚ã€Œminecraftã€ã¨ã€ŒACGæ–‡åŒ–ã€ãŒå¥½ãã§ã™ã€‚  xiaozhiyuqwq.top
+##### ãƒ­ãƒªï¼Ÿ
+ãƒ­ãƒªã˜ã‚ƒãªã„ï¼ï¼ï¼ï¼ï¼ï¼
 
-#### ßB½j¤¹¤ë
-##### GitHub£ºhttps://github.com/xiaozhiyuqwq 
-##### Gitee£ºhttps://gitee.com/xiaozhiyuqwq 
-##### bilibili£ºhttps://space.bilibili.com/437306982
+#### é€£çµ¡ã™ã‚‹
+##### GitHubï¼šhttps://github.com/xiaozhiyuqwq 
+##### Giteeï¼šhttps://gitee.com/xiaozhiyuqwq 
+##### bilibiliï¼šhttps://space.bilibili.com/437306982
 
-#### ¥Ê¥Ó¥²©`¥¿
-##### main£º¥×¥í¥¸¥§¥¯¥È¥Þ¥¹¥¿±£¹Ü
-##### v1£º¥×¥í¥¸¥§¥¯¥È¤ÎÇ°Éí
-##### v2.1£º2ÊÀ´ú1¥×¥í¥¸¥§¥¯¥È
-##### v2.1£º2ÊÀ´ú2¥×¥í¥¸¥§¥¯¥È
-##### album£º¥¢¥ë¥Ð¥à
-##### sundries£ºëjÎï¤Î·Öáª
-##### reserve£ºÓè‚ä·Öáª
-##### Development: é_°k¥Ö¥é¥ó¥Á
-##### wiki£ºwiki
+#### ãƒŠãƒ“ã‚²ãƒ¼ã‚¿
+##### mainï¼šãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆãƒžã‚¹ã‚¿ä¿ç®¡
+##### v1ï¼šãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã®å‰èº«
+##### v2.1ï¼š2ä¸–ä»£1ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆ
+##### v2.1ï¼š2ä¸–ä»£2ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆ
+##### albumï¼šã‚¢ãƒ«ãƒãƒ 
+##### sundriesï¼šé›‘ç‰©ã®åˆ†å²
+##### reserveï¼šäºˆå‚™åˆ†å²
+##### Development: é–‹ç™ºãƒ–ãƒ©ãƒ³ãƒ
+##### wikiï¼šwiki
 
-#### Ø•Ï×
-##### ×÷Õß zhiyu
-##### ¸ÐÖx¤·¤Þ¤¹ HeroHerobrine26 AceAR Liangtong JUNCHA2019 Tuffy2020China ChenfengAB xingchenchen mc bianqouyiyan
+#### è²¢çŒ®
+##### ä½œè€… zhiyu
+##### æ„Ÿè¬ã—ã¾ã™ HeroHerobrine26 AceAR Liangtong JUNCHA2019 Tuffy2020China ChenfengAB xingchenchen mc bianqouyiyan
 
-#### ¥é¥¤¥»¥ó¥¹¥×¥í¥È¥³¥ë
-##### 0 ¾t„t
-¹ú¼Ò·¨ÂÉ¤ÎévßBÒŽ¶¨¤Ë¤è¤ê¡¢¼×ÒÒË«·½¤ÏÆ½µÈ×ÔÖ÷¡¢Õ\ŒgÐÅÓÃ¤ÎÔ­„t¤Ë¾¤¤¡¢¼×£¨ìíÓï¤Á¤ã¤ó£©¤¬ÒÒ¤Ë¡¸skybock for server¡¹¤òÊ¹ÓÃ¤¹¤ë¤³¤È¤òÊÚ˜Ø¤¹¤ë¤³¤È¤Ë¤Ä¤¤¤Æ±¾Æõ¼s¤ò¾†½Y¤¹¤ë¡£
-##### 1 ÊÚ˜ØÄÚÈÝ
-[skybalock for server]¥Õ¥¡¥¤¥ë¤Ï¡¢ÒÔÏÂ¤òº¬¤à¤¬¡¢¤³¤ì¤é¤ËÏÞ¶¨¤µ¤ì¤Ê¤¤¡£
-a.µØ‡í¥¢©`¥«¥¤¥Ö£»
-b.²ÄÙ|¤ÎÓ°£»
-c.¼¡
-d.¥É¥­¥å¥á¥ó¥È;
-e.»­Ïñ
-f.¸÷·N¥½©`¥¹¡£
-##### 2 Ë«·½¤Î˜ØÀû¤ÈÁx„Õ
-a.Æõ¼s¾†½YÈÕ¤«¤é¡¢ÒÒ¤ÏéLÆÚ¤Ë¤ï¤¿¤êÊÚ˜ØÄÚÈÝ¤òßmÇÐ¤Ê¹ ‡ì¤ÇÊ¹ÓÃ¤¹¤ë˜ØÀû¤òÓÐ¤·¡¢ÒÔÏÂ¤ÎÐÐžé¤òº¬¤à¡£
-a-1.¥Ñ©`¥½¥Ê¥ë¥²©`¥à¤Çß[¤ó¤À¤ê¡¢ÐÞÕý¤·¤¿¤ê¤¹¤ë¡£
-a-2.LAN¥ª¥ó¥é¥¤¥ó¥²©`¥à¤Çß[¤ó¤À¤ê¡¢ÐÞÕý¤·¤¿¤ê¤¹¤ë¡£
-a-3.¥×¥é¥¤¥Ù©`¥È¥µ©`¥Ð¤Çß[¤ó¤À¤ê¡¢ÐÞÕý¤·¤¿¤ê¤¹¤ë¡£
-a-4.·ÇÉÌ˜IÓÃÍ¾¤Î¶þ´ÎÓ³Ïñ„“×÷¤òÐÐ¤¦¡£
-a-5.ÊÚ˜ØÄÚÈÝ¤òËû¤ÎÓ›‘›×°ÖÃ¤ËÈ«ÌåµÄ¤ËÒÆÐÐ¤¹¤ë¡£
-b.¼×¤¬²»¿É¿¹Á¦£¨Àý¤¨¤Ð¡¢µØÕð¡¢Ì¨ïL¡¢½ò²¨¡¢‘éÕù¤Ê¤É£©¤Ç¥Ç©`¥¿¤ò¤Ê¤¯¤·¤¿ˆöºÏ¡¢¼×¤ÏÒÒ¤ËÊÚ˜ØÎÄ•ø¤ò»Ø…§¤¹¤ë˜ØÀû¤¬¤¢¤ë¡£
-c.¼×¤ÏÒÒ¤¬ßmÇÐ¤Ê¹ ‡ì¤ÇÊÚ˜ØÄÚÈÝ¤òÊ¹ÓÃ¤¹¤ë¤³¤È¤ò±O¶½¤¹¤ë˜ØÀû¤¬¤¢¤ê¡¢ÒÒ¤Ï·e˜OµÄ¤Ë¼×¤ÎÌá°¸¤òÂ—È¡¤·¤Ê¤±¤ì¤Ð¤Ê¤é¤Ê¤¤¡£
-d.Æõ¼sÆÚégÄÚ¤ËÒÒ¤¬ÒÔÏÂ¤Î×´›r¤ÇÊÚ˜ØÄÚÈÝ¤òÊ¹ÓÃ¤¹¤ë¤Ë¤Ï¼×¤Î•øÃæÊÚ˜Ø¤¬±ØÒª¤Ç¤¢¤ë£º
-d-1.¤É¤ó¤Ê¥Ó¥¸¥Í¥¹ÓÃÍ¾¤Ç¤¹¤«£¿
-d-2.¶þ´Î„“×÷¼°¤Ó¹«¸æ¥×¥é¥Ã¥È¥Õ¥©©`¥à¤Ë°k±í¤¹¤ë¡£
-e.Æõ¼sÆÚégÄÚ¤ËÒÒ¤ÏÒÔÏÂ¤ÎÐÐžé¤Ë¾ÊÂ¤·¤Æ¤Ï¤¤¤±¤Ê¤¤£º
-e-1.ÊÚ˜ØÄÚÈÝ¤ÏÒÒ¤ËŽ¢Êô¤¹¤ë¤È¹«ÑÔ¤¹¤ë¡£
-e-2.ÊÚ˜ØÄÚÈÝ¤ò¶þ´ÎØœ‰Ó¤¹¤ë¡£
-e-3.ÊÚ˜Ø¤µ¤ì¤¿¥³¥ó¥Æ¥ó¥Ä¤òËû¤ÎÓ›‘›×°ÖÃ¤Ë±£´æ¤Þ¤¿¤Ï¥³¥Ô©`¤·¤¿¤ê¡¢ËûÈË¤Ë¹²ÓÐ¤·¤Æ±£´æ¤·¤¿¤ê¤¹¤ë¡£
-e-4.ÊÚ˜ØÄÚÈÝ¤ò¹ú¼Ò·¨ÂÉ·¨ÒŽ¤Ëß`·´¤¹¤ëÓÃÍ¾¤ËÊ¹ÓÃ¤¹¤ë¡£
-##### 3  ÖªµÄËùÓÐ˜Ø
-a.¼×¤ÏÊÚ˜Ø¤µ¤ì¤¿ÄÚÈÝ¤¬µÚÈýÕß¤ÎÖªµÄØ”®b˜Ø¤ËÇÖº¦¤µ¤ì¤Ê¤¤¤³¤È¤ò±£Ô^¤·¤Þ¤¹¡£¤â¤·ÙYÔ´¤ÎÄÚÈÝ¤¬Ëû¤ÎÖø×÷˜ØÇÖº¦¤äµÁÓÃ†–î}¤ËévßB¤¹¤ëˆöºÏ¡¢Ö±¤Á¤Ë¼×¤ËÖª¤é¤»¤Æ¤¯¤À¤µ¤¤¡£¼×¤ÏµÚÒ»•rég¤òÏ÷³ý¤Þ¤¿¤Ï‰ä¸ü¤·¤Þ¤¹¡£ÒÒ¤ÏÍ¬•r¤ËÎÄ•ø¤Î¥³¥Ô©`¤òÏ÷³ý¤¹¤ë±ØÒª¤¬¤¢¤ê¤Þ¤¹¡£
-b.ÊÚ˜ØÄÚÈÝ¤Ï¤¹¤Ù¤ÆÒÒ¤Î»²¥¡¢ÜžÝd¡¢µÁ×÷¡¢¥³¥Ô©`¡¢Á÷ÓÃ¼°¤Ó¶þ´ÎÅä²¼¤ò½ûÖ¹¤·¡¢¤¹¤Ù¤Æ¤Î¥×¥é¥Ã¥È¥Õ¥©©`¥à¤òº¬¤à¡£¼×¤È•øÃæ¤ÇÍ¬Òâ¤·¡¢ÔS¿É¤·¤Æ¥µ¥¤¥ó¤·¤Ê¤¤ÏÞ¤ê¡¢¼×¤Ï·¨ÂÉØŸÈÎ¤ò×·¼°¤¹¤ë˜ØÀû¤ò³Ö¤Ä¡£
-c.ÒÒ¤ËÊÚ˜Ø¤·¤¿ÄÚÈÝ¤Ï¡¢¼×¤¬½~ŒµÄ¤Ê„“×÷˜Ø¤ò³Ö¤Ä¡£
-##### 4  ß`¼sØŸÈÎ
-a.ÒÒ¤¬ÒŽ¶¨Áx„Õ¤òÂÄÐÐ¤·¤Ê¤¤ˆöºÏ¡¢ß`¼sØŸÈÎ¤òØ“¤ï¤Ê¤±¤ì¤Ð¤Ê¤é¤Ê¤¤¡£¼×¤ÏÖ±½ÓÆõ¼s¤òÖÐÖ¹¤·¡¢ÊÚ˜Ø¤ò»Ø…§¤¹¤ë˜ØÀû¤¬¤¢¤ë¡£¤Þ¤¿¡¢ÒÒ¤Îß`¼sÐÐžé¤¬¼×¤Ë“pº¦¤òÓë¤¨¤¿ˆöºÏ¡¢ÒÒ¤Ï¼×¤Î“pÊ§¤òÙrƒ”¤·¡¢ÒÒ¤Ï¶þ´ÎØœ‰Ó¤Ë¤è¤Ã¤ÆµÃ¤é¤ì¤¿…§Òæ¤òÈ«²¿¼×¤Ë·µß€¤·¤Ê¤±¤ì¤Ð¤Ê¤é¤Ê¤¤¡£
-b.¼×¤ÏÒŽ¶¨Áx„Õ¤òÂÄÐÐ¤·¤Ê¤¤¤Ç¡¢·¨ÂÉ¤ÎÒŽ¶¨¤Ë¾¤Ã¤Æß`¼sØŸÈÎ¤òØ“¤¦¤Ù¤­¤Ç¤¹¡£
-##### 5 ¼ŠÕù½â›Q¤ÈßmÓÃ·¨ÂÉ
-a.±¾Æõ¼s¤ÎÄÚÈÝ¤Þ¤¿¤Ï¤½¤ÎˆÌÐÐ¤Ë¤Ä¤¤¤Æ¤¤¤«¤Ê¤ëÕ“Õù¤¬°kÉú¤·¤¿ˆöºÏ¡¢Ë«·½¤ÏÓÑºÃµÄ¤Ê…f×h¤òÐÐ¤¦¤Ù¤­¤Ç¤¢¤ë¡£…f×h¤¬³ÉÁ¢¤·¤Ê¤¤ˆöºÏ¡¢¤¤¤º¤ì¤Îµ±ÊÂÕß¤â±¾Æõ¼s¤Î¾†½YµØ¤ÎÈËÃñ·¨Ôº¤ËÔVÔA¤òÌáÆð¤¹¤ë¤³¤È¤¬¤Ç¤­¤ë¡£
-b.±¾Æõ¼s¤Î¾†½Y¡¢ˆÌÐÐ¼°¤Ó½âá‹¼°¤Ó¼ŠÕù¤Î½â›Q¤Ï¤¤¤º¤ì¤âÖÐ¹ú´óê‘¤Î·¨ÂÉ¤òßmÓÃ¤·¤Ê¤±¤ì¤Ð¤Ê¤é¤Ê¤¤¡£
-##### 6 ¤½¤ÎËû
-a.±¾Æõ¼s¤Î¾†½YˆöËù¤Ï½­ÌKÊ¡ÄÏÍ¨ÊÐé_°kÇø¤Ç¤¢¤ë¡£
-b.±¾Æõ¼s¤ËÒŽ¶¨¤µ¤ì¤Æ¤¤¤Ê¤¤ÊÂí—¤Ë¤Ä¤¤¤Æ¡¢Ë«·½¤Ï„eÍ¾¤ËÑa×ãÆõ¼s¤ò¾†½Y¤¹¤ë¤³¤È¤¬¤Ç¤­¤ë¡£
-c.±¾Æõ¼s•ø¤ÏÒ»Ê½¶þ²¿¤Ç¡¢Ë«·½¤Ï¤½¤ì¤¾¤ìÒ»²¿¤ò±£ÓÐ¤·¡¢Í¬µÈ¤Î·¨µÄ„¿Á¦¤òÓÐ¤¹¤ë¡£
-d.±¾…f¶¨¤Î×÷³É¡¢½âá‹¤Ï¤¹¤Ù¤ÆÖÐ¹úÕZ¤ËœÊ¤º¤ë¡£Ë«·½¤Ë„eÍ¾¤Î¼sÊø¤¬¤¢¤ëˆöºÏ¤ò³ý¤­¡¢±¾…f¶¨¤Ëév¤¹¤ë·­ÔU¤Ï¡¢±¾…f¶¨¤Î½âá‹¤Þ¤¿¤ÏË«·½¤Îµ±ÊÂÕß¤ÎÒâ‡í¤òÅÐ¶¨¤¹¤ë¸ù’‡¤È¤·¤Æ¤Ï¤Ê¤é¤Ê¤¤¡£
+
