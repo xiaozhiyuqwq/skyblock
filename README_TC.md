@@ -1,92 +1,48 @@
 
 # Skyblock-for-Server
 
-### ·±ówÖÐÎÄ
-#### ½é½B
-»ùì¶MineCraft»ùÑÒ°æÑu×÷µÄ¿ÕuÉú´æ´æ™n£¬ÓÃì¶†Î™CÂ“™CÅcbds·þ„ÕÆ÷¡£Èç¹ûÄúÏëÊ¹ÓÃ±¾í—Ä¿£¬°üÀ¨µ«²»ÏÞì¶é_·þ£¬¿ÉÒÔÊ¹ÓÃí—Ä¿Ç°ÉíÙYÔ´£¨¼´v1£©¡£
+### ç¹é«”ä¸­æ–‡
+#### ä»‹ç´¹
+åŸºæ–¼MineCraftåŸºå²©ç‰ˆè£½ä½œçš„ç©ºå³¶ç”Ÿå­˜å­˜æª”ï¼Œç”¨æ–¼å–®æ©Ÿè¯æ©Ÿèˆ‡bdsæœå‹™å™¨ã€‚å¦‚æžœæ‚¨æƒ³ä½¿ç”¨æœ¬é …ç›®ï¼ŒåŒ…æ‹¬ä½†ä¸é™æ–¼é–‹æœï¼Œå¯ä»¥ä½¿ç”¨é …ç›®å‰èº«è³‡æºï¼ˆå³v1ï¼‰ã€‚
 
-#### í—Ä¿
-ß@‚€í—Ä¿ÊÇÔ´ì¶ÎÒ²ß„ß\ IµÄÎÒµÄÊÀ½ç»ùÑÒ°æµÄ·þ„ÕÆ÷£¬Äú¿ÉÒÔÔL†–www.rainyat.work²t½âß@‚€í—Ä¿.
+#### é …ç›®
+é€™å€‹é …ç›®æ˜¯æºæ–¼æˆ‘ç­–åŠƒé‹ç‡Ÿçš„æˆ‘çš„ä¸–ç•ŒåŸºå²©ç‰ˆçš„æœå‹™å™¨ï¼Œæ‚¨å¯ä»¥è¨ªå•www.rainyat.workçž­è§£é€™å€‹é …ç›®.
 
-#### ÕZÑÔ
-¬F•rv1Ö§³Öº†ówÖÐÎÄ·±ówÖÐÎÄÓ¢ÕZ£¬v2Ö§³Öº†ówÖÐÎÄ·±ówÖÐÎÄÓ¢ÕZÈÕÕZ£¨Î´ßmÅäÍê³É£©
+#### èªžè¨€
+ç¾æ™‚v1æ”¯æŒç°¡é«”ä¸­æ–‡ç¹é«”ä¸­æ–‡è‹±èªžï¼Œv2æ”¯æŒç°¡é«”ä¸­æ–‡ç¹é«”ä¸­æ–‡è‹±èªžæ—¥èªžï¼ˆæœªé©é…å®Œæˆï¼‰
 
-#### Â©¶´
-°¡à»£¡ÓÐÂ©¶´ÁË£¿ÔÚgithub gitee bilibiliµÈµØ·½Â“ÏµÎÒÅ¶~ÎÒ•þÈ¥×¢ÒâÐÞÍµÄ~
+#### æ¼æ´ž
+å•Šå—·ï¼æœ‰æ¼æ´žäº†ï¼Ÿåœ¨github gitee bilibiliç­‰åœ°æ–¹è¯ç³»æˆ‘å“¦~æˆ‘æœƒåŽ»æ³¨æ„ä¿®å¾©çš„~
 
 #### wiki
 wiki.xiaozhiyuqwq.top
 
-#### êPì¶
-##### êPì¶
-ÄúºÃ£¬ÎÒÊÇìíÕZ£¬Ï²šg[ÎÒµÄÊÀ½ç]Åc[ACGÎÄ»¯]¡£xiaozhiyuqwq.top
-##### Ì}Àò£¿
-²»ÊÇ¼ˆÆ¬ÈË£¡£¡£¡£¡£¡£¡£¡²»ÊÇÌ}Àò£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡¸ü²»ÊÇÐ¡Ì}Àò£¡£¡£¡£¡£¡£¡£¡£¡£¡²»•þ°É²»•þ°É£¬²»•þß€ÓÐÈËÕJžéìíÕZÊÇÐ¡Ì}Àò°É
+#### é—œæ–¼
+##### é—œæ–¼
+æ‚¨å¥½ï¼Œæˆ‘æ˜¯ç¥‰èªžï¼Œå–œæ­¡[æˆ‘çš„ä¸–ç•Œ]èˆ‡[ACGæ–‡åŒ–]ã€‚xiaozhiyuqwq.top
+##### è˜¿èŽ‰ï¼Ÿ
+ä¸æ˜¯ç´™ç‰‡äººï¼ï¼ï¼ï¼ï¼ï¼ï¼ä¸æ˜¯è˜¿èŽ‰ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼æ›´ä¸æ˜¯å°è˜¿èŽ‰ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ä¸æœƒå§ä¸æœƒå§ï¼Œä¸æœƒé‚„æœ‰äººèªç‚ºç¥‰èªžæ˜¯å°è˜¿èŽ‰å§
 
-#### Â“Ïµ
+#### è¯ç³»
 
-##### GitHub£ºhttps://github.com/xiaozhiyuqwq
-##### Gitee£ºhttps://gitee.com/xiaozhiyuqwq
-##### †ôÁ¨†ôÁ¨£ºhttps://space.bilibili.com/437306982
+##### GitHubï¼šhttps://github.com/xiaozhiyuqwq
+##### Giteeï¼šhttps://gitee.com/xiaozhiyuqwq
+##### å—¶å“©å—¶å“©ï¼šhttps://space.bilibili.com/437306982
 
-#### Œ§º½
-##### main£ºí—Ä¿Ö÷ƒ¦´æ
-##### v1£ºí—Ä¿Ç°Éí
-##### v2.1:2´ú1í—Ä¿
-##### v2.1:2´ú2í—Ä¿
-##### album£ºÏà²á
-##### sundries£ºësÎï·ÖÖ§
-##### reserve£ºîAÁô·ÖÖ§
-##### Development: é_°l·ÖÖ§
-##### wiki£ºwiki
+#### å°Žèˆª
+##### mainï¼šé …ç›®ä¸»å„²å­˜
+##### v1ï¼šé …ç›®å‰èº«
+##### v2.1:2ä»£1é …ç›®
+##### v2.1:2ä»£2é …ç›®
+##### albumï¼šç›¸å†Œ
+##### sundriesï¼šé›œç‰©åˆ†æ”¯
+##### reserveï¼šé ç•™åˆ†æ”¯
+##### Development: é–‹ç™¼åˆ†æ”¯
+##### wikiï¼šwiki
 
-#### Ø•«I
-##### ×÷Õß£ºìíÕZxhduoduobaby£¨Í¬Ò»ÈË£©
-##### ¸ÐÖx£º×Ó¼ÑAceARÒ»ëb±°Î¢µÄÁ¿Í²¾ý²èÐ¡T³¿ïLÐÇ³½ß…ÇïÒ»Ñã
+#### è²¢ç»
+##### ä½œè€…ï¼šç¥‰èªžxhduoduobabyï¼ˆåŒä¸€äººï¼‰
+##### æ„Ÿè¬ï¼šå­ä½³AceARä¸€éš»å‘å¾®çš„é‡ç­’å›èŒ¶å°Tæ™¨é¢¨æ˜Ÿè¾°é‚Šç§‹ä¸€é›
 
-#### ÊÚ™à…f×h
-##### 0 ¿‚„t
-¸ù“þ‡ø¼Ò·¨ÂÉÓÐêPÒŽ¶¨£¬¼×ÒÒëp·½°´ÕÕÆ½µÈ×ÔîŠ¡¢Õ\ŒÐÅÓÃµÄÔ­„t£¬¾Í¼×·½£¨ìíÕZ£©ÊÚ™àÒÒ·½£¨Äú£©Ê¹ÓÃ[¿ÕuÉú´æ-·þ„Õ¶Ë°æ±¾]ÊÂÒËÓ†Á¢±¾…f¶¨¡£
-##### 1 ÊÚÈ¨ÄÚÈÝ
-[¿ÕuÉú´æ-·þ„Õ¶Ë°æ±¾]™n°¸£¬°üÀ¨µ«²»ÏÞì¶£º
-a.µØˆD´æ™n£»
-b.²ÄÙ|¹âÓ°£»
-c.Æ¤Äw£»
-d.™n°¸£»
-e.ˆDÆ¬£»
-f.¸÷îÔ´´a¡£
-##### 2 ëp·½µÄ™àÀûºÍÁx„Õ
-a.×Ô…f¶¨ºžÓ†Ö®ÈÕÆð£¬ÒÒ·½éLÆÚ¾ßÓÐÔÚßm®”µÄ¹ ‡úƒÈÊ¹ÓÃÊÚ™àƒÈÈÝµÄ™àÀû£¬°üÀ¨ÒÔÏÂÐÐžé£º
-a-1.†Î™Cß[‘òÖÐß[Íæ¡¢ÐÞ¸Ä£»
-a-2.¾ÖÓò¾WÂ“™Cß[‘òÖÐß[Íæ¡¢ÐÞ¸Ä£»
-a-3.ÔÚË½ÈËËÅ·þÆ÷ÖÐß[Íæ¡¢ÐÞ¸Ä£»
-a-4.ßMÐÐ·ÇÉÌ˜IÓÃÍ¾µÄ¶þ´ÎÓ°Òô„“×÷£»
-a-5.Œ¢ÊÚ™àƒÈÈÝÕûówßwÒÆÖÁÆäËüƒ¦´æÔO‚äÖÐ¡£
-b.Èç¹û¼×·½Òòžé²»¿É¿¹Á¦£¨Èç£ºµØÕð£¬ïUïL£¬º£‡[£¬‘ð ŽµÈ£©Œ§ÖÂÙYÁÏGÊ§µÄ£¬¼×·½ÓÐ™àÏòÒÒ·½ÚH»ØÊÚ™àÎÄ¼þ¡£
-c.¼×·½ÓÐ™à±O¶½ÒÒ·½ÔÚßm®”¹ ‡úƒÈÊ¹ÓÃÊÚ™àƒÈÈÝ£¬ÒÒ·½‘ª®”·e˜OÂ È¡¼×·½½¨×h¡£
-d.ÔÚºÏÍ¬ÆÚÏÞƒÈÒÒ·½ÔÚÒÔÏÂÇé¿öÏÂÊ¹ÓÃÊÚ™àƒÈÈÝÐèÒª¼×·½•øÃæÊÚ™à£º
-d-1.ÈÎºÎÉÌ˜IÓÃÍ¾£»
-d-2.¶þ´Î„“×÷KÇÒ°lÑÖÁ¹«¸æÆ½Å_¡£
-e.ÔÚºÏÍ¬ÆÚÏÞƒÈÒÒ·½²»µÃÄÊÂÒÔÏÂÐÐžé£º
-e-1.Ðû·QÊÚ™àƒÈÈÝšwŒÙì¶ÒÒ·½£»
-e-2.Œ¢ÊÚ™àƒÈÈÝ¶þ´Î³öÊÛ£»
-e-3.±£´æ»ò¿½ØÊÚ™àƒÈÈÝ¸±±¾ÖÁÆäËüƒ¦´æÔO‚ä»ò·ÖÏí½oËûÈËƒ¦´æ£»
-e-4.Œ¢ÊÚ™àƒÈÈÝÓÃ×öß`·´‡ø¼Ò·¨ÂÉ·¨ÒŽµÄÓÃÍ¾¡£
-##### 3  Öª×R®a™à
-a.¼×·½±£×CËùÊÚ™àµÄƒÈÈÝ²»•þÇÖ·¸µ½…fÁ¦SÉÌÖª×R®a™à£¬Èç¹ûÙYÔ´ƒÈÈÝÉæ¼°ÆäËüÇÖ·¸°æ™à»ò±IÓÃ†–î}£¬ÕˆÁ¢¼´¸æÖª¼×·½£¬¼×·½Œ¢µÚÒ»•régÉ¾³ý»òÖø¸ü¸Ä¡£ÒÒ·½ÐèÒªÍ¬•r„h³ý™nµÄ¸±±¾¡£
-b.ÊÚ™àƒÈÈÝÒ»ÂÉ½ûÖ¹ÒÒ·½‚÷²¥¡¢ÞDÝd¡¢Øâ¸`¡¢¿½Ø¡¢Å²ÓÃ¼°¶þ´Î°lÑ£¬°üÀ¨ËùÓÐÆ½Å_¡£³ý·ÇºÍ¼×·½•øÃæÍ¬ÒâºÍÔÊÔSKºž×Ö£¬·ñ„t¼×·½Œ¢¾ßÓÐ×·¾¿·¨ÂÉØŸÈÎµÄ™àÀû¡£
-c.ÊÚ™à½oÒÒ·½µÄƒÈÈÝ£¬¼×·½“íÓÐ½^Œ¦µÄ„“×÷™à¡£
-##### 4  ß`¼sØŸÈÎ
-a.ÒÒ·½²»ÂÄÐÐÒŽ¶¨Áx„ÕµÄ£¬‘ª®”³Ð“úß`¼sØŸÈÎ£¬¼×·½ÓÐ™àÖ±½Ó½KÖ¹ºÏÍ¬£¬KÊÕ»ØÊÚ™à¡£Í¬•r£¬ÒÒ·½µÄß`¼sÐÐžé½o¼×·½Ôì³É“pÊ§µÄ£¬ÒÒ·½‘ª®”Ùrƒ”¼×·½µÄ“pÊ§£¬KÇÒÒÒ·½Í¨ß^¶þ´Î³öÊÛËù«@µÃµÄÊÕÒæ‘ª®”È«²¿šwß€¼×·½¡£
-b.¼×·½²»ÂÄÐÐÒŽ¶¨Áx„Õ£¬‘ª®”ÒÀÕÕ·¨ÂÉÒŽ¶¨³Ð“úß`¼sØŸÈÎ¡£
-##### 5  Ž×h½â¾öÅcßmÓÃ·¨ÂÉ
-a.¾Í±¾ÆõÔ¼ƒÈÈÝ»òÆäˆÌÐÐ°lÉúÈÎºÎ Ž×h£¬ëp·½‘ªßMÐÐÓÑºÃ…fÉÌ£»…fÉÌ²»³É•r£¬ÈÎºÎÒ»·½¾ù¿ÉÏò±¾…f¶¨ºžÊðµØÈËÃñ·¨ÔºÌáÆðÔVÔA¡£
-b.±¾ÆõÔ¼µÄÓ†Á¢¡¢ˆÌÐÐºÍ½âáŒ¼° Ž×hµÄ½â¾ö¾ù‘ªßmÓÃÖÐ‡ø´óê‘·¨ÂÉ¡£
-##### 6 ÆäËü
-a.±¾…f¶¨ºžÊðµØücžé½­ÌKÊ¡ÄÏÍ¨ÊÐé_°l…^¡£
-b.±¾ÆõÔ¼Î´±MÊÂÒË£¬ëp·½¿ÉÁíÐÐºžÊðÑa³ä…f×h¡£
-c.±¾ÆõÔ¼Ò»Ê½¶þ·Ý£¬ëp·½¸÷ˆÌÒ»·Ý£¬¾ßÓÐÍ¬µÈ·¨ÂÉÐ§Á¦¡£
-d.±¾…f¶¨µÄ”M¶¨¡¢½âáŒ¾ùÒÔÖÐÎÄžé×¼¡£³ýëp·½ÁíÓÐ¼s¶¨Íâ£¬ÈÎºÎÓÐêP±¾…f¶¨µÄ·­×g²»µÃ×÷žé½âáŒ±¾…f¶¨»òÅÐ¶¨ëp·½®”ÊÂÈËÒâˆDÖ®ÒÀ“þ¡£
-
-#### ¸ü¶à
-¸è„¡×àí‘µÄË²ég£¬ÝpÒôÓÆßh£¬ªqÈçËNÞ±¶ËÇf¸ß£¬¿´Âä»¨Îè„Ó“áß^ÁËÉÙÅ®Ö¸¼â¡£
+#### æ›´å¤š
+æ­ŒåŠ‡å¥éŸ¿çš„çž¬é–“ï¼Œè¼•éŸ³æ‚ é ï¼ŒçŒ¶å¦‚è–”è–‡ç«¯èŽŠé«˜æ½”ï¼Œçœ‹è½èŠ±èˆžå‹•æ’«éŽäº†å°‘å¥³æŒ‡å°–ã€‚
