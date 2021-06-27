@@ -1,0 +1,1495 @@
+:root {
+    --color-basic-50: white;
+    --color-basic-50-a: rgba(255, 255, 255, 0);
+    --color-basic-75: #FAFAFA;
+    --color-basic-100: #F5F5F5;
+    --color-basic-200: #EAEAEA;
+    --color-basic-300: #E1E1E1;
+    --color-basic-400: #CACACA;
+    --color-basic-500: #B3B3B3;
+    --color-basic-600: #8E8E8E;
+    --color-basic-700: #6E6E6E;
+    --color-basic-800: #4B4B4B;
+    --color-basic-900: #2c2c2c;
+    --wolai-normal-font: "zh quote", -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans", "Noto Sans CJK SC", "Microsoft YaHei", 微软雅黑, sans-serif, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --wolai-prescript-font: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    --wolai-hover-bg: #EEECEC;
+    --wolai-theme-color: rgb(207, 86, 89);
+    --wolai-border-color: rgba(38, 22, 22, 0.1);
+    --wolai-border-radius: 3px;
+    --wolai-inline-code-color: rgb(85, 142, 218);
+    --wolai-inline-code-background: rgba(208, 187, 193, 0.2);
+    --wolai-link-node-color: #544c4c;
+    --wolai-link-node-line-color: #e8e6e6;
+    --wolai-link-node-hover-color: #231e1e;
+    --wolai-bi-link-background: rgba(208, 207, 207, 0.2);
+    --wolai-bi-link-hover-color: #F1EFEF;
+    --wolai-bi-link-line-color: #bbb;
+    --wolai-code-node-color: #333940;
+    --wolai-code-node-bg: #F6F5F5;
+    --wolai-table-header-bg: #F5F5F5;
+    --wolai-table-border-color: #dddddd;
+    --wolai-title-color: #312727;
+    --wolai-modal-color: #554C4C;
+    --wolai-quote-border-color: rgba(187, 187, 187, 0.5);
+    --wolai-scrollbar-color: #D2CFCF;
+    --wolai-scrollbar-hover-color: #6C6A6A;
+    --wolai-block-top-bottom-margin: 4px;
+    --wolai-desc-color: #BCB3B3;
+    --wolai-bookmark-title-color: rgb(55, 53, 47);
+    --wolai-bookmark-node-border-color: #dddddd;
+    --wolai-bookmark-description-color: #878683;
+    /* 调色板颜色 */
+    --wolai-color-default: rgb(33, 37, 41);
+    --wolai-color-gray: rgba(55, 53, 47, 0.6);
+    --wolai-color-brown: rgb(100, 71, 58);
+    --wolai-color-orange: rgb(217, 115, 13);
+    --wolai-color-yellow: rgb(223, 171, 1);
+    --wolai-color-green: rgb(15, 123, 108);
+    --wolai-color-blue: rgb(11, 110, 153);
+    --wolai-color-purple: rgb(105, 64, 165);
+    --wolai-color-pink: rgb(173, 26, 114);
+    --wolai-color-red: rgb(224, 62, 62);
+    --wolai-color-blank-bg: white;
+    --wolai-color-cultured: rgba(237, 233, 235, 0.5);
+    --wolai-color-lightgray: rgba(217, 211, 215, 0.5);
+    --wolai-color-apricot: rgba(247, 214, 183, 0.5);
+    --wolai-color-vivid_tangerine: rgba(255, 193, 153, 0.5);
+    --wolai-color-blond: rgba(252, 246, 189, 0.5);
+    --wolai-color-aero_blue: rgba(205, 243, 220, 0.5);
+    --wolai-color-uranian_blue: rgba(169, 222, 249, 0.5);
+    --wolai-color-lavender_blue: rgba(189, 201, 255, 0.5);
+    --wolai-color-pale_purple: rgba(239, 218, 251, 0.5);
+    --wolai-color-pink_lavender: rgba(234, 202, 220, 0.5);
+    --wolai-color-lightpink: rgba(253, 198, 200, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+     :root {
+        --color-basic-50: #252525;
+        --color-basic-50-a: rgba(37, 37, 37, 0);
+        --color-basic-75: #2F2F2F;
+        --color-basic-100: #323232;
+        --color-basic-200: #3E3E3E;
+        --color-basic-300: #4A4A4A;
+        --color-basic-400: #5A5A5A;
+        --color-basic-500: #6E6E6E;
+        --color-basic-600: #909090;
+        --color-basic-700: #B9B9B9;
+        --color-basic-800: #BDBDBD;
+        --color-basic-900: #C2C2C2;
+        --wolai-hover-bg: #2c2c2f;
+        --wolai-border-color: #444444;
+        --wolai-inline-code-color: #84aadc;
+        --wolai-inline-code-background: rgba(208, 187, 193, 0.2);
+        --wolai-link-node-color: rgba(255, 255, 255, 0.5);
+        --wolai-link-node-line-color: rgba(255, 255, 255, 0.2);
+        --wolai-link-node-hover-color: rgba(255, 255, 255, 0.7);
+        --wolai-bi-link-background: rgba(208, 207, 207, 0.2);
+        --wolai-bi-link-line-color: #888;
+        --wolai-bi-link-hover-color: #686868;
+        --wolai-code-node-color: #f8f8f2;
+        --wolai-code-node-bg: #282a36;
+        --wolai-table-header-bg: #3A3A3A;
+        --wolai-table-border-color: #555555;
+        --wolai-title-color: rgba(255, 255, 255, 0.7);
+        --wolai-modal-color: rgba(255, 255, 255, 0.7);
+        --wolai-quote-border-color: 404040;
+        --wolai-scrollbar-color: #545454;
+        --wolai-scrollbar-hover-color: #C0BCBC;
+        --wolai-desc-color: #8F8F8F;
+        --wolai-bookmark-title-color: rgb(190, 190, 191);
+        --wolai-bookmark-node-border-color: #555555;
+        --wolai-bookmark-description-color: #7f7f81;
+        /* 暗色调调色板颜色 */
+        --wolai-color-default: rgba(255, 255, 255, 0.7);
+        --wolai-color-gray: rgba(130, 130, 130, 0.6);
+        --wolai-color-brown: rgb(165, 113, 90);
+        --wolai-color-orange: rgb(217, 115, 13);
+        --wolai-color-yellow: rgb(223, 206, 1);
+        --wolai-color-green: rgb(29, 198, 58);
+        --wolai-color-blue: rgb(23, 158, 217);
+        --wolai-color-purple: rgb(184, 107, 241);
+        --wolai-color-pink: rgb(241, 79, 176);
+        --wolai-color-red: rgb(224, 62, 62);
+        --wolai-color-blank-bg: #252528;
+        --wolai-color-cultured: rgba(237, 233, 235, 0.09);
+        --wolai-color-lightgray: rgba(217, 211, 215, 0.2);
+        --wolai-color-apricot: rgba(247, 214, 183, 0.5);
+        --wolai-color-vivid_tangerine: rgba(255, 193, 153, 0.5);
+        --wolai-color-blond: rgba(252, 246, 189, 0.5);
+        --wolai-color-aero_blue: rgba(205, 243, 220, 0.5);
+        --wolai-color-uranian_blue: rgba(169, 222, 249, 0.5);
+        --wolai-color-lavender_blue: rgba(189, 201, 255, 0.5);
+        --wolai-color-pale_purple: rgba(239, 218, 251, 0.5);
+        --wolai-color-pink_lavender: rgba(234, 202, 220, 0.5);
+        --wolai-color-lightpink: rgba(253, 198, 200, 0.5);
+    }
+}
+
+
+/*设置嵌套 Block 才会有的缩进*/
+
+.wolai-block>.wolai-block {
+    margin-left: 20px;
+}
+
+
+/* 代表一个占位的空文本 */
+
+.placeholder {
+    opacity: 0.3;
+}
+
+body {
+    background-color: var(--wolai-color-blank-bg);
+    font-family: var(--wolai-normal-font);
+    margin: 0;
+}
+
+header>div.header-image {
+    height: 120px;
+}
+
+header>div.header-image.has-image {
+    height: 30vh;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+header>div.header-title {
+    max-width: 760px;
+    padding: 0 98px;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 768px) {
+    header>div.header-title {
+        max-width: inherit;
+        padding: 0 72px;
+    }
+}
+
+div.header-title>div.banner {
+    height: 36px;
+    margin-bottom: 16px;
+    padding-bottom: 36px;
+}
+
+div.header-title>div.banner>div.icon {
+    margin-top: -36px;
+    width: 66px;
+    height: 66px;
+    font-size: 66px;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.header-title>div.banner>div.icon.icon-image {
+    border-radius: 5px;
+}
+
+div.header-title>div.banner>div.icon[data-symbol]::before {
+    content: attr(data-symbol)
+}
+
+div.main-title {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 48px;
+    margin-bottom: 20px;
+}
+
+div.main-title::before {
+    content: attr(title)
+}
+
+article {
+    max-width: 768px;
+    padding: 0 98px;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 768px) {
+    article {
+        padding: 0 72px;
+    }
+}
+
+
+/* 设置页面全局的滚动条颜色样式 */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    /*滚动条里面的小方块*/
+    background-color: var(--wolai-scrollbar-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--wolai-scrollbar-hover-color);
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+
+/* 所有块的样式  */
+
+h1,
+h2,
+h3,
+h4,
+div.wolai-text,
+aside,
+pre,
+figure,
+table,
+blockquote,
+details,
+li,
+div.wolai-task-block,
+div.wolai-file-block,
+div.wolai-sub-page,
+div.wolai-bookmark {
+    border-radius: var(--wolai-border-radius);
+    border: 1px dashed transparent;
+}
+
+div.wolai-center {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* 页面设定样式 */
+
+.wolai-block-frame {
+    border: 1px dashed var(--wolai-border-color);
+}
+
+
+/* 单独设置每个块的样式 */
+
+h1 {
+    font-size: 30px;
+    line-height: 39px;
+    margin-top: calc(0px + var(--wolai-block-top-bottom-margin));
+    margin-bottom: calc(9px + var(--wolai-block-top-bottom-margin));
+    padding: 3px 2px;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 31px;
+    margin-top: calc(22px + var(--wolai-block-top-bottom-margin));
+    margin-bottom: calc(5px + var(--wolai-block-top-bottom-margin));
+    padding: 3px 2px;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: calc(12px + var(--wolai-block-top-bottom-margin));
+    margin-bottom: calc(5px + var(--wolai-block-top-bottom-margin));
+    padding: 3px 2px;
+}
+
+h4 {
+    font-size: 18px;
+    line-height: 21.5px;
+    margin-top: calc(9px + var(--wolai-block-top-bottom-margin));
+    margin-bottom: calc(5px + var(--wolai-block-top-bottom-margin));
+    padding: 3px 2px;
+}
+
+div.wolai-text {
+    font-size: 16px;
+    line-height: 26px;
+    margin-top: var(--wolai-block-top-bottom-margin);
+    margin-bottom: var(--wolai-block-top-bottom-margin);
+    padding: 3px 2px;
+}
+
+p {
+    margin: 0;
+}
+
+
+/* 着重文字和其图标的样式 */
+
+aside {
+    font-size: 16px;
+    line-height: 26px;
+    padding: 15px 15px 15px 51px;
+    position: relative;
+    margin: 4px 0;
+}
+
+aside>div.marker {
+    position: absolute;
+    font-size: 24px;
+    width: 26px;
+    height: 26px;
+    top: 15px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+aside>div.marker::before {
+    content: "📌";
+}
+
+aside>div.marker[data-symbol]::before {
+    content: attr(data-symbol);
+}
+
+
+/* 有图片背景的 Callout Icon，需要把默认图钉藏起来 */
+
+aside>div.marker.icon-image {
+    border-radius: var(--wolai-border-radius);
+    background-size: contain;
+}
+
+aside>div.marker.icon-image::before {
+    content: none;
+}
+
+pre {
+    font-family: var(--wolai-prescript-font);
+    font-size: 14px;
+    line-height: 21px;
+    color: var(--wolai-code-node-color);
+    background-color: var(--wolai-code-node-bg);
+    padding: 20px 10px;
+    overflow-x: auto;
+    position: relative;
+}
+
+pre>div.marker {
+    position: absolute;
+    right: 15px;
+    bottom: 3px;
+    color: var(--wolai-modal-color);
+    font-size: 12px;
+}
+
+pre>div.marker::before {
+    content: attr(data-lang);
+}
+
+hr {
+    display: block;
+    border: none;
+    border-bottom: 1px solid var(--wolai-border-color);
+    margin: 6.5px 0;
+}
+
+figure {
+    margin: 0;
+}
+
+figure>img {
+    display: block;
+    border-radius: 5px;
+    max-width: 100%;
+}
+
+figure>figcaption,
+table>caption {
+    padding: 10px 5px;
+    font-size: 14px;
+    line-height: 26px;
+    text-align: inherit;
+    color: var(--color-basic-600);
+}
+
+blockquote {
+    margin: 4px 0;
+    padding: 8px 0 8px 20px;
+    font-size: 16px;
+    line-height: 26px;
+    position: relative;
+}
+
+blockquote::before {
+    content: '';
+    height: calc(100% - 10px);
+    width: 4px;
+    background: var(--wolai-quote-border-color);
+    position: absolute;
+    top: 5px;
+    left: 2px;
+    border-radius: 1.5px;
+}
+
+details {
+    font-size: 16px;
+    line-height: 26px;
+    margin: 4px 0 0 0;
+    padding: 3px 2px;
+}
+
+
+/* 隐藏默认的 details 的 marker */
+
+details>summary::marker {
+    content: ''
+}
+
+details>.wolai-block {
+    margin-left: 29px !important;
+}
+
+details>summary {
+    position: relative;
+    padding-left: 29px;
+}
+
+
+/* 以下是亮色模式下的设置 */
+
+details>summary>div.marker {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 1px;
+    left: 1px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(44, 44, 44); fill-rule: evenodd; opacity: 1;'%3E%3Cpath d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+details[open]>summary>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(44, 44, 44); fill-rule: evenodd; opacity: 1;'%3E%3Cpath transform='rotate(90 12 12)' d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+
+/* 亮色模式下的灰色 */
+
+details.gray>summary>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgba(55, 53, 47, 0.6); fill-rule: evenodd; opacity: 1;'%3E%3Cpath d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+details.gray[open]>summary>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgba(55, 53, 47, 0.6); fill-rule: evenodd; opacity: 1;'%3E%3Cpath transform='rotate(90 12 12)' d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+
+/* 亮色模式下的棕色 */
+
+details.brown>summary>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(100, 71, 58); fill-rule: evenodd; opacity: 1;'%3E%3Cpath d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+details.brown[open]>summary>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(100, 71, 58); fill-rule: evenodd; opacity: 1;'%3E%3Cpath transform='rotate(90 12 12)' d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+
+/* 亮色模式下的橙色 */
+
+details.orange>summary>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(217, 115, 13); fill-rule: evenodd; opacity: 1;'%3E%3Cpath d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+details.orange[open]>summary>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(217, 115, 13); fill-rule: evenodd; opacity: 1;'%3E%3Cpath transform='rotate(90 12 12)' d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+
+/* 亮色模式下的黄色 */
+
+details.yellow>summary>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(223, 171, 1); fill-rule: evenodd; opacity: 1;'%3E%3Cpath d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+details.yellow[open]>summary>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(223, 171, 1); fill-rule: evenodd; opacity: 1;'%3E%3Cpath transform='rotate(90 12 12)' d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+
+/* 亮色模式下的绿色 */
+
+details.green>summary>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(15, 123, 108); fill-rule: evenodd; opacity: 1;'%3E%3Cpath d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+details.green[open]>summary>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(15, 123, 108); fill-rule: evenodd; opacity: 1;'%3E%3Cpath transform='rotate(90 12 12)' d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+
+/* 亮色模式下的蓝色 */
+
+details.blue>summary>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(11, 110, 153); fill-rule: evenodd; opacity: 1;'%3E%3Cpath d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+details.blue[open]>summary>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(11, 110, 153); fill-rule: evenodd; opacity: 1;'%3E%3Cpath transform='rotate(90 12 12)' d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+
+/* 亮色模式下的紫色 */
+
+details.purple>summary>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(105, 64, 165); fill-rule: evenodd; opacity: 1;'%3E%3Cpath d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+details.purple[open]>summary>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(105, 64, 165); fill-rule: evenodd; opacity: 1;'%3E%3Cpath transform='rotate(90 12 12)' d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+
+/* 亮色模式下的粉色 */
+
+details.pink>summary>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(173, 26, 114); fill-rule: evenodd; opacity: 1;'%3E%3Cpath d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+details.pink[open]>summary>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(173, 26, 114); fill-rule: evenodd; opacity: 1;'%3E%3Cpath transform='rotate(90 12 12)' d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+
+/* 亮色模式下的红色 */
+
+details.red>summary>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(224, 62, 62); fill-rule: evenodd; opacity: 1;'%3E%3Cpath d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+details.red[open]>summary>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(224, 62, 62); fill-rule: evenodd; opacity: 1;'%3E%3Cpath transform='rotate(90 12 12)' d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+
+/* 以下是暗色模式下的设置 */
+
+@media (prefers-color-scheme: dark) {
+    details>summary>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgba(255, 255, 255, 0.7); fill-rule: evenodd; opacity: 1;'%3E%3Cpath d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    details[open]>summary>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgba(255, 255, 255, 0.7); fill-rule: evenodd; opacity: 1;'%3E%3Cpath transform='rotate(90 12 12)' d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    /* 暗色模式下的灰色 */
+    details.gray>summary>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgba(130, 130, 130, 0.6); fill-rule: evenodd; opacity: 1;'%3E%3Cpath d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    details.gray[open]>summary>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgba(130, 130, 130, 0.6); fill-rule: evenodd; opacity: 1;'%3E%3Cpath transform='rotate(90 12 12)' d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    /* 暗色模式下的棕色 */
+    details.brown>summary>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(165, 113, 90); fill-rule: evenodd; opacity: 1;'%3E%3Cpath d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    details.brown[open]>summary>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(165, 113, 90); fill-rule: evenodd; opacity: 1;'%3E%3Cpath transform='rotate(90 12 12)' d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    /* 暗色模式下的橙色 */
+    details.orange>summary>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(217, 115, 13); fill-rule: evenodd; opacity: 1;'%3E%3Cpath d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    details.orange[open]>summary>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(217, 115, 13); fill-rule: evenodd; opacity: 1;'%3E%3Cpath transform='rotate(90 12 12)' d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    /* 暗色模式下的黄色 */
+    details.yellow>summary>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(223, 206, 1); fill-rule: evenodd; opacity: 1;'%3E%3Cpath d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    details.yellow[open]>summary>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(223, 206, 1); fill-rule: evenodd; opacity: 1;'%3E%3Cpath transform='rotate(90 12 12)' d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    /* 暗色模式下的绿色 */
+    details.green>summary>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(29, 198, 58); fill-rule: evenodd; opacity: 1;'%3E%3Cpath d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    details.green[open]>summary>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(29, 198, 58); fill-rule: evenodd; opacity: 1;'%3E%3Cpath transform='rotate(90 12 12)' d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    /* 暗色模式下的蓝色 */
+    details.blue>summary>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(23, 158, 217); fill-rule: evenodd; opacity: 1;'%3E%3Cpath d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    details.blue[open]>summary>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(23, 158, 217); fill-rule: evenodd; opacity: 1;'%3E%3Cpath transform='rotate(90 12 12)' d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    /* 暗色模式下的紫色 */
+    details.purple>summary>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(184, 107, 241); fill-rule: evenodd; opacity: 1;'%3E%3Cpath d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    details.purple[open]>summary>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(184, 107, 241); fill-rule: evenodd; opacity: 1;'%3E%3Cpath transform='rotate(90 12 12)' d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    /* 暗色模式下的粉色 */
+    details.pink>summary>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(241, 79, 176); fill-rule: evenodd; opacity: 1;'%3E%3Cpath d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    details.pink[open]>summary>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(241, 79, 176); fill-rule: evenodd; opacity: 1;'%3E%3Cpath transform='rotate(90 12 12)' d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    /* 暗色模式下的红色 */
+    details.red>summary>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(224, 62, 62); fill-rule: evenodd; opacity: 1;'%3E%3Cpath d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    details.red[open]>summary>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(224, 62, 62); fill-rule: evenodd; opacity: 1;'%3E%3Cpath transform='rotate(90 12 12)' d='M15.388 10.968a1.2 1.2 0 010 2.064l-4.7 2.789a1.2 1.2 0 01-1.813-1.032V9.21a1.2 1.2 0 011.813-1.032l4.7 2.789z'%3E%3C/path%3E%3C/svg%3E");
+    }
+}
+
+span.katex-display {
+    font-size: 19.36px;
+    line-height: 23.232px;
+}
+
+progress {
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 16px;
+    width: 100%;
+}
+
+
+/* 设置数字列表和圆形列表的样式 */
+
+ul {
+    padding-left: 0;
+    margin: 0;
+}
+
+li {
+    margin: 3px 0;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+ul>li,
+ol>li {
+    list-style: none;
+    position: relative;
+    padding: 3px 2px 3px 29px;
+}
+
+ul>li>div.marker {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 4px;
+    left: 3px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgb(33, 37, 41);'%3E%3Cpath d='M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+ul>li.gray>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgba(55, 53, 47, 0.6);'%3E%3Cpath d='M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+ul>li.brown>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgb(100, 71, 58);'%3E%3Cpath d='M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+ul>li.orange>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgb(217, 115, 13);'%3E%3Cpath d='M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+ul>li.yellow>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgb(223, 171, 1);'%3E%3Cpath d='M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+ul>li.green>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgb(15, 123, 108);'%3E%3Cpath d='M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+ul>li.blue>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgb(11, 110, 153);'%3E%3Cpath d='M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+ul>li.purple>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgb(105, 64, 165);'%3E%3Cpath d='M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+ul>li.pink>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgb(173, 26, 114);'%3E%3Cpath d='M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+ul>li.red>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgb(224, 62, 62);'%3E%3Cpath d='M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+@media (prefers-color-scheme: dark) {
+    ul>li>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgba(255, 255, 255, 0.7);'%3E%3Cpath d='M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    ul>li.gray>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgba(130, 130, 130, 0.6);'%3E%3Cpath d='M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    ul>li.brown>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgb(165, 113, 90);'%3E%3Cpath d='M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    ul>li.orange>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgb(217, 115, 13);'%3E%3Cpath d='M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    ul>li.yellow>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgb(223, 206, 1);'%3E%3Cpath d='M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    ul>li.green>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgb(29, 198, 58);'%3E%3Cpath d='M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    ul>li.blue>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgb(23, 158, 217);'%3E%3Cpath d='M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    ul>li.purple>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgb(184, 107, 241);'%3E%3Cpath d='M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    ul>li.pink>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgb(241, 79, 176);'%3E%3Cpath d='M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    ul>li.red>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgb(224, 62, 62);'%3E%3Cpath d='M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'%3E%3C/path%3E%3C/svg%3E");
+    }
+}
+
+ol>li>div.marker {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 3px;
+    left: 3px;
+    text-align: center;
+}
+
+
+/* 数字列表开始要重置 counter 计数器 */
+
+ol {
+    padding-left: 0;
+    margin: 0;
+    counter-reset: enumlist;
+}
+
+ol>li>div.marker::before {
+    counter-increment: enumlist;
+    content: counter(enumlist) ".";
+}
+
+
+/* 设置 wolai-task-block 的样式 */
+
+div.wolai-task-block.wolai-block {
+    font-size: 16px;
+    line-height: 26px;
+    margin: 4px 0;
+    padding: 3px 2px 3px 29px;
+    position: relative;
+}
+
+div.wolai-task-block.wolai-block>input[type="checkbox"] {
+    display: none;
+}
+
+div.wolai-task-block.wolai-block>.wolai-block {
+    margin-left: 0;
+}
+
+
+/* 亮色模式下的 TaskList */
+
+div.wolai-task-block>div.marker {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 4px;
+    left: 3px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(33, 37, 41); fill-rule: evenodd;'%3E%3Cpath clip-rule='evenodd' d='M16.6 6.2H7.4a1.2 1.2 0 00-1.2 1.2v9.2a1.2 1.2 0 001.2 1.2h9.2a1.2 1.2 0 001.2-1.2V7.4a1.2 1.2 0 00-1.2-1.2zM7.4 5A2.4 2.4 0 005 7.4v9.2A2.4 2.4 0 007.4 19h9.2a2.4 2.4 0 002.4-2.4V7.4A2.4 2.4 0 0016.6 5H7.4z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+div.wolai-task-block.gray>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgba(55, 53, 47, 0.6); fill-rule: evenodd;'%3E%3Cpath clip-rule='evenodd' d='M16.6 6.2H7.4a1.2 1.2 0 00-1.2 1.2v9.2a1.2 1.2 0 001.2 1.2h9.2a1.2 1.2 0 001.2-1.2V7.4a1.2 1.2 0 00-1.2-1.2zM7.4 5A2.4 2.4 0 005 7.4v9.2A2.4 2.4 0 007.4 19h9.2a2.4 2.4 0 002.4-2.4V7.4A2.4 2.4 0 0016.6 5H7.4z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+div.wolai-task-block.brown>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(100, 71, 58); fill-rule: evenodd;'%3E%3Cpath clip-rule='evenodd' d='M16.6 6.2H7.4a1.2 1.2 0 00-1.2 1.2v9.2a1.2 1.2 0 001.2 1.2h9.2a1.2 1.2 0 001.2-1.2V7.4a1.2 1.2 0 00-1.2-1.2zM7.4 5A2.4 2.4 0 005 7.4v9.2A2.4 2.4 0 007.4 19h9.2a2.4 2.4 0 002.4-2.4V7.4A2.4 2.4 0 0016.6 5H7.4z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+div.wolai-task-block.orange>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(217, 115, 13); fill-rule: evenodd;'%3E%3Cpath clip-rule='evenodd' d='M16.6 6.2H7.4a1.2 1.2 0 00-1.2 1.2v9.2a1.2 1.2 0 001.2 1.2h9.2a1.2 1.2 0 001.2-1.2V7.4a1.2 1.2 0 00-1.2-1.2zM7.4 5A2.4 2.4 0 005 7.4v9.2A2.4 2.4 0 007.4 19h9.2a2.4 2.4 0 002.4-2.4V7.4A2.4 2.4 0 0016.6 5H7.4z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+div.wolai-task-block.yellow>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(223, 171, 1); fill-rule: evenodd;'%3E%3Cpath clip-rule='evenodd' d='M16.6 6.2H7.4a1.2 1.2 0 00-1.2 1.2v9.2a1.2 1.2 0 001.2 1.2h9.2a1.2 1.2 0 001.2-1.2V7.4a1.2 1.2 0 00-1.2-1.2zM7.4 5A2.4 2.4 0 005 7.4v9.2A2.4 2.4 0 007.4 19h9.2a2.4 2.4 0 002.4-2.4V7.4A2.4 2.4 0 0016.6 5H7.4z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+div.wolai-task-block.green>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(15, 123, 108); fill-rule: evenodd;'%3E%3Cpath clip-rule='evenodd' d='M16.6 6.2H7.4a1.2 1.2 0 00-1.2 1.2v9.2a1.2 1.2 0 001.2 1.2h9.2a1.2 1.2 0 001.2-1.2V7.4a1.2 1.2 0 00-1.2-1.2zM7.4 5A2.4 2.4 0 005 7.4v9.2A2.4 2.4 0 007.4 19h9.2a2.4 2.4 0 002.4-2.4V7.4A2.4 2.4 0 0016.6 5H7.4z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+div.wolai-task-block.blue>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(11, 110, 153); fill-rule: evenodd;'%3E%3Cpath clip-rule='evenodd' d='M16.6 6.2H7.4a1.2 1.2 0 00-1.2 1.2v9.2a1.2 1.2 0 001.2 1.2h9.2a1.2 1.2 0 001.2-1.2V7.4a1.2 1.2 0 00-1.2-1.2zM7.4 5A2.4 2.4 0 005 7.4v9.2A2.4 2.4 0 007.4 19h9.2a2.4 2.4 0 002.4-2.4V7.4A2.4 2.4 0 0016.6 5H7.4z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+div.wolai-task-block.purple>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(105, 64, 165); fill-rule: evenodd;'%3E%3Cpath clip-rule='evenodd' d='M16.6 6.2H7.4a1.2 1.2 0 00-1.2 1.2v9.2a1.2 1.2 0 001.2 1.2h9.2a1.2 1.2 0 001.2-1.2V7.4a1.2 1.2 0 00-1.2-1.2zM7.4 5A2.4 2.4 0 005 7.4v9.2A2.4 2.4 0 007.4 19h9.2a2.4 2.4 0 002.4-2.4V7.4A2.4 2.4 0 0016.6 5H7.4z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+div.wolai-task-block.pink>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(173, 26, 114); fill-rule: evenodd;'%3E%3Cpath clip-rule='evenodd' d='M16.6 6.2H7.4a1.2 1.2 0 00-1.2 1.2v9.2a1.2 1.2 0 001.2 1.2h9.2a1.2 1.2 0 001.2-1.2V7.4a1.2 1.2 0 00-1.2-1.2zM7.4 5A2.4 2.4 0 005 7.4v9.2A2.4 2.4 0 007.4 19h9.2a2.4 2.4 0 002.4-2.4V7.4A2.4 2.4 0 0016.6 5H7.4z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+div.wolai-task-block.red>div.marker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(224, 62, 62); fill-rule: evenodd;'%3E%3Cpath clip-rule='evenodd' d='M16.6 6.2H7.4a1.2 1.2 0 00-1.2 1.2v9.2a1.2 1.2 0 001.2 1.2h9.2a1.2 1.2 0 001.2-1.2V7.4a1.2 1.2 0 00-1.2-1.2zM7.4 5A2.4 2.4 0 005 7.4v9.2A2.4 2.4 0 007.4 19h9.2a2.4 2.4 0 002.4-2.4V7.4A2.4 2.4 0 0016.6 5H7.4z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+@media (prefers-color-scheme: dark) {
+    div.wolai-task-block>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgba(255, 255, 255, 0.7); fill-rule: evenodd;'%3E%3Cpath clip-rule='evenodd' d='M16.6 6.2H7.4a1.2 1.2 0 00-1.2 1.2v9.2a1.2 1.2 0 001.2 1.2h9.2a1.2 1.2 0 001.2-1.2V7.4a1.2 1.2 0 00-1.2-1.2zM7.4 5A2.4 2.4 0 005 7.4v9.2A2.4 2.4 0 007.4 19h9.2a2.4 2.4 0 002.4-2.4V7.4A2.4 2.4 0 0016.6 5H7.4z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    div.wolai-task-block.gray>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgba(130, 130, 130, 0.6); fill-rule: evenodd;'%3E%3Cpath clip-rule='evenodd' d='M16.6 6.2H7.4a1.2 1.2 0 00-1.2 1.2v9.2a1.2 1.2 0 001.2 1.2h9.2a1.2 1.2 0 001.2-1.2V7.4a1.2 1.2 0 00-1.2-1.2zM7.4 5A2.4 2.4 0 005 7.4v9.2A2.4 2.4 0 007.4 19h9.2a2.4 2.4 0 002.4-2.4V7.4A2.4 2.4 0 0016.6 5H7.4z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    div.wolai-task-block.brown>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(165, 113, 90); fill-rule: evenodd;'%3E%3Cpath clip-rule='evenodd' d='M16.6 6.2H7.4a1.2 1.2 0 00-1.2 1.2v9.2a1.2 1.2 0 001.2 1.2h9.2a1.2 1.2 0 001.2-1.2V7.4a1.2 1.2 0 00-1.2-1.2zM7.4 5A2.4 2.4 0 005 7.4v9.2A2.4 2.4 0 007.4 19h9.2a2.4 2.4 0 002.4-2.4V7.4A2.4 2.4 0 0016.6 5H7.4z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    div.wolai-task-block.orange>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(217, 115, 13); fill-rule: evenodd;'%3E%3Cpath clip-rule='evenodd' d='M16.6 6.2H7.4a1.2 1.2 0 00-1.2 1.2v9.2a1.2 1.2 0 001.2 1.2h9.2a1.2 1.2 0 001.2-1.2V7.4a1.2 1.2 0 00-1.2-1.2zM7.4 5A2.4 2.4 0 005 7.4v9.2A2.4 2.4 0 007.4 19h9.2a2.4 2.4 0 002.4-2.4V7.4A2.4 2.4 0 0016.6 5H7.4z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    div.wolai-task-block.yellow>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(223, 206, 1); fill-rule: evenodd;'%3E%3Cpath clip-rule='evenodd' d='M16.6 6.2H7.4a1.2 1.2 0 00-1.2 1.2v9.2a1.2 1.2 0 001.2 1.2h9.2a1.2 1.2 0 001.2-1.2V7.4a1.2 1.2 0 00-1.2-1.2zM7.4 5A2.4 2.4 0 005 7.4v9.2A2.4 2.4 0 007.4 19h9.2a2.4 2.4 0 002.4-2.4V7.4A2.4 2.4 0 0016.6 5H7.4z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    div.wolai-task-block.green>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(29, 198, 58); fill-rule: evenodd;'%3E%3Cpath clip-rule='evenodd' d='M16.6 6.2H7.4a1.2 1.2 0 00-1.2 1.2v9.2a1.2 1.2 0 001.2 1.2h9.2a1.2 1.2 0 001.2-1.2V7.4a1.2 1.2 0 00-1.2-1.2zM7.4 5A2.4 2.4 0 005 7.4v9.2A2.4 2.4 0 007.4 19h9.2a2.4 2.4 0 002.4-2.4V7.4A2.4 2.4 0 0016.6 5H7.4z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    div.wolai-task-block.blue>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(23, 158, 217); fill-rule: evenodd;'%3E%3Cpath clip-rule='evenodd' d='M16.6 6.2H7.4a1.2 1.2 0 00-1.2 1.2v9.2a1.2 1.2 0 001.2 1.2h9.2a1.2 1.2 0 001.2-1.2V7.4a1.2 1.2 0 00-1.2-1.2zM7.4 5A2.4 2.4 0 005 7.4v9.2A2.4 2.4 0 007.4 19h9.2a2.4 2.4 0 002.4-2.4V7.4A2.4 2.4 0 0016.6 5H7.4z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    div.wolai-task-block.purple>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(184, 107, 241); fill-rule: evenodd;'%3E%3Cpath clip-rule='evenodd' d='M16.6 6.2H7.4a1.2 1.2 0 00-1.2 1.2v9.2a1.2 1.2 0 001.2 1.2h9.2a1.2 1.2 0 001.2-1.2V7.4a1.2 1.2 0 00-1.2-1.2zM7.4 5A2.4 2.4 0 005 7.4v9.2A2.4 2.4 0 007.4 19h9.2a2.4 2.4 0 002.4-2.4V7.4A2.4 2.4 0 0016.6 5H7.4z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    div.wolai-task-block.pink>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(241, 79, 176); fill-rule: evenodd;'%3E%3Cpath clip-rule='evenodd' d='M16.6 6.2H7.4a1.2 1.2 0 00-1.2 1.2v9.2a1.2 1.2 0 001.2 1.2h9.2a1.2 1.2 0 001.2-1.2V7.4a1.2 1.2 0 00-1.2-1.2zM7.4 5A2.4 2.4 0 005 7.4v9.2A2.4 2.4 0 007.4 19h9.2a2.4 2.4 0 002.4-2.4V7.4A2.4 2.4 0 0016.6 5H7.4z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    div.wolai-task-block.red>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' style='fill: rgb(224, 62, 62); fill-rule: evenodd;'%3E%3Cpath clip-rule='evenodd' d='M16.6 6.2H7.4a1.2 1.2 0 00-1.2 1.2v9.2a1.2 1.2 0 001.2 1.2h9.2a1.2 1.2 0 001.2-1.2V7.4a1.2 1.2 0 00-1.2-1.2zM7.4 5A2.4 2.4 0 005 7.4v9.2A2.4 2.4 0 007.4 19h9.2a2.4 2.4 0 002.4-2.4V7.4A2.4 2.4 0 0016.6 5H7.4z'%3E%3C/path%3E%3C/svg%3E");
+    }
+}
+
+
+/* 亮色模式下已完成的任务 */
+
+div.wolai-task-block[checked="true"]>div.marker {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 4px;
+    left: 3px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10' class='_2SAZO _1FRvK'%3E%3Cpath d='M3.955 10c-.35 0-.618-.16-.896-.509L.247 5.938A1.09 1.09 0 010 5.27c0-.487.381-.87.834-.87.289 0 .536.107.762.425l2.317 3.054L8.393.488C8.59.159 8.857 0 9.125 0c.453 0 .875.308.875.806 0 .233-.113.477-.247.69L4.799 9.48c-.216.35-.504.52-.844.52z' fill='rgba(33, 37, 41, 0.5)' fill-rule='nonzero'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media (prefers-color-scheme: dark) {
+    /* 暗色模式下已完成的任务 */
+    div.wolai-task-block[checked="true"]>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10' class='_2SAZO _1FRvK'%3E%3Cpath d='M3.955 10c-.35 0-.618-.16-.896-.509L.247 5.938A1.09 1.09 0 010 5.27c0-.487.381-.87.834-.87.289 0 .536.107.762.425l2.317 3.054L8.393.488C8.59.159 8.857 0 9.125 0c.453 0 .875.308.875.806 0 .233-.113.477-.247.69L4.799 9.48c-.216.35-.504.52-.844.52z' fill='rgba(255, 255, 255, 0.35)' fill-rule='nonzero'%3E%3C/path%3E%3C/svg%3E");
+    }
+}
+
+div.wolai-task-block[checked="true"]>.summary {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+
+/* 设置行和列的 flex 样式 */
+
+div.wolai-fence-row {
+    display: flex;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+div.wolai-fence-row>div.wolai-fence-col {
+    margin-left: 40px;
+    flex-grow: 0.5;
+    flex-basis: 0;
+}
+
+div.wolai-fence-row>div.wolai-fence-col:first-child {
+    margin-left: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .wolai-fence-row {
+        flex-direction: column;
+    }
+    div.wolai-fence-row>div.wolai-fence-col {
+        margin-left: 0;
+    }
+}
+
+
+/* 设置 Table 的样式 */
+
+table {
+    border-collapse: separate;
+    border: 0 solid transparent;
+    border-spacing: 0;
+    padding: 0;
+    margin: calc(8px + var(--wolai-block-top-bottom-margin)) 8px;
+    box-shadow: 0 0 0 1px var(--wolai-table-border-color);
+}
+
+table>caption {
+    caption-side: bottom;
+}
+
+table>thead {
+    background: var(--wolai-table-header-bg);
+    border-radius: var(--wolai-border-radius);
+}
+
+table td,
+table th {
+    padding: 5px 10px;
+    font-size: 16px;
+    line-height: 26px;
+    width: 80px;
+    height: 20px;
+    font-weight: inherit;
+    text-align: inherit;
+}
+
+
+/* 每个单元格左侧和上侧会显示横线 */
+
+tr>td,
+tr>th {
+    border: 0 solid transparent;
+    border-left: 1px solid var(--wolai-table-border-color);
+    border-top: 1px solid var(--wolai-table-border-color);
+}
+
+
+/* 第一列没有左侧的边框线 */
+
+tr>td:first-child,
+tr>th:first-child {
+    border-left: 0 transparent;
+}
+
+
+/* 第一行没有上侧的横线 */
+
+table tr:first-child>td,
+table tr:first-child>th {
+    border-top: 0 transparent;
+}
+
+table>thead+tbody>tr:first-child>td {
+    border-top: 1px solid var(--wolai-table-border-color);
+}
+
+
+/* 第一行的单元格，第一列和最后一列分别要有一个圆角 */
+
+table tr:first-child>td:first-child,
+table tr:first-child>th:first-child {
+    border-top-left-radius: var(--wolai-border-radius);
+}
+
+table tr:first-child>td:last-child,
+table tr:first-child>th:last-child {
+    border-top-right-radius: var(--wolai-border-radius);
+}
+
+table>thead+tbody>tr:first-child>td:first-child,
+table>thead+tbody>tr:first-child>td:last-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+/* 最后一行的单元格，第一列和最后一列分别要有一个圆角 */
+
+table tr:last-child>td:first-child,
+table tr:only-child>th:first-child {
+    border-bottom-left-radius: var(--wolai-border-radius);
+}
+
+table tr:last-child>td:last-child,
+table tr:only-child>th:last-child {
+    border-bottom-right-radius: var(--wolai-border-radius);
+}
+
+
+/* 设置进度条的样式 */
+
+div.wolai-progress.wolai-block {
+    margin: 4px 0;
+}
+
+div.wolai-progress.wolai-block>progress {
+    display: none;
+}
+
+div.wolai-progress.wolai-block>div.display {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 26px;
+    height: 34px;
+}
+
+div.wolai-progress.wolai-block>div.display>div.marker {
+    width: 26px;
+    height: 14px;
+    padding-left: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.wolai-progress.wolai-block>div.display>.content {
+    overflow: hidden;
+    position: relative;
+    flex: 1;
+    height: 10px;
+    border-radius: 5px;
+}
+
+div.wolai-progress.wolai-block>div.display>.content>.bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: var(--wolai-theme-color);
+    /*默认是零进度*/
+    width: 0;
+    height: 100%;
+}
+
+div.wolai-progress.wolai-block>div.display>.content>.background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: var(--wolai-theme-color);
+    opacity: 0.15;
+    width: 100%;
+    height: 100%;
+}
+
+div.wolai-progress.wolai-block>div.display>.digit {
+    color: var(--wolai-desc-color);
+    text-align: right;
+    padding-left: 8px;
+    padding-right: 2px;
+    width: 44px;
+}
+
+div.wolai-progress.wolai-block>div.display>.digit[value]::before {
+    content: attr(value) "%";
+}
+
+
+/* 子页面的样式 */
+
+
+/* 文件块的样式 */
+
+div.wolai-file-block.wolai-block,
+div.wolai-sub-page.wolai-block {
+    font-size: 16px;
+    line-height: 26px;
+    margin-top: var(--wolai-block-top-bottom-margin);
+    margin-bottom: var(--wolai-block-top-bottom-margin);
+    padding: 3px 2px 3px 30px;
+    position: relative;
+}
+
+div.wolai-file-block.wolai-block:hover,
+div.wolai-sub-page.wolai-block:hover {
+    background-color: var(--wolai-hover-bg);
+}
+
+div.wolai-file-block a,
+div.wolai-sub-page.wolai-block a {
+    color: var(--wolai-title-color);
+    display: block;
+    text-decoration: none;
+}
+
+div.wolai-sub-page.wolai-block a {
+    font-weight: 600;
+}
+
+div.wolai-sub-page.wolai-block a>span {
+    display: inline-block;
+    line-height: 1.5;
+    border-bottom: 1px solid var(--wolai-border-color);
+}
+
+div.wolai-file-block a>.file-size {
+    font-size: 12px;
+    margin-left: 4px;
+    color: var(--wolai-title-color);
+    opacity: 0.65;
+}
+
+div.wolai-file-block a>.file-size::before {
+    content: attr(data-size)
+}
+
+div.wolai-file-block>div.marker {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 4px;
+    left: 3px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M12.157 2.2a2.8 2.8 0 011.856.703l.148.142 4.843 4.965a2.8 2.8 0 01.789 1.756l.007.199V19a2.8 2.8 0 01-2.63 2.795L17 21.8H7a2.8 2.8 0 01-2.795-2.63L4.2 19V5a2.8 2.8 0 012.63-2.795L7 2.2h5.157zM11.2 3.8H7a1.2 1.2 0 00-1.194 1.077L5.8 5v14a1.2 1.2 0 001.077 1.194L7 20.2h10a1.2 1.2 0 001.194-1.077L18.2 19v-8.2H13a1.8 1.8 0 01-1.794-1.652L11.2 9V3.8zm1.816.362a1.2 1.2 0 00-.215-.175L12.8 9a.2.2 0 00.147.193L13 9.2h4.923l-.064-.073-4.843-4.965z' fill='none' style='fill: rgb(33, 37, 41);' fill-rule='evenodd'%3E%3C/path%3E%3C/svg%3E") center no-repeat;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+div.wolai-sub-page.wolai-block>div.marker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 7px;
+    left: 5px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath d='M14.202 18c1.32 0 1.8-.138 2.282-.396a2.692 2.692 0 001.12-1.12l.046-.088c.229-.456.35-.954.35-2.194V5.798l-.002-.23c-.015-1.148-.151-1.599-.394-2.052a2.692 2.692 0 00-1.12-1.12l-.088-.046c-.456-.229-.954-.35-2.194-.35H5.798l-.23.002c-1.148.015-1.599.151-2.052.394a2.692 2.692 0 00-1.12 1.12l-.046.088c-.221.441-.342.922-.35 2.077v8.52c0 1.321.138 1.8.396 2.283.258.483.637.862 1.12 1.12l.088.046c.441.221.922.342 2.077.35h8.52zm.094-1.778H5.704l-.256-.003c-.655-.012-.873-.064-1.094-.182a.916.916 0 01-.39-.391c-.133-.247-.183-.491-.186-1.35V5.704l.003-.256c.012-.655.064-.873.182-1.094a.916.916 0 01.391-.39c.247-.133.491-.183 1.35-.186h8.498c.935 0 1.188.049 1.444.185a.916.916 0 01.39.391c.133.247.183.491.186 1.35v8.498c0 .935-.049 1.188-.185 1.444a.916.916 0 01-.391.39c-.247.133-.491.183-1.35.186zm-2.413-7.555V6.889H5.556v1.778h6.327zm2.505 4.44v-1.779H5.556v1.778h8.832z' fill='rgb(33, 37, 41)' fill-rule='nonzero'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: var(--wolai-border-radius);
+}
+
+div.wolai-sub-page.wolai-block>div.marker[data-symbol] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: none;
+    font-size: 18px;
+}
+
+div.wolai-sub-page.wolai-block>div.marker[data-symbol]::before {
+    content: attr(data-symbol);
+}
+
+@media (prefers-color-scheme: dark) {
+    div.wolai-file-block>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M12.157 2.2a2.8 2.8 0 011.856.703l.148.142 4.843 4.965a2.8 2.8 0 01.789 1.756l.007.199V19a2.8 2.8 0 01-2.63 2.795L17 21.8H7a2.8 2.8 0 01-2.795-2.63L4.2 19V5a2.8 2.8 0 012.63-2.795L7 2.2h5.157zM11.2 3.8H7a1.2 1.2 0 00-1.194 1.077L5.8 5v14a1.2 1.2 0 001.077 1.194L7 20.2h10a1.2 1.2 0 001.194-1.077L18.2 19v-8.2H13a1.8 1.8 0 01-1.794-1.652L11.2 9V3.8zm1.816.362a1.2 1.2 0 00-.215-.175L12.8 9a.2.2 0 00.147.193L13 9.2h4.923l-.064-.073-4.843-4.965z' fill='none' style='fill: rgba(255, 255, 255, 0.7);' fill-rule='evenodd'%3E%3C/path%3E%3C/svg%3E");
+    }
+    div.wolai-sub-page.wolai-block>div.marker {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath d='M14.202 18c1.32 0 1.8-.138 2.282-.396a2.692 2.692 0 001.12-1.12l.046-.088c.229-.456.35-.954.35-2.194V5.798l-.002-.23c-.015-1.148-.151-1.599-.394-2.052a2.692 2.692 0 00-1.12-1.12l-.088-.046c-.456-.229-.954-.35-2.194-.35H5.798l-.23.002c-1.148.015-1.599.151-2.052.394a2.692 2.692 0 00-1.12 1.12l-.046.088c-.221.441-.342.922-.35 2.077v8.52c0 1.321.138 1.8.396 2.283.258.483.637.862 1.12 1.12l.088.046c.441.221.922.342 2.077.35h8.52zm.094-1.778H5.704l-.256-.003c-.655-.012-.873-.064-1.094-.182a.916.916 0 01-.39-.391c-.133-.247-.183-.491-.186-1.35V5.704l.003-.256c.012-.655.064-.873.182-1.094a.916.916 0 01.391-.39c.247-.133.491-.183 1.35-.186h8.498c.935 0 1.188.049 1.444.185a.916.916 0 01.39.391c.133.247.183.491.186 1.35v8.498c0 .935-.049 1.188-.185 1.444a.916.916 0 01-.391.39c-.247.133-.491.183-1.35.186zm-2.413-7.555V6.889H5.556v1.778h6.327zm2.505 4.44v-1.779H5.556v1.778h8.832z' fill='rgb(255, 255, 255, 0.7)' fill-rule='nonzero'%3E%3C/path%3E%3C/svg%3E");
+    }
+}
+
+
+/* 页面书签的样式 */
+
+div.wolai-block.wolai-bookmark {
+    position: relative;
+    border: 1px solid var(--wolai-bookmark-node-border-color);
+    margin: 4px 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    div.wolai-block.wolai-bookmark {
+        background-color: rgba(237, 233, 235, 0.09);
+    }
+}
+
+div.wolai-block.wolai-bookmark>a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: transparent;
+    user-select: none;
+}
+
+div.wolai-block.wolai-bookmark>div.info-box {
+    display: flex;
+}
+
+div.wolai-block.wolai-bookmark>div.info-box>div.text-pane {
+    padding: 16px;
+    flex: 0.7;
+}
+
+
+/* 网址书签的标题 */
+
+div.wolai-block.wolai-bookmark>div.info-box>div.text-pane div[data-title] {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    margin-bottom: 3px;
+    color: var(--wolai-bookmark-title-color);
+}
+
+div.wolai-block.wolai-bookmark>div.info-box>div.text-pane div[data-title]::before {
+    content: attr(data-title);
+}
+
+
+/* 网址书签的注释文本 */
+
+div.wolai-block.wolai-bookmark>div.info-box>div.text-pane div[data-desc] {
+    font-size: 12px;
+    line-height: 19px;
+    color: var(--wolai-bookmark-description-color);
+}
+
+div.wolai-block.wolai-bookmark>div.info-box>div.text-pane div[data-desc]::before {
+    content: attr(data-desc);
+}
+
+
+/* 网址书签的域名 */
+
+div.wolai-block.wolai-bookmark>div.info-box>div.text-pane div[data-hostname] {
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--wolai-bookmark-title-color);
+}
+
+div.wolai-block.wolai-bookmark>div.info-box>div.text-pane div[data-hostname]::before {
+    content: attr(data-hostname);
+}
+
+
+/* 设置嵌入块的左边虚线样式 */
+
+.wolai-embed {
+    position: relative;
+}
+
+.wolai-embed>div.embed-marker {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    left: -2px;
+    top: 0;
+    /* 嵌入块 暂时隐藏，不显示这个虚线 */
+    /* border-left: 1px dashed var(--wolai-bi-link-line-color); */
+}
+
+li.wolai-embed>div.embed-marker {
+    left: -3px;
+    top: -1px;
+    height: calc(100% + 2px);
+}
+
+
+/*最后的页脚的高度*/
+
+footer {
+    height: 80px;
+    padding: 20px 0 0 60px;
+}
+
+
+/* 设置行内样式 */
+
+span>a>span {
+    border-bottom: 1px solid var(--wolai-link-node-line-color);
+}
+
+span>a>span:hover {
+    border-bottom: 1px solid var(--wolai-link-node-hover-color);
+}
+
+code {
+    padding: 0.2em 0.4em;
+    font-family: var(--wolai-prescript-font);
+    font-size: 85%;
+    color: var(--wolai-inline-code-color);
+    background-color: var(--wolai-inline-code-background);
+    border-radius: 4px;
+}
+
+
+/* 设置双向链接的样式 */
+
+span>a.wolai-bi-link {
+    background-color: var(--wolai-bi-link-background);
+}
+
+span>a.wolai-bi-link:hover {
+    background-color: var(--wolai-bi-link-hover-color);
+}
+
+span>a.wolai-bi-link>span {
+    border-bottom: 1px dashed var(--wolai-bi-link-line-color);
+}
+
+
+/* 设置东亚/西文字符之间的间距 */
+
+span.spacing {
+    padding: 0 0.125em
+}
+
+
+/* 重载页面下划线的样式 */
+
+span u {
+    text-decoration: none;
+    border-bottom: 1px solid var(--wolai-color-default);
+}
+
+.gray u,
+u.gray {
+    border-bottom-color: var(--wolai-color-gray);
+}
+
+.brown u,
+u.brown {
+    border-bottom-color: var(--wolai-color-brown);
+}
+
+.orange u,
+u.orange {
+    border-bottom-color: var(--wolai-color-orange);
+}
+
+.yellow u,
+u.yellow {
+    border-bottom-color: var(--wolai-color-yellow);
+}
+
+.green u,
+u.green {
+    border-bottom-color: var(--wolai-color-green);
+}
+
+.blue u,
+u.blue {
+    border-bottom-color: var(--wolai-color-blue);
+}
+
+.purple u,
+u.purple {
+    border-bottom-color: var(--wolai-color-purple);
+}
+
+.pink u,
+u.pink {
+    border-bottom-color: var(--wolai-color-pink);
+}
+
+.red u,
+u.red {
+    border-bottom-color: var(--wolai-color-red);
+}
+
+
+/* 以后内容是全文当的颜色定义  */
+
+header,
+article {
+    color: var(--wolai-color-default);
+}
+
+
+/* 链接不能有默认的蓝色底色，且下划线需要隐藏 */
+
+a {
+    text-decoration: none;
+    color: var(--wolai-color-default);
+}
+
+article .gray {
+    color: var(--wolai-color-gray);
+}
+
+article .brown {
+    color: var(--wolai-color-brown);
+}
+
+article .orange {
+    color: var(--wolai-color-orange);
+}
+
+article .yellow {
+    color: var(--wolai-color-yellow);
+}
+
+article .green {
+    color: var(--wolai-color-green);
+}
+
+article .blue {
+    color: var(--wolai-color-blue);
+}
+
+article .purple {
+    color: var(--wolai-color-purple);
+}
+
+article .pink {
+    color: var(--wolai-color-pink);
+}
+
+article .red {
+    color: var(--wolai-color-red);
+}
+
+article .bg-cultured {
+    background-color: var(--wolai-color-cultured);
+}
+
+article .bg-lightgray {
+    background-color: var(--wolai-color-lightgray);
+}
+
+article .bg-apricot {
+    background-color: var(--wolai-color-apricot);
+}
+
+article .bg-vivid_tangerine {
+    background-color: var(--wolai-color-vivid_tangerine);
+}
+
+article .bg-blond {
+    background-color: var(--wolai-color-blond);
+}
+
+article .bg-aero_blue {
+    background-color: var(--wolai-color-aero_blue);
+}
+
+article .bg-uranian_blue {
+    background-color: var(--wolai-color-uranian_blue);
+}
+
+article .bg-lavender_blue {
+    background-color: var(--wolai-color-lavender_blue);
+}
+
+article .bg-pale_purple {
+    background-color: var(--wolai-color-pale_purple);
+}
+
+article .bg-pink_lavender {
+    background-color: var(--wolai-color-pink_lavender);
+}
+
+article .bg-lightpink {
+    background-color: var(--wolai-color-lightpink);
+}
