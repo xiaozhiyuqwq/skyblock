@@ -1,7 +1,7 @@
 # Skyblock-for-Server
 
-#### 分支album
-这是相册分支
+#### album
+这是相册
 
 #### 目录
 ##### gouqt.png
@@ -26,3 +26,14 @@
 文件：class-1.jpg 手稿+同学的笔记+同学的狼虎之词+不是萝莉
 ##### notice.jpg
 文件：notice.jpg 公告效果（实拍）
+##### bengzi.png
+文件：bengzi.png 初中毕业前 sunyi 画的智乃还有语文老师
+##### qt.png
+文件：qt.png 初中毕业前 qt 整的一些东西
+##### BuildingAuthorization.png
+文件：BuildingAuthorization.png 建筑文件商用授权 
+##### BuildingAuthorization-2.png
+文件：BuildingAuthorization-2.png 建筑文件商用授权 
+##### zijia.png
+文件：zijia.png 子佳细细的小手，戴着女孩子的发圈，真tm好看，阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴
+
