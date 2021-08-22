@@ -1,0 +1,67 @@
+#git使用方案与更新方法
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=0},tag=admin] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f项目更新及下载方式：使用 GIT 克隆远程仓库，并根据仓库 readme.md 文件选择合适版本。完整操作如下："}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=0},tag=admin] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f1.下载 GIT 软件(https://git-scm.com/downloads)。"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=0},tag=admin] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f2.安装 GIT 软件。"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=0},tag=admin] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f3.运行 GIT 软件 [Git Bash] 。"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=0},tag=admin] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f4.使用命令 cd 设置仓库本地位置([cd]命令语法：cd <路径> ，举例：设置目录至D盘xiaozhiyuqwq文件夹下： cd d:/xiaozhiyuqwq )。请注意，本地位置根目录下不可以有任何文件。"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=0},tag=admin] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f5.使用 clone 命令将远程仓库克隆至本地([clone]命令语法：git clone <远程仓库地址> ，举例：将仓库 https://github.com/xiaozhiyuqwq/Skyblock-for-Server.git 克隆至本地： git clone https://github.com/xiaozhiyuqwq/Skyblock-for-Server.git )。"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=0},tag=admin] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f6.根据原先设定的本地路径找到并打开仓库文件，阅读 readme.md 文件寻找并选择合适的版本。"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=0},tag=admin] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f项目所有可用的公开远程仓库地址："}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=0},tag=admin] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§a[地址源：GitHub] §bhttps://github.com/xiaozhiyuqwq/Skyblock-for-Server.git"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=0},tag=admin] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§a[地址源：Gitee] §bhttps://gitee.com/xiaozhiyuqwq/Skyblock-for-Server.git"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=0},tag=admin] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§a[地址源：GitLab] §bhttps://gitlab.com/xiaozhiyuqwq/Skyblock-for-Server.git"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=0},tag=admin] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§a[地址源：阿里云CODE] §bhttps://code.aliyun.com/xiaozhiyuqwq/skyblock.git"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=0},tag=admin] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§a[地址源：CODING][GitHub 镜像] §bhttps://e.coding.net/xiaozhiyuqwq/mirror-skyblock/github.git"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=0},tag=admin] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§a[地址源：CODING][Gitee 镜像] §bhttps://e.coding.net/xiaozhiyuqwq/mirror-skyblock/gitee.git"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=0},tag=admin] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f请注意：§c各仓库更新有延时！§f以 GitHub 与 Gitee 为主要仓库，为提升加载速度， 部分仓库设置了镜像仓库。§c镜像仓库§f将会在每日 §c12:00(UTC+8)§f 自动刷新。"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=0},tag=admin] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f提示：输入 [/tag @s add git] 即可显示该文本。"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=1},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fProject update and download mode: clone the remote warehouse using GIT and select the appropriate version according to the warehouse readme.md file. Complete operation is as follows:"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=1},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f1. Downloads the GIT Software (https://git-scm.com/downloads)."}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=1},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f2. Install the GIT software."}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=1},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f3. Runs the GIT software [Git Bash]."}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=1},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f4. Uses the command cd to set the warehouse local location ([cd] command syntax: cd <path>, for example: set the directory to the D disk xiaozhiyuqwq folder: cd d:/xiaozhiyuqwq). Note that no files can be in the root directory of the local location."}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=1},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f5. uses the clone command to clone the remote warehouse to the local ([clone] command syntax: git clone <remote warehouse address>, for example: Clone the warehouse https://github.com/xiaozhiyuqwq/Skyblock-for-Server.git to the local: git clone https://github.com/xiaozhiyuqwq/Skyblock-for-Server.git)."}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=1},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f6. Finds and opens the warehouse file based on the local path originally set, read the readme.md file to find and select the appropriate version."}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=1},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fAll open remote warehouse addresses available for the project:"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=1},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§a[Address Source : GitHub] §bhttps://github.com/xiaozhiyuqwq/Skyblock-for-Server.git"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=1},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§a[Address Source : Gitee] §bhttps://gitee.com/xiaozhiyuqwq/Skyblock-for-Server.git"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=1},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§a[Address Source : GitLab] §bhttps://gitlab.com/xiaozhiyuqwq/Skyblock-for-Server.git"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=1},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§a[Address Source : AlibabaCloudCode] §bhttps://code.aliyun.com/xiaozhiyuqwq/skyblock.git"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=1},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§a[Address Source : CODING][GitHub Mirror] §bhttps://e.coding.net/xiaozhiyuqwq/mirror-skyblock/github.git"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=1},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§a[Address Source : CODING][Gitee Mirror] §bhttps://e.coding.net/xiaozhiyuqwq/mirror-skyblock/gitee.git"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=1},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§a[Address Source : CODING][Gitee Mirror] §bhttps://e.coding.net/xiaozhiyuqwq/mirror-skyblock/gitee.git"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=1},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fPlease note: §cThere is a delay in updating each warehouse! §fWith GitHub and Gitee as the main warehouses, in order to improve the loading speed, some warehouses set up mirror warehouses. The §cimage warehouse§f will be automatically refreshed at §c12:00 (UTC+8)§f every day."}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=1},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fTip: Enter [/tag @s add git] to display the text."}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=2},tag=admin] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f項目更新及下載方式：使用 GIT 克隆遠程倉庫，並根據倉庫 readme.md 文件選擇合適版本。完整操作如下："}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=2},tag=admin] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f1.下載 GIT 軟件(https://git-scm.com/downloads)。"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=2},tag=admin] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f2.安裝 GIT 軟件。"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=2},tag=admin] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f3.運行 GIT 軟件 [Git Bash] 。"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=2},tag=admin] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f4.使用命令 cd 設置倉庫本地位置([cd]命令語法：cd <路徑> ，舉例：設置目錄至D盤xiaozhiyuqwq文件夾下： cd d:/xiaozhiyuqwq )。請注意，本地位置根目錄下不可以有任何檔案。"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=2},tag=admin] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f5.使用 clone 命令將遠程倉庫克隆至本地([clone]命令語法：git clone <遠程倉庫地址> ，舉例：將倉庫 https://github.com/xiaozhiyuqwq/Skyblock-for-Server.git 克隆至本地： git clone https://github.com/xiaozhiyuqwq/Skyblock-for-Server.git )。"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=2},tag=admin] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f6.根據原先設定的本地路徑找到並打開倉庫文件，閱讀 readme.md 文件尋找並選擇合適的版本。"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=2},tag=admin] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f項目所有可用的公開遠程倉庫地址："}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=2},tag=admin] {"rawtext":[{"text":"§l§e空島生存§f>>§r§a[地址源：GitHub] §bhttps://github.com/xiaozhiyuqwq/Skyblock-for-Server.git"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=2},tag=admin] {"rawtext":[{"text":"§l§e空島生存§f>>§r§a[地址源：Gitee] §bhttps://gitee.com/xiaozhiyuqwq/Skyblock-for-Server.git"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=2},tag=admin] {"rawtext":[{"text":"§l§e空島生存§f>>§r§a[地址源：GitLab] §bhttps://gitlab.com/xiaozhiyuqwq/Skyblock-for-Server.git"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=2},tag=admin] {"rawtext":[{"text":"§l§e空島生存§f>>§r§a[地址源：阿裡雲CODE] §bhttps://code.aliyun.com/xiaozhiyuqwq/skyblock.git"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=2},tag=admin] {"rawtext":[{"text":"§l§e空島生存§f>>§r§a[地址源：CODING][GitHub 鏡像] §bhttps://e.coding.net/xiaozhiyuqwq/mirror-skyblock/github.git"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=2},tag=admin] {"rawtext":[{"text":"§l§e空島生存§f>>§r§a[地址源：CODING][Gitee 鏡像] §bhttps://e.coding.net/xiaozhiyuqwq/mirror-skyblock/gitee.git"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=2},tag=admin] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f請注意：§c各倉庫更新有延時！§f以 GitHub 與 Gitee 為主要倉庫，為提升加載速度， 部分倉庫設置了鏡像倉庫。§c鏡像倉庫§f將會在每日 §c12:00(UTC+8)§f 自動刷新。"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=2},tag=admin] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f提示：輸入 [/tag @s add git] 即可显示該文本。"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=3},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fプロジェクトの更新とダウンロード: GIT を使用してリモートウェアハウスをクローンし、ウェアハウスの readme.md ファイルに基づいて適切なバージョンを選択します。 完全な操作は次のとおりです: "}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=3},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f1.GIT ソフトウェア（https://git-scm.com/downloads）をダウンロードします。"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=3},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f2.GIT ソフトウェアをインストールします。 "}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=3},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f3.GIT ソフトウェア[Git Bash]を実行します。 "}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=3},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f4.コマンド cd を使用してウェアハウスのローカル位置を設定します（[cd]コマンド構文:cd<パス>。例:Dディスクxiaozhiyuqwqフォルダにディレクトリを設定:cd d:/xiaozhiyuqwq）。ローカルロケーションのルートディレクトリの下には、いかなるファイルも存在しないことに注意してください。 "}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=3},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f5.clone コマンドを使用して、リモートウェアハウスをローカルにクローンします（[clone]コマンド構文:git clone<リモートウェアハウスアドレス>。例:ウェアハウスhttps://github.com/xiaozhiyuqwq/Skyblock-for-Server.gitをローカルにクローンする:git clone https://github.com/xiaozhiyuqwq/Skyblock-for-Server.git）。 "}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=3},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f6.元に設定したローカルパスに基づいて倉庫ファイルを見つけて開き、readme.md ファイルを読んで適切なバージョンを探して選択します。 "}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=3},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fプロジェクトで使用可能なすべての公開リモートウェアハウスアドレス: "}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=3},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§a[アドレスソース：GitHub] §bhttps://github.com/xiaozhiyuqwq/Skyblock-for-Server.git "}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=3},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§a[アドレスソース：Gitee] §bhttps://gitee.com/xiaozhiyuqwq/Skyblock-for-Server.git "}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=3},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§a[アドレスソース：GitLab] §bhttps://gitlab.com/xiaozhiyuqwq/Skyblock-for-Server.git "}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=3},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§a[アドレスソース：AlibabaCloudCode] §bhttps://code.aliyun.com/xiaozhiyuqwq/skyblock.git "}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=3},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§a[アドレスソース：CODING][GitHub ミラーリング] §bhttps://e.coding.net/xiaozhiyuqwq/mirror-skyblock/github.git "}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=3},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§a[アドレスソース：CODING][Gitee ミラーリング] §bhttps://e.coding.net/xiaozhiyuqwq/mirror-skyblock/gitee.git "}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=3},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fご注意ください:§c各倉庫の更新には遅延があります！ §f GitHubとGiteeを主倉庫とし，ロード速度を向上させるために一部の倉庫にミラー倉庫を設置した。 §cミラーウェアハウス§f毎日§c12:00（UTC+8）§f自動更新されます。"}]}
+execute @a[tag=admin,tag=git] ~ ~ ~ tellraw @s[scores={language=3},tag=admin] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§fヒント:[/tag@s add git]と入力すると、テキストが表示されます。 "}]}
+execute @a[tag=git] ~ ~ ~ tag @s remove git
