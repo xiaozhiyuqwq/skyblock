@@ -571,7 +571,6 @@ execute @a[tag=islandruns,tag=mainworld,scores={islandruns=1..100}] ~ ~ ~ scoreb
 execute @a[tag=islandruns,tag=mainworld] ~ ~ ~ scoreboard players set @s actionbar 30
 execute @a[tag=islandruns,scores={islandruns=300..},tag=mainworld] ~ ~ ~ tp @s 0 151 0
 execute @a[tag=!islandruns,tag=mainworld] ~ ~ ~ scoreboard players reset @s islandruns
-execute @a[tag=islandruns,tag=mainworld] ~ ~ ~ gamemode 2 @s[m=0]
 execute @a[tag=islandruns] ~ ~ ~ tag @s remove islandruns
 execute @a[tag=nosur] ~ ~ ~ tag @s remove nosur
 #注册，用户注册（uid=1..40000）temp=220，游客注册（uid=100001..）temp=230
