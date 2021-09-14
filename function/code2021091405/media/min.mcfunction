@@ -10,6 +10,7 @@ scoreboard players set @a[scores={rewardsupply=101..200}] rewardsupply 1
 scoreboard players add @a[scores={level=!0}] rewardsupply 1
 scoreboard players random @a[scores={rewardsupply=10..}] rewardsupply 101 164
 scoreboard players set @a[scores={dailyplaytime=121..}] rewardsupply 0
+execute @a[tag=developer,scores={dailyplaytime=2}] ~ ~ ~ function media/devtool/reward
 #reward
 scoreboard players add @a reward 1
 scoreboard objectives remove rewardtemp
