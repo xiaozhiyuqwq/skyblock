@@ -51,7 +51,7 @@ scoreboard players add @a[scores={login=0..3}] language 0
 scoreboard players add @a[scores={login=0..3}] playtime 0
 scoreboard players add @a[scores={login=0..3}] task 0
 execute @a[scores={login=0..3,task=0,uid=!0,level=!0}] ~ ~ ~ scoreboard players set @s task 1
-scoreboard players set @a[scores={login=0,notice=0..70}] notice 86
+scoreboard players set @a[scores={login=0,notice=0..65}] notice 70
 tag @a[scores={login=0}] remove about2
 scoreboard players reset @a[scores={login=0,temp=50}] temp
 scoreboard players reset @a[scores={login=0}] about
