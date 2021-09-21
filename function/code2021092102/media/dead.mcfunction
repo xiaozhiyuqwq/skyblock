@@ -21,8 +21,8 @@ execute @a[scores={temp=444}] ~ ~ ~ xp -1l @s[scores={temp=444,deadcoin=!0}]
 execute @a[scores={temp=444}] ~ ~ ~ effect @s[scores={temp=444}] resistance 60 2 true
 execute @a[scores={temp=444}] ~ ~ ~ effect @s[scores={temp=444}] regeneration 30 2 true
 execute @a[scores={temp=444}] ~ ~ ~ effect @s[scores={temp=444}] health_boost 90 2 true
-execute @a[scores={temp=444}] ~ ~ ~ scoreboard players add @s[scores={temp=444,deadproject=!0..1440},tag=!developer] deadproject 1335
-execute @a[scores={temp=444}] ~ ~ ~ scoreboard players add @s[scores={temp=444,deadproject=!0..1440},tag=developer] deadproject 1330
+execute @a[scores={temp=444}] ~ ~ ~ scoreboard players add @s[scores={temp=444,deadproject=!0..1440},tag=!developer] deadproject 1330
+execute @a[scores={temp=444}] ~ ~ ~ scoreboard players add @s[scores={temp=444,deadproject=!0..1440},tag=developer] deadproject 1325
 execute @a[scores={temp=444}] ~ ~ ~ scoreboard players reset @s[scores={temp=444}] deadcoin
 execute @a[scores={temp=444}] ~ ~ ~ give @s[scores={temp=444},tag=developer] apple 1 0
 execute @a[scores={temp=444}] ~ ~ ~ tp @s[scores={temp=444}] 0 151 0
