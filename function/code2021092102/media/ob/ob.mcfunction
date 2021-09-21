@@ -1238,9 +1238,9 @@ execute @e[type=leash_knot,tag=ob,scores={version=1},tag=obnew,tag=obnewerror] ~
 execute @e[type=leash_knot,tag=ob,scores={version=1,oblevel=101..300},tag=obnew,tag=obnewerror] ~ ~ ~ detect ~ 100 ~ air 0 setblock ~ 100 ~ stone 0
 execute @e[type=leash_knot,tag=ob,scores={version=1,oblevel=0..100},tag=obnew,tag=!obnewerror] ~ ~ ~ scoreboard players add @s obegglevel 1
 execute @e[type=leash_knot,tag=ob,scores={version=1,obegglevel=6},tag=obnew,tag=!obnewerror] ~ ~ ~ scoreboard players random @s obegglevel 101 200
-execute @e[type=leash_knot,tag=ob,scores={version=1,obegglevel=101..130},tag=obnew,tag=!obnewerror] ~ ~ ~ scoreboard players random @s oblevel 101 105
-execute @e[type=leash_knot,tag=ob,scores={version=1,obegglevel=131..165},tag=obnew,tag=!obnewerror] ~ ~ ~ scoreboard players random @s oblevel 201 203
-execute @e[type=leash_knot,tag=ob,scores={version=1,obegglevel=166..200},tag=obnew,tag=!obnewerror] ~ ~ ~ scoreboard players random @s obegglevel 2 5
+execute @e[type=leash_knot,tag=ob,scores={version=1,obegglevel=101..115},tag=obnew,tag=!obnewerror] ~ ~ ~ scoreboard players random @s oblevel 101 105
+execute @e[type=leash_knot,tag=ob,scores={version=1,obegglevel=116..130},tag=obnew,tag=!obnewerror] ~ ~ ~ scoreboard players random @s oblevel 201 203
+execute @e[type=leash_knot,tag=ob,scores={version=1,obegglevel=131..200},tag=obnew,tag=!obnewerror] ~ ~ ~ scoreboard players random @s obegglevel 1 4
 execute @e[type=leash_knot,tag=ob,scores={version=1,obegglevel=101..165},tag=obnew,tag=!obnewerror] ~ ~ ~ scoreboard players set @s obegglevel 0
 execute @e[type=leash_knot,scores={version=1,oblevel=1},tag=obnew,tag=!obnewerror] ~ ~ ~ tellraw @a[x=~,y=101,z=~,scores={language=0},r=200] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f单方块生成列表已刷新！当前阶段 [§3平原§f] 。"}]}
 execute @e[type=leash_knot,scores={version=1,oblevel=2},tag=obnew,tag=!obnewerror] ~ ~ ~ tellraw @a[x=~,y=101,z=~,scores={language=0},r=200] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f单方块生成列表已刷新！当前阶段 [§3树林§f] 。"}]}
