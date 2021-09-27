@@ -191,6 +191,7 @@ execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scor
 execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..110},c=1] ~ ~ ~ fill ~-1 100 ~-1 ~4 100 ~4 grass 0
 execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..110},c=1] ~ ~ ~ fill ~2 98 ~2 ~4 100 ~4 air 0
 execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..110},c=1] ~ ~ ~ fill ~1 104 ~-2 ~5 105 ~2 leaves 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..110},c=1] ~ ~ ~ fill ~2 106 ~-1 ~4 107 ~1 leaves 0
 execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..110},c=1] ~ ~ ~ setblock ~5 105 ~2 air
 execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..110},c=1] ~ ~ ~ fill ~1 104 ~-2 ~1 105 ~-2 air
 execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..110},c=1] ~ ~ ~ fill ~1 104 ~-2 ~1 105 ~-2 air
