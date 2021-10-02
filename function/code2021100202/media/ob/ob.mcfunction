@@ -10,7 +10,8 @@ execute @e[type=leash_knot,tag=obset,scores={obdaily=10001..},tag=obnotset] ~ 10
 execute @e[type=leash_knot,tag=obset,scores={obdaily=10001..},tag=obnotset] ~ ~ ~ tag @s remove obset
 execute @e[type=leash_knot,scores={obdaily=10001..},tag=obnotset] ~ ~ ~ tag @s remove obnotset
 execute @e[type=leash_knot,tag=ob,scores={version=1}] ~ ~ ~ scoreboard players add @s oblevel 0
-execute @e[type=leash_knot,tag=obset,scores={obnumber=!1,oblevel=0..100}] ~ ~ ~ scoreboard players random @s obblocktemp 1 1033
+execute @e[type=leash_knot,tag=obset,scores={obnumber=!1,oblevel=0..100,obnumber=0..30}] ~ ~ ~ scoreboard players random @s obblocktemp 1 1000
+execute @e[type=leash_knot,tag=obset,scores={obnumber=!1,oblevel=0..100,obnumber=!0..30}] ~ ~ ~ scoreboard players random @s obblocktemp 1 1033
 execute @e[type=leash_knot,tag=obset,scores={obnumber=!1,oblevel=0..100,obblocktemp=1001..1033}] ~ ~ ~ scoreboard players random @s obblocktemp 2001 3000
 execute @e[type=leash_knot,tag=obset,scores={obnumber=!1,oblevel=101..200}] ~ ~ ~ scoreboard players random @s obblocktemp 1 16
 execute @e[type=leash_knot,tag=obset,scores={obnumber=!1,oblevel=201..300}] ~ ~ ~ scoreboard players random @s obblocktemp 1 1000
