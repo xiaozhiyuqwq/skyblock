@@ -10,8 +10,8 @@ execute @e[type=leash_knot,tag=obset,scores={obdaily=10001..},tag=obnotset] ~ 10
 execute @e[type=leash_knot,tag=obset,scores={obdaily=10001..},tag=obnotset] ~ ~ ~ tag @s remove obset
 execute @e[type=leash_knot,scores={obdaily=10001..},tag=obnotset] ~ ~ ~ tag @s remove obnotset
 execute @e[type=leash_knot,tag=ob,scores={version=1}] ~ ~ ~ scoreboard players add @s oblevel 0
-execute @e[type=leash_knot,tag=obset,scores={obnumber=!1,oblevel=0..100,obnumber=0..30}] ~ ~ ~ scoreboard players random @s obblocktemp 1 1000
-execute @e[type=leash_knot,tag=obset,scores={obnumber=!1,oblevel=0..100,obnumber=!0..30}] ~ ~ ~ scoreboard players random @s obblocktemp 1 1033
+execute @e[type=leash_knot,tag=obset,scores={obnumber=!1,oblevel=0..100,obnumber=0..89}] ~ ~ ~ scoreboard players random @s obblocktemp 1 1000
+execute @e[type=leash_knot,tag=obset,scores={obnumber=!1,oblevel=0..100,obnumber=!0..89}] ~ ~ ~ scoreboard players random @s obblocktemp 1 1033
 execute @e[type=leash_knot,tag=obset,scores={obnumber=!1,oblevel=0..100,obblocktemp=1001..1033}] ~ ~ ~ scoreboard players random @s obblocktemp 2001 3000
 execute @e[type=leash_knot,tag=obset,scores={obnumber=!1,oblevel=101..200}] ~ ~ ~ scoreboard players random @s obblocktemp 1 16
 execute @e[type=leash_knot,tag=obset,scores={obnumber=!1,oblevel=201..300}] ~ ~ ~ scoreboard players random @s obblocktemp 1 1000
@@ -25,6 +25,8 @@ execute @e[type=leash_knot,tag=obset] ~ ~ ~ scoreboard players add @s obdaily 1
 execute @e[type=leash_knot,tag=obset,scores={version=1}] ~ ~ ~ scoreboard players remove @s obleveltarget 1
 execute @e[type=leash_knot,tag=obset] ~ ~ ~ detect ~ 100 ~ air 0 scoreboard players add @p[x=~,y=101,z=~,r=5,c=1] obnumber 1
 execute @e[type=leash_knot,tag=ob,scores={version=1}] ~ ~ ~ scoreboard players set @s[scores={obleveltarget=!0..1200}] obleveltarget 100
+#第二阶段新手教程结束不刷生物
+execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obnumber=0..281}] ~ ~ ~ scoreboard players reset @s obtypetemp
 #实体方块保护（即重力方块）
 execute @e[type=leash_knot,tag=obset] ~ ~ ~ detect ~ 99 ~ structure_void 0 setblock ~ 99 ~ air
 execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obblocktemp=601..650,obnumber=!0..30,obnumber=!281}] ~ ~ ~ detect ~ 99 ~ air 0 tag @s add obproject
@@ -65,12 +67,14 @@ execute @e[type=leash_knot,tag=obset,scores={obnumber=6501..6510}] ~ ~ ~ detect 
 execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obnumber=1}] ~ ~ ~ detect ~ 100 ~ air 0 setblock ~ 100 ~ stained_glass 1
 execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obnumber=2..9}] ~ ~ ~ detect ~ 100 ~ air 0 setblock ~ 100 ~ dirt 0
 execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obnumber=10..12}] ~ ~ ~ detect ~ 100 ~ air 0 setblock ~ 100 ~ grass 0
-execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obnumber=13..18}] ~ ~ ~ detect ~ 100 ~ air 0 setblock ~ 100 ~ log 0
-execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obnumber=19..28}] ~ ~ ~ detect ~ 100 ~ air 0 setblock ~ 100 ~ stone 0
-execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obnumber=29}] ~ ~ ~ detect ~ 100 ~ air 0 setblock ~ 100 ~ chest
-execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obnumber=29}] ~ ~ ~ replaceitem block ~ 100 ~ slot.container 13 emerald 1 0
+execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obnumber=13..19}] ~ ~ ~ detect ~ 100 ~ air 0 setblock ~ 100 ~ log 0
+execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obnumber=20..29}] ~ ~ ~ detect ~ 100 ~ air 0 setblock ~ 100 ~ stone 0
 execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obnumber=30}] ~ ~ ~ detect ~ 100 ~ air 0 setblock ~ 100 ~ stained_glass 3
 #方块
+#奖励箱教程
+execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obnumber=90}] ~ ~ ~ detect ~ 100 ~ air 0 setblock ~ 100 ~ chest
+execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obnumber=90}] ~ ~ ~ replaceitem block ~ 100 ~ slot.container 13 emerald 1 0
+#正常刷新
 execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obblocktemp=1..50,obnumber=!0..30,obnumber=!281}] ~ ~ ~ detect ~ 100 ~ air 0 setblock ~ 100 ~ grass 0
 execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obblocktemp=51..100,obnumber=!0..30,obnumber=!281}] ~ ~ ~ detect ~ 100 ~ air 0 setblock ~ 100 ~ dirt 0
 execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obblocktemp=101..200,obnumber=!0..30,obnumber=!281}] ~ ~ ~ detect ~ 100 ~ air 0 setblock ~ 100 ~ stone 0
@@ -92,11 +96,12 @@ execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obblocktemp=931..950,obnu
 execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obblocktemp=951..1000,obnumber=!0..30,obnumber=!281}] ~ ~ ~ detect ~ 100 ~ air 0 setblock ~ 100 ~ gravel 0
 execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obnumber=281}] ~ ~ ~ detect ~ 100 ~ air 0 setblock ~ 100 ~ stained_glass 4
 #生物
-execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obnumber=35}] ~ ~ ~ scoreboard players set @s obtypetemp 1751
-execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obtypetemp=1001..1250,obnumber=!0..30,obnumber=!281}] ~ ~ ~ summon chicken ~ 102 ~
-execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obtypetemp=1251..1500,obnumber=!0..30,obnumber=!281}] ~ ~ ~ summon cow ~ 102 ~
-execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obtypetemp=1501..1750,obnumber=!0..30,obnumber=!281}] ~ ~ ~ summon sheep ~ 102 ~
-execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obtypetemp=1751..2000,obnumber=!0..30,obnumber=!281}] ~ ~ ~ summon pig ~ 102 ~
+execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obnumber=0..149}] ~ ~ ~ scoreboard players reset @s obtypetemp
+execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obnumber=150}] ~ ~ ~ scoreboard players set @s obtypetemp 1751
+execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obtypetemp=1001..1250,obnumber=!0..149}] ~ ~ ~ summon chicken ~ 102 ~
+execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obtypetemp=1251..1500,obnumber=!0..149}] ~ ~ ~ summon cow ~ 102 ~
+execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obtypetemp=1501..1750,obnumber=!0..149}] ~ ~ ~ summon sheep ~ 102 ~
+execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obtypetemp=1751..2000,obnumber=!0..149}] ~ ~ ~ summon pig ~ 102 ~
 #箱子
 execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obblocktemp=2001..2100,obnumber=!0..30,obnumber=!281}] ~ ~ ~ replaceitem block ~ 100 ~ slot.container 13 log 6 0
 execute @e[type=leash_knot,tag=obset,scores={oblevel=0,obblocktemp=2101..2200,obnumber=!0..30,obnumber=!281}] ~ ~ ~ replaceitem block ~ 100 ~ slot.container 13 log 6 2
@@ -2298,8 +2303,13 @@ execute @e[type=leash_knot,tag=ob,scores={version=1},tag=obchange] ~ ~ ~ tag @s 
 #教程
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=2..5},tag=obset] ~ 101 ~ titleraw @a[r=50] title {"rawtext":[{"text":"§l"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=10},tag=obset] ~ 101 ~ titleraw @a[r=50] title {"rawtext":[{"text":"§l"}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=29},tag=obset] ~ 101 ~ titleraw @a[r=50] title {"rawtext":[{"text":"§l"}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=32..36},tag=obset] ~ 101 ~ titleraw @a[r=50] title {"rawtext":[{"text":"§l"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=32..34},tag=obset] ~ 101 ~ titleraw @a[r=50] title {"rawtext":[{"text":"§l"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=50..53},tag=obset] ~ 101 ~ titleraw @a[r=50] title {"rawtext":[{"text":"§l"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=90..92},tag=obset] ~ 101 ~ titleraw @a[r=50] title {"rawtext":[{"text":"§l"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=150..151},tag=obset] ~ 101 ~ titleraw @a[r=50] title {"rawtext":[{"text":"§l"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=210..213,language=!0},tag=obset] ~ 101 ~ titleraw @a[r=50] title {"rawtext":[{"text":"§l"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=183..274,language=0},tag=obset] ~ 101 ~ titleraw @a[r=50] title {"rawtext":[{"text":"§l"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=274,language=0},tag=obset] ~ 101 ~ titleraw @a[r=50] title {"rawtext":[{"text":"§l"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=275..278},tag=obset] ~ 101 ~ titleraw @a[r=50] title {"rawtext":[{"text":"§l"}]}
 #中文
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=2},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f嘿！您好！欢迎游玩 §e单方块空岛 §f。"}]}
@@ -2307,28 +2317,122 @@ execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=3},tag=obset] ~ 101
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=4},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f尝试破坏它！"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=5},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f嗯，是的，这个方块会无限刷新。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=10},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f发现了吗？这个方块会刷新不同的种类呐~"}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=29},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f这是 §d奖励箱 §f可以获得很多物品哦~"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=32},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f开始刷新了哦。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=33},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f刷新的方块种类会根据阶段判断。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=34},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f不同的阶段会略有不同。"}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=35},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f看，刷新 §a生物§f 了！"}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=36},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f每次挖掘都有概率刷新生物。"}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=275},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f您即将完成了教程啦。"}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=276},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f下面即将正式踏上冒险！"}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=277},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f祝游玩愉快。"}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=278},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f来自：§b最可爱的小祉语"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=50},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f您还在担心无法收集物品？"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=51},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f每次挖掘后，"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=52},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f系统会将掉落的物品，"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=53},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f自动收集至刷新点上方。"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=90},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f这是 §d奖励箱 §f可以获得很多物品哦~"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=91},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f奖励箱里面的物品也是会刷新的哦。"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=92},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f每次挖掘都有概率刷新奖励箱。"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=150},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f看，刷新 §a生物§f 了！"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=151},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f每次挖掘都有概率刷新生物。"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=183},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f如果您看到这行字幕，"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=184},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f则表示您使用的是简体中文。"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=185},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f在这里，我想分享一首我最喜欢的音乐......"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=186},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§l§b起风了"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=187},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f作词 : 米果   作曲 : 高桥优"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=188},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f......"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=189},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f这一路上走走停停"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=190},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f顺着少年漂流的痕迹"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=191},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f迈出车站的前一刻"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=192},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f竟有些犹豫"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=193},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f不禁笑这近乡情怯"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=194},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f仍无可避免"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=195},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f而长野的天"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=196},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f依旧那么暖"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=197},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f风吹起了从前"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=198},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f从前初识这世间"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=199},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f万般流连"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=200},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f看着天边似在眼前"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=201},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f也甘愿赴汤蹈火去走它一遍"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=202},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f如今走过这世间"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=203},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f万般流连"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=204},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f翻过岁月不同侧脸"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=205},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f措不及防闯入你的笑颜"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=206},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f我曾难自拔于世界之大"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=207},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f也沉溺于其中梦话"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=208},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f不得真假"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=209},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f不做挣扎"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=210},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f不惧笑话"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=211},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f我曾将青春翻涌成她"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=212},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f也曾指尖弹出盛夏"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=213},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f心之所动 且就随缘去吧"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=214},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f逆着光行走 任风吹雨打"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=215},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f短短的路走走停停"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=216},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f也有了几分的距离"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=217},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f不知抚摸的是故事"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=218},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f还是段心情"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=219},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f也许期待的不过是"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=220},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f与时间为敌"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=221},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f再次看到你"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=222},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f微凉晨光里"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=223},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f笑得很甜蜜"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=224},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f从前初识这世间"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=225},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f万般流连"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=226},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f看着天边似在眼前"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=227},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f也甘愿赴汤蹈火去走它一遍"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=228},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f如今走过这世间"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=229},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f万般流连"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=230},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f翻过岁月不同侧脸"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=231},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f措不及防闯入你的笑颜"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=232},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f我曾难自拔于世界之大"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=233},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f也沉溺于其中梦话"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=234},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f不得真假"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=235},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f不做挣扎"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=236},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f不惧笑话"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=237},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f我曾将青春翻涌成她"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=238},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f也曾指尖弹出盛夏"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=239},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f心之所动 且就随缘去吧"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=240},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f晚风吹起你鬓间的白发"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=241},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f抚平回忆留下的疤"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=242},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f你的眼中"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=243},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f明暗交杂"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=244},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f一笑生花"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=245},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f暮色遮住你蹒跚的步伐"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=246},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f走进床头藏起的画"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=247},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f画中的你"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=248},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f低着头说话"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=249},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f我仍感叹于世界之大"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=250},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f也沉醉于儿时情话"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=251},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f不剩真假"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=252},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f不做挣扎"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=253},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f无谓笑话"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=254},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f我终将青春还给了她"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=255},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f连同指尖弹出的盛夏"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=256},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f心之所动 就随风去了"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=257},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f以爱之名 你还愿意吗"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=258},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§b以爱之名 你还愿意吗"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=259},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§d以爱之名 你还愿意吗"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=274},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f您即将完成了教程啦。"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=275},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f下面即将正式踏上冒险！"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=276},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f祝游玩愉快。"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=277},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f来自：§b最可爱的小祉语"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=278},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§6§n小祉语今天也要萌萌哒awa~"}]}
 #英文
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=2},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fHello! Welcome to §eSkyBlock(OneBlock) §f."}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=3},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fSee the box below you?"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=4},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fTry to destroy it!"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=5},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fWell, yes, this box will refresh indefinitely."}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=10},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fThis box will refresh different types~"}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=29},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fThis is a §dReward Box§f . You can get a lot of items~"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=32},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fIt's starting to refresh."}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=33},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fThe type of refreshed blocks will be determined according to the stage."}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=34},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fDifferent stages will be slightly different."}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=35},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fLook, refresh a §apig §f!"}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=36},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fEach excavation has a probability to refresh the creature."}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=50},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fAre you still worried about not being able to collect items?"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=51},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fAfter each excavation,"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=52},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fThe system will drop items,"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=53},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fAutomatically collect above the refresh point."}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=90},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fThis is a §dReward Box§f . You can get a lot of items~"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=91},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fThe items in the reward box will also be refreshed."}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=92},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fEach excavation has a probability to refresh the reward box."}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=150},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fLook, refresh a §apig §f!"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=151},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fEach excavation has a probability to refresh the creature."}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=210},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fBy the way, if you are interested in this project,"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=211},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fYou can access GitHub and gitee,"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=212},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fSearch and follow §axiaozhiyuqwq §f!"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=213},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fYou can also visit the official website to view the project."}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=275},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fYou are about to finish the tutorial."}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=276},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fNow we will officially embark on an adventure!"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=277},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fHave a good time."}]}
@@ -2339,12 +2443,18 @@ execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=3},tag=obset] ~ 101
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=4},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f嘗試破壞它！"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=5},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f嗯，是的，這個方塊會無限重繪。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=10},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f發現了嗎？這個方塊會重繪不同的種類呐~"}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=29},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f這是 §d獎勵箱§f 可以獲得很多物品哦~"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=32},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f開始重繪了哦。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=33},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f重繪的方塊種類會根據階段判斷。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=34},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f不同的階段會略有不同。"}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=35},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f看，重繪 §a生物§f 了！"}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=36},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f每次挖掘都有概率重繪生物。"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=50},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f您還在擔心無法收集物品？"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=51},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f每次挖掘後，"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=52},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f系統會將掉落的物品，"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=53},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f自動收集至重繪點上方。"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=90},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f這是 §d獎勵箱§f 可以獲得很多物品哦~"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=91},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f獎勵箱裡面的物品也是會重繪的哦。"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=92},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f每次挖掘都有概率重繪獎勵箱。"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=150},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f看，重繪 §a生物§f 了！"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=151},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f每次挖掘都有概率重繪生物。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=275},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f您即將完成了教程啦。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=276},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f下麵即將正式踏上冒險！"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=277},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f祝遊玩愉快。"}]}
@@ -2355,12 +2465,18 @@ execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=3},tag=obset] ~ 101
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=4},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§fそれを破壊しよう！"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=5},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§fはい、このブロックは無限に更新されます。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=10},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§f見つけましたか？このブロックは違う種類を更新しますね。"}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=29},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§fこれは §d奨励箱§f です。たくさんのものがもらえますよ。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=32},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§f更新し始めましたよ。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=33},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§f更新されたブロックの種類は段階によって判断されます。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=34},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§f段階によって少しずつ違います。"}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=35},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§a生き物 §fを更新しました。"}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=36},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§f発掘するたびに生物を更新する確率があります。"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=50},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§f物を集めることができないと心配していますか？"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=51},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§f発掘する度に、"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=52},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§fシステムが落下するもの、"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=53},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§fリフレッシュポイントの上に自動的に収集されます。"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=90},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§fこれは §d奨励箱§f です。たくさんのものがもらえますよ。"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=91},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§f奨励箱の中のものも更新しますよ。"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=92},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§f発掘するたびに奨励箱を更新する確率があります。"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=150},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§a生き物 §fを更新しました。"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=151},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§f発掘するたびに生物を更新する確率があります。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=275},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§fもうすぐ教程が完成します。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=276},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§fこれから本格的に冒険に出発します！"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=277},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§f楽しい旅をしてください。"}]}
