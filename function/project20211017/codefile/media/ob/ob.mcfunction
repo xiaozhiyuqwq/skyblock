@@ -2307,10 +2307,11 @@ execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=32..34},tag=obset] 
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=50..53},tag=obset] ~ 101 ~ titleraw @a[r=50] title {"rawtext":[{"text":"§l"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=90..92},tag=obset] ~ 101 ~ titleraw @a[r=50] title {"rawtext":[{"text":"§l"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=150..151},tag=obset] ~ 101 ~ titleraw @a[r=50] title {"rawtext":[{"text":"§l"}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=210..213,language=!0},tag=obset] ~ 101 ~ titleraw @a[r=50] title {"rawtext":[{"text":"§l"}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=183..274,language=0},tag=obset] ~ 101 ~ titleraw @a[r=50] title {"rawtext":[{"text":"§l"}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=274,language=0},tag=obset] ~ 101 ~ titleraw @a[r=50] title {"rawtext":[{"text":"§l"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=210..213},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=!0}] title {"rawtext":[{"text":"§l"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=183..274},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] title {"rawtext":[{"text":"§l"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=274},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0} title {"rawtext":[{"text":"§l"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=275..278},tag=obset] ~ 101 ~ titleraw @a[r=50] title {"rawtext":[{"text":"§l"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=330..333},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] title {"rawtext":[{"text":"§l"}]}
 #中文
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=2},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f嘿！您好！欢迎游玩 §e单方块空岛 §f。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=3},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f看到您下方的方块了嘛？"}]}
@@ -2410,7 +2411,11 @@ execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=274},tag=obset] ~ 1
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=275},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f下面即将正式踏上冒险！"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=276},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f祝游玩愉快。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=277},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f来自：§b最可爱的小祉语"}]}
-execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=278},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§6§n小祉语今天也要萌萌哒awa~"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=278},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§6小祉语今天也要萌萌哒awa~"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=330},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f同时，如果您对这个项目感兴趣，"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=331},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f可以访问 Github 或 Gitee ，"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=332},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f搜索并关注 §axiaozhiyuqwq §f！"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=333},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=0}] subtitle {"rawtext":[{"text":"§f当然您也可以访问项目官网查看最新消息！"}]}
 #英文
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=2},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fHello! Welcome to §eSkyBlock(OneBlock) §f."}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=3},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=1}] subtitle {"rawtext":[{"text":"§fSee the box below you?"}]}
@@ -2455,6 +2460,10 @@ execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=91},tag=obset] ~ 10
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=92},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f每次挖掘都有概率重繪獎勵箱。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=150},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f看，重繪 §a生物§f 了！"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=151},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f每次挖掘都有概率重繪生物。"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=210},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f同時，如果您對這個項目感興趣，"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=211},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f可以訪問 Github 或 Gitee ，"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=212},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f蒐索並關注 §axiaozhiyuqwq §f！"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=213},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f當然您也可以訪問項目官網查看最新消息！"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=275},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f您即將完成了教程啦。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=276},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f下麵即將正式踏上冒險！"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=277},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=2}] subtitle {"rawtext":[{"text":"§f祝遊玩愉快。"}]}
@@ -2477,6 +2486,10 @@ execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=91},tag=obset] ~ 10
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=92},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§f発掘するたびに奨励箱を更新する確率があります。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=150},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§a生き物 §fを更新しました。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=151},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§f発掘するたびに生物を更新する確率があります。"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=210},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§fまた、このプロジェクトに興味があれば、"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=211},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§fGithubまたはGiteeにアクセスできます。"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=212},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§axiaozhiyuqwq §fを検索して注目してください。"}]}
+execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=213},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§fもちろんあなたもプロジェクト公式サイトに訪問して最新のニュースを見ることができます。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=275},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§fもうすぐ教程が完成します。"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=276},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§fこれから本格的に冒険に出発します！"}]}
 execute @e[type=leash_knot,tag=ob,scores={version=1,obnumber=277},tag=obset] ~ 101 ~ titleraw @a[r=50,scores={language=3}] subtitle {"rawtext":[{"text":"§f楽しい旅をしてください。"}]}
