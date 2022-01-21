@@ -69,6 +69,11 @@ execute @a[scores={temp=231}] ~ ~ ~ tag @s add receiveitem
 execute @a[tag=receiveitem] ~ ~ ~ tag @s[tag=receiveitem] remove guild
 execute @a[tag=receiveitem] ~ ~ ~ tag @s[tag=receiveitem] remove guildmaster
 execute @a[tag=receiveitem] ~ ~ ~ clear @s
+execute @a[tag=receiveitem] ~ ~ ~ tag @s remove ybis1
+execute @a[tag=receiveitem] ~ ~ ~ tag @s remove ybis2
+execute @a[tag=receiveitem] ~ ~ ~ tag @s remove ybis3
+execute @a[tag=receiveitem] ~ ~ ~ tag @s remove ybis4
+execute @a[tag=receiveitem] ~ ~ ~ tag @s remove ybis5
 execute @a[tag=receiveitem] ~ ~ ~ effect @s clear
 execute @a[tag=receiveitem] ~ ~ ~ effect @s slowness 60 255 true
 execute @a[tag=receiveitem] ~ ~ ~ effect @s blindness 60 255 true
@@ -195,10 +200,9 @@ execute @a[scores={temp=225,uid=!1..40000}] ~ ~ ~ clear @s
 execute @a[scores={temp=223,receive=1..}] ~ ~ ~ scoreboard players add @s receive 1
 execute @a[scores={temp=223,receive=1..},c=1] ~ 101 ~ tp @s ~ 101 ~
 execute @a[scores={temp=223,receive=1..}] ~ ~ ~ scoreboard objectives add ybis dummy
-execute @a[scores={temp=223,receive=1..}] ~ ~ ~ scoreboard players random @s ybis 1 4
+execute @a[scores={temp=223,receive=1..}] ~ ~ ~ scoreboard players random @s ybis 1 5
 #原版的刷新
-#最最最原版的岛屿（1）
-#普通岛屿（1）
+#普通岛屿（1） - 最最最原版的岛屿（1）
 #添加tag
 execute @a[scores={temp=223,receive=1..,ybis=1}] ~ ~ ~ tag @s add ybis1
 #刷新
@@ -509,6 +513,177 @@ execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scor
 execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis4] ~ ~ ~ setblock ~4 101 ~-1 copper_ore 0
 execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis4] ~ ~ ~ setblock ~4 102 ~-1 iron_ore 0
 execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis4] ~ ~ ~ setblock ~3 101 ~-1 gold_ore 0
+#沙漠岛（5）
+#添加tag
+execute @a[scores={temp=223,receive=1..,ybis=5}] ~ ~ ~ tag @s add ybis5
+#刷新
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 100 ~ bedrock 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 100 ~ sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 100 ~1 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 100 ~-1 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 100 ~ sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 100 ~1 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 100 ~-1 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 100 ~-1 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 100 ~1 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~2 100 ~-2 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~2 100 ~-1 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~2 100 ~ sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~2 100 ~1 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~2 100 ~2 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 100 ~-2 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 100 ~-1 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 100 ~ sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 100 ~1 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 100 ~2 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 100 ~-2 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 100 ~2 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 100 ~2 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 100 ~2 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 100 ~-2 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 100 ~-2 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 100 ~-2 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~3 100 ~-2 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~3 100 ~-1 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~3 100 ~ sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~3 100 ~1 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~3 100 ~2 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-3 100 ~-2 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-3 100 ~-1 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-3 100 ~ sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-3 100 ~1 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-3 100 ~2 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~2 100 ~3 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 100 ~3 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 100 ~3 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 100 ~3 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 100 ~3 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~2 100 ~-3 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 100 ~-3 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 100 ~-3 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 100 ~-3 sand 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 100 ~-3 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~4 100 ~1 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~4 100 ~ sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~4 100 ~-1 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-4 100 ~1 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-4 100 ~ sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-4 100 ~-1 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 100 ~4 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 100 ~4 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 100 ~4 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 100 ~-4 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 100 ~-4 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 100 ~-4 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 99 ~ sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 99 ~1 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 99 ~ sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 99 ~-1 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 99 ~1 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 99 ~ sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 99 ~-1 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 99 ~1 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 99 ~-1 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~2 99 ~2 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~2 99 ~1 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~2 99 ~ sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~2 99 ~-1 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~2 99 ~-2 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 99 ~2 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 99 ~1 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 99 ~ sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 99 ~-1 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 99 ~-2 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 99 ~2 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 99 ~2 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 99 ~2 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 99 ~-2 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 99 ~-2 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 99 ~-2 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~3 99 ~1 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~3 99 ~ sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~3 99 ~-1 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-3 99 ~1 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-3 99 ~ sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-3 99 ~-1 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 99 ~3 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 99 ~3 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 99 ~3 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 99 ~-3 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 99 ~-3 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 99 ~-3 sandstone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 98 ~ stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 98 ~1 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 98 ~ stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 98 ~-1 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 98 ~1 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 98 ~ stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 98 ~-1 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 98 ~1 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 98 ~-1 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~2 98 ~1 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~2 98 ~ stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~2 98 ~-1 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 98 ~1 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 98 ~ stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 98 ~-1 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 98 ~2 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 98 ~2 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 98 ~2 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 98 ~-2 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 98 ~-2 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 98 ~-2 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 97 ~ stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 97 ~1 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 97 ~ stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 97 ~-1 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 97 ~1 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 97 ~ stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 97 ~-1 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 97 ~1 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 97 ~-1 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 96 ~ stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~1 96 ~ stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 96 ~ stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 96 ~1 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 96 ~-1 stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~ 95 ~ stone 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~2 101 ~1 deadbush 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 101 ~-1 deadbush 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ fill ~-2 101 ~-1 ~-2 104 ~-1 fence 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 105 ~-1 wood 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 105 ~-1 torch 1
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-3 105 ~-1 torch 2
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 105 ~ torch 3
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 105 ~-2 torch 4
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~2 101 ~3 lit_pumpkin 2
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 101 ~2 sandstone 1
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 101 ~4 sandstone 1
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-3 101 ~2 sandstone 1
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-3 101 ~4 sandstone 1
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 101 ~3 stone_slab 1
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 101 ~2 stone_slab 1
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 101 ~4 stone_slab 1
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-3 101 ~3 stone_slab 1
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 102 ~2 cobblestone_wall 5
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 102 ~4 cobblestone_wall 5
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-3 102 ~2 cobblestone_wall 5
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-3 102 ~4 cobblestone_wall 5
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 103 ~2 cobblestone_wall 5
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 103 ~4 cobblestone_wall 5
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-3 103 ~2 cobblestone_wall 5
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-3 103 ~4 cobblestone_wall 5
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 104 ~2 stone_slab 1
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-1 104 ~4 stone_slab 1
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-3 104 ~2 stone_slab 1
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-3 104 ~4 stone_slab 1
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 104 ~3 sandstone 1
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 105 ~3 torch 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~-2 101 ~3 water 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~3 101 ~-2 fence 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~2 101 ~-2 fence 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~2 101 ~-3 fence 0
+execute @e[type=armor_stand,scores={typeid=128,version=0}] ~ ~ ~ execute @a[scores={temp=223,receive=100..200},c=1,tag=ybis5] ~ ~ ~ setblock ~2 102 ~-2 torch 0
 #ob模式的刷新
 execute @e[type=armor_stand,scores={typeid=128,version=1}] ~ ~ ~ execute @a[scores={temp=223,receive=100..130},c=1] ~ ~ ~ detect ~ 253 ~ air 0 fill ~-2 251 ~-2 ~2 255 ~2 barrier 0
 execute @e[type=armor_stand,scores={typeid=128,version=1}] ~ ~ ~ execute @a[scores={temp=223,receive=100..130},c=1] ~ ~ ~ setblock ~ 253 ~ cobblestone_wall 0
@@ -661,6 +836,7 @@ execute @a[scores={receive=541..}] ~ ~ ~ tag @a remove ybis1
 execute @a[scores={receive=541..}] ~ ~ ~ tag @a remove ybis2
 execute @a[scores={receive=541..}] ~ ~ ~ tag @a remove ybis3
 execute @a[scores={receive=541..}] ~ ~ ~ tag @a remove ybis4
+execute @a[scores={receive=541..}] ~ ~ ~ tag @a remove ybis5
 #完成注册后删除缓存
 execute @a[scores={receive=541..}] ~ ~ ~ scoreboard players reset @s temp
 execute @a[scores={receive=541..}] ~ ~ ~ scoreboard players reset @s receivetext
