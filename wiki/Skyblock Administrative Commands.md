@@ -96,3 +96,16 @@ Remove items from a player.
 
 ---
 
+### Reset data
+
+```纯文本
+/function reset
+```
+
+
+Reset date. After the reset, all counts marked with one day in the system return to 0.
+
+---
+
+
+
