@@ -1,30 +1,6 @@
 # Skyblock Readme
 
-## 目录
-
-*   [Skyblock](#skyblock)
-
-*   [衍生项目](#衍生项目)
-
-*   [如何使用](#如何使用)
-
-*   [使用场景](#使用场景)
-
-*   [安装](#安装)
-
-*   [配置](#配置)
-
-    *   *   *   [原版模式](#原版模式)
-            *   [单方块模式](#单方块模式)
-            *   [网格模式\[开发中\]](#网格模式开发中)
-
-*   [贡献](#贡献)
-
-*   [捐赠](#捐赠)
-
-*   [授权](#授权)
-
-*   [链接](#链接)
+***
 
 # Skyblock
 
@@ -40,6 +16,8 @@
 官网 [https://skyblock.xiaozhiyuqwq.top](https://skyblock.xiaozhiyuqwq.top "https://skyblock.xiaozhiyuqwq.top")
 
 by 小祉语qwq
+
+> 我曾难自拔于世界之大 也沉溺于其中梦话 不得真假 不做挣扎 不惧笑话&#x20;
 
 # 衍生项目
 
@@ -90,8 +68,8 @@ by 小祉语qwq
 3.  游玩开始！
 
 相关仓库：
-https://github.com/xiaozhiyuqwq/skyblock.git
-https://gitee.com/xiaozhiyuqwq/skyblock.git
+https\://github.com/xiaozhiyuqwq/skyblock.git
+https\://gitee.com/xiaozhiyuqwq/skyblock.git
 
 可能以后会有发布单独仓库。
 
@@ -103,7 +81,7 @@ https://gitee.com/xiaozhiyuqwq/skyblock.git
 
 不要在首个玩家注册后更改全局模式，否则将会有bug！！！！
 
-#### 原版模式
+**原版模式**
 
 将会随机刷新岛屿。
 
@@ -111,7 +89,7 @@ https://gitee.com/xiaozhiyuqwq/skyblock.git
 /scoreboard players set gamerule version 0
 ```
 
-#### 单方块模式
+**单方块模式**
 
 这是一个特殊的模式，将会出现一个方块作为岛屿。特殊的是，这个方块会无限刷新！
 
@@ -119,13 +97,19 @@ https://gitee.com/xiaozhiyuqwq/skyblock.git
 /scoreboard players set gamerule version 1
 ```
 
-#### 网格模式\[开发中]
+**网格模式\[开发中]**
 
 在这个模式下，将会出现一片眼花缭乱并且排列整齐的方块。\[开发中]
 
 ```text
 /scoreboard players set gamerule version 2
 ```
+
+**小提示**
+
+在存档文件 behavior\_packs/skyblock/media/enroll.mcfunction 中，会有强制锁定全局游戏模式。可以在此输入玩法名称代号，每次注册会强制同步全局玩法。
+
+再次提示：不要在首个玩家注册后更改全局模式！
 
 # 贡献
 
@@ -170,3 +154,4 @@ limitations under the License.
 *   [xiaozhiyuqwq.top](https://xiaozhiyuqwq.top "xiaozhiyuqwq.top")
 
 *   [Rainyat](https://www.rainyat.work "Rainyat")
+
