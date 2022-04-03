@@ -1,10 +1,23 @@
 # Skyblock Readme
 
-***
+## 目录
+
+*   [Skyblock](#skyblock)
+*   [衍生项目](#衍生项目)
+*   [如何使用](#如何使用)
+*   [使用场景](#使用场景)
+*   [安装](#安装)
+*   [配置](#配置)
+*   [贡献](#贡献)
+*   [捐赠](#捐赠)
+*   [授权](#授权)
+*   [链接](#链接)
 
 # Skyblock
 
-**基于我的世界基岩版的Skyblock存档，轻松联机/开服......开箱即用！**
+**基于我的世界基岩版的Skyblock存档，轻松联机、秒级开服......开箱即用！**
+
+[\[Github\]](https://github.com/xiaozhiyuqwq/skyblock "[Github]") [\[Gitee\]](https://gitee.com/xiaozhiyuqwq/skyblock "[Gitee]") [\[Coding\]](https://xiaozhiyuqwq.coding.net/public/skyblock/skyblock/git/files "[Coding]")
 
 我的世界基岩版 skyblock 存档。
 适用于MCBDS服务器，联机游戏。
@@ -68,14 +81,15 @@ by 小祉语qwq
 3.  游玩开始！
 
 相关仓库：
-https\://github.com/xiaozhiyuqwq/skyblock.git
-https\://gitee.com/xiaozhiyuqwq/skyblock.git
+（1）https://github.com/xiaozhiyuqwq/skyblock.git  （2）https://gitee.com/xiaozhiyuqwq/skyblock.git
 
 可能以后会有发布单独仓库。
 
 # 配置
 
-首次加入游戏。游戏模式默认为 \[原版空岛]。
+首次加入游戏。游戏模式默认为 \[原版空岛]。（可能也不是，所以务必完成配置工作！）
+
+玩家在初次加入（未注册的时候）的字幕条会显示当前全局玩法。
 
 您需要通过相关命令更改
 
@@ -141,6 +155,10 @@ limitations under the License.
 
 # 链接
 
+这里存放着一些杂乱的链接，您可以访问查看。
+
+*   [xiaozhiyuqwq.top](https://xiaozhiyuqwq.top "xiaozhiyuqwq.top")
+
 *   [Github@xiaozhiyuqwq](https://github.com/xiaozhiyuqwq "Github@xiaozhiyuqwq")
 
 *   [Gitee@xiaozhiyuqwq](https://gitee.com/xiaozhiyuqwq "Gitee@xiaozhiyuqwq")
@@ -151,7 +169,20 @@ limitations under the License.
 
 *   [网易云音乐@小祉语qwq](https://music.163.com/#/user/home?id=1958071148 "网易云音乐@小祉语qwq")
 
-*   [xiaozhiyuqwq.top](https://xiaozhiyuqwq.top "xiaozhiyuqwq.top")
-
 *   [Rainyat](https://www.rainyat.work "Rainyat")
 
+*   [小子佳的博客](http://inoriilu.top "小子佳的博客")
+
+*   [单方块空岛策划 - wolai](https://www.wolai.com/xiaozhiyuqwq/6hUwbmjnaQnucdDzAZHdiH "单方块空岛策划 - wolai")
+
+*   [网格空岛策划 - wolai](https://www.wolai.com/xiaozhiyuqwq/6xnBACAC7BhtUFqwZDSzKX "网格空岛策划 - wolai")
+
+*   [skyblock官网](https://skyblock.xiaozhiyuqwq.top "skyblock官网")
+
+*   [skyblock更新日志 - wolai](https://www.wolai.com/xiaozhiyuqwq/7JxnfASAXj13ZbYUiBTttB "skyblock更新日志 - wolai")
+
+*   [Taptap@祉语](https://www.taptap.com/user/61306024 "Taptap@祉语")
+
+***
+
+![](https://xiaozhiyuqwq.top/icon/skyblock-readme-1.jpg)
