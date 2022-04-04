@@ -114,13 +114,6 @@ by 小祉语qwq
 /scoreboard players set gamerule version 1
 ```
 
-**网格模式\[开发中]**
-
-在这个模式下，将会出现一片眼花缭乱并且排列整齐的方块。\[开发中]
-
-```text
-/scoreboard players set gamerule version 2
-```
 
 **小提示**
 
