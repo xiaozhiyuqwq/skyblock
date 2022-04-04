@@ -17,7 +17,7 @@
 
 **基于我的世界基岩版的Skyblock存档，轻松联机、秒级开服......开箱即用！**
 
-[\[Github\]](https://github.com/xiaozhiyuqwq/skyblock "[Github]") [\[Gitee\]](https://gitee.com/xiaozhiyuqwq/skyblock "[Gitee]") [\[Coding\]](https://xiaozhiyuqwq.coding.net/public/skyblock/skyblock/git/files "[Coding]")
+[\[Github\]](https://github.com/xiaozhiyuqwq/skyblock "[Github]")  [\[Gitee\]](https://gitee.com/xiaozhiyuqwq/skyblock "[Gitee]")  [\[Coding\]](https://xiaozhiyuqwq.coding.net/public/skyblock/skyblock/git/files "[Coding]")
 
 我的世界基岩版 skyblock 存档。
 适用于MCBDS服务器，联机游戏。
@@ -80,10 +80,13 @@ by 小祉语qwq
 
 3.  游玩开始！
 
-相关仓库：
-（1）https://github.com/xiaozhiyuqwq/skyblock.git  （2）https://gitee.com/xiaozhiyuqwq/skyblock.git
+相关仓库
 
-可能以后会有发布单独仓库。
+[\[Github\]](https://github.com/xiaozhiyuqwq/skyblock "[Github]") https://github.com/xiaozhiyuqwq/skyblock
+
+[\[Gitee\]](https://gitee.com/xiaozhiyuqwq/skyblock "[Gitee]") https://gitee.com/xiaozhiyuqwq/skyblock
+
+[\[Coding\]](https://xiaozhiyuqwq.coding.net/public/skyblock/skyblock/git/files "[Coding]") https://xiaozhiyuqwq.coding.net/public/skyblock/skyblock/git/files
 
 # 配置
 
