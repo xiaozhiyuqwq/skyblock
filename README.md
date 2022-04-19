@@ -12,6 +12,7 @@
 *   [捐赠](#捐赠)
 *   [授权](#授权)
 *   [链接](#链接)
+*   [写在最后](#写在最后)
 
 # Skyblock
 
@@ -114,7 +115,6 @@ by 小祉语qwq
 /scoreboard players set gamerule version 1
 ```
 
-
 **小提示**
 
 在存档文件 behavior\_packs/skyblock/media/enroll.mcfunction 中，会有强制锁定全局游戏模式。可以在此输入玩法名称代号，每次注册会强制同步全局玩法。
@@ -128,6 +128,8 @@ by 小祉语qwq
 # 捐赠
 
 没钱，要饭了！[https://xiaozhiyuqwq.top/dm](https://xiaozhiyuqwq.top/dm "https://xiaozhiyuqwq.top/dm")
+
+![](http://xiaozhiyuqwq.top/wp-content/uploads/2022/02/pay.png)
 
 # 授权
 
@@ -180,5 +182,17 @@ limitations under the License.
 *   [Taptap@祉语](https://www.taptap.com/user/61306024 "Taptap@祉语")
 
 ***
+
+# 写在最后
+
+<https://music.163.com/song?id=421639623&userid=1958071148>
+
+> 夏天对于中国的孩子是特殊的，中考，高考，毕业，成年前所有重大人生转折都发生在夏天。无处可藏的炎热意味着过往的终结和新生活的开始，逼迫着对成熟毫无心里准备的我们往前走。
+
+至今我仍然怀念那个夏天。燥热的盛夏，汗水流淌于肩胛。亦或猛然阴霾，大雨倾盆。
+
+夏天对于中国的孩子来说是特别的，每一个夏天，汗滴与雨水都在推着你向前无论前方是光明亦或是黑暗。每当一个夏天过去，就意味着我们彼此各奔东西，从此消失与人海。
+
+这个项目是我初中开始写的。是2020那个燥热的夏天开始的。我们被时光推着向前走，已然没有那大把的时间了。这个项目大概率不会写完。谨此纪念2018-2021年的岁月。
 
 ![](https://xiaozhiyuqwq.top/icon/skyblock-readme-1.jpg)
