@@ -8,6 +8,7 @@
 *   [使用场景](#使用场景)
 *   [安装](#安装)
 *   [配置](#配置)
+*   [文档](#文档)
 *   [贡献](#贡献)
 *   [捐赠](#捐赠)
 *   [授权](#授权)
@@ -121,6 +122,26 @@ by 小祉语qwq
 
 再次提示：不要在首个玩家注册后更改全局模式！
 
+# 文档
+
+这里公开了相关文档。供您参考。
+
+本库全部文档材料(包括非本库内但是与本库有关联)禁止商业使用。文本内容除另有声明外，均在[知识共享 署名-非商业性使用-相同方式共享 3.0 (CC BY-NC-SA 3.0) 许可协议](https://creativecommons.org/licenses/by-nc-sa/3.0/cn/ "知识共享 署名-非商业性使用-相同方式共享 3.0 (CC BY-NC-SA 3.0) 许可协议")下提供，附加条款亦可能应用。其他类型作品版权归属原作者，如有授权遵照授权协议使用。
+
+*   [skyblock更新日志 - wolai](https://www.wolai.com/xiaozhiyuqwq/7JxnfASAXj13ZbYUiBTttB "skyblock更新日志 - wolai")
+
+*   [单方块空岛策划 - wolai](https://www.wolai.com/xiaozhiyuqwq/6hUwbmjnaQnucdDzAZHdiH "单方块空岛策划 - wolai")
+
+*   [管理员命令](https://github.com/xiaozhiyuqwq/skyblock/blob/main/wiki/Skyblock%20Administrative%20Commands.md "管理员命令")
+
+*   [维基](https://skyblock.xiaozhiyuqwq.top/wiki "维基")
+
+*   [单方块背后的故事](https://www.wolai.com/rFXpZaEXheUTXqx5zBdK7A "单方块背后的故事")
+
+*   [空岛基本逻辑](https://www.wolai.com/51bcgkV8HXAqhXbv8iCUhd "空岛基本逻辑")
+
+*   [空岛任务策划](https://www.wolai.com/6GmHNzck7XA1v9pWrqCk3F "空岛任务策划")
+
 # 贡献
 
 提交Issue。或者pr自行修改。
@@ -133,9 +154,15 @@ by 小祉语qwq
 
 # 授权
 
-[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.html "Apache License 2.0")
+Skyblock for Server (Skyblock)
 
-```text
+[https://github.com/xiaozhiyuqwq/skyblock](https://github.com/xiaozhiyuqwq/skyblock "https://github.com/xiaozhiyuqwq/skyblock")
+
+Copyright 2020 - 2022 xiaozhiyuqwq .
+
+Licensed under the Apache License, Version 2.0(the "License"); [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0 "http://www.apache.org/licenses/LICENSE-2.0")
+
+```纯文本
 Copyright [Skyblock] [xiaozhiyuqwq]
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -150,6 +177,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
+
+当您的项目引用库内文件时，必须在readme文件以及对外公开的介绍页面标注该库URL，并且应该将其使用超链接样式链接到 https://github.com/xiaozhiyuqwq/skyblock 。
 
 # 链接
 
@@ -183,6 +212,10 @@ limitations under the License.
 
 ***
 
+![](https://xiaozhiyuqwq.top/icon/skyblock-readme-1.jpg)
+
+***
+
 # 写在最后
 
 <https://music.163.com/song?id=421639623&userid=1958071148>
@@ -194,5 +227,3 @@ limitations under the License.
 夏天对于中国的孩子来说是特别的，每一个夏天，汗滴与雨水都在推着你向前无论前方是光明亦或是黑暗。每当一个夏天过去，就意味着我们彼此各奔东西，从此消失与人海。
 
 这个项目是我初中开始写的。是2020那个燥热的夏天开始的。我们被时光推着向前走，已然没有那大把的时间了。这个项目大概率不会写完。谨此纪念2018-2021年的岁月。
-
-![](https://xiaozhiyuqwq.top/icon/skyblock-readme-1.jpg)
