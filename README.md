@@ -3,23 +3,36 @@
 ## 目录
 
 *   [Skyblock](#skyblock)
-*   [衍生项目](#衍生项目)
+
+*   [衍生](#衍生)
+
+*   [推荐项目](#推荐项目)
+
 *   [如何使用](#如何使用)
+
 *   [使用场景](#使用场景)
+
 *   [安装](#安装)
+
 *   [配置](#配置)
+
 *   [文档](#文档)
+
 *   [贡献](#贡献)
+
 *   [捐赠](#捐赠)
+
 *   [授权](#授权)
+
 *   [链接](#链接)
+
 *   [写在最后](#写在最后)
 
 # Skyblock
 
 **基于我的世界基岩版的Skyblock存档，轻松联机、秒级开服......开箱即用！**
 
-[\[Github\]](https://github.com/xiaozhiyuqwq/skyblock "[Github]")  [\[Gitee\]](https://gitee.com/xiaozhiyuqwq/skyblock "[Gitee]")  [\[Coding\]](https://xiaozhiyuqwq.coding.net/public/skyblock/skyblock/git/files "[Coding]")
+[\[Github\]](https://github.com/xiaozhiyuqwq/skyblock "\[Github]")  [\[Gitee\]](https://gitee.com/xiaozhiyuqwq/skyblock "\[Gitee]")  [\[Coding\]](https://xiaozhiyuqwq.coding.net/public/skyblock/skyblock/git/files "\[Coding]")
 
 我的世界基岩版 skyblock 存档。
 适用于MCBDS服务器，联机游戏。
@@ -34,11 +47,19 @@ by 小祉语qwq
 
 > 我曾难自拔于世界之大 也沉溺于其中梦话 不得真假 不做挣扎 不惧笑话&#x20;
 
-# 衍生项目
+# 衍生
 
 *   我的世界基岩版[Rainyat](https://www.rainyat.work "Rainyat")
 
 *   [整合包 - One Block - 单方块空岛整合包](https://www.minebbs.com/resources/one-block.3554/ "整合包 - One Block - 单方块空岛整合包")
+
+# 推荐项目
+
+这里列出的仓库是推荐搭配使用的。您可以按需求使用。该列表之下的仓库与本仓库无联系，请在使用前查看相关仓库readme与许可证。
+
+**Rainyat texts resource\_packs**
+
+MCBE资源包，修改了汉化翻译，对盔甲与食物增加盔甲值与饱食度的显示。仓库链接：<https://github.com/xiaozhiyuqwq/Rainyattextsresource\\_packs>
 
 # 如何使用
 
@@ -84,11 +105,11 @@ by 小祉语qwq
 
 相关仓库
 
-[\[Github\]](https://github.com/xiaozhiyuqwq/skyblock "[Github]") https://github.com/xiaozhiyuqwq/skyblock
+[\[Github\]](https://github.com/xiaozhiyuqwq/skyblock "\[Github]") <https://github.com/xiaozhiyuqwq/skyblock>
 
-[\[Gitee\]](https://gitee.com/xiaozhiyuqwq/skyblock "[Gitee]") https://gitee.com/xiaozhiyuqwq/skyblock
+[\[Gitee\]](https://gitee.com/xiaozhiyuqwq/skyblock "\[Gitee]") <https://gitee.com/xiaozhiyuqwq/skyblock>
 
-[\[Coding\]](https://xiaozhiyuqwq.coding.net/public/skyblock/skyblock/git/files "[Coding]") https://xiaozhiyuqwq.coding.net/public/skyblock/skyblock/git/files
+[\[Coding\]](https://xiaozhiyuqwq.coding.net/public/skyblock/skyblock/git/files "\[Coding]") <https://xiaozhiyuqwq.coding.net/public/skyblock/skyblock/git/files>
 
 # 配置
 
@@ -178,7 +199,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-当您的项目引用库内文件时，必须在readme文件以及对外公开的介绍页面标注该库URL，并且应该将其使用超链接样式链接到 https://github.com/xiaozhiyuqwq/skyblock 。
+当您的项目引用库内文件时，必须在readme文件以及对外公开的介绍页面标注该库URL，并且应该将其使用超链接样式链接到 <https://github.com/xiaozhiyuqwq/skyblock> 。
 
 # 链接
 
