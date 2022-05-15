@@ -163,9 +163,21 @@ MCBE资源包，修改了汉化翻译，对盔甲与食物增加盔甲值与饱�
 
 *   [空岛任务策划](https://www.wolai.com/6GmHNzck7XA1v9pWrqCk3F "空岛任务策划")
 
+*   [skyblock-ob-wiki: skyblock-ob-wiki (gitee.com)](https://gitee.com/rainyat/skyblock-ob-wiki "skyblock-ob-wiki: skyblock-ob-wiki (gitee.com)")
+
+*   [Rainyat/skyblock-ob-wiki (github.com)](https://github.com/Rainyat/skyblock-ob-wiki "Rainyat/skyblock-ob-wiki (github.com)")
+
 # 贡献
 
-提交Issue。或者pr自行修改。
+*   祉语 [@xiaozhiyuqwq](https://xiaozhiyuqwq.top "@xiaozhiyuqwq")
+
+*   Inoriilu [\[web\]](https://inoriilu.top "\[web]")
+
+*   量筒 [\[bilibili\]](https://space.bilibili.com/241650193 "\[bilibili]")
+
+*   归来
+
+*   君茶
 
 # 捐赠
 
