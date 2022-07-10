@@ -1,0 +1,38 @@
+#dead
+#计算
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ scoreboard players random @s[scores={temp=444,level=1}] deadcoin 35 50
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ scoreboard players random @s[scores={temp=444,level=2}] deadcoin 45 80
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ scoreboard players random @s[scores={temp=444,level=3}] deadcoin 55 100
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ scoreboard players random @s[scores={temp=444,level=4}] deadcoin 65 120
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ scoreboard players random @s[scores={temp=444,level=5}] deadcoin 75 140
+execute @a[scores={temp=444},tag=registered,scores={dailyplaytime=20..}] ~ ~ ~ scoreboard players add deadcoin 5
+execute @a[scores={temp=444},tag=registered,scores={dailyplaytime=45..}] ~ ~ ~ scoreboard players add deadcoin 5
+execute @a[scores={temp=444},tag=registered,scores={dailyplaytime=120..}] ~ ~ ~ scoreboard players add deadcoin 15
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ scoreboard players set @s[scores={temp=444,coin=!300..}] deadcoin 0
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ scoreboard players set @s[scores={temp=444,level=0}] deadcoin 0
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ scoreboard players set @s[scores={temp=444},tag=deadproject] deadcoin 0
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ tellraw @s[scores={language=0,deadcoin=0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§c您阵亡了！§f不扣除硬币及经验。"}]}
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ tellraw @s[scores={language=1,deadcoin=0}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§cYou are dead! §fNo deduction for coins and experience."}]}
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ tellraw @s[scores={language=2,deadcoin=0}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§c您陣亡了！§f不扣除硬幣及經驗。"}]}
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ tellraw @s[scores={language=3,deadcoin=0}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§cあなたは死にました！§f硬貨及び経験は差し引かない。"}]}
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ tellraw @s[scores={language=0,deadcoin=!0}] {"rawtext":[{"text":"§l§e空岛生存§f>>§r§f§c您阵亡了！§f死亡扣除 §e"},{"score":{"name":"@s","objective":"deadcoin"}},{"text":"枚硬币 §f，并且扣除1级经验。"}]}
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ tellraw @s[scores={language=1,deadcoin=!0}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§cYou are dead! §fDeduct §e"},{"score":{"name":"@s","objective":"deadcoin"}},{"text":" Coin §f. And deduct level 1 experience."}]}
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ tellraw @s[scores={language=2,deadcoin=!0}] {"rawtext":[{"text":"§l§e空島生存§f>>§r§f§c您陣亡了！§f死亡扣除 §e"},{"score":{"name":"@s","objective":"deadcoin"}},{"text":"枚硬幣 §f。並且扣除1級經驗。"}]}
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ tellraw @s[scores={language=3,deadcoin=!0}] {"rawtext":[{"text":"§l§eSkyBlock§f>>§r§f§cあなたは死にました！§f死亡控除です §e"},{"score":{"name":"@s","objective":"deadcoin"}},{"text":"枚のコイン §f。そして1級の経験を差し引きます。"}]}
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ scoreboard players operation @s coin -= @s deadcoin
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ xp -1l @s[scores={temp=444,deadcoin=!0}]
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ effect @s[scores={temp=444}] resistance 60 2 true
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ effect @s[scores={temp=444}] regeneration 30 2 true
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ effect @s[scores={temp=444}] health_boost 90 2 true
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ scoreboard players set @s[scores={temp=444,deadproject=!0..1440},tag=!developer] deadproject 1330
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ scoreboard players set @s[scores={temp=444,deadproject=!0..1440},tag=developer] deadproject 1325
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ scoreboard players reset @s[scores={temp=444}] deadcoin
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ give @s[scores={temp=444},tag=developer] apple 1 0
+#直接传送回岛屿
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ scoreboard players add @s tptype 0
+execute @a[scores={temp=444,tptype=!0},tag=registered] ~ ~ ~ scoreboard players set @s temp 1102
+execute @a[scores={temp=1102},tag=registered] ~ ~ ~ function media/tp
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ tp @s[scores={temp=444}] 0 151 0
+execute @a[scores={temp=444},tag=registered] ~ ~ ~ scoreboard players reset @s[scores={temp=444}] temp
+execute @a[scores={temp=444},tag=!registered] ~ ~ ~ tp @s 0 151 0
+execute @a[scores={temp=444},tag=!registered] ~ ~ ~ scoreboard players reset @s[scores={temp=444}] temp
